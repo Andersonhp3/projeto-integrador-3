@@ -1,0 +1,10 @@
+body {
+  font-family: 'Baloo 2', cursive;
+}
+.branco{
+  background-color:#03658C;
+  color: white;
+  display: flex;
+  justify-content: center;
+  position: inherit;
+}
