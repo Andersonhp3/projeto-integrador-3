@@ -1,11 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css">
+
     <title>Login</title>
 </head>
+
 <body>
-    
+    <!-- header gabarito -->
+    <header>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div id="header"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ---------------------------------- -->
+    <section id="login">
+        <div class="container-fluid py-5">
+            <div class="row justify-content-center">
+                <div class="col-4">
+                    <div id="loginbox">
+                        <form action="" method="post">
+                            <h3 id="login" class="mb-5">Login</h3>
+
+                            <div class="form-group mb-4">
+                                <input id="email" class="form-control" type="email" name="email" placeholder="E-Mail">
+                            </div>
+                            <div class="form-group mb-4">
+                                <input id="senha" class="form-control" type="password" name="senha" placeholder="Senha">
+                            </div>
+                            <div>
+                                <button class="btn btn-login mr-5 mb-4 mt-3" id="btn-login">Cadastre-se</button>
+                                <button class="btn btn-login ml-5 mb-4 mt-3" id="btn-login">Entrar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 </body>
+
 </html>
