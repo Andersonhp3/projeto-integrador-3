@@ -10,7 +10,7 @@ body {
   position: inherit;
 }
 
-#login {
+h3 {
   text-transform: uppercase;
   color: grey;
   text-align: center;
@@ -32,9 +32,28 @@ body {
   padding: 20px;
 }
 
-.btn-login{
+.btn-site{
   background-color: #f2a0a0;
   color:white;
   border-radius: 16px;
   
+}
+
+.botoes {
+  display: flex;
+  justify-content: space-between;
+}
+
+#botaocadastro {
+  display: flex;
+  justify-content: center;
+}
+
+#logocadastro {
+  display: flex;
+  justify-content: center;
+}
+
+#logo{
+  border-radius: 15rem;
 }

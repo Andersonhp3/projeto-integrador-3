@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <!-- header gabarito -->
+    <header>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div id="header"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ---------------------------------- -->
+    <form action="" method="post">
+        <section id="cadastro" class="container-fluid py-5">
+            <div class="row">
+
+                <div class="col-4 border-right" id="cadastro-foto">
+                    <h3>Foto/Logo</h3>
+                    <div id="logocadastro">
+                        <img src="https://cdn.pixabay.com/photo/2019/09/02/05/12/girl-4446528_960_720.jpg" alt="Foto/Logo" width="200px" height="200px" class="img-thumbnail mb-5 mt-5" id="logo">
+                    </div>
+                    <div class="input-group mb-3 mt-5">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="inputGroupFileAddon01">Carregar</span>
+                        </div>
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                          <label class="custom-file-label" for="inputGroupFile01">Escolha uma foto</label>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-6">
+                    <div id="cadastro-dados">
+
+                        <h3 id="" class="mb-5">Cadastro</h3>
+
+                        <div class="form-group mb-4">
+                            <input id="razaosocial" class="form-control" type="number" name="razaosocial"
+                                placeholder="Razão Social">
+                        </div>
+                        <div class="form-group mb-4">
+                            <input id="cnpjcpf" class="form-control" type="number" name="cnpjcpf"
+                                placeholder="CNPJ/CPF">
+                        </div>
+                        <div class="form-group mb-4">
+                            <input id="email" class="form-control" type="email" name="email" placeholder="E-Mail">
+                        </div>
+                        <div class="form-group mb-4">
+                            <input id="senha" class="form-control" type="password" name="senha" placeholder="Senha">
+                        </div>
+                        <div class="botoes" id="botaocadastro">
+                            <button class="btn btn-site mr-5 mb-4 mt-3">Cadastre-se</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </section>
+    </form>
+
+</body>
+
+
+
+
+
+</html>
