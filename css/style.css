@@ -1,13 +1,9 @@
+*{
+  box-sizing: border-box;
+}
 body {
   font-family: 'Baloo 2', cursive;
   background-color: #f1f1f1;
-}
-.branco{
-  background-color:#03658C;
-  color: white;
-  display: flex;
-  justify-content: center;
-  position: inherit;
 }
 
 h3 {
@@ -22,6 +18,14 @@ h3 {
   border-width: 5px;
   border-style: solid;
   height: 80px;
+  
+}
+#footer{
+  border: black;
+  border-width: 5px;
+  border-style: solid;
+  height: 80px;
+  margin-top: 40px;
   
 }
 /* ------------------- */
