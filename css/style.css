@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&display=swap');
+
 *{
   box-sizing: border-box;
 }
@@ -20,17 +22,26 @@ h3 {
   height: 80px;
   
 }
-#footer{
-  border: black;
-  border-width: 5px;
-  border-style: solid;
-  height: 80px;
-  margin-top: 40px;
-  
+.footer{
+  height: 60px;
+  margin-top: 40px;  
+}
+
+.img-footer {
+  height: 50px;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.footer-content img{
+  margin: 0 10px;
 }
 /* ------------------- */
-
-
 
 .btn-site{
   background-color: #f2a0a0;
@@ -44,3 +55,7 @@ h3 {
   justify-content: space-between;
 }
 
+.bg-blue {
+  background-color: #03658C;
+  color: #fff;
+}
