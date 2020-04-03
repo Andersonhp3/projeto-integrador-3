@@ -1,0 +1,24 @@
+.foto-produto {
+    height: 440px;
+    width: 440px;
+}
+
+#foto-vendedor{
+    font-size: 7em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#foto-coment{
+    font-size: 2em;
+    margin: 5px;
+}
+
+#avaliacao-coment{
+    margin: 2px;
+}
+
+i{
+    color: #03658C
+}

@@ -23,8 +23,9 @@ h3 {
   
 }
 .footer{
-  height: 60px;
   margin-top: 40px;  
+  display: hidden;
+  padding: 10px;
 }
 
 .img-footer {
@@ -38,8 +39,10 @@ h3 {
   padding: 5px;
 }
 
-.footer-content img{
+.footer-content i{
   margin: 0 10px;
+  color: #fff;
+  font-size: 1.5em;
 }
 /* ------------------- */
 
