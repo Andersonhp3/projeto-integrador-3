@@ -19,3 +19,7 @@ h1 {
 h2 {
     font-size: 25px;
 }
+
+section#pesquisa {
+    margin-top: 100px;
+}
