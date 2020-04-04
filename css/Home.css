@@ -18,6 +18,7 @@ section{
 .carrossel{
     justify-content: start;
     width: 4%;
+    margin-bottom: 50px;
 }
 h2{
     padding:20px;
