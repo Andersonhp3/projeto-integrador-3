@@ -1,0 +1,15 @@
+#imagemGrande {
+    width: 445px;
+    height: 350px;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+
+.infoD {
+    font-size: 17px;
+    margin-bottom: 4px;
+    margin-top: 5px;
+}
