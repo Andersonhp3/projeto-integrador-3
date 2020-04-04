@@ -13,3 +13,7 @@ h1 {
     margin-bottom: 4px;
     margin-top: 5px;
 }
+
+section#descricao {
+    margin-top: 100px;
+}
