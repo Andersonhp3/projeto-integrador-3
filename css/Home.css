@@ -15,9 +15,7 @@ section{
 .card{
     box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.30);
 }
-.carrossel{
-    justify-content: start;
-    width: 4%;
+div#carouselExampleControls2{
     margin-bottom: 50px;
 }
 h2{
