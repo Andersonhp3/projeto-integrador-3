@@ -13,23 +13,53 @@
     <link rel="stylesheet" href="css/fontawesome/css/all.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/Home.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <title>Home</title>
 </head>
 
 <body>
-    <!-- header gabarito -->
     <header>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <div id="header"></div>
+        <div class="header-content container-fluid fixed-top">
+            <div class="column">
+                <div class="header-content-top row">
+                    <div class="col-6 hct-0">
+                        <a href="#"><img src="/images/Logo Azul.svg" class="logo-azul" alt="">pet livre</a>
+                    </div>
+                    <div class="col-6 hct-1">
+                        <a href="#"><i class="material-icons md-48">shopping_cart</i></a>
+                        <a href="#"><i class="material-icons md-48">account_circle</i></a>
+                    </div>
+                </div>
+                <div class="header-content-bottom row">
+                    <div class="col-3">
+                        <nav class="navbar navbar-expand-lg py-0">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="navbar-collapse collapse navbar-custom" id="navbarNav">
+                                <a href="#" class="nav-link nav-item py-0 active">Home</a>
+                                <a href="#" class="nav-link nav-item py-0">Loja</a>
+                                <a href="#" class="nav-link nav-item py-0">Adoção</a>
+                                <a href="#" class="nav-link nav-item py-0">Contato</a>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="col-6 aasss">
+                        <div class="input-group">
+                            <input class="my-0 py-0" type="text" placeholder="Pesquisar" aria-label="Search">
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="basic-text1"><i class="fas fa-search text-grey"
+                                        aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
-    <!-- ---------------------------------- -->
-    <section class="container">
+    <section class="home-content container">
         <div class="row ">
             <div class="col-6 banner">
                 <a href="#" type="button"><img src="./images/Grupo 143.png" alt="Loja"></a>
@@ -614,7 +644,7 @@
             </a>
         </div>
     </section>
-    <footer class="container-fluid bg-blue footer">
+    <footer class="container-fluid bg-blue footer fixed-bottom">
         <div class="row">
             <div class="col-md-4 footer-content">
                 <img src="images/PET LIVRE-logo-white (2).png" alt="logo" class="img-footer">
