@@ -10,3 +10,12 @@
     border-radius: 15rem;
     text-indent: 10px;
 }
+
+h1 {
+    text-align: center;
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 25px;
+}
