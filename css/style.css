@@ -39,6 +39,7 @@ h3 {
 .header-content-bottom {
   height: 40px;
   background-color: #03658C;
+  justify-content: space-evenly;
 }
 
 .logo-azul {
