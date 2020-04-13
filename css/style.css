@@ -51,11 +51,14 @@ h3 {
 }
 
 .nav-link.active {
+  color: #f2a0a0;
+  text-shadow: 1px 1px 10px white;
   border-bottom: 3px solid #f2a0a0;
 }
 
 .nav-link:hover{
   color: #f2a0a0;
+  text-shadow: 1px 1px 10px white;
 }
 
 .input-group input{
