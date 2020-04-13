@@ -37,7 +37,6 @@ h3 {
 .header-content-bottom {
   height: 30px;
   background-color: #03658C;
-  /* box-shadow: 0px 10px rgba(0, 0, 0, 0.5); */
 }
 
 .logo-azul {
@@ -52,8 +51,7 @@ h3 {
 }
 
 .nav-link.active {
-  color: #f2a0a0;
-  border-bottom: 2px solid #f2a0a0;
+  border-bottom: 3px solid #f2a0a0;
 }
 
 .nav-link:hover{
