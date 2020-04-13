@@ -17,14 +17,13 @@ h3 {
   text-align: center;
 }
 
-/* header gabarito */
+/* Inicio Header */
 .header-content {
   height: 100;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 .header-content-top {
-  height: 60px;
+  height: 70px;
   background-color: white;
   padding-top: 5px;
 }
@@ -32,43 +31,29 @@ h3 {
 .header-content-top a {
   font-size: 2em;
   color: #03658C;
-  text-decoration: none;
   text-transform: uppercase;
 }
 
 .header-content-bottom {
-  height: 40px;
+  height: 30px;
   background-color: #03658C;
-  justify-content: space-evenly;
+  /* box-shadow: 0px 10px rgba(0, 0, 0, 0.5); */
 }
 
 .logo-azul {
-  height: 50px;
+  height: 60px;
   padding-right: 16px;
 }
 
-.hct-1 {
-  text-align: right;
-}
-
-.md-48{
-  font-size: 48px !important;
-  color: #03658C;
-  padding-right: 16px;
- }
-
- .header-content-bottom{
-   align-items: center;
- }
  .nav-link {
   color: #fff;
-  height: 40px;
-  font-size: x-large;
+  height: 30px;
+  font-size: 1rem;
 }
 
 .nav-link.active {
   color: #f2a0a0;
-  border-bottom: 5px solid #f2a0a0;
+  border-bottom: 2px solid #f2a0a0;
 }
 
 .nav-link:hover{
@@ -77,30 +62,36 @@ h3 {
 
 .input-group input{
   width: 80%;
-  text-align: right;
-  border: transparent;
+  border: 1px solid #03658C;
   border-radius: 15px 0 0 15px;
 
 }
 
 .input-group {
   width: auto;
-  justify-content: center;
 }
 
 .input-group span{
-  border: transparent;
+  border: 1px solid #03658C;
+  border-left: transparent;
   border-radius: 0 15px 15px 0;
   background-color: white;
 }
 
+.icons-header {
+  color: white;
+}
+
+/* Fim Header */
+
+/* Inicio Footer */
 .footer{
   margin-top: 40px;  
   display: hidden;
 }
 
 .img-footer {
-  height: 40px;
+  height: 30px;
 }
 
 .footer-content {
@@ -132,3 +123,5 @@ h3 {
   background-color: #03658C;
   color: #fff;
 }
+
+/* Fim Footer */
