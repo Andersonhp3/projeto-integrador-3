@@ -87,29 +87,14 @@ h3 {
 
 /* Inicio Footer */
 .footer{
-  /* margin-top: 40px;   */
   height: 30px;
   background-color: #03658C;
   color: #fff;
-  /* display: hidden; */
 }
 
 .img-footer {
   height: 30px;
 }
-
-/* .footer-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
-
-/* .footer-content i{
-  margin: 0 10px;
-  color: #fff;
-  font-size: 1.5em;
-} */
-/* ------------------- */
 
 .btn-site{
   background-color: #f2a0a0;
@@ -117,15 +102,4 @@ h3 {
   border-radius: 16px;
   
 }
-
-.botoes {
-  /* display: flex; */
-  /* justify-content: space-between; */
-}
-
-.bg-blue {
-  background-color: #03658C;
-  color: #fff;
-}
-
 /* Fim Footer */
