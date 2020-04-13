@@ -20,40 +20,42 @@
 
 <body>
     <header>
-        <div class="header-content container-fluid fixed-top">
-            <div class="column">
-                <div class="header-content-top row">
-                    <div class="col-6 hct-0">
-                        <a href="#"><img src="/images/Logo Azul.svg" class="logo-azul" alt="">pet livre</a>
+        <div class="header-content fixed-top">
+            <div class="header-content-top container">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col">
+                        <a href="#" class="text-decoration-none"><img src="/images/Logo Azul.svg" class="logo-azul" alt="">pet livre</a>
                     </div>
-                    <div class="col-6 hct-1">
-                        <a href="#"><i class="material-icons md-48">shopping_cart</i></a>
-                        <a href="./login.html"><i class="material-icons md-48">account_circle</i></a>
-                    </div>
-                </div>
-                <div class="header-content-bottom row">
-                    <div class="col-3">
-                        <nav class="navbar navbar-expand-lg py-0">
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div class="navbar-collapse collapse navbar-custom" id="navbarNav">
-                                <a href="/home.html" class="nav-link nav-item py-0">Home</a>
-                                <a href="/homeLoja.html" class="nav-link nav-item py-0">Loja</a>
-                                <a href="/homeAdocao.html" class="nav-link nav-item py-0">Adoção</a>
-                                <a href="/contato.html" class="nav-link nav-item py-0">Contato</a>
-                            </div>
-                        </nav>
-                    </div>
-                    <div class="col-6">
+                    <div class="col">
                         <div class="input-group">
-                            <input class="my-0 py-0" type="text" placeholder="Pesquisar" aria-label="Search">
+                            <input class="text-right my-0 py-0" type="text" placeholder="Pesquisar" aria-label="Search">
                             <div class="input-group-append">
                                 <span class="input-group-text" id="basic-text1"><i class="fas fa-search text-grey"
                                         aria-hidden="true"></i></span>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-content-bottom container">
+                <div class="row justify-content-between">
+                    <div class="col-12">
+                        <nav class="navbar navbar-expand py-0">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="navbar-collapse collapse" id="navbarNav">
+                                <a href="/home.html" class="nav-link nav-item py-0">Home</a>
+                                <a href="/homeLoja.html" class="nav-link nav-item py-0 active">Loja</a>
+                                <a href="/homeAdocao.html" class="nav-link nav-item py-0">Adoção</a>
+                                <a href="/contato.html" class="nav-link nav-item py-0">Contato</a>
+                            </div>
+                            <div>
+                                <a href="#" class="material-icons icons-header">shopping_cart</a>
+                                <a href="/login.html" class="material-icons icons-header">account_circle</a>
+                            </div> 
+                        </nav>
                     </div>
                 </div>
             </div>
