@@ -25,3 +25,113 @@ h2{
 .home-content {
     margin-top: 100px;
 }
+.card-img-top {
+    width: 90%;
+    margin: 5px auto;
+}
+@media (max-width: 1024px){
+    .banner{
+        height: 350px
+    }
+    
+    .banner img{
+        width: 100%;
+        height: 350px;
+    }
+}
+@media (max-width: 770px){
+    .col-2 {
+        flex: auto;
+        max-width: 50%
+    }
+    .banner{
+        height: 280px
+    }
+    
+    .banner img{
+        width: 100%;
+        height: 280px;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+    .carousel {
+        height: 350px;
+    }
+    .carousel-inner {
+        height: 350px;
+    }
+    .hidden{
+        visibility: hidden; 
+    }
+    .card-img-top {
+        width: 90%;
+        margin: 5px auto;
+    }    
+}
+@media (max-width: 641px){
+    
+    .col-2 {
+        flex: auto;
+        max-width: 50%
+    }
+    .banner{
+        height: 220px
+    }
+    
+    .banner img{
+        width: 100%;
+        height: 220px;
+    }
+    h2 {
+        font-size: 1.3rem;
+    }
+    .carousel {
+        height: 300px;
+    }
+    .carousel-inner {
+        height: 300px;
+    }
+    .hidden{
+        visibility: hidden; 
+    }
+    .card-img-top {
+        width: 90%;
+        margin: 5px auto;
+    }
+}
+
+@media (max-width: 480px){
+    .col-6 {
+        flex: auto;
+        max-width: 90%
+    }
+    .col-2 {
+        flex: auto;
+        max-width: 50%
+    }
+    .banner{
+        height: 220px
+    }
+    
+    .banner img{
+        width: 100%;
+        height: 220px;
+    }
+    h2 {
+        font-size: 1.3rem;
+    }
+    .carousel {
+        height: 250px;
+    }
+    .carousel-inner {
+        height: 250px;
+    }
+    .hidden{
+        visibility: hidden; 
+    }
+    .card-img-top {
+        /* width: 90%; */
+        margin: 5px auto;
+    }
+};
