@@ -4,9 +4,24 @@
 }
 
 h1 {
-    font-size: 30px;
+    font-size: 25px;
 }
 
+#campoGeral {
+    background-color: white;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.30);
+    margin-top: 140px;
+}
+
+#campoFoto {
+    padding: 17px 17px;
+}
+
+
+
+#campoDescri {
+    padding-top: 17px;
+}
 
 .infoD {
     font-size: 17px;
