@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/PET-LIVRE-favicon.ico">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/fontawesome/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/carrinho.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>Carrinho</title>
+</head>
+
+<body>
+    <header>
+        <div class="header-content fixed-top">
+            <div class="header-content-top container">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col">
+                        <a href="#" class="text-decoration-none"><img src="/images/Logo Azul.svg" class="logo-azul"
+                                alt="">pet livre</a>
+                    </div>
+                    <div class="col">
+                        <div class="input-group">
+                            <input class="text-right my-0 py-0" type="text" placeholder="Pesquisar" aria-label="Search">
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="basic-text1"><i class="fas fa-search text-grey"
+                                        aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-content-bottom container">
+                <div class="row justify-content-between">
+                    <div class="col-12">
+                        <nav class="navbar navbar-expand py-0">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="navbar-collapse collapse" id="navbarNav">
+                                <a href="home.html" class="nav-link nav-item py-0">Home</a>
+                                <a href="homeLoja.html" class="nav-link nav-item py-0">Loja</a>
+                                <a href="homeAdocao.html" class="nav-link nav-item py-0">Adoção</a>
+                                <a href="contato.html" class="nav-link nav-item py-0">Contato</a>
+                            </div>
+                            <div>
+                                <a href="#" class="text-decoration-none text-white material-icons">shopping_cart</a>
+                                <a href="login.html"
+                                    class="text-decoration-none text-white material-icons">account_circle</a>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="container py-5">
+        <div class="row">
+            <div class="col-md-8">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span>Resumo do Pedido</span>
+                </h4>
+                <ul class="list-group mb-3">
+                    <li class="list-group-item d-flex justify-content-between lh-condensed py-3">
+                        <div>
+                            <h6 class="my-0">Nome do produto</h6>
+                            <span class="text-muted">Quantidade: </span><input type="number">
+                        </div>
+                        <span class="text-muted">R$12</span>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span>Seu carrinho</span>
+                </h4>
+                <ul class="list-group mb-3">
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">Total dos Produtos</h6>
+                            <small class="text-muted">Breve descrição</small>
+                        </div>
+                        <span class="text-muted">R$12</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">Frete</h6>
+                            <small class="text-muted">Breve descrição</small>
+                        </div>
+                        <span class="text-muted">R$8</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between bg-light">
+                        <div class="text-success">
+                            <h6 class="my-0">Código de promoção</h6>
+                            <small>CODIGOEXEMEPLO</small>
+                        </div>
+                        <span class="text-success">-R$5</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>Total (BRL)</span>
+                        <strong>R$15</strong>
+                    </li>
+                </ul>
+            </div>
+        </div>
+            <h2>Quem comprou também viu:</h2>
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active container">
+                        <div class="row">
+                            <div class="col-2"> 
+                                <a href="./login.html">
+                                    <div class="card" style="width: auto;">
+                                        <img src="./images/NoPath-2.png" class="card-img-top" alt="Nome do produto">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Nome do produto</h5>
+                                            <p class="card-text">R$ 00,00</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-2"> 
+                                <a href="./login.html">
+                                    <div class="card" style="width: auto;">
+                                        <img src="./images/NoPath-2.png" class="card-img-top" alt="Nome do produto">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Nome do produto</h5>
+                                            <p class="card-text">R$ 00,00</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-2"> 
+                                <a href="./login.html">
+                                    <div class="card" style="width: auto;">
+                                        <img src="./images/NoPath-2.png" class="card-img-top" alt="Nome do produto">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Nome do produto</h5>
+                                            <p class="card-text">R$ 00,00</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-2"> 
+                                <a href="./login.html">
+                                    <div class="card" style="width: auto;">
+                                        <img src="./images/NoPath-2.png" class="card-img-top" alt="Nome do produto">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Nome do produto</h5>
+                                            <p class="card-text">R$ 00,00</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-2"> 
+                                <a href="./login.html">
+                                    <div class="card" style="width: auto;">
+                                        <img src="./images/NoPath-2.png" class="card-img-top" alt="Nome do produto">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Nome do produto</h5>
+                                            <p class="card-text">R$ 00,00</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-2"> 
+                                <a href="./login.html">
+                                    <div class="card" style="width: auto;">
+                                        <img src="./images/NoPath-2.png" class="card-img-top" alt="Nome do produto">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Nome do produto</h5>
+                                            <p class="card-text">R$ 00,00</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>      
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <footer class="bg-blue footer">
+        <div class="row">
+            <div class="col-md-4 col-sm-12 footer-element">
+                <img src="images/PET LIVRE-logo-white (2).png" alt="logo" class="img-footer">
+            </div>
+            <div class="col-md-4 col-sm-12 footer-element">
+                Copyright &copy 2020
+            </div>
+            <div class="col-md-4 col-sm-12 footer-element">
+                <a href="#" class="text-decoration-none text-white px-1 fab fa-facebook-square"></a>
+                <a href="#" class="text-decoration-none text-white px-1 fab fa-instagram"></a>
+                <a href="#" class="text-decoration-none text-white px-1 fab fa-twitter"></a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
