@@ -83,13 +83,44 @@ h3 {
 
 /* Inicio Footer */
 .footer{
-  height: 30px;
+  height: 50px;
   background-color: #03658C;
   color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.footer>.row{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-element {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width:500px){
+  .footer{
+    height: 100%;
+    padding: 5px;
+}
+
+  .footer div{
+    display: flex;
+  }
+
+  .footer-element{
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+  }
 }
 
 .img-footer {
-  height: 30px;
+  height: 50px;
 }
 
 .btn-site{
