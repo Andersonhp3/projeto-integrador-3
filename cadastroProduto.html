@@ -12,10 +12,10 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/fontawesome/css/all.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/cadastroAdocao.css">
+    <link rel="stylesheet" href="css/cadastroProduto.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <title>cadastro-pet</title>
+    <title>Cadastrar Produto</title>
 </head>
 
 <body>
@@ -24,7 +24,8 @@
             <div class="header-content-top container">
                 <div class="row justify-content-between align-items-center">
                     <div class="col">
-                        <a href="#" class="text-decoration-none"><img src="/images/Logo Azul.svg" class="logo-azul" alt="">pet livre</a>
+                        <a href="#" class="text-decoration-none"><img src="/images/Logo Azul.svg" class="logo-azul"
+                                alt="">pet livre</a>
                     </div>
                     <div class="col">
                         <div class="input-group">
@@ -53,8 +54,9 @@
                             </div>
                             <div>
                                 <a href="#" class="text-decoration-none text-white material-icons">shopping_cart</a>
-                                <a href="login.html" class="text-decoration-none text-white material-icons">account_circle</a>
-                            </div> 
+                                <a href="login.html"
+                                    class="text-decoration-none text-white material-icons">account_circle</a>
+                            </div>
                         </nav>
                     </div>
                 </div>
@@ -103,15 +105,15 @@
             </div>
             <div class="col-12 col-md-6 py-5">
                 <form action="" method="post">
-                                <h3>cadastre seu pet</h3>
+                                <h3>cadastre seu Produto</h3>
                                 <div id="cadastro-dados">
                                     <div class="form-group mb-4">
                                         <input id="nomePet" class="form-control" type="text" name="nomePet"
-                                            placeholder="Nome do Pet">
+                                            placeholder="Nome do Produto">
                                     </div>
                                     <div class="form-group mb-4">
-                                        <textarea name="descricao" id="descricao" class="form-control"
-                                            rows="10" placeholder="Descrição" type="text"></textarea>
+                                        <textarea name="descricao" id="descricao" class="form-control" rows="5"
+                                            placeholder="Descrição" type="text"></textarea>
                                     </div>
                                     <div class="form-group mb-4 mw-75">
                                         <input id="quantidade" class="form-control w-25" type="number" name="quantidade"
@@ -119,15 +121,19 @@
                                     </div>
                                     <div class="form-group">
                                         <select class="form-control" id="exampleFormControlSelect1">
-                                          <option>Categoria</option>
-                                          <option>Cachorro</option>
-                                          <option>Gato</option>
-                                          <option>Peixe</option>
-                                          <option>Papagaio</option>
+                                            <option>Categoria</option>
+                                            <option>Rações</option>
+                                            <option>Brinquedos</option>
+                                            <option>Farmácia</option>
+                                            <option>Higiene e Limpeza</option>
                                         </select>
-                                      </div>
+                                    </div>
+                                    <div class="form-group mb-4 w-75">
+                                        <input id="quantidade" class="form-control w-50" type="number" name="quantidade"
+                                            placeholder="Preço" columns="4">
+                                    </div>
                                     <div class="botoes" id="botaocadastro">
-                                        <button class="btn btn-site mr-5 mb-4 mt-3">Adicionar para adoção</button>
+                                        <button class="btn btn-site mr-5 mb-4 mt-3">Cadastrar</button>
                                     </div>
                                 </div>
                             </div>
@@ -138,6 +144,9 @@
             </div>
         </div>
     </section>
+
+
+
     <footer class="bg-blue footer">
         <div class="row">
             <div class="col-md-4 col-sm-12 footer-element">
@@ -163,4 +172,5 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
 </body>
+
 </html>
