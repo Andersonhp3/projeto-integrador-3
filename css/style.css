@@ -4,12 +4,18 @@
   box-sizing: border-box;
 }
 
+html, body {
+  min-height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Baloo 2', cursive;
   background-color: #f1f1f1;
   overflow-y:scroll;
+  position: relative;
+  padding-bottom: 70px;
 }
 
 h3 {
@@ -17,6 +23,11 @@ h3 {
   color: grey;
   text-align: center;
 }
+
+section {
+  margin-top: 100px;
+}
+
 
 /* Inicio Header */
 .header-content {
@@ -88,6 +99,9 @@ h3 {
   color: #fff;
   display: flex;
   justify-content: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 .footer>.row{
@@ -106,6 +120,7 @@ h3 {
   .footer{
     height: 100%;
     padding: 5px;
+    position: relative;
 }
 
   .footer div{

@@ -1,0 +1,25 @@
+ul {
+    padding: 10px;
+}
+
+
+div>li {
+    list-style: none;
+    text-align: left;
+    padding-bottom: 5px;
+}
+
+ul>div {
+    padding-left: 0px;
+    padding-bottom: 2px;
+}
+
+.opcao {
+    padding-left: 20px;
+}
+
+.filtros {
+    background-color: #fff;
+    border: 1px solid #707070;
+    height: fit-content;
+}
