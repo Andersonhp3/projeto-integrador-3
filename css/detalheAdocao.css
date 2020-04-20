@@ -3,6 +3,11 @@
     height: 350px;
 }
 
+.btn-Adotar {
+    margin-top: 40px;
+    text-align: center;
+}
+
 h1 {
     font-size: 25px;
 }
@@ -31,4 +36,5 @@ h1 {
 
 section#descricao {
     margin-top: 100px;
+    margin-bottom: 50px;
 }
