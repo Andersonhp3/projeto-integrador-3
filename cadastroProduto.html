@@ -12,7 +12,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/fontawesome/css/all.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/cadastroAdocao.css">
+    <link rel="stylesheet" href="css/cadastroProduto.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <title>Cadastrar Produto</title>
@@ -63,10 +63,10 @@
             </div>
         </div>
     </header>
-    <section class="container" id="newsletter">
-        <div class="row d-flex flex-row align-items-center">
-            <div class=" col-12 col-md-6 py-5 my-5 pad-0">
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <section class="container">
+        <div class="row">
+            <div class="col-12 col-md-6 py-2">
+                <div id="carouselExampleIndicators" class="carousel slide d-none d-sm-none d-md-block" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -92,7 +92,7 @@
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
-                <div class="input-group w-75 mb-3 mt-5">
+                <div class="input-group mw-75 mb-3 mt-5">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="inputGroupFileAddon01">Carregar</span>
                     </div>
@@ -103,11 +103,8 @@
                     </div>
                 </div>
             </div>
-            <div class=" col-12 col-md-6 py-5 my-5 pad-0">
+            <div class="col-12 col-md-6 py-5">
                 <form action="" method="post">
-                    <section id="cadastro" class="container-fluid py-5">
-                        <div class="row">
-                            <div class="col">
                                 <h3>cadastre seu Produto</h3>
                                 <div id="cadastro-dados">
                                     <div class="form-group mb-4">
@@ -118,7 +115,7 @@
                                         <textarea name="descricao" id="descricao" class="form-control" rows="5"
                                             placeholder="Descrição" type="text"></textarea>
                                     </div>
-                                    <div class="form-group mb-4 w-75">
+                                    <div class="form-group mb-4 mw-75">
                                         <input id="quantidade" class="form-control w-25" type="number" name="quantidade"
                                             placeholder="Qtd" columns="4">
                                     </div>
