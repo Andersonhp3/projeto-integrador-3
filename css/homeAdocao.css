@@ -11,6 +11,10 @@
     text-indent: 10px;
 }
 
+#petDisp {
+    margin-bottom: 50px;
+}
+
 h1 {
     text-align: center;
     font-size: 30px;
