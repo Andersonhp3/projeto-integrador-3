@@ -43,6 +43,10 @@ h3 {
   font-size: 2.5rem;
 }
 
+.navbar {
+  padding: 0;
+}
+
 /* header .nav-link:hover {
   text-shadow: 1px 1px 10px white;
   border-bottom: 2px solid #f2a0a0;
