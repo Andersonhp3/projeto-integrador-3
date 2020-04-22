@@ -96,7 +96,7 @@ box-shadow: none !important;
 }
 @media (max-width: 641px){
     section#navCategorias {
-        margin-top: 160px;
+        margin-top: 108px;
     }
     .col-2 {
         flex: auto;
@@ -125,6 +125,12 @@ box-shadow: none !important;
     .card-img-top {
         width: 90%;
         margin: 5px auto;
+    }
+}
+
+@media (max-width: 575px){
+    section#navCategorias {
+        margin-top: 151px;
     }
 }
 
