@@ -39,6 +39,10 @@ p {
     color: #03658c;
 }
 
+.active {
+    color: #03658c;
+}
+
 /* Hover na imagem do usuario */
 #iconeUser:hover {
     text-decoration: none;
