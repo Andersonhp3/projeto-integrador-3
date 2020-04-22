@@ -9,9 +9,10 @@
     border-radius: 16px;
 }
 
-section {
+/* section {
     margin-top: 100px;
-}
+} */
+
 @media (max-width:769px){
     .flex-row{
         flex-direction:column!important;
