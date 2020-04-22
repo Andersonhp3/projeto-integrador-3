@@ -1,14 +1,10 @@
 section#navCategorias {
-    margin-top: 131px;
+    margin-top: 126px;
 }
 
 section a.nav-link:hover {
-    text-shadow: 1px 1px 10px #f2a0a0;
-    border-bottom: 1px solid #03658C;
-}
-section a.nav-link.active {
-    text-shadow: 1px 1px 10px #f2a0a0;
-    border-bottom: 2px solid #03658C;
+    background-color: #f2a0a0;
+    color: white !important;
 }
 
 .carousel-control-prev {
