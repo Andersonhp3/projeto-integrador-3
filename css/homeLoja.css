@@ -1,3 +1,133 @@
-section #featured {
-    margin-top: 300px;
+section#navCategorias {
+    margin-top: 131px;
 }
+
+section a.nav-link:hover {
+    text-shadow: 1px 1px 10px #f2a0a0;
+    border-bottom: 1px solid #03658C;
+}
+section a.nav-link.active {
+    text-shadow: 1px 1px 10px #f2a0a0;
+    border-bottom: 2px solid #03658C;
+}
+
+.carousel-control-prev {
+    height: 50px;
+    width: 50px;
+    border-radius: 30rem;
+}
+
+.carousel-control-next {
+    height: 50px;
+    width: 50px;
+    border-radius: 30rem;
+}
+
+@media (max-width: 1024px){
+    .banner{
+        height: 350px
+    }
+    
+    .banner img{
+        width: 100%;
+        height: 350px;
+    }
+}
+@media (max-width: 770px){
+    .col-2 {
+        flex: auto;
+        max-width: 50%
+    }
+    .banner{
+        height: 280px
+    }
+    
+    .banner img{
+        width: 100%;
+        height: 280px;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+    .carousel {
+        height: 350px;
+    }
+    .carousel-inner {
+        height: 350px;
+    }
+    .hidden{
+        visibility: hidden; 
+    }
+    .card-img-top {
+        width: 90%;
+        margin: 5px auto;
+    }    
+}
+@media (max-width: 641px){
+    section#navCategorias {
+        margin-top: 160px;
+    }
+    .col-2 {
+        flex: auto;
+        max-width: 50%
+    }
+    .banner{
+        height: 220px
+    }
+    
+    .banner img{
+        width: 100%;
+        height: 220px;
+    }
+    h2 {
+        font-size: 1.3rem;
+    }
+    .carousel {
+        height: 300px;
+    }
+    .carousel-inner {
+        height: 300px;
+    }
+    .hidden{
+        visibility: hidden; 
+    }
+    .card-img-top {
+        width: 90%;
+        margin: 5px auto;
+    }
+}
+
+@media (max-width: 480px){
+    .col-6 {
+        flex: auto;
+        max-width: 90%
+    }
+    .col-2 {
+        flex: auto;
+        max-width: 50%
+    }
+    .banner{
+        height: 220px
+    }
+    
+    .banner img{
+        width: 100%;
+        height: 220px;
+    }
+    h2 {
+        font-size: 1.3rem;
+    }
+    .carousel {
+        height: 250px;
+    }
+    .carousel-inner {
+        height: 250px;
+    }
+    .hidden{
+        visibility: hidden; 
+    }
+    .card-img-top {
+        /* width: 90%; */
+        margin: 5px auto;
+    }
+};

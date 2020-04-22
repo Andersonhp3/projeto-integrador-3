@@ -9,8 +9,8 @@
     border-radius: 16px;
 }
 
-section {
-    margin-top: 125px;
+section#newsletter {
+    margin-top: 150px;
 }
 
 @media (max-width:769px){
