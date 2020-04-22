@@ -31,17 +31,6 @@ h3 {
   color: #03658C;
 }
 
-.btn-site{
-  background-color: #f2a0a0;
-  color:white;
-  border-radius: 2rem;
-}
-
-.m-conteudo {
-  margin-top: 150px;
-  padding: 20px 0;
-}
-
 /* Inicio Header */
 
 .navbar-brand {
@@ -90,28 +79,13 @@ header .nav-link.active {
   font-size: 35px !important;
 }
 
-@media (max-width: 767px){
-  .search-group {
-    width: 90%;
-    margin: auto;
-  }
-
-  .input-group {
-    width: 100%;
-  }
-
-  .logo {
-    margin: auto;
-  }
-}
-
 /* Fim Header */
 
 /* Inicio Footer */
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
 
+.btn-site{
+  background-color: #f2a0a0;
+  color:white;
+  border-radius: 2rem;
+}
 /* Fim Footer */
