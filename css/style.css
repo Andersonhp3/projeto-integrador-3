@@ -85,6 +85,20 @@ header .nav-link.active {
   font-size: 35px !important;
 }
 
+@media (max-width: 767px) {
+  .search-group {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 /* Fim Header */
 
 /* Inicio Footer */
