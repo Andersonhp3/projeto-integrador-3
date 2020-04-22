@@ -1,0 +1,54 @@
+/* mt = margin top */
+.mt {
+    margin-top: 150px;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #03658c;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+p {
+    font-size: 17px;
+}
+
+.imgIcone {
+    width: 30px;
+    padding-right: 8px;
+}
+
+.divInfo {
+    background-color: white;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.30);
+    padding: 20px 0px 15px 0px;
+    margin-bottom: 50px;
+}
+
+.table {
+    padding-right: 30px;
+}
+
+#links {
+    padding-left: 25px;
+    padding-top: 60px;
+    border-right: grey solid 1px;
+}
+
+#iconeUser {
+    font-size: 100px;
+    color: #03658c;
+}
+
+.active {
+    color: #03658c;
+}
+
+/* Hover na imagem do usuario */
