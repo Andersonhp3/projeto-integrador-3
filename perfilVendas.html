@@ -12,10 +12,10 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/fontawesome/css/all.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/homeloja.css">
+    <link rel="stylesheet" href="css/perfilVendas.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <title>Loja</title>
+    <title>Minhas Vendas</title>
 </head>
 
 <body>
@@ -23,8 +23,8 @@
         <nav class="navbar navbar-expand-sm bg-white text-dark">
             <div class="container">
                 <div class="text-blue mb-2">
-                    <img src="/images/logoAzul.svg" height="50px" class="logo-azul" alt="Logo Pet Livre">
-                    <a href="/home.html" class="navbar-brand text-decoration-none text-reset text-uppercase py-0">pet livre</a>
+                    <img src="images/logoAzul.svg" height="50px" class="logo-azul" alt="Logo Pet Livre">
+                    <a href="home.html" class="navbar-brand text-decoration-none text-reset text-uppercase py-0">pet livre</a>
                 </div>
                 <form action="" class="form-inline search-group">
                     <div class="input-group">
@@ -80,8 +80,73 @@
     </header><!-- header -->
 
     <section id="perfilVendas">
-        <div class="container">
-            <p>Minhas Vendas</p>
+        <div class="container mt  divInfo">
+            <div class="row">
+                <div class="col-md-3" id="links">
+                    <p><a href="perfil.html"> <img src="images/do-utilizador.svg" alt="" class="imgIcone"> Dados
+                            Cadastrais</a></p>
+                    <hr>
+                    <p><a href="perfilCompras.html"
+                            class="active"> <img src="images/bolsa-de-compras.svg" alt="" class="imgIcone">Minhas Compras</a>
+                    </p>
+                    <hr>
+                    <p><a href="perfilVendas.html" class="active"><img src="images/conta.svg" alt="" class="imgIcone">Minhas Vendas</a>
+                    </p>
+                    <hr>
+                </div>
+                <div class="col-md-9 table">
+                    <h1>Vendas</h1>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Qtd</th>
+                                <th scope="col">Nome do Produto</th>
+                                <th scope="col">Valor</th>
+                                <th scope="col">Data da Venda</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Lorem, ipsum dolor.</td>
+                                <td>R$ 99.00</td>
+                                <td>12/12/2019</td>
+                                <td>Entregue</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Lorem, ipsum dolor.</td>
+                                <td>R$ 99.00</td>
+                                <td>22/02/2020</td>
+                                <td>Aguardando Pagamento</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Lorem, ipsum dolor.</td>
+                                <td>R$ 99.00</td>
+                                <td>22/02/2019</td>
+                                <td>Entregue</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Lorem, ipsum dolor.</td>
+                                <td>R$ 99.00</td>
+                                <td>12/12/2019</td>
+                                <td>Na transportadora</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Lorem, ipsum dolor.</td>
+                                <td>R$ 99.00</td>
+                                <td>12/12/2019</td>
+                                <td>Na transportadora</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
         </div>
     </section>
 
