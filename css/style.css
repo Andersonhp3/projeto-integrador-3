@@ -15,7 +15,7 @@ body {
   font-family: 'Baloo 2', cursive;
   background-color: #f1f1f1;
   overflow-y:scroll;
-  position: relative;
+  position: initial;
   padding-bottom: 70px;
 }
 
