@@ -2,6 +2,15 @@ section#navCategorias {
     margin-top: 126px;
 }
 
+section#featured .container {
+    /* height: 200px; */
+}
+
+section#newsletterShop .container {
+    border-radius: 30rem;
+    background-color: #f2a0a0;
+}
+
 section a.nav-link:hover {
     background-color: #f2a0a0;
     color: white !important;
@@ -17,6 +26,22 @@ section a.nav-link:hover {
     height: 50px;
     width: 50px;
     border-radius: 30rem;
+}
+
+.newsShop-group {
+    border: 1px solid #03658C;
+    border-radius: 2rem;
+}
+.newsShop-group #newsShop-button {
+outline: none !important;
+box-shadow: none !important;
+background-color: transparent; 
+}
+.newsShop-group #newsShop {
+border: 0;
+background-color: transparent; 
+outline: none !important;
+box-shadow: none !important;
 }
 
 @media (max-width: 1024px){
