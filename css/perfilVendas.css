@@ -38,8 +38,7 @@ p {
 }
 
 #links {
-    padding-left: 25px;
-    padding-top: 60px;
+    padding: 25px;
     border-right: grey solid 1px;
 }
 

@@ -43,7 +43,7 @@ p {
     color: #03658c;
 }
 
-.active {
+.active, li.active {
     color: #03658c;
 }
 
