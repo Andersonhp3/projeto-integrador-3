@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="images/PET-LIVRE-favicon.ico"/>
+    <link rel="shortcut icon" href="images/PET-LIVRE-favicon.ico" />
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/fontawesome/css/all.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/homeloja.css">
+    <link rel="stylesheet" href="css/perfilCompras.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <title>Loja</title>
+    <title>Minhas compras</title>
 </head>
 
 <body>
@@ -23,28 +23,27 @@
         <nav class="navbar navbar-expand-sm bg-white text-dark">
             <div class="container">
                 <div class="text-blue mb-2">
-                    <img src="/images/logoAzul.svg" height="50px" class="logo-azul" alt="Logo Pet Livre">
-                    <a href="/home.html" class="navbar-brand text-decoration-none text-reset text-uppercase py-0">pet livre</a>
+                    <img src="images/logoAzul.svg" height="50px" class="logo-azul" alt="Logo Pet Livre">
+                    <a href="home.html" class="navbar-brand text-decoration-none text-reset text-uppercase py-0">pet
+                        livre</a>
                 </div>
                 <form action="" class="form-inline search-group">
                     <div class="input-group">
                         <label for="search" class="sr-only">Pesquisar</label>
                         <input id="search" type="text" class="form-control" placeholder="Pesquisa...">
                         <div class="input-group-append">
-                            <button id="search-button"class="btn fas fa-search text-blue" type="button"></button>
+                            <button id="search-button" class="btn fas fa-search text-blue" type="button"></button>
                         </div><!-- input-group-append -->
                     </div><!-- input-group -->
                 </form>
             </div><!-- container -->
-        </nav><!--top nav-->
+        </nav>
+        <!--top nav-->
 
         <nav class="navbar navbar-expand-sm bg-blue text-white stick-top py-0">
             <div class="container">
-                <button class="navbar-toggler" type="button"
-                    data-toggle="collapse" data-target="#myNavbar"
-                    aria-controls="myNavbar"
-                    aria-expanded="false"
-                    aria-label="Menu de Navegação">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar"
+                    aria-controls="myNavbar" aria-expanded="false" aria-label="Menu de Navegação">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -58,14 +57,12 @@
                 </div><!-- collapse -->
                 <div class="d-flex justify-content-between align-items-center">
                     <span class="badge badge-danger badge-pill">1</span>
-                    <a href="carrinho.html" class="text-decoration-none text-white material-icons shopping-cart">shopping_cart</a>
+                    <a href="carrinho.html"
+                        class="text-decoration-none text-white material-icons shopping-cart">shopping_cart</a>
                     <div class="dropdown">
-                        <a href="#" id="profileMenu" 
-                            data-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false">
+                        <a href="#" id="profileMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img src="images/profile-1.jpg" height="35" width="35" alt="Foto do Perfil"
-                                class="profile-picture" >
+                                class="profile-picture">
                         </a>
                         <div class="dropdown-menu" aria-labelledby="profileMenu">
                             <a class="dropdown-item text-blue" href="perfil.html">Perfil</a>
@@ -80,26 +77,99 @@
     </header><!-- header -->
 
     <section id="perfilCompras">
-        <div class="container">
-            <p>Minhas Compras</p>
+        <div class="container mt  divInfo">
+            <div class="row">
+                <div class="col-md-3" id="links">
+                    <p><a href="perfil.html"> <img src="images/do-utilizador.svg" alt="" class="imgIcone"> Dados
+                            Cadastrais</a></p>
+                    <hr>
+                    <p><a href="perfilCompras.html"
+                            class="active"> <img src="images/bolsa-de-compras.svg" alt="" class="imgIcone">Minhas Compras</a>
+                    </p>
+                    <hr>
+                    <p><a href="perfilVendas.html"> <img src="images/conta.svg" alt="" class="imgIcone">Minhas Vendas</a>
+                    </p>
+                    <hr>
+                </div>
+                <div class="col-md-9 table">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Qtd</th>
+                                <th scope="col">Nome do Produto</th>
+                                <th scope="col">Valor</th>
+                                <th scope="col">Data da Compra</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Lorem, ipsum dolor.</td>
+                                <td>R$ 99.00</td>
+                                <td>12/12/2019</td>
+                                <td>Entregue</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Lorem, ipsum dolor.</td>
+                                <td>R$ 99.00</td>
+                                <td>22/02/2020</td>
+                                <td>Aguardando Pagamento</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Lorem, ipsum dolor.</td>
+                                <td>R$ 99.00</td>
+                                <td>22/02/2019</td>
+                                <td>Entregue</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>Lorem, ipsum dolor.</td>
+                                <td>R$ 99.00</td>
+                                <td>12/12/2019</td>
+                                <td>Na transportadora</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>Lorem, ipsum dolor.</td>
+                                <td>R$ 99.00</td>
+                                <td>12/12/2019</td>
+                                <td>Na transportadora</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
         </div>
     </section>
 
     <footer class="bg-blue">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <a class="text-decoration-none text-white text-uppercase" href=""><img class="px-1 py-1" src="images/logoBranco.svg" height="30px" alt="logo">pet livre</a>
+                <a class="text-decoration-none text-white text-uppercase" href=""><img class="px-1 py-1"
+                        src="images/logoBranco.svg" height="30px" alt="logo">pet livre</a>
                 <span class="text-white">Copyright &copy 2020</span>
                 <div>
-                    <a href="http://facebook.com" class="text-decoration-none text-white px-1 fab fa-facebook-square"></a>
+                    <a href="http://facebook.com"
+                        class="text-decoration-none text-white px-1 fab fa-facebook-square"></a>
                     <a href="http://instagram.com" class="text-decoration-none text-white px-1 fab fa-instagram"></a>
                     <a href="http://twitter.com" class="text-decoration-none text-white px-1 fab fa-twitter"></a>
                 </div>
             </div><!-- itens -->
         </div><!-- container -->
     </footer>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
 </body>
+
 </html>
