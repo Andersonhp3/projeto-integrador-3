@@ -80,21 +80,49 @@
     </header>
 
     <section id="perfilVendas">
-        <div class="container mt  divInfo">
-            <div class="row">
-                <div class="col-md-3" id="links">
-                    <p><a href="perfil.html"> <img src="images/do-utilizador.svg" alt="" class="imgIcone"> Dados
-                            Cadastrais</a></p>
-                    <hr>
-                    <p><a href="perfilCompras.html"> <img src="images/bolsa-de-compras.svg" alt=""
-                                class="imgIcone">Minhas Compras</a>
-                    </p>
-                    <hr>
-                    <p><a href="perfilVendas.html" class="active"><img src="images/conta.svg" alt=""
-                                class="imgIcone">Minhas Vendas</a>
-                    </p>
-                    <hr>
+        <div class="container mt divInfo">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light d-md-none container opcoes">
+                <a class="active-option" href="#">Opções</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="perfil.html"><i class="fas fa-user"></i> Dados Cadastrais</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="perfilCompras.html"><i class="fas fa-shopping-bag"></i> Minhas Compras</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="perfilVendas.html"><i class="fas fa-clipboard-check"></i> Minhas Vendas</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="cadastroProduto.html"><i class="fas fa-handshake"></i>Vender</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="cadastroAdocao.html"><i class="fas fa-paw"></i>Doar</a>
+                        </li>
+                    </ul>
                 </div>
+            </nav>
+            
+                <div class="row">
+                    <div class="col-md-3 d-none d-md-block" id="links">
+                        <p><a href="perfil.html" class="active"><i class="fas fa-user"></i> Dados Cadastrais</a></p>
+                        <hr>
+                        <p><a href="perfilCompras.html"><i class="fas fa-shopping-bag"></i> Minhas Compras</a>
+                        </p>
+                        <hr>
+                        <p><a href="perfilVendas.html"><i class="fas fa-clipboard-check"></i> Minhas Vendas</a></p>
+                        <hr>
+                        <p><a href="cadastroProduto.html"><i class="fas fa-handshake"></i> Vender</a></p>
+                        <hr>
+                        <p><a href="cadastroAdocao.html"><i class="fas fa-paw"></i> Doar</a></p>
+                        <hr>
+                    </div>
                 <div class="col-md-9 table">
                     <h1>Vendas</h1>
                     <table class="table table-striped">
