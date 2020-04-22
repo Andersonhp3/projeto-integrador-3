@@ -1,0 +1,52 @@
+.btn-site{
+    font-size: large;
+}
+.pad-0{
+    padding: 0;
+    margin-right: 0;
+}
+.form-control{
+    border-radius: 16px;
+}
+
+section#newsletter {
+    margin-top: 135px;
+}
+
+@media (max-width:769px){
+    .flex-row{
+        flex-direction:column!important;
+    }
+    .media{
+        margin: 0!important;
+        padding: 0!important;
+    }
+    .botao{
+        padding-right: 0!important;
+    }
+    .divform{
+        width: 70%!important;
+        flex:0;
+        max-width: 100%;
+    }    
+}
+@media (max-width:769px){
+    .flex-row{
+        flex-direction:column!important;
+    }
+    .media{
+        width: 70%!important;
+        margin: 0!important;
+        padding: 0!important;
+        flex:0;
+        max-width: 100%;
+    }
+    .botao{
+        padding-right: 0!important;
+    }
+    .divform{
+        width: 100%!important;
+        flex:0;
+        max-width: 100%;
+    } 
+}
