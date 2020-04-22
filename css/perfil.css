@@ -1,6 +1,6 @@
 /* mt = margin top */
-.mt {
-    margin-top: 150px;
+section#perfil {
+    margin-top: 175px; /* 125 + 50 */
 }
 
 a {
