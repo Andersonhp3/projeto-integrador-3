@@ -7,3 +7,14 @@
 section#login {
     margin-top: 150px;
 }
+
+.botoes {
+    display: flex;
+    justify-content: center;
+}
+
+.botao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

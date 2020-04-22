@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 section#home {
     margin-top: 135px;
+=======
+section #home {
+    padding-top: 20px;
+>>>>>>> Ajustes de responsividade e espaçamento
 }
 .banner{
     margin-left: auto;
@@ -22,9 +27,6 @@ h2{
     padding:20px;
 }
 
-.home-content {
-    margin-top: 100px;
-}
 .card-img-top {
     width: 90%;
     margin: 5px auto;
