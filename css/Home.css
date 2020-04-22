@@ -1,6 +1,6 @@
-section{
+section #home {
+    margin-top: 125px;
     padding-top: 20px;
-    position: relative;
 }
 .banner{
     margin-left: auto;
