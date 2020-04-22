@@ -1,6 +1,6 @@
-/* section {
-    margin-top: 100px;
-} */
+section#shopCart {
+    margin-top: 100px !important;
+}
 
 input {
     width: 50px;
