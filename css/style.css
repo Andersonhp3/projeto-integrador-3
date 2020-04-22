@@ -24,124 +24,57 @@ h3 {
   text-align: center;
 }
 
-section {
-  margin-top: 100px;
-}
-
-
-/* Inicio Header */
-.header-content {
-  height: 100;
-}
-
-.header-content-top {
-  height: 70px;
-  background-color: white;
-  padding-top: 5px;
-}
-
-.header-content-top a {
-  font-size: 2em;
-  color: #03658C;
-  text-transform: uppercase;
-}
-
-.header-content-bottom {
-  height: 30px;
+.bg-blue {
   background-color: #03658C;
 }
-
-.logo-azul {
-  height: 60px;
-  padding-right: 16px;
+.text-blue {
+  color: #03658C;
 }
 
- .nav-link {
-  color: #fff;
-  height: 30px;
-  font-size: 1rem;
+/* Inicio Header */
+
+.navbar-brand {
+  font-size: 2.5rem;
+}
+.nav-link.active {
+  text-shadow: 1px 1px 10px white;
+}
+
+.search-group {
+  border: 1px solid #03658C;
+  border-radius: 2rem;
+}
+.search-group #search-button {
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: transparent; 
+}
+.search-group #search {
+  border: 0;
+  background-color: transparent; 
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .nav-link.active {
-  color: #f2a0a0;
-  text-shadow: 1px 1px 10px white;
-  border-bottom: 3px solid #f2a0a0;
+  border-bottom: 5px solid #f2a0a0;
 }
 
-.nav-link:hover{
-  color: #f2a0a0;
-  text-shadow: 1px 1px 10px white;
+.profile-picture {
+  border-radius: 2rem;
 }
 
-.input-group input{
-  width: 80%;
-  border: 1px solid #03658C;
-  border-radius: 15px 0 0 15px;
-
+.shopping-cart {
+  font-size: 35px !important;
 }
 
-.input-group {
-  width: auto;
-}
-
-.input-group span{
-  border: 1px solid #03658C;
-  border-left: transparent;
-  border-radius: 0 15px 15px 0;
-  background-color: white;
-}
 /* Fim Header */
 
 /* Inicio Footer */
-.footer{
-  height: 50px;
-  background-color: #03658C;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
-.footer>.row{
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer-element {
-  display: flex;
-  justify-content: center;
-}
-
-@media (max-width:500px){
-  .footer{
-    height: 100%;
-    padding: 5px;
-    position: relative;
-}
-
-  .footer div{
-    display: flex;
-  }
-
-  .footer-element{
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
-  }
-}
-
-.img-footer {
-  height: 50px;
-}
 
 .btn-site{
   background-color: #f2a0a0;
   color:white;
   border-radius: 16px;
-  
 }
 /* Fim Footer */

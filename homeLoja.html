@@ -12,74 +12,94 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/fontawesome/css/all.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/Contato.css">
+    <link rel="stylesheet" href="css/homeloja.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <title>Loja</title>
 </head>
 
 <body>
-    <header>
-        <div class="header-content fixed-top">
-            <div class="header-content-top container">
-                <div class="row justify-content-between align-items-center">
-                    <div class="col">
-                        <a href="#" class="text-decoration-none"><img src="/images/Logo Azul.svg" class="logo-azul" alt="">pet livre</a>
-                    </div>
-                    <div class="col">
-                        <div class="input-group">
-                            <input class="text-right my-0 py-0" type="text" placeholder="Pesquisar" aria-label="Search">
-                            <div class="input-group-append">
-                                <span class="input-group-text" id="basic-text1"><i class="fas fa-search text-grey"
-                                        aria-hidden="true"></i></span>
-                            </div>
-                        </div>
-                    </div>
+    <header >
+        <nav class="navbar navbar-expand-sm bg-white text-dark">
+            <div class="container">
+                <div class="text-blue mb-2">
+                    <img src="/images/logoAzul.svg" height="50px" class="logo-azul" alt="Logo Pet Livre">
+                    <a href="/home.html" class="navbar-brand text-decoration-none text-reset text-uppercase py-0">pet livre</a>
                 </div>
-            </div>
-            <div class="header-content-bottom container">
-                <div class="row justify-content-between">
-                    <div class="col-12">
-                        <nav class="navbar navbar-expand py-0">
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div class="navbar-collapse collapse" id="navbarNav">
-                                <a href="home.html" class="nav-link nav-item py-0">Home</a>
-                                <a href="homeLoja.html" class="nav-link nav-item py-0 active">Loja</a>
-                                <a href="homeAdocao.html" class="nav-link nav-item py-0">Adoção</a>
-                                <a href="contato.html" class="nav-link nav-item py-0">Contato</a>
-                            </div>
-                            <div>
-                                <a href="#" class="text-decoration-none text-white material-icons">shopping_cart</a>
-                                <a href="login.html" class="text-decoration-none text-white material-icons">account_circle</a>
-                            </div> 
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+                <form action="" class="form-inline search-group">
+                    <div class="input-group">
+                        <label for="search" class="sr-only">Pesquisar</label>
+                        <input id="search" type="text" class="form-control" placeholder="Pesquisa...">
+                        <div class="input-group-append">
+                            <button id="search-button"class="btn fas fa-search text-blue" type="button"></button>
+                        </div><!-- input-group-append -->
+                    </div><!-- input-group -->
+                </form>
+            </div><!-- container -->
+        </nav><!--top nav-->
+
+        <nav class="navbar navbar-expand-sm bg-blue text-white stick-top py-0">
+            <div class="container">
+                <button class="navbar-toggler" type="button"
+                    data-toggle="collapse" data-target="#myNavbar"
+                    aria-controls="myNavbar"
+                    aria-expanded="false"
+                    aria-label="Menu de Navegação">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <div class="navbar-nav">
+                        <a class="nav-link nav-item text-decoration-none text-reset" href="home.html">Home</a>
+                        <a class="nav-link nav-item text-decoration-none text-reset active" href="homeLoja.html">Loja</a>
+                        <a class="nav-link nav-item text-decoration-none text-reset" href="homeAdocao.html">Adoção</a>
+                        <a class="nav-link nav-item text-decoration-none text-reset" href="contato.html">Contato</a>
+                    </div><!-- navbar -->
+                </div><!-- collapse -->
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="badge badge-danger badge-pill">1</span>
+                    <a href="carrinho.html" class="text-decoration-none text-white material-icons shopping-cart">shopping_cart</a>
+                    <div class="dropdown">
+                        <a href="#" id="profileMenu" 
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false">
+                            <img src="images/profile-1.jpg" height="35" width="35" alt="Foto do Perfil"
+                                class="profile-picture" >
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="profileMenu">
+                            <a class="dropdown-item text-blue" href="perfil.html">Perfil</a>
+                            <a class="dropdown-item text-blue" href="perfilVendas.html">Minhas Vendas</a>
+                            <a class="dropdown-item text-blue" href="perfilCompras.html">Minhas Compras</a>
+                            <a class="dropdown-item text-blue" href="login.html">Sair</a>
+                        </div><!-- dropdown-menu -->
+                    </div><!-- dropdown -->
+                </div><!-- perfil -->
+            </div><!-- container -->
+        </nav><!-- bottom nav -->
+    </header><!-- header -->
 
     <section id="loja">
-
+        <div class="container">
+            <p>Loja</p>
+        </div>
     </section>
 
-    <footer class="bg-blue footer">
-        <div class="row">
-            <div class="col-md-4 col-sm-12 footer-element">
-                <img src="images/PET LIVRE-logo-white (2).png" alt="logo" class="img-footer">
-            </div>
-            <div class="col-md-4 col-sm-12 footer-element">
-                Copyright &copy 2020
-            </div>
-            <div class="col-md-4 col-sm-12 footer-element">
-                <a href="#" class="text-decoration-none text-white px-1 fab fa-facebook-square"></a>
-                <a href="#" class="text-decoration-none text-white px-1 fab fa-instagram"></a>
-                <a href="#" class="text-decoration-none text-white px-1 fab fa-twitter"></a>
-            </div>
-        </div>
+    <footer class="bg-blue">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <a class="text-decoration-none text-white text-uppercase" href=""><img class="px-1 py-1" src="images/logoBranco.svg" height="30px" alt="logo">pet livre</a>
+                <span class="text-white">Copyright &copy 2020</span>
+                <div>
+                    <a href="http://facebook.com" class="text-decoration-none text-white px-1 fab fa-facebook-square"></a>
+                    <a href="http://instagram.com" class="text-decoration-none text-white px-1 fab fa-instagram"></a>
+                    <a href="http://twitter.com" class="text-decoration-none text-white px-1 fab fa-twitter"></a>
+                </div>
+            </div><!-- itens -->
+        </div><!-- container -->
     </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>
