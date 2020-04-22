@@ -31,6 +31,12 @@ h3 {
   color: #03658C;
 }
 
+.btn-site{
+  background-color: #f2a0a0;
+  color:white;
+  border-radius: 2rem;
+}
+
 /* Inicio Header */
 
 .navbar-brand {
@@ -83,9 +89,10 @@ header .nav-link.active {
 
 /* Inicio Footer */
 
-.btn-site{
-  background-color: #f2a0a0;
-  color:white;
-  border-radius: 2rem;
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
+
 /* Fim Footer */
