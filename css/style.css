@@ -27,6 +27,10 @@ h3 {
 .bg-blue {
   background-color: #03658C;
 }
+
+.arrow{
+  font-size: 2em;
+}
 .text-blue {
   color: #03658C;
 }
