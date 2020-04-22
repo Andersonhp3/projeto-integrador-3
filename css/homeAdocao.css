@@ -31,6 +31,27 @@ section#pesquisa {
 .btn-pesquisar{
     margin-left: 40px;
 }
+.carousel{
+    display: flex;
+}
+
+.carousel-control-prev {
+    height: 50px;
+    width: 50px;
+    border-radius: 30rem;
+    align-self: center;
+    top: auto;
+    bottom: auto;
+}
+
+.carousel-control-next {
+    height: 50px;
+    width: 50px;
+    border-radius: 30rem;
+    align-self: center;
+    top: auto;
+    bottom: auto;
+}
 
 @media screen and (max-width: 900px) {
     .labelForm{
