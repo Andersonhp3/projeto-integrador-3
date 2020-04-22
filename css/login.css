@@ -7,3 +7,11 @@
 section#login {
     margin-top: 150px;
 }
+
+.botao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
