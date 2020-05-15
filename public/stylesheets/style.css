@@ -1,8 +1,137 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
 }
 
-a {
-  color: #00B7FF;
+html, body {
+  min-height: 100%;
+  position: relative;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Baloo 2', cursive;
+  background-color: #f1f1f1;
+  overflow-y:scroll;
+  position: initial;
+  padding-bottom: 70px;
+}
+
+h3 {
+  text-transform: uppercase;
+  color: grey;
+  text-align: center;
+}
+
+.bg-blue {
+  background-color: #03658C;
+}
+
+.arrow{
+  font-size: 2em;
+}
+.text-blue {
+  color: #03658C;
+}
+
+.btn-site{
+  background-color: #f2a0a0;
+  color:white;
+  border-radius: 2rem;
+}
+
+/* Inicio Header */
+
+.navbar-brand {
+  font-size: 2.5rem;
+}
+
+.navbar {
+  padding: 0;
+}
+
+@media (max-width: 576px){
+  .container {
+    width: 95%;
+  }
+}
+
+/* header .nav-link:hover {
+  text-shadow: 1px 1px 10px white;
+  border-bottom: 2px solid #f2a0a0;
+}
+
+header .nav-link.active {
+  text-shadow: 1px 1px 10px white;
+  border-bottom: 5px solid #f2a0a0;
+} */
+
+header .nav-link:hover {
+  background-color:  #f2a0a0;
+}
+
+header .nav-link.active {
+  background-color:  #f2a0a0;
+}
+
+.search-group {
+  border: 1px solid #03658C;
+  border-radius: 2rem;
+}
+.search-group #search-button {
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: transparent; 
+}
+.search-group #search {
+  border: 0;
+  background-color: transparent; 
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.profile-picture {
+  border-radius: 2rem;
+}
+
+.shopping-cart {
+  font-size: 35px !important;
+}
+
+@media (max-width: 575px) {
+  * {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  .search-group {
+    margin-bottom: 0.5rem !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .search-group {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* Fim Header */
+
+/* Inicio Footer */
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Fim Footer */
