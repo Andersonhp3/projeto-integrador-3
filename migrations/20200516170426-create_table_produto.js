@@ -28,7 +28,7 @@ module.exports = {
       categoria_id: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'categoria_pet',
+          model: 'categoria',
           key: 'id'
         },
         allowNull: false,
@@ -36,7 +36,7 @@ module.exports = {
       usuario_id: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'usuario_id',
+          model: 'usuario',
           key: 'id'
         },
         allowNull: false,
