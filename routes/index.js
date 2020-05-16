@@ -1,9 +1,16 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-var homeController = require('../controllers/homeController')
+/* Controllers */
+const homeController = require('../controllers/homeController');
+const loginController = require('../controllers/loginController');
+
 
 /* GET home page. */
 router.get('/home', homeController.home);
+
+/* GET Login */
+router.get('/login', loginController.view);
+
 
 module.exports = router;
