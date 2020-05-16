@@ -3,19 +3,16 @@ const router = express.Router();
 
 /* Controllers */
 const homeController = require('../controllers/homeController');
-const loginController = require('../controllers/loginController');
-const cadastroController = require('../controllers/cadastroController');
+const authController = require('../controllers/authController');
 
 
 
-/* GET Home */
+/* homeController */
 router.get('/home', homeController.home);
 
-/* GET Login */
-router.get('/login', loginController.view);
-
-/* GET Cadastro */
-router.get('/cadastro', cadastroController.view);
+/* authController */
+router.get('/login', authController.viewLogin);
+router.get('/cadastro', authController.viewCadastro);
 
 
 
