@@ -25,6 +25,10 @@ h3 {
   text-align: center;
 }
 
+section.first {
+  margin-top: 135px;
+}
+
 .bg-blue {
   background-color: #03658C;
 }
@@ -38,6 +42,12 @@ h3 {
 
 .btn-site{
   background-color: #f2a0a0;
+  color:white;
+  border-radius: 2rem;
+}
+
+.btn-site:hover{
+  background-color: #03658C;
   color:white;
   border-radius: 2rem;
 }
