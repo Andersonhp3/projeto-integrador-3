@@ -33,6 +33,7 @@
   "homepage": "https://github.com/Andersonhp3/projeto-integrador-3#readme",
   "description": "",
   "devDependencies": {
+    "nodemon": "^2.0.4",
     "sequelize-cli": "^5.5.1"
   }
 }
