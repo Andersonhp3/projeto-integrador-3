@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const bcrypt = require('bcrypt');
 const fileHelper = require('../middlewares/fileHelper')
-const Usuario = require('../models');
+const { Usuario } = require('../models');
 
 
 
@@ -11,7 +11,7 @@ const authController = {
 
     },
 
-    cadastro: async (req, res, next) => {
+    cadastro: async (req, res) => {
         let {nome, cpf_cnpj, email, senha} = req.body;
     
         if(req.file){            
@@ -28,9 +28,23 @@ const authController = {
 
         let senhaHash = bcrypt.hashSync(senha, 12);
 
-
+        let  novoUsuario = {
+            nome,
+            email,
+            senha: senhaHash,
+            cpf_cnpj,
+            imagem
+        }
+                
+        await Usuario.create(novoUsuario)
+            .then()
+            .catch(err => console.log(err));
         
 
+        res.render('login', {
+            title: 'Tela de Login',
+            error: false
+        });
     },
 
     showLogin: (req, res) => {

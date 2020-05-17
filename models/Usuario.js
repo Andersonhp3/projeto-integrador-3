@@ -27,7 +27,7 @@ let Usuario = (sequelize, DataTypes) => {
                 type: DataTypes.STRING(200),
             }
         }, {
-            tablename: 'usuario',
+            tableName: 'usuario',
             timestamps: false
         }
     );
