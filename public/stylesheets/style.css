@@ -62,11 +62,11 @@ section.first {
   padding: 0;
 }
 
-@media (max-width: 576px){
+/* @media (max-width: 576px){
   .container {
     width: 95%;
   }
-}
+} */
 
 /* header .nav-link:hover {
   text-shadow: 1px 1px 10px white;
