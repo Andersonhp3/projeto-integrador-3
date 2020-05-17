@@ -8,23 +8,23 @@ let Usuario = (sequelize, DataTypes) => {
                 allowNull: false
             },
             nome: {
-                type: Sequelize.STRING(100),
+                type: DataTypes.STRING(100),
                 allowNull: false
             },
             email: {
-                type: Sequelize.STRING(100),
+                type: DataTypes.STRING(100),
                 allowNull: false
             },
             senha: {
-                type: Sequelize.STRING(256),
+                type: DataTypes.STRING(256),
                 allowNull: false
             },
             cpf_cnpj: {
-                type: Sequelize.STRING(14),
+                type: DataTypes.STRING(14),
                 allowNull: false
             },
             imagem: {
-                type: Sequelize.STRING(200),
+                type: DataTypes.STRING(200),
             }
         }, {
             tablename: 'usuario',
