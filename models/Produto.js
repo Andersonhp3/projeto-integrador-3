@@ -32,7 +32,7 @@ let Produto = (sequelize, DataTypes) => {
                 allowNull: false,
               }
         }, {
-            tableName: 'Produto',
+            tableName: 'produto',
             timestamps: false
         }
     );
