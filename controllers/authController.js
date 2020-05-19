@@ -50,6 +50,7 @@ const authController = {
     showLogin: (req, res) => {
         res.render('login', {
             title: 'Tela de Login',
+            css: 'login',
             error: false
         });
     },
@@ -57,6 +58,7 @@ const authController = {
     showCadastro: (req, res) => {
         res.render('cadastro', {
             title: 'Tela de Cadastro',
+            css: 'cadastro',
             error: false
         });
     }

@@ -7,7 +7,7 @@ const homeController = require('../controllers/homeController');
 const authController = require('../controllers/authController');
 
 /* homeController */
-router.get('/home', homeController.home);
+router.get('/', homeController.home);
 
 /* authController */
 router.get('/login', authController.showLogin);
