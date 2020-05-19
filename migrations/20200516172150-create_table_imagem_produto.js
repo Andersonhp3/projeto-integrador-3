@@ -9,14 +9,14 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true
       },
-      data: {
-        type: Sequelize.DATE,
+      imagem: {
+        type: Sequelize.STRING(200),
         allowNull: false
       },
-      usuario_id: {
+      produto_id: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'usuario',
+          model: 'produto',
           key: 'id'
         },
         allowNull: false
