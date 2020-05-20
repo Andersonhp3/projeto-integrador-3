@@ -23,11 +23,11 @@ let Endereco = (sequelize, DataTypes) => {
                 allowNull: false
             },
             estado_id: {
-                type: Sequelize.INTEGER,
+                type: DataTypes.INTEGER,
                 allowNull: false
             },
             cidade_id: {
-                type: Sequelize.INTEGER,
+                type: DataTypes.INTEGER,
                 references: {
                     model: 'cidade',
                     key: 'id'
