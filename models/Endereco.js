@@ -50,4 +50,8 @@ let Endereco = (sequelize, DataTypes) => {
             as: 'estado'
         })
     }
+
+    return endereco;
 }
+
+module.exports = Endereco;
