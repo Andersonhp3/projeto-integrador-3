@@ -22,7 +22,7 @@ let Cidade = (sequelize, DataTypes) => {
     );
 
     cidade.associate = (models) => {
-        cidade.hasMany(modes.Endereco, {
+        cidade.hasMany(models.Endereco, {
             as: 'endereco'
         })
         cidade.belongsTo(models.Estado, {
