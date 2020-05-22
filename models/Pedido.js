@@ -22,8 +22,8 @@ let Pedido = (sequelize, DataTypes) => {
     );
 
     pedido.associate = (models) => {
-        pedido.hasMany(models.Cidade, {
-            as: "cidade"
+        pedido.belongsTo(models.Usuario, {
+            as: "usuario"
         })
     }
 
