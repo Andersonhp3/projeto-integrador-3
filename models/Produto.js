@@ -51,7 +51,7 @@ let Produto = (sequelize, DataTypes) => {
     produto.belongsToMany(models.Pedido, {
       foreignKey: 'pedido_id',
       as: 'pedidos',
-      through: models.pedidoProduto
+      through: "pedidoProduto"
     });
 
     produto.hasMany(models.ImagemProduto, {

@@ -35,22 +35,22 @@ let Usuario = (sequelize, DataTypes) => {
     usuario.associate = (models) => {
         usuario.hasMany(models.Produto, {
             foreignKey: 'usuario_id',
-            as: 'usuario'
+            as: 'produto'
         })
 
         usuario.hasMany(models.Pet, {
             foreignKey: 'usuario_id',
-            as: 'usuario'
+            as: 'pet'
         })
 
         usuario.hasMany(models.Pedido, {
             foreignKey: 'usuario_id',
-            as: 'usuario'
+            as: 'pedido'
         })
 
         usuario.hasMany(models.Endereco, {
             foreignKey: 'usuario_id',
-            as: 'usuario'
+            as: 'endereco'
         })
     }
 

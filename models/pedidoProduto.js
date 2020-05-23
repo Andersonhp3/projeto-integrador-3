@@ -1,12 +1,6 @@
 let pedidoProduto = (sequelize, DataTypes) => {
   let pedido_produto = sequelize.define(
-    "Pedido_produto", {
-      id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true
-      },
+    "PedidoProduto", {
       pedido_id: {
         type: DataTypes.INTEGER,
         allowNull: false
