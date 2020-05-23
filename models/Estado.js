@@ -19,6 +19,7 @@ let Estado = (sequelize, DataTypes) => {
 
     estado.associate = (models) => {
         estado.hasMany(models.Cidade, {
+            foreignKey: 'estado_id',
             as: "cidade"
         })
     }
