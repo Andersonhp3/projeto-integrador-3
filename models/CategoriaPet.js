@@ -17,6 +17,13 @@ let CategoriaPet = (sequelize, DataTypes) => {
         }
     );
 
+    categoria_pet.associate = (models) => {
+        categoria_pet.hasMany(models.Pet, {
+          foreignKey: 'categoria_pet_id',
+          as: 'pet'
+        })
+    }
+
     return categoria_pet;
 };
 

@@ -29,7 +29,7 @@ let Pedido = (sequelize, DataTypes) => {
     pedido.belongsToMany(models.Produto, {
       foreignKey: 'produto_id',
       as: 'produto_pedido',
-      through: models.Pedido_produto
+      through: models.pedidoProduto
     })
 
   }

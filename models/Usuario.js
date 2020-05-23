@@ -32,6 +32,28 @@ let Usuario = (sequelize, DataTypes) => {
         }
     );
 
+    usuario.associate = (models) => {
+        usuario.hasMany(models.Produto, {
+            foreignKey: 'usuario_id',
+            as: 'usuario'
+        })
+
+        usuario.hasMany(models.Pet, {
+            foreignKey: 'usuario_id',
+            as: 'usuario'
+        })
+
+        usuario.hasMany(models.Pedido, {
+            foreignKey: 'usuario_id',
+            as: 'usuario'
+        })
+
+        usuario.hasMany(models.Endereco, {
+            foreignKey: 'usuario_id',
+            as: 'usuario'
+        })
+    }
+
     return usuario;
 };
 
