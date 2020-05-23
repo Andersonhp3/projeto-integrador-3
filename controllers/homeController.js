@@ -2,12 +2,14 @@ const path = require('path')
 const fs = require('fs')
 
 
-const homeController =  {
-    home: (req,res) => {
+const homeController = {
+    home: (req, res) => {
         res.render(
-            'home', 
-            { title: 'Home'}
-          );
+            'home', {
+                title: 'Home',
+                css: 'index'
+            }
+        );
     }
 }
 
