@@ -20,9 +20,5 @@ router.get('/homeLoja',lojaController.home)
 
 // contatoController
 router.get('/contato',contatoController.showContato)
-/* authController */
-router.get('/login', authController.showLogin);
-router.get('/cadastro', authController.showCadastro);
-router.post('/cadastro', multer.single('imagem'), authController.cadastro);
 
 module.exports = router;
