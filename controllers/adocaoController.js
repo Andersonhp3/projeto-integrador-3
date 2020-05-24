@@ -8,6 +8,12 @@ const adocaoController = {
             title: 'Adocao-home',
             css: 'homeAdocao'
         })
+    },
+    detalheAdocao: (req, res) => {
+        res.render('detalheAdocao', {
+            title: 'Detalhes do pet',
+            css: 'detalheAdocao'
+        })
     }
 }
 
