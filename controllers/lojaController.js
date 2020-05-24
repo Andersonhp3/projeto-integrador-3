@@ -8,6 +8,12 @@ const lojaController = {
             title: 'Loja-home',
             css: 'homeLoja'
         })
+    },
+    showProduto: (req, res) => {
+        res.render('produto', {
+            title: 'Detalhes do Produto',
+            css: 'produto'
+        })
     }
 }
 
