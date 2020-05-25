@@ -28,10 +28,6 @@ let Endereco = (sequelize, DataTypes) => {
       },
       cidade_id: {
         type: DataTypes.INTEGER,
-        references: {
-          model: 'cidade',
-          key: 'id'
-        },
         allowNull: false
       }
     }, {
