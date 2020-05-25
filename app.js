@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var indexRouter = require('./routes/index');
+var session = require('express-session');
 
 // Routers
 var usuarioRouter = require('./routes/usuario');
@@ -26,6 +27,7 @@ app.use(express.urlencoded({
 
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session( {secret: "Segredinho hein!"}))
 
 app.use('/', indexRouter);
 app.use('/usuario', usuarioRouter);

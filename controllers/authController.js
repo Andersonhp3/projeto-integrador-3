@@ -7,8 +7,22 @@ const { Usuario } = require('../models');
 
 
 const authController = {
-    login: (req, res) => {
+    login: async (req, res) => {
+        const {email, senha} = req.body;
 
+        const user = await Usuario.findOne({ where : { email}});
+
+        if(!user){
+            res.redirect('/login')
+        }
+
+        if(!bcrypt.compareSync(senha, user.senha)){
+            res.redirect('/login')
+        }
+
+        req.session.usuario = user
+
+        res.redirect('/usuario/perfil')
     },
 
     cadastro: async (req, res) => {
@@ -43,6 +57,7 @@ const authController = {
 
         res.render('login', {
             title: 'Tela de Login',
+            css: 'login',
             error: false
         });
     },
@@ -61,7 +76,19 @@ const authController = {
             css: 'cadastro',
             error: false
         });
-    }
+    },
+
+    perfil: (req,res) => {
+
+        let usuario = req.session.usuario
+
+        res.render('perfil', {
+            title: 'Minha Conta',
+            css:'perfil',
+            error:false,
+            usuario
+        })
+    }   
 };
 
 module.exports = authController;
