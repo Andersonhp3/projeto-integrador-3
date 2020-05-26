@@ -43,6 +43,12 @@ p {
     color: #03658c;
 }
 
+#fotoUser {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
 .active, li.active {
     color: #03658c;
 }
