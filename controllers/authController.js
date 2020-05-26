@@ -88,7 +88,33 @@ const authController = {
             error:false,
             usuario
         })
-    }   
+    },
+    
+    perfilCompras: (req,res) => {
+
+        let usuario = req.session.usuario
+
+        res.render('perfilCompras', {
+            title: 'Minha Compras',
+            css:'perfilCompras',
+            error:false,
+            usuario
+        })
+    },
+    
+    perfilVendas: (req,res) => {
+
+        let usuario = req.session.usuario
+
+        res.render('perfilVendas', {
+            title: 'Minha Vendas',
+            css:'perfilVendas',
+            error:false,
+            usuario
+        })
+    }
+    
+    
 };
 
 module.exports = authController;
