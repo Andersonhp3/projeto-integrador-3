@@ -11,5 +11,7 @@ router.post('/login', authController.login);
 router.get('/cadastro', authController.showCadastro);
 router.post('/cadastro', multer.single('imagem'), authController.cadastro);
 router.get('/perfil', verificaUsuarioLogado ,authController.perfil);
+router.get('/perfilVendas', verificaUsuarioLogado ,authController.perfilVendas);
+router.get('/perfilCompras', verificaUsuarioLogado ,authController.perfilCompras);
 
 module.exports = router;
