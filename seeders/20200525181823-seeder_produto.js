@@ -41,7 +41,7 @@ module.exports = {
     },
     {
       id: 5,
-      nome: 'Casinha para Cachorro Decorativa Verde Pet Pequeno - Meemo',
+      nome: 'Casinha para Cachorro Decorativa Pet Pequeno - Meemo',
       preco: 89.99,
       descricao: 'A Casinha decorativa serve como abrigo para seu animalzinho e também como mesa decorativa. Com Meemo seu melhor amigo terá uma vida saudável e com muito estilo. É impermeável, inodoro e isola o calor. Todas as informações divulgadas...',
       estoque: 30,
@@ -50,7 +50,7 @@ module.exports = {
     },
     {
       id: 6,
-      nome: 'Casinha para Cachorro Decorativa Verde Pet Pequeno - Meemo',
+      nome: 'Casinha para Cachorro Decorativa Pet Pequeno - Meemo',
       preco: 69.99,
       descricao: 'A Casinha decorativa serve como abrigo para seu animalzinho e também como mesa decorativa. Com Meemo seu melhor amigo terá uma vida saudável e com muito estilo. É impermeável, inodoro e isola o calor. Todas as informações divulgadas...',
       estoque: 30,
@@ -67,7 +67,7 @@ module.exports = {
       usuario_id: 10
     },
     {
-      id: 9,
+      id: 8,
       nome: 'Roupa Casacos Poliéster Cão Gato Pet Elegante 2',
       preco: 69.99,
       descricao: 'Roupa Casacos Poliéster Cão Gato Pet EleganteCasacos Roupa para Cão, Gato, Pet.Confeccionado em Poliéster, soft e microfibra para seu bebe com muito amor e carinho para o friozinho....',
@@ -76,7 +76,7 @@ module.exports = {
       usuario_id: 10
     },
     {
-      id: 10,
+      id: 9,
       nome: 'Roupa Casacos Poliéster Cão Gato Pet Elegante 4',
       preco: 109.99,
       descricao: 'Roupa Casacos Poliéster Cão Gato Pet EleganteCasacos Roupa para Cão, Gato, Pet.Confeccionado em Poliéster, soft e microfibra para seu bebe com muito amor e carinho para o friozinho....',
@@ -114,7 +114,7 @@ module.exports = {
     {
       id: 13,
       nome: 'Ração Royal Canin Hepatic Veterinary Diet Canine cachorro adulto 10kg',
-      preco: 209.99,
+      preco: 109.99,
       descricao: 'Eles fazem parte da família e nos dão sua companhia e seu amor. Para que seu fiel amigo permaneça saudável e forte, uma dieta equilibrada é essencial. Dê ao seu cão todos os nutrientes que ele precisa para que ele possa correr, pular e brincar o dia todo.',
       estoque: 110,
       categoria_id: 1,
@@ -172,11 +172,11 @@ module.exports = {
       descricao: 'Sem Info',
       estoque: 10,
       categoria_id: 11,
-      usuario_id: 5
+      usuario_id: 8
     },
     {
       id: 20,
-      nome: 'Glicopan Pet 125 mL',
+      nome: 'Glicopan Pet 30 mL',
       preco: 99.99,
       descricao: 'SAÚDE E BEM-ESTAR - Estimula o apetite;- Excelente Energético;- Auxilia na melhora do estado geral de animais com estado nutricional inadequado;- Indicado no preparo de animais para exposição e em treinamento;- Complexo B;- Suplemen',
       estoque: 100,
