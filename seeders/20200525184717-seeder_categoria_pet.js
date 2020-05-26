@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
 
-    return queryInterface.bulkInsert('People', [{
+    return queryInterface.bulkInsert('categoria_pet', [{
         id: 1,
         categoria: 'Cachorro',
       },
@@ -38,7 +38,7 @@ module.exports = {
 
   down: (queryInterface, Sequelize) => {
 
-    return queryInterface.bulkDelete('People', null, {});
+    return queryInterface.bulkDelete('categoria_pet', null, {});
 
   }
 };
