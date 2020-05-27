@@ -31,20 +31,18 @@
                         <label for="search" class="sr-only">Pesquisar</label>
                         <input id="search" type="text" class="form-control" placeholder="Pesquisa...">
                         <div class="input-group-append">
-                            <button id="search-button"class="btn fas fa-search text-blue" type="button"></button>
+                            <button id="search-button" class="btn fas fa-search text-blue" type="button"></button>
                         </div><!-- input-group-append -->
                     </div><!-- input-group -->
                 </form>
             </div><!-- container -->
-        </nav><!--top nav-->
+        </nav>
+        <!--top nav-->
 
         <nav class="navbar navbar-expand-sm bg-blue text-white stick-top py-0">
             <div class="container">
-                <button class="navbar-toggler text-white" type="button"
-                    data-toggle="collapse" data-target="#myNavbar"
-                    aria-controls="myNavbar"
-                    aria-expanded="false"
-                    aria-label="Menu de Navegação">
+                <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#myNavbar"
+                    aria-controls="myNavbar" aria-expanded="false" aria-label="Menu de Navegação">
                     <i class="fas fa-bars text-white mr-2"></i>Menu
                 </button>
 
@@ -57,15 +55,16 @@
                     </div><!-- navbar -->
                 </div><!-- collapse -->
                 <div class="d-flex justify-content-between align-items-center">
+                    <% if(!usuario) { %>
+                    <a class="nav-link nav-item text-decoration-none text-reset" href="/usuario/login">Login </a>
+                    <% } else { %>
                     <span class="badge badge-danger badge-pill">1</span>
-                    <a href="/carrinho" class="text-decoration-none text-white material-icons shopping-cart">shopping_cart</a>
+                    <a href="/carrinho"
+                        class="text-decoration-none text-white material-icons shopping-cart">shopping_cart</a>
                     <div class="dropdown">
-                        <a href="#" id="profileMenu" 
-                            data-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false">
+                        <a href="#" id="profileMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img src="/images/profile-1.jpg" height="35" width="35" alt="Foto do Perfil"
-                                class="profile-picture" >
+                                class="profile-picture">
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profileMenu">
                             <a class="dropdown-item text-blue" href="/perfil">Perfil</a>
@@ -74,6 +73,7 @@
                             <a class="dropdown-item text-blue" href="/usuario/login">Sair</a>
                         </div><!-- dropdown-menu -->
                     </div><!-- dropdown -->
+                    <% } %>
                 </div><!-- perfil -->
             </div><!-- container -->
         </nav><!-- bottom nav -->
