@@ -1,4 +1,9 @@
-<%- include('./partials/header') %>
+<% if (typeof(usuario) == "undefined") {%>
+    <%- include('./partials/headeroff') %>
+<%} else {%>
+    <%- include('./partials/header') %>
+<% } %>
+
     <div class="container tudo">
         <section id="produto">
             <div class="container mt-5">

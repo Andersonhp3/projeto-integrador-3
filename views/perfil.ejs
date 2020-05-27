@@ -12,13 +12,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="active" href="perfil.html"><i class="fas fa-user"></i> Dados Cadastrais</a>
+                        <a class="active" href="/usuario"><i class="fas fa-user"></i> Dados Cadastrais</a>
                     </li>
                     <li class="nav-item">
-                        <a href="perfilCompras.html"><i class="fas fa-shopping-bag"></i> Minhas Compras</a>
+                        <a href="/usuario/perfilCompras"><i class="fas fa-shopping-bag"></i> Minhas Compras</a>
                     </li>
                     <li class="nav-item">
-                        <a href="perfilVendas.html"><i class="fas fa-clipboard-check"></i> Minhas Vendas</a>
+                        <a href="/usuario/perfilVendas"><i class="fas fa-clipboard-check"></i> Minhas Vendas</a>
                     </li>
                     <li class="nav-item">
                         <a href="cadastroProduto.html"><i class="fas fa-handshake"></i>Vender</a>
@@ -32,12 +32,12 @@
 
         <div class="row">
             <div class="col-md-3 d-none d-md-block" id="links">
-                <p><a href="perfil.html" class="active"><i class="fas fa-user"></i> Dados Cadastrais</a></p>
+                <p><a href="/usuario" class="active"><i class="fas fa-user"></i> Dados Cadastrais</a></p>
                 <hr>
-                <p><a href="perfilCompras.html"><i class="fas fa-shopping-bag"></i> Minhas Compras</a>
+                <p><a href="/usuario/perfilCompras"><i class="fas fa-shopping-bag"></i> Minhas Compras</a>
                 </p>
                 <hr>
-                <p><a href="perfilVendas.html"><i class="fas fa-clipboard-check"></i> Minhas Vendas</a></p>
+                <p><a href="/usuario/perfilVendas"><i class="fas fa-clipboard-check"></i> Minhas Vendas</a></p>
                 <hr>
                 <p><a href="cadastroProduto.html"><i class="fas fa-handshake"></i> Vender</a></p>
                 <hr>
@@ -52,9 +52,10 @@
 
                     <div class="col-12" id="fotoUser">
                         <% if(!usuario.imagem) {%>
-                        <a href="login.html" class="material-icons" id="iconeUser">account_circle</a>
+                        <!-- <a href="/login" class="material-icons" id="iconeUser">account_circle</a> -->
+                        <img src="../public/images/profiles/default.png" alt="Foto usuario" id="fotoUser">
                         <% } else { %>
-                        <img src="<%= usuario.imagem %> " alt="Foto usuario" id="fotoUser">
+                        <img src="../<%= usuario.imagem %> " alt="Foto usuario" id="fotoUser">
                     </div>
                     <% } %>
                     <div class="col-12 d-flex justify-content-center align-items-center p-1

@@ -1,4 +1,9 @@
-<%- include('./partials/header') %>
+<% if (typeof(usuario) == "undefined") {%>
+    <%- include('./partials/headeroff') %>
+<%} else {%>
+    <%- include('./partials/header') %>
+<% } %>
+
 <section class="container first">
     <form action="/usuario/cadastro" method="POST" enctype="multipart/form-data">
         <div class="row form-group">

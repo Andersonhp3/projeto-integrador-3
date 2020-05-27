@@ -64,14 +64,19 @@
                             data-toggle="dropdown"
                             aria-haspopup="true"
                             aria-expanded="false">
-                            <img src="/images/profile-1.jpg" height="35" width="35" alt="Foto do Perfil"
-                                class="profile-picture" >
+                            <% if(!usuario.imagem) {%>
+                                <img src="../public/images/profiles/default.png" height="35" width="35" alt="Foto do Perfil"
+                                class="profile-picture">
+                            <%} else {%>
+                                <img src="../<%= usuario.imagem %> " height="35" width="35" alt="Foto do Perfil"
+                                class="profile-picture">
+                            <%}%>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profileMenu">
-                            <a class="dropdown-item text-blue" href="/usuario/perfil">Perfil</a>
+                            <a class="dropdown-item text-blue" href="/usuario">Perfil</a>
                             <a class="dropdown-item text-blue" href="/usuario/perfilVendas">Minhas Vendas</a>
                             <a class="dropdown-item text-blue" href="/usuario/perfilCompras">Minhas Compras</a>
-                            <a class="dropdown-item text-blue" href="/usuario/login">Sair</a>
+                            <a class="dropdown-item text-blue" href="/login">Sair</a>
                         </div><!-- dropdown-menu -->
                     </div><!-- dropdown -->
                 </div><!-- perfil -->
