@@ -56,10 +56,10 @@
                         <img src="../public/images/profiles/default.png" alt="Foto usuario" id="fotoUser">
                         <% } else { %>
                         <img src="../<%= usuario.imagem %> " alt="Foto usuario" id="fotoUser">
+                        <% } %>
                     </div>
-                    <% } %>
-                    <div class="col-12 d-flex justify-content-center align-items-center p-1
-                    " id="nomeUser">
+
+                    <div class="col-12 d-flex justify-content-center align-items-center p-1" id="nomeUser">
                         <h4 class="m-0"><%=usuario.nome%></h4>
                     </div>
                 </div>
@@ -68,6 +68,66 @@
 
                         <p><strong>Email:</strong> <%=usuario.email%></p>
                         <p><strong>CPF:</strong><%=usuario.cpf_cnpj%></p>
+                        <!-- Botão para acionar modal -->
+                        <button type="button" class="btn btn-site" data-toggle="modal" data-target="#modalExemplo">
+                            Adicionar Endereço
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Adicione seu endereço</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="exampleInputEmail1"
+                                                    aria-describedby="emailHelp" placeholder="CEP">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="exampleInputEmail1"
+                                                    aria-describedby="emailHelp" placeholder="Logradouro">
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-3">
+                                                    <input type="text" class="form-control" id="exampleInputPassword1"
+                                                        placeholder="Número">
+                                                </div>
+                                                <div class="form-group col-md-9">
+                                                    <input type="text" class="form-control" id="exampleInputPassword1"
+                                                        placeholder="Bairro">
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-3">
+                                                <select name="estado" id="estado" class="form-control">
+                                                    <option value="" selected disabled> Estado </option>
+                                                    <option value="SP">SP</option>
+                                                    <option value="RJ">RJ</option>
+                                                    <option value="PR">PR</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-9">
+                                                <input type="text" class="form-control" id="exampleInputPassword1"
+                                                    placeholder="Cidade">
+                                            </div></div>
+                                            
+                                            
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-site" data-dismiss="modal">Fechar</button>
+                                        <button type="button" class="btn btn-site">Salvar Endereço</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
