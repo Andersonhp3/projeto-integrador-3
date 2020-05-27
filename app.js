@@ -27,12 +27,15 @@ app.use(express.urlencoded({
 
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use("/public", express.static(path.join(__dirname, 'public')));
 app.use(session( {secret: "Segredinho hein!"}))
 
 app.use('/', indexRouter);
 app.use('/usuario', usuarioRouter);
 app.use('/pet', petRouter);
 app.use('/produto', produtoRouter);
+
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

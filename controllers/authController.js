@@ -22,7 +22,7 @@ const authController = {
 
         req.session.usuario = user
 
-        res.redirect('/usuario/perfil')
+        res.redirect('/home')
     },
 
     cadastro: async (req, res) => {
@@ -37,7 +37,7 @@ const authController = {
         const user = await Usuario.findOne({where: {email}});
 
         if(user) {
-            res.redirect('/login?erro=1')
+            res.redirect('/login')
         }
 
         let senhaHash = bcrypt.hashSync(senha, 12);
@@ -88,7 +88,33 @@ const authController = {
             error:false,
             usuario
         })
-    }   
+    },
+    
+    perfilCompras: (req,res) => {
+
+        let usuario = req.session.usuario
+
+        res.render('perfilCompras', {
+            title: 'Minha Compras',
+            css:'perfilCompras',
+            error:false,
+            usuario
+        })
+    },
+    
+    perfilVendas: (req,res) => {
+
+        let usuario = req.session.usuario
+
+        res.render('perfilVendas', {
+            title: 'Minha Vendas',
+            css:'perfilVendas',
+            error:false,
+            usuario
+        })
+    }
+    
+    
 };
 
 module.exports = authController;
