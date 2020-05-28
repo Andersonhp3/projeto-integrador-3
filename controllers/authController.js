@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const bcrypt = require('bcrypt');
 const fileHelper = require('../middlewares/fileHelper')
-const { Usuario } = require('../models');
+const { Usuario, Endereco, Estado, Cidade } = require('../models');
 
 
 
@@ -78,16 +78,57 @@ const authController = {
         });
     },
 
-    perfil: (req,res) => {
+    perfil: async (req,res) => {
 
         let usuario = req.session.usuario
+
+        let usuario_id = usuario.id
+
+        console.log(`Usuario: ${usuario_id}`)
+
+        let endereco = await Endereco.findOne({where: {usuario_id}})
+
+        console.log(endereco)
+
+        let estados = await Estado.findAll().then().catch(err => console.log(err))
+
+        let cidades = await Cidade.findAll().then().catch(err => console.log(err))
 
         res.render('perfil', {
             title: 'Minha Conta',
             css:'perfil',
             error:false,
-            usuario
+            usuario,
+            endereco,
+            estados,
+            cidades
         })
+    },
+
+    cadastroEndereco: async (req,res)=>{
+        let usuario = req.session.usuario
+
+        let usuario_id = usuario.id
+
+        console.log(`Usuario: ${usuario_id}`)
+
+        let endereco = await Endereco.findOne({where: {usuario_id}})
+
+        if(!endereco){
+            let {logradouro, numero, bairro, estado, cidade} = req.body;
+
+            let novoEndereco = {
+                logradouro,
+                numero,
+                bairro,
+                usuario_id,
+                estado,
+                cidade
+            }
+
+            await Endereco.create(novoEndereco).then().catch(err => console.log(err))
+
+        }
     },
     
     perfilCompras: (req,res) => {

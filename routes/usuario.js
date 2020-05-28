@@ -8,6 +8,7 @@ const verificaUsuarioLogado = require('../middlewares/verificaUsuarioLogado');
 /* authController */
 router.get('/', verificaUsuarioLogado ,authController.perfil);
 router.get('/perfil', verificaUsuarioLogado ,authController.perfil);
+router.post('/cadastroEndereco', verificaUsuarioLogado, authController.cadastroEndereco)
 router.get('/perfilVendas', verificaUsuarioLogado ,authController.perfilVendas);
 router.get('/perfilCompras', verificaUsuarioLogado ,authController.perfilCompras);
 

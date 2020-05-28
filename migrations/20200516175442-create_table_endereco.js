@@ -9,6 +9,10 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true
       },
+      cep: {
+        type: Sequelize.INTEGER(8),
+        allowNull: false
+      },
       logradouro: {
         type: Sequelize.STRING,
         allowNull: false

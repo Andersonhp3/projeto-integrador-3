@@ -68,6 +68,7 @@
 
                         <p><strong>Email:</strong> <%=usuario.email%></p>
                         <p><strong>CPF:</strong><%=usuario.cpf_cnpj%></p>
+                        <% if(!endereco) {%>
                         <!-- Botão para acionar modal -->
                         <button type="button" class="btn btn-site" data-toggle="modal" data-target="#modalExemplo">
                             Adicionar Endereço
@@ -85,55 +86,58 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form>
+                                        <form action="/cadastroEndereco" method="POST">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="exampleInputEmail1"
+                                                <input type="text" class="form-control" id="cep"
                                                     aria-describedby="emailHelp" placeholder="CEP">
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="exampleInputEmail1"
+                                                <input type="text" class="form-control" id="logradouro"
                                                     aria-describedby="emailHelp" placeholder="Logradouro">
                                             </div>
                                             <div class="form-row">
                                                 <div class="form-group col-md-3">
-                                                    <input type="text" class="form-control" id="exampleInputPassword1"
+                                                    <input type="text" class="form-control" id="numero"
                                                         placeholder="Número">
                                                 </div>
                                                 <div class="form-group col-md-9">
-                                                    <input type="text" class="form-control" id="exampleInputPassword1"
+                                                    <input type="text" class="form-control" id="bairro"
                                                         placeholder="Bairro">
                                                 </div>
                                             </div>
                                             <div class="form-row">
                                                 <div class="form-group col-md-3">
-                                                <select name="estado" id="estado" class="form-control">
-                                                    <option value="" selected disabled> Estado </option>
-                                                    <option value="SP">SP</option>
-                                                    <option value="RJ">RJ</option>
-                                                    <option value="PR">PR</option>
+                                                    <select name="estado" id="estado" class="form-control estado">
+                                                        <option value="0" selected disabled> Estado </option>
+                                                        <% for(e of estados){%>
+                                                        <option id="<%=e.id%>" value="<%=e.id%>">
+                                                            <%=e.estado%></option>
+                                                        <%}%>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group col-md-9">
+                                                    <select name="cidade" id="cidade" class="form-control">
+                                                    <option value="0" selected disabled>Cidade</option>
                                                 </select>
+                                                </div>
                                             </div>
-                                            <div class="form-group col-md-9">
-                                                <input type="text" class="form-control" id="exampleInputPassword1"
-                                                    placeholder="Cidade">
-                                            </div></div>
-                                            
-                                            
-                                        </form>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-site" data-dismiss="modal">Fechar</button>
-                                        <button type="button" class="btn btn-site">Salvar Endereço</button>
+                                        <button type="button" class="btn btn-site" data-dismiss="modal">Descartar
+                                            Alterações</button>
+                                        <button type="submit" class="btn btn-site">Salvar Endereço</button>
                                     </div>
+                                    </form>
                                 </div>
+                            <% } %> 
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
-    </div>
+    </div>                                                     
 </section>
+<script src="/javascripts/perfil.js"></script>
 
 <%- include('./partials/footer') %>
