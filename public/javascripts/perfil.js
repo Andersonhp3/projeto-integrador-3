@@ -1,20 +1,22 @@
-let selectEstado = document.getElementById('estado')
+const selectEstado = document.getElementById('estado')
 
-let mostrarCidades = (estado) => {
-    let select = document.getElementById('cidade')
+let selectCidade = document.getElementById('cidade')
+
+const mostrarCidades = (estado) => {  
     for (c of cidades){
-        if(c.estado_id === estado){
+        if(c.estado_id == estado){
             let option = document.createElement('option');
             option.setAttribute('value', c.id);
             option.setAttribute('id', c.id);
             option.innerText = c.cidade;
-            select.appendChild(option);
+            selectCidade.appendChild(option);
         }
     }
 }
 
 const onChangeOption = (evt) =>{
     console.log(evt)
+    selectCidade.innerHTML = '<option value="0" selected disabled>Cidade</option>'
     mostrarCidades(event.target.value)
 }
 

@@ -112,23 +112,21 @@ const authController = {
 
         console.log(`Usuario: ${usuario_id}`)
 
-        let endereco = await Endereco.findOne({where: {usuario_id}})
+        let {cep, logradouro, numero, bairro, estado, cidade} = req.body;
 
-        if(!endereco){
-            let {logradouro, numero, bairro, estado, cidade} = req.body;
-
-            let novoEndereco = {
+        let novoEndereco = {
+                cep,
                 logradouro,
                 numero,
                 bairro,
                 usuario_id,
-                estado,
-                cidade
-            }
-
-            await Endereco.create(novoEndereco).then().catch(err => console.log(err))
-
+                estado_id: estado,
+                cidade_id: cidade
         }
+
+        await Endereco.create(novoEndereco).then().catch(err => console.log(err))
+
+        res.redirect('/usuario/perfil')
     },
     
     perfilCompras: (req,res) => {

@@ -16,6 +16,11 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <title><%=title%></title>
+    <% if(title==='Minha Conta') {%> 
+    <script>
+        let cidades = <%-JSON.stringify(cidades)%>
+    </script>
+    <% } %> 
 </head>
 
 <body>
