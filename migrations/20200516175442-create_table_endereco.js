@@ -10,7 +10,7 @@ module.exports = {
         primaryKey: true
       },
       cep: {
-        type: Sequelize.INTEGER(8),
+        type: Sequelize.STRING(8),
         allowNull: false
       },
       logradouro: {

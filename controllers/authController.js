@@ -86,7 +86,8 @@ const authController = {
 
         console.log(`Usuario: ${usuario_id}`)
 
-        let endereco = await Endereco.findOne({where: {usuario_id}})
+        let endereco = await Endereco.findOne({where: {usuario_id}, include: ['estado', 'cidade']})
+
 
         console.log(endereco)
 

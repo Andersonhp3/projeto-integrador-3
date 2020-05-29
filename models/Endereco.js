@@ -8,7 +8,7 @@ let Endereco = (sequelize, DataTypes) => {
         primaryKey: true
       },
       cep: {
-        type: DataTypes.INTEGER(8),
+        type: DataTypes.STRING(8),
         allowNull: false
       },
       logradouro: {

@@ -129,7 +129,9 @@
                                     </div>
                                     </form>
                                 </div>
-                            <% } %> 
+                            <% } else {%> 
+                                <p><%=`${endereco.logradouro}, ${endereco.numero} - ${endereco.bairro}`%> <br> <%=`${endereco.cidade.cidade}, ${endereco.estado.estado} - ${endereco.cep}` %> </p>
+                            <%} %> 
                             </div>
                         </div>
                     </div>
