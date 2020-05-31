@@ -1,104 +1,103 @@
 <%- include('./partials/header') %>
 
-    <section id="perfilCompras">
-        <div class="container mt divInfo">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light d-md-none container opcoes">
-                <a class="active-option" href="#">Opções</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <i class="fas fa-chevron-down"></i>
-                </button>
+<section class="first" id="perfilCompras">
+    <div class="container divInfo">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light d-md-none container opcoes">
+            <a class="active-option px-3" href="#">Opções</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-chevron-down"></i>
+            </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a href="/usuario"><i class="fas fa-user"></i> Dados Cadastrais</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="active" href="/usuario/compras"><i class="fas fa-shopping-bag"></i> Minhas Compras</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/usuario/vendas"><i class="fas fa-clipboard-check"></i> Minhas Vendas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/usuario/vender"><i class="fas fa-handshake"></i>Vender</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/usuario/doar"><i class="fas fa-paw"></i>Doar</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-
-            <div class="row">
-                <div class="col-md-3 d-none d-md-block" id="links">
-                    <p><a href="/usuario" ><i class="fas fa-user"></i> Dados Cadastrais</a></p>
-                    <hr>
-                    <p><a href="/usuario/compras" class="active"><i class="fas fa-shopping-bag"></i> Minhas Compras</a>
-                    </p>
-                    <hr>
-                    <p><a href="/usuario/vendas"><i class="fas fa-clipboard-check"></i> Minhas Vendas</a></p>
-                    <hr>
-                    <p><a href="/usuario/vender"><i class="fas fa-handshake"></i> Vender</a></p>
-                    <hr>
-                    <p><a href="/usuario/doar"><i class="fas fa-paw"></i> Doar</a></p>
-                    <hr>
-                </div>
-                <div class="col-md-9 table">
-                    <h1>Compras</h1>
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th scope="col">Qtd</th>
-                                <th scope="col">Nome do Produto</th>
-                                <th scope="col">Valor</th>
-                                <th scope="col">Data da Compra</th>
-                                <th scope="col">Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Lorem, ipsum dolor.</td>
-                                <td>R$ 99.00</td>
-                                <td>12/12/2019</td>
-                                <td>Entregue</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Lorem, ipsum dolor.</td>
-                                <td>R$ 99.00</td>
-                                <td>22/02/2020</td>
-                                <td>Aguardando Pagamento</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Lorem, ipsum dolor.</td>
-                                <td>R$ 99.00</td>
-                                <td>22/02/2019</td>
-                                <td>Entregue</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Lorem, ipsum dolor.</td>
-                                <td>R$ 99.00</td>
-                                <td>12/12/2019</td>
-                                <td>Na transportadora</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Lorem, ipsum dolor.</td>
-                                <td>R$ 99.00</td>
-                                <td>12/12/2019</td>
-                                <td>Na transportadora</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a href="/usuario"><i class="fas fa-user px-1"></i>Dados Cadastrais</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="active" href="/usuario/compras"><i class="fas fa-shopping-bag px-1"></i>Minhas
+                            Compras</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/usuario/vendas"><i class="fas fa-clipboard-check px-1"></i>Minhas Vendas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/usuario/vender"><i class="fas fa-handshake px-1"></i>Vender</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/usuario/doar"><i class="fas fa-paw px-1"></i>Doar</a>
+                    </li>
+                </ul>
             </div>
-        </div>
-    </section>
+        </nav>
 
-    <%- include('./partials/footer') %>
+        <div class="row container">
+            <div class="col-md-3 d-none d-md-block" id="links">
+                <a href="/usuario"><i class="fas fa-user px-1"></i>Dados Cadastrais</a>
+                <hr>
+                <a href="/usuario/compras" class="active"><i class="fas fa-shopping-bag px-1"></i>Minhas Compras</a>
+                <hr>
+                <a href="/usuario/vendas"><i class="fas fa-clipboard-check px-1"></i>Minhas Vendas</a>
+                <hr>
+                <a href="/usuario/vender"><i class="fas fa-handshake px-1"></i>Vender</a>
+                <hr>
+                <a href="/usuario/doar"><i class="fas fa-paw px-1"></i>Doar</a>
+                <hr>
+            </div>
+            <div class="col-md-9 table">
+                <h1>Compras</h1>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Qtd</th>
+                            <th scope="col">Nome do Produto</th>
+                            <th scope="col">Valor</th>
+                            <th scope="col">Data da Compra</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Lorem, ipsum dolor.</td>
+                            <td>R$ 99.00</td>
+                            <td>12/12/2019</td>
+                            <td>Entregue</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Lorem, ipsum dolor.</td>
+                            <td>R$ 99.00</td>
+                            <td>22/02/2020</td>
+                            <td>Aguardando Pagamento</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Lorem, ipsum dolor.</td>
+                            <td>R$ 99.00</td>
+                            <td>22/02/2019</td>
+                            <td>Entregue</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Lorem, ipsum dolor.</td>
+                            <td>R$ 99.00</td>
+                            <td>12/12/2019</td>
+                            <td>Na transportadora</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Lorem, ipsum dolor.</td>
+                            <td>R$ 99.00</td>
+                            <td>12/12/2019</td>
+                            <td>Na transportadora</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<%- include('./partials/footer') %>

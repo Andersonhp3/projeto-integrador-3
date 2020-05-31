@@ -24,9 +24,6 @@ h2 {
     font-size: 25px;
 }
 
-.btn-pesquisar{
-    margin-left: 40px;
-}
 .carousel{
     display: flex;
 }
@@ -49,16 +46,11 @@ h2 {
     bottom: auto;
 }
 
-@media screen and (max-width: 900px) {
-    .labelForm{
-        padding-right: 40px;
-        padding-left: 40px;
-        margin-top: 30px;
-        margin-bottom: 30px;
-        
+@media screen and (max-width: 570px) {
+    #pesquisaBox {
+        background-color: transparent;    
     }
-
-    .btn-pesquisar {
-        margin-left: 7px;
+    #dropdownMenuButton {
+        background-color: white;
     }
 }

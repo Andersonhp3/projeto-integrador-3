@@ -5,7 +5,7 @@ const fs = require('fs')
 const adocaoController = {
     home: (req, res) => {
         res.render("homeAdocao", {
-            title: 'Adocao-home',
+            title: 'Adoção',
             css: 'homeAdocao'
         })
     },

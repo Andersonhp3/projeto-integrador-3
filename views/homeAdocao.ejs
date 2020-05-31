@@ -4,26 +4,20 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
-                <div id="pesquisaBox" class="py-1 pt-3 form-group">
+                <div id="pesquisaBox" class="py-1 pt-3 mb-md-5 form-group">
                     <h1 class="text-blue">Pesquisar Pet</h1>
-                    <form class="form-group" action="categoriaAdocao.html">
-                        <div class="row justify-content-center align-items-center">
-                            <div class="">
-                                <label for="regiaoAdocao" class="text-blue mb-0 mr-2 labelForm">Região da Adoção</label>
+                    <form class="container form-group" action="categoriaAdocao.html">
+                        <div class="row justify-content-around align-items-center">
+                            <div class="col-md-4 pb-2">
+                                <input class="form-control input-decoration text-center" type="text" name="regiaoAdocao"
+                                    id="regiaoAdocao" placeholder="Região da Adoção">
                             </div>
-                            <div class="">
-                                <input class="form-control input-decoration" type="text" name="regiaoAdocao"
-                                    id="regiaoAdocao">
-                            </div>
-                            <div class="">
-                                <label for="tipoPet" class="text-blue mb-0 ml-3 mr-2 labelForm">Tipo do Pet</label>
-                            </div>
-                            <div class="">
+                            <div class="col-md-4 pb-2">
                                 <button
                                     class="form-control input-decoration btn btn-outline-secondary dropdown-toggle rounded-pill"
                                     type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">
-                                    Escolha o tipo de pet
+                                    Escolha o tipo de Pet
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item" href="#">Cachorro</a>
@@ -31,7 +25,7 @@
                                     <a class="dropdown-item" href="#">Pássaros</a>
                                 </div>
                             </div>
-                            <div class="">
+                            <div class="col-md-2">
                                 <button class="btn btn-site btn-pesquisar">Pesquisar</button>
                             </div>
                         </div>

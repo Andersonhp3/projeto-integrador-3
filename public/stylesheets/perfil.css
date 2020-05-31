@@ -10,6 +10,7 @@ a:hover {
 
 h1 {
     font-size: 30px;
+    text-align: center;
 }
 
 p {
@@ -66,10 +67,6 @@ p {
 .campo-info p {
     padding: 5px;
     margin-bottom: 0;
-}
-
-#links i{
-    padding: 5px;
 }
 
 .dropdown d-block {

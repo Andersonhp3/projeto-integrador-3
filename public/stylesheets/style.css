@@ -79,8 +79,8 @@ header .nav-link.active {
 } */
 
 .input-decoration {
-  border: 1px solid #03658C;
-  border-radius: 2rem;
+  border: 1px solid #03658C !important;
+  border-radius: 1.25rem !important;
 }
 
 header .nav-link:hover {
@@ -122,6 +122,9 @@ header .nav-link.active {
   }
   .search-group {
     margin-bottom: 0.5rem !important;
+  }
+  section.first {
+    margin-top: 175px;
   }
 }
 

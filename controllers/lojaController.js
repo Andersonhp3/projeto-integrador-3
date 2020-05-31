@@ -5,7 +5,7 @@ const fs = require('fs')
 const lojaController = {
     home: (req, res) => {
         res.render("homeLoja", {
-            title: 'Loja-home',
+            title: 'Loja',
             css: 'homeLoja'
         })
     },
