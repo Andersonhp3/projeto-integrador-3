@@ -9,10 +9,6 @@
     border-radius: 16px;
 }
 
-section#newsletter {
-    margin-top: 135px;
-}
-
 @media (max-width:769px){
     .flex-row{
         flex-direction:column!important;

@@ -1,9 +1,4 @@
 /* mt = margin top */
-section#perfil {
-    margin-top: 175px; /* 125 + 50 */
-    margin: 175px auto;
-}
-
 a {
     color: black;
 }
