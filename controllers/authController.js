@@ -66,6 +66,7 @@ const authController = {
         res.render('login', {
             title: 'Tela de Login',
             css: 'login',
+            nav: '',
             error: false
         });
     },
@@ -74,6 +75,7 @@ const authController = {
         res.render('cadastro', {
             title: 'Tela de Cadastro',
             css: 'cadastro',
+            nav: '',
             error: false
         });
     },
@@ -98,6 +100,7 @@ const authController = {
         res.render('perfil', {
             title: 'Minha Conta',
             css:'perfil',
+            nav: '',
             error:false,
             usuario,
             endereco,
@@ -137,6 +140,7 @@ const authController = {
         res.render('perfilCompras', {
             title: 'Minha Compras',
             css:'perfilCompras',
+            nav: '',
             error:false,
             usuario
         })
@@ -149,6 +153,7 @@ const authController = {
         res.render('perfilVendas', {
             title: 'Minha Vendas',
             css:'perfilVendas',
+            nav: '',
             error:false,
             usuario
         })
@@ -161,6 +166,7 @@ const authController = {
         res.render('cadastroProduto', {
             title: 'Nova Venda',
             css:'cadastroProduto',
+            nav: '',
             error:false,
             usuario
         })
@@ -173,6 +179,7 @@ const authController = {
         res.render('cadastroAdocao', {
             title: 'Nova Adoção',
             css:'cadastroAdocao',
+            nav: '',
             error:false,
             usuario
         })

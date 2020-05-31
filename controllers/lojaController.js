@@ -13,7 +13,8 @@ const lojaController = {
     showProduto: (req, res) => {
         res.render('produto', {
             title: 'Detalhes do Produto',
-            css: 'produto'
+            css: 'produto',
+            nav: ''
         })
     }
 }

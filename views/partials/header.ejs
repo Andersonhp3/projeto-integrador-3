@@ -19,8 +19,10 @@
 
     <script>
         const activeNav = () => {
-            let nav = <%= nav%>;
-            nav.classList.add('active');
+            if(<%= nav%> != '') {
+                let nav = <%= nav%>;
+                nav.classList.add('active');
+            };
         }
     </script>
 
