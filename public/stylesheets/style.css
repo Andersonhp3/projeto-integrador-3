@@ -78,6 +78,11 @@ header .nav-link.active {
   border-bottom: 5px solid #f2a0a0;
 } */
 
+.input-decoration {
+  border: 1px solid #03658C;
+  border-radius: 2rem;
+}
+
 header .nav-link:hover {
   background-color:  #f2a0a0;
 }
