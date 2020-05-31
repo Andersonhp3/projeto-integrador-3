@@ -16,6 +16,14 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <title><%=title%></title>
+
+    <script>
+        const activeNav = () => {
+            let nav = <%= nav%>;
+            nav.classList.add('active');
+        }
+    </script>
+
     <% if(title==='Minha Conta') {%> 
     <script>
         let cidades = <%-JSON.stringify(cidades)%>
@@ -23,7 +31,7 @@
     <% } %> 
 </head>
 
-<body>
+<body onload="activeNav()">
     <header class="fixed-top">
         <nav class="navbar navbar-expand-sm bg-white text-dark">
             <div class="container">
@@ -53,10 +61,10 @@
 
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <div class="navbar-nav">
-                        <a class="nav-link nav-item text-decoration-none text-reset active" href="/">Home</a>
-                        <a class="nav-link nav-item text-decoration-none text-reset" href="/homeLoja">Loja</a>
-                        <a class="nav-link nav-item text-decoration-none text-reset" href="/homeAdocao">Adoção</a>
-                        <a class="nav-link nav-item text-decoration-none text-reset" href="/contato">Contato</a>
+                        <a class="nav-link nav-item text-decoration-none text-reset" id="navHome" href="/">Home</a>
+                        <a class="nav-link nav-item text-decoration-none text-reset" id="navLoja" href="/loja">Loja</a>
+                        <a class="nav-link nav-item text-decoration-none text-reset" id="navAdocao" href="/adocao">Adoção</a>
+                        <a class="nav-link nav-item text-decoration-none text-reset" id="navContato" href="/contato">Contato</a>
                     </div><!-- navbar -->
                 </div><!-- collapse -->
                 <div class="d-flex justify-content-between align-items-center">

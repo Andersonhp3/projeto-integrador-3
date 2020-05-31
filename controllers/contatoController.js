@@ -5,8 +5,9 @@ const fs = require('fs')
 const contatoController = {
     showContato: (req, res) => {
         res.render("contato", {
-            title: 'contato',
-            css: 'contato'
+            title: 'Contato',
+            css: 'contato',
+            nav: 'navContato'
         })
     }
 }

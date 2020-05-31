@@ -17,10 +17,10 @@ router.get('/home', homeController.home)
 
 
 // adocaoController
-router.get('/homeAdocao',adocaoController.home)
+router.get('/adocao',adocaoController.home)
 
 // lojaController
-router.get('/homeLoja',lojaController.home)
+router.get('/loja',lojaController.home)
 
 // contatoController
 router.get('/contato',contatoController.showContato)

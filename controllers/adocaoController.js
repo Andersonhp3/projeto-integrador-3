@@ -6,7 +6,8 @@ const adocaoController = {
     home: (req, res) => {
         res.render("homeAdocao", {
             title: 'Adoção',
-            css: 'homeAdocao'
+            css: 'homeAdocao',
+            nav: 'navAdocao'
         })
     },
     detalheAdocao: (req, res) => {

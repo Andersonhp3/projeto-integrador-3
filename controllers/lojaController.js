@@ -6,7 +6,8 @@ const lojaController = {
     home: (req, res) => {
         res.render("homeLoja", {
             title: 'Loja',
-            css: 'homeLoja'
+            css: 'homeLoja',
+            nav: 'navLoja'
         })
     },
     showProduto: (req, res) => {
