@@ -36,8 +36,13 @@ section.first {
 .arrow{
   font-size: 2em;
 }
+
 .text-blue {
   color: #03658C;
+}
+
+.text-pink {
+  color: #f2a0a0;
 }
 
 .btn-site{

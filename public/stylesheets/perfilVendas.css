@@ -5,7 +5,7 @@ a {
 
 a:hover {
     text-decoration: none;
-    color: #03658c;
+    color: #f2a0a0;
 }
 
 h1 {
@@ -43,8 +43,8 @@ p {
     color: #03658c;
 }
 
-.active {
-    color: #03658c;
+.active, li.active {
+    color: #f2a0a0;
 }
 
 /* Hover na imagem do usuario */
