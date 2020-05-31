@@ -10,7 +10,8 @@ module.exports = {
         bairro: 'Santana',
         usuario_id: 1,
         estado_id: 26,
-        cidade_id: 5349
+        cidade_id: 5349,
+        cep: 12345123
       },
       {
         id: 2,
@@ -19,7 +20,8 @@ module.exports = {
         bairro: 'Centro',
         usuario_id: 2,
         estado_id: 22,
-        cidade_id: 222
+        cidade_id: 222,
+        cep: 12345123
       },
       {
         id: 3,
@@ -28,7 +30,8 @@ module.exports = {
         bairro: 'Alto',
         usuario_id: 3,
         estado_id: 10,
-        cidade_id: 2
+        cidade_id: 2,
+        cep: 12345123
       },
       {
         id: 4,
@@ -37,7 +40,8 @@ module.exports = {
         bairro: 'Bras',
         usuario_id: 4,
         estado_id: 2,
-        cidade_id: 30
+        cidade_id: 30,
+        cep: 12345123
       },
       {
         id: 5,
@@ -46,7 +50,8 @@ module.exports = {
         bairro: 'Bras',
         usuario_id: 5,
         estado_id: 5,
-        cidade_id: 654
+        cidade_id: 654,
+        cep: 12345123
       },
       {
         id: 6,
@@ -55,7 +60,8 @@ module.exports = {
         bairro: 'Bras',
         usuario_id: 6,
         estado_id: 8,
-        cidade_id: 900
+        cidade_id: 900,
+        cep: 12345123
       },
       {
         id: 7,
@@ -64,7 +70,8 @@ module.exports = {
         bairro: 'Pari',
         usuario_id: 7,
         estado_id: 10,
-        cidade_id: 1000
+        cidade_id: 1000,
+        cep: 12345123
       },
       {
         id: 8,
@@ -73,7 +80,8 @@ module.exports = {
         bairro: 'Pari',
         usuario_id: 8,
         estado_id: 4,
-        cidade_id: 321
+        cidade_id: 321,
+        cep: 12345123
       },
       {
         id: 9,
@@ -82,7 +90,8 @@ module.exports = {
         bairro: 'Pari',
         usuario_id: 9,
         estado_id: 18,
-        cidade_id: 986
+        cidade_id: 986,
+        cep: 12345123
       },
       {
         id: 10,
@@ -91,7 +100,8 @@ module.exports = {
         bairro: 'Centro',
         usuario_id: 10,
         estado_id: 13,
-        cidade_id: 776
+        cidade_id: 776,
+        cep: 12345123
       },
       
       
