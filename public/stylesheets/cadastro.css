@@ -1,14 +1,19 @@
 #botaocadastro {
-    display: flex;
-    justify-content: center;
-  }
-  
-  #logocadastro {
-    display: flex;
-    justify-content: center;
-  }
-  
-  #logo{
-    border-radius: 15rem;
-  }
+  display: flex;
+  justify-content: center;
+}
 
+#logocadastro {
+  display: flex;
+  justify-content: center;
+}
+
+#logo {
+  border-radius: 15rem;
+}
+
+.image-preview{
+  width: 200px;
+  height: 200px;
+  
+}
