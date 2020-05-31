@@ -78,7 +78,7 @@ const authController = {
         });
     },
 
-    perfil: async (req,res) => {
+    showPerfil: async (req,res) => {
 
         let usuario = req.session.usuario
 
@@ -130,7 +130,7 @@ const authController = {
         res.redirect('/usuario/perfil')
     },
     
-    perfilCompras: (req,res) => {
+    showCompras: (req,res) => {
 
         let usuario = req.session.usuario
 
@@ -142,13 +142,37 @@ const authController = {
         })
     },
     
-    perfilVendas: (req,res) => {
+    showVendas: (req,res) => {
 
         let usuario = req.session.usuario
 
         res.render('perfilVendas', {
             title: 'Minha Vendas',
             css:'perfilVendas',
+            error:false,
+            usuario
+        })
+    },
+
+    showVender: (req,res) => {
+
+        let usuario = req.session.usuario
+
+        res.render('cadastroProduto', {
+            title: 'Nova Venda',
+            css:'cadastroProduto',
+            error:false,
+            usuario
+        })
+    },
+
+    showDoar: (req,res) => {
+
+        let usuario = req.session.usuario
+
+        res.render('cadastroAdocao', {
+            title: 'Nova Adoção',
+            css:'cadastroAdocao',
             error:false,
             usuario
         })
