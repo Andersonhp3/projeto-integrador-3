@@ -183,6 +183,12 @@ const authController = {
             error:false,
             usuario
         })
+    },
+
+    sair: (req,res)=>{
+        req.session.usuario = undefined
+
+        res.redirect('/home')
     }
     
     
