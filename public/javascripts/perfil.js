@@ -1,3 +1,22 @@
+let cepInput = document.querySelector('#cep')
+let ruaInput = document.querySelector('#logradouro')
+let bairroInput = document.querySelector('#bairro')
+
+const buscaCep = () => {
+    if(cepInput.value.length == 8){
+    fetch(`https://viacep.com.br/ws/${cepInput.value}/json/`)
+    .then(res => res.json())
+    .then(dados => {
+        ruaInput.value = dados.logradouro;
+        bairroInput.value = dados.bairro;
+    })
+    }
+}
+
+addEventListener('input', buscaCep)
+
+
+
 const selectEstado = document.getElementById('estado')
 
 let selectCidade = document.getElementById('cidade')
