@@ -160,8 +160,6 @@ const authController = {
     let produtos = await Produto.findAll()
       .then()
       .catch((err) => console.log(err));
-    console.log(usuario_id)
-      console.log(pedidos.length)
 
     res.render("perfilCompras", {
       title: "Minha Compras",
@@ -174,8 +172,26 @@ const authController = {
     });
   },
 
-  showVendas: (req, res) => {
+  showVendas: async (req, res) => {
     let usuario = req.session.usuario;
+
+    let usuario_id = usuario.id;
+
+    let pedidos = await Pedido.findAll({
+        where: { usuario_id },
+        include: [
+          { model: Produto, as: "produto", attributes: ["nome", "preco"] },
+          "produto",
+        ],
+      });
+
+    let produtos = await Produto.findAll({
+      where: { usuario_id },
+      include: [
+        { model: Pedido, as: "pedido", attributes: ["data"] },
+        "pedido",
+      ],
+    });
 
     res.render("perfilVendas", {
       title: "Minha Vendas",
@@ -183,7 +199,26 @@ const authController = {
       nav: "",
       error: false,
       usuario,
+      produtos,
+      pedidos
     });
+  },
+
+  showProdutos: async (req, res) => {
+    let usuario = req.session.usuario;
+
+    let usuario_id = usuario.id
+
+    let produtos = await Produto.findAll({where: {usuario_id}})
+
+    res.render("perfilProdutos",{
+        title: "Meus Produtos",
+        css: "perfilVendas",
+        nav: "",
+        error: false,
+        usuario,
+        produtos
+    })
   },
 
   showVender: (req, res) => {

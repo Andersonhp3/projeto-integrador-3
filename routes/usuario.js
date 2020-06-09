@@ -11,6 +11,7 @@ router.get('/perfil', verificaUsuarioLogado ,authController.showPerfil);
 router.post('/cadastroEndereco', verificaUsuarioLogado, authController.cadastroEndereco)
 router.get('/vendas', verificaUsuarioLogado ,authController.showVendas);
 router.get('/compras', verificaUsuarioLogado ,authController.showCompras);
+router.get('/produtos', verificaUsuarioLogado, authController.showProdutos);
 router.get('/vender', verificaUsuarioLogado ,authController.showVender);
 router.get('/doar', verificaUsuarioLogado ,authController.showDoar);
 
