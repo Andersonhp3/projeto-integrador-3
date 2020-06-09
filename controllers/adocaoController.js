@@ -1,13 +1,21 @@
 const path = require('path')
 const fs = require('fs')
 
+const {Pet, ImagemPet} = require('../models')
+
 
 const adocaoController = {
-    home: (req, res) => {
+    home: async (req, res) => {
+
+        let pets = await Pet.findAll({include: ['imagem']})
+
+        console.log(pets)
+
         res.render("homeAdocao", {
             title: 'Adoção',
             css: 'homeAdocao',
-            nav: 'navAdocao'
+            nav: 'navAdocao',
+            pets
         })
     },
     detalheAdocao: (req, res) => {
