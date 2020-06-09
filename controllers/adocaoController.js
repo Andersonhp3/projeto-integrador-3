@@ -18,11 +18,19 @@ const adocaoController = {
             pets
         })
     },
-    detalheAdocao: (req, res) => {
+    detalheAdocao: async (req, res) => {
+
+        let id = req.query.id
+
+        let pet = await Pet.findByPk(id, {include: ['usuario', 'imagem']})
+
+        console.log(pet)
+
         res.render('detalheAdocao', {
             title: 'Detalhes do pet',
             css: 'detalheAdocao',
             nav: '',
+            pet
         })
     }
 }

@@ -40,7 +40,7 @@
     <div class="row">
         <% for (pet of pets) { %>
         <div class="col-md-3 p-1">
-            <a href="/pet/detalheAdocao">
+            <a href="/pet/detalheAdocao?id=<%=pet.id%> ">
                 <div class="card" style="width: auto;">
                     <img src="<%= pet.imagem[0].imagem %> " class="card-img-top" height="142px" alt="Nome do produto" />
                     <div class="card-body">
