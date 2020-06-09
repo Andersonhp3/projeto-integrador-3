@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const bcrypt = require('bcrypt');
 const fileHelper = require('../middlewares/fileHelper')
-const { Usuario, Endereco, Estado, Cidade } = require('../models');
+const { Usuario, Endereco, Estado, Cidade, Pedido, Produto } = require('../models');
 
 
 
@@ -133,16 +133,24 @@ const authController = {
         res.redirect('/usuario/perfil')
     },
     
-    showCompras: (req,res) => {
+    showCompras: async (req,res) => {
 
         let usuario = req.session.usuario
+
+
+        let pedidos = await Pedido.findAll({
+            include: ['usuario', {model: Produto, as:'produto', attributes: ['nome', 'preco']}, 'produto']})
+        let produtos = await Produto.findAll().then().catch(err => console.log(err))
+        console.log(pedidos[0].produto[0].nome)
+
 
         res.render('perfilCompras', {
             title: 'Minha Compras',
             css:'perfilCompras',
             nav: '',
             error:false,
-            usuario
+            pedidos,
+            produtos
         })
     },
     
