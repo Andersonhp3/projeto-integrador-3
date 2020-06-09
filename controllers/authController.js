@@ -148,7 +148,7 @@ const authController = {
   showCompras: async (req, res) => {
     let usuario = req.session.usuario;
 
-    let usuario_id = usuario;
+    let usuario_id = usuario.id;
 
     let pedidos = await Pedido.findAll({
       where: { usuario_id },
@@ -160,6 +160,8 @@ const authController = {
     let produtos = await Produto.findAll()
       .then()
       .catch((err) => console.log(err));
+    console.log(usuario_id)
+      console.log(pedidos.length)
 
     res.render("perfilCompras", {
       title: "Minha Compras",
