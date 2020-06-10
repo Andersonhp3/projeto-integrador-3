@@ -67,7 +67,7 @@ module.exports = {
         cpf_cnpj: "99922222211",
         imagem: '/images/profiles/1589739533336-17332_100735099957491_1314197_n.webp'
       },
-      {,
+      {
         nome: 'Natalia Pereira',
         email: 'natalia@teste.com',
         senha: bcrypt.hashSync('123456', 12),
