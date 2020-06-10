@@ -7,19 +7,21 @@
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
                             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            <% if(pet.imagem.length>0){
+                                for(let i=1; i<pet.imagem.length; i++){%> 
+                            <li data-target="#carouselExampleIndicators" data-slide-to="<%=i%>"></li>
+                            <%}}%>
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="/images/ativo-61.png" class="d-block w-100" alt="...">
+                                <img src="<%=pet.imagem[0].imagem%>" class="d-block w-100" alt="...">
                             </div>
+                            <% if(pet.imagem.length>0) {
+                                for (let i=1; i<pet.imagem.length;i++){%> 
                             <div class="carousel-item">
-                                <img src="/images/ativo-47.png" class="d-block w-100" alt="...">
+                                <img src="<%=pet.imagem[i].imagem%>" class="d-block w-100" alt="...">
                             </div>
-                            <div class="carousel-item">
-                                <img src="/images/ativo-40.png" class="d-block w-100" alt="...">
-                            </div>
+                            <%} }%>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
                             data-slide="prev">
@@ -36,18 +38,13 @@
                 </div>
                 <div class="col-md-6" id="campoDescri">
                     <div class="row container-fluid">
-                        <h1>Nome do pet: Dogão</h1>
+                        <h1>Nome do pet: <%=pet.nome%></h1>
                     </div>
 
                     <p class="infoD"><strong>Sexo:</strong> Macho</p>
-                    <p class="infoD"><strong>Idade:</strong> 2 anos</p>
-                    <p class="infoD"><strong>Raça:</strong> SRD Sem raça definida</p>
-                    <p class="infoD"><strong>Descrição:</strong> Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. Esse excepturi, tempora, sapiente ipsam ducimus explicabo at quam necessitatibus animi eos
-                        molestias! Consectetur iste maxime veritatis natus earum illo doloribus nemo.</p>
-                    <div class="btn-Adotar">
-                        <button class="btn btn-site">Adotar</button>
-                    </div>
+                    <p class="infoD"><strong>Idade:</strong> <%=pet.idade%> anos</p>
+                    <p class="infoD"><strong>Raça:</strong> <%= pet.raca %> </p>
+                    <p class="infoD"><strong>Descrição:</strong> <%= pet.descricao %> </p>
                 </div>
             </div>
             <div class="row" id="infoDoador">
@@ -58,8 +55,8 @@
                     <a href="/usuario/login" class="material-icons" id="iconeUser">account_circle</a>
                 </div>
                 <div class="col-md-11">
-                    <p class="infoD"><strong>Nome:</strong> Silva Santos</p>
-                    <p class="infoD"><strong>Telefone:</strong> (99) 9999-9999</p>
+                    <p class="infoD"><strong>Nome:</strong><%= pet.usuario.nome %>  </p>
+                    <p class="infoD"><strong>Telefone:</strong> <%= pet.contato %> </p>
                 </div>
             </div>
         </div>
