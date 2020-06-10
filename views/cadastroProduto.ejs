@@ -58,41 +58,72 @@
                         </div>
                         <div class="d-flex justify-content-center">
                             <img src="/images/produtos/default.png" alt="Foto/Logo" width="200px" height="200px"
-                                class="image-preview mb-5" id="logo">
+                                class="image-preview mb-5" id="image-preview">
                         </div>
                         <div class="d-flex justify-content-center">
-                            <label for="imagem" class="btn btn-site">
+                            <label for="image-selector" class="btn btn-site">
                                 Selecione Imagem
-                                <input class="form-control d-none" type="file" id="imagem" name="imagem">
+                                <input class="form-control d-none" type="file" id="image-selector" name="imagem">
                             </label>
                         </div>
                     </div>
                     <div class="col">
-                        <form action="" method="post">
+                        <form action="/produto/novo" method="POST">
                             <div id="cadastro-dados">
                                 <div class="form-group mb-4">
-                                    <input id="nomePet" class="form-control input-decoration" type="text" name="nomePet"
-                                        placeholder="Nome do Produto">
+                                    <input id="nomeProduto" class="form-control input-decoration" type="text"
+                                        name="nomeProduto" placeholder="Nome do Produto">
                                 </div>
                                 <div class="form-group mb-4">
                                     <textarea name="descricao" id="descricao" class="form-control input-decoration"
                                         rows="10" placeholder="Descrição" type="text"></textarea>
                                 </div>
-                                <div class="form-group mb-4 mw-75">
-                                    <input id="quantidade" class="form-control w-25 input-decoration" type="number"
-                                        name="quantidade" placeholder="Qtd" columns="4">
+                                <div class="d-flex">
+                                    <div class="form-group mb-4 mw-75 mr-1">
+                                        <input id="quantidade" class="form-control input-decoration" type="number"
+                                            name="quantidade" placeholder="Quantidade" columns="4">
+                                    </div>
+                                    <div class="form-group mb-4 mw-75 ml-1">
+                                        <input id="preco" class="form-control input-decoration" type="number"
+                                            name="preco" placeholder="Preço" columns="4">
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control input-decoration" id="exampleFormControlSelect1">
-                                        <option>Categoria</option>
-                                        <option>Rações</option>
-                                        <option>Brinquedos</option>
-                                        <option>Farmácia</option>
-                                        <option>Higiene e Limpeza</option>
+                                    <select class="form-control input-decoration" id="exampleFormControlSelect1"
+                                        name="categoria">
+                                        <% for(cat of categorias) { %>
+                                            <option name=<%= cat.id %> id=<%= cat.id %> ><%= cat.categoria %></option>
+                                        <% } %>
                                     </select>
                                 </div>
+                                <input class="form-control d-none" type="hidden" name="imagemb64" id="imagemb64"
+                                    value="">
                                 <div class="botoes" id="botaocadastro">
-                                    <button class="btn btn-site mr-5 mb-4 mt-3">Adicionar para adoção</button>
+                                    <button class="btn btn-site mr-5 mb-4 mt-3">Adicionar produto</button>
+                                </div>
+                            </div>
+                            <div class="modal fade" id="image-cropper" data-backdrop="static" tabindex="-1"
+                                role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title text-blue" id="staticBackdropLabel">Ajuste da Imagem
+                                            </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div id="canvas">
+
+                                            </div>
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button id="pronto" type="button" class="btn btn-site"
+                                                data-dismiss="modal">Pronto</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                     </div>
@@ -105,5 +136,5 @@
 </div>
 </div>
 </section>
-
+<script src="/public/javascripts/cadastro.js"></script>
 <%- include('./partials/footer') %>
