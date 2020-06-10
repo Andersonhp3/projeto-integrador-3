@@ -1,4 +1,8 @@
 /* mt = margin top */
+* {
+    box-sizing: border-box;
+}
+
 a {
     color: black;
 }
@@ -47,4 +51,7 @@ p {
     color: #f2a0a0;
 }
 
+.ajuste {
+    background-color: black;
+}
 /* Hover na imagem do usuario */
