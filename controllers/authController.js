@@ -58,6 +58,7 @@ const authController = {
         res.render('login', {
             title: 'Tela de Login',
             css: 'login',
+            nav:'',
             error: false
         });
     },

@@ -15,6 +15,9 @@ section a.nav-link:hover {
 .carousel{
     display: flex;
 }
+.tamanho{
+    height:250px;
+}
 
 .carousel-control-prev {
     height: 50px;
