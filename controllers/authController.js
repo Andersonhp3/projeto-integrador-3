@@ -9,7 +9,8 @@ const {
   Cidade,
   Pedido,
   Produto,
-  Categoria
+  Categoria,
+  CategoriaPet
 } = require("../models");
 
 const authController = {
@@ -297,8 +298,10 @@ const authController = {
     });
   },
 
-  showDoar: (req, res) => {
+  showDoar: async (req, res) => {
     let usuario = req.session.usuario;
+
+    let categorias = await CategoriaPet.findAll()
 
     res.render("cadastroAdocao", {
       title: "Nova Adoção",
@@ -306,6 +309,7 @@ const authController = {
       nav: "",
       error: false,
       usuario,
+      categorias
     });
   },
 
