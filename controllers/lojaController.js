@@ -1,4 +1,3 @@
-const {Produto, ImagemProduto}= require("../models")
 const path = require('path')
 const fs = require('fs')
 const {
@@ -8,16 +7,17 @@ const {
     Cidade,
     Pedido,
     Produto,
-    Categoria
-  } = require("../models");
+    Categoria,
+    ImagemProduto
+} = require("../models");
 
 const lojaController = {
     home: async (req, res) => {
         const itens = await Produto.findAll();
         const imagem = await ImagemProduto.findAll();
-        const filtro =(i)=>
-        { return imagem.filter((resultado)=>{
-            return resultado.produto_id == itens[i-1].id
+        const filtro = (i) => {
+            return imagem.filter((resultado) => {
+                return resultado.produto_id == itens[i - 1].id
             })[0];
 
         }
@@ -71,29 +71,40 @@ const lojaController = {
             var imagem = await decode_base64(imgb64, ('produto.' + filetype));
         }
 
-        categoria = await Categoria.findOne(
-            {
-                where: {
-                    categoria
-                }
+        categoria = await Categoria.findOne({
+            where: {
+                categoria
             }
-        )
-        
+        })
+
         let categoria_id = categoria.id;
         let estoque = quantidade;
         let nome = nomeProduto;
 
-        console.log(
+        let novoProduto = {
+            id: null,
             nome,
             preco,
             descricao,
             estoque,
             categoria_id,
-            usuario_id,
-            imagem
-        )
+            usuario_id
+        }
 
+        let produto_id = await Produto.create(novoProduto)
+        .then()
+        .catch((err) => console.log(err));
+        produto_id = produto_id.dataValues.id
 
+        await ImagemProduto.create({
+            id: null,
+            imagem,
+            produto_id
+        })
+        .then()
+        .catch((err) => console.log(err));
+
+        res.redirect('/usuario/vender');
     }
 }
 

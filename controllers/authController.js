@@ -90,7 +90,7 @@ const authController = {
     };
 
     await Usuario.create(novoUsuario)
-      .then(console.log('ok'))
+      .then()
       .catch((err) => console.log(err));
 
     res.render("login", {
