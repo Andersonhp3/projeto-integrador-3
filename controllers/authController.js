@@ -1,7 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 const bcrypt = require("bcrypt");
-const fileHelper = require("../middlewares/fileHelper");
+
 const {
   Usuario,
   Endereco,
@@ -9,13 +9,21 @@ const {
   Cidade,
   Pedido,
   Produto,
+  Categoria
 } = require("../models");
 
 const authController = {
   login: async (req, res) => {
-    const { email, senha } = req.body;
+    const {
+      email,
+      senha
+    } = req.body;
 
-    const user = await Usuario.findOne({ where: { email } });
+    const user = await Usuario.findOne({
+      where: {
+        email
+      }
+    });
 
     if (!user) {
       res.redirect("/login");
@@ -31,16 +39,40 @@ const authController = {
   },
 
   cadastro: async (req, res) => {
-    let { nome, cpf_cnpj, email, senha } = req.body;
+    let {
+      nome,
+      cpf_cnpj,
+      email,
+      senha,
+      imagemb64
+    } = req.body;
 
-    if (req.file) {
-      var imagem = await fileHelper
-        .compressImage(req.file, 100)
-        .then()
-        .catch((err) => console.log(err));
+    async function decode_base64(base64str, filename) {
+      let buff = Buffer.from(base64str, 'base64');
+      let file = ('/images/profiles/' + Date.now().toString() + '-' + filename);
+      fs.writeFile('./public' + file, buff, (error) => {
+        if (error) {
+          throw error;
+        } else {
+          return true;
+        };
+      });
+      return file;
+    };
+
+    if (!imagemb64) {
+      var imagem = "/images/profiles/default.png";
+    } else {
+      let filetype = imagemb64.split(';base64,')[0].split('/')[1];
+      let imgb64 = imagemb64.split(';base64,').pop();
+      var imagem = await decode_base64(imgb64, ('avatar.' + filetype));
     }
-
-    const user = await Usuario.findOne({ where: { email } });
+    
+    const user = await Usuario.findOne({
+      where: {
+        email
+      }
+    });
 
     if (user) {
       res.redirect("/login");
@@ -49,6 +81,7 @@ const authController = {
     let senhaHash = bcrypt.hashSync(senha, 12);
 
     let novoUsuario = {
+      id: null,
       nome,
       email,
       senha: senhaHash,
@@ -57,7 +90,7 @@ const authController = {
     };
 
     await Usuario.create(novoUsuario)
-      .then()
+      .then(console.log('ok'))
       .catch((err) => console.log(err));
 
     res.render("login", {
@@ -80,7 +113,7 @@ const authController = {
     res.render("cadastro", {
       title: "Tela de Cadastro",
       css: "cadastro",
-      nav: "",
+      nav: undefined,
       error: false,
     });
   },
@@ -93,7 +126,9 @@ const authController = {
     console.log(`Usuario: ${usuario_id}`);
 
     let endereco = await Endereco.findOne({
-      where: { usuario_id },
+      where: {
+        usuario_id
+      },
       include: ["estado", "cidade"],
     });
 
@@ -126,7 +161,14 @@ const authController = {
 
     console.log(`Usuario: ${usuario_id}`);
 
-    let { cep, logradouro, numero, bairro, estado, cidade } = req.body;
+    let {
+      cep,
+      logradouro,
+      numero,
+      bairro,
+      estado,
+      cidade
+    } = req.body;
 
     let novoEndereco = {
       cep,
@@ -151,9 +193,14 @@ const authController = {
     let usuario_id = usuario.id;
 
     let pedidos = await Pedido.findAll({
-      where: { usuario_id },
-      include: [
-        { model: Produto, as: "produto", attributes: ["nome", "preco"] },
+      where: {
+        usuario_id
+      },
+      include: [{
+          model: Produto,
+          as: "produto",
+          attributes: ["nome", "preco"]
+        },
         "produto",
       ],
     });
@@ -178,17 +225,27 @@ const authController = {
     let usuario_id = usuario.id;
 
     let pedidos = await Pedido.findAll({
-        where: { usuario_id },
-        include: [
-          { model: Produto, as: "produto", attributes: ["nome", "preco"] },
-          "produto",
-        ],
-      });
+      where: {
+        usuario_id
+      },
+      include: [{
+          model: Produto,
+          as: "produto",
+          attributes: ["nome", "preco"]
+        },
+        "produto",
+      ],
+    });
 
     let produtos = await Produto.findAll({
-      where: { usuario_id },
-      include: [
-        { model: Pedido, as: "pedido", attributes: ["data"] },
+      where: {
+        usuario_id
+      },
+      include: [{
+          model: Pedido,
+          as: "pedido",
+          attributes: ["data"]
+        },
         "pedido",
       ],
     });
@@ -209,20 +266,26 @@ const authController = {
 
     let usuario_id = usuario.id
 
-    let produtos = await Produto.findAll({where: {usuario_id}})
+    let produtos = await Produto.findAll({
+      where: {
+        usuario_id
+      }
+    })
 
-    res.render("perfilProdutos",{
-        title: "Meus Produtos",
-        css: "perfilVendas",
-        nav: "",
-        error: false,
-        usuario,
-        produtos
+    res.render("perfilProdutos", {
+      title: "Meus Produtos",
+      css: "perfilVendas",
+      nav: "",
+      error: false,
+      usuario,
+      produtos
     })
   },
 
-  showVender: (req, res) => {
+  showVender: async (req, res) => {
     let usuario = req.session.usuario;
+
+    let categorias = await Categoria.findAll()
 
     res.render("cadastroProduto", {
       title: "Nova Venda",
@@ -230,6 +293,7 @@ const authController = {
       nav: "",
       error: false,
       usuario,
+      categorias
     });
   },
 

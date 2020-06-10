@@ -40,4 +40,5 @@ save.addEventListener('click', (e) => {
     .getCroppedCanvas()
     .toDataURL();
     preview.src = imgSrc;
+    document.getElementById('imagemb64').value = imgSrc;
 });

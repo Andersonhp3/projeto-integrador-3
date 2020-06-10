@@ -1,7 +1,7 @@
 <%- include('./partials/header') %>
 
 <section class="container first">
-    <form action="/cadastro" method="POST" enctype="multipart/form-data">
+    <form action="/cadastro" method="POST">
         <div class="row form-group">
             <div class="col-md-4 border-right">
                 <div class="d-flex justify-content-center">
@@ -16,6 +16,7 @@
                         Selecione Imagem
                         <input class="form-control d-none" type="file" id="image-selector" name="imagem">
                     </label>
+                    <input class="form-control d-none" type="hidden" name="imagemb64" id="imagemb64" value="">
                 </div>
             </div>
             <div class="col-md-8">
