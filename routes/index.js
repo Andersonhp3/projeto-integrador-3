@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const multer = require('../middlewares/multer');
 
 /* Controllers */
 const homeController = require('../controllers/homeController');
@@ -29,7 +28,7 @@ router.get('/login', authController.showLogin);
 router.post('/login', authController.login);
 
 router.get('/cadastro', authController.showCadastro);
-router.post('/cadastro', multer.single('imagem'), authController.cadastro);
+router.post('/cadastro', authController.cadastro);
 
 router.get('/sair', authController.sair)
 
