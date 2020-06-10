@@ -27,9 +27,9 @@ let Pedido = (sequelize, DataTypes) => {
       as: "usuario"
     })
     pedido.belongsToMany(models.Produto, {
-      foreignKey: 'produto_id',
-      as: 'produtos',
-      through: "pedidoProduto"
+      through: "pedido_produto",
+      foreignKey: 'pedido_id',
+      as: 'produto'
     })
 
   }

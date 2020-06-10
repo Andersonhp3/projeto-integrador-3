@@ -70,7 +70,7 @@ module.exports = {
       },
       {
         id: 14,
-        imagem: '/images/cavalo1.png',
+        imagem: '/images/ativo-47.png',
         pet_id: 13
       },
       {

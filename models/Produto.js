@@ -49,9 +49,9 @@ let Produto = (sequelize, DataTypes) => {
     });
 
     produto.belongsToMany(models.Pedido, {
-      foreignKey: 'pedido_id',
-      as: 'pedidos',
-      through: "pedidoProduto"
+      through: "pedido_produto",
+      foreignKey: 'produto_id',
+      as: 'pedido',
     });
 
     produto.hasMany(models.ImagemProduto, {

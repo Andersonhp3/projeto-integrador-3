@@ -10,7 +10,7 @@
                         <div class="row justify-content-around align-items-center">
                             <div class="col-md-4 pb-2">
                                 <input class="form-control input-decoration text-center" type="text" name="regiaoAdocao"
-                                    id="regiaoAdocao" placeholder="Região da Adoção">
+                                    id="regiaoAdocao" placeholder="Região da Adoção" />
                             </div>
                             <div class="col-md-4 pb-2">
                                 <button
@@ -37,141 +37,22 @@
 </section>
 <section class="container" id="petDisp">
     <h2 class="text-blue">Pets disponíveis para adoção</h2>
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="row">
-                    <div class="col-md-3"> <a href="/pet/detalheAdocao">
-                            <div class="card" style="width: auto;">
-                                <img src="./images/ativo-6.png" class="card-img-top" alt="Nome do produto">
-                                <div class="card-body">
-                                    <h5 class="card-title">Região do Pet</h5>
-                                    <p class="card-text">Macho</p>
-                                </div>
-                            </div>
-                        </a>
+    <div class="row">
+        <% for (pet of pets) { %>
+        <div class="col-md-3 p-1">
+            <a href="/pet/detalheAdocao?id=<%=pet.id%> ">
+                <div class="card" style="width: auto;">
+                    <img src="<%= pet.imagem[0].imagem %> " class="card-img-top" height="142px" alt="Nome do produto" />
+                    <div class="card-body">
+                        <h5 class="card-title"><%=pet.nome%></h5>
+                        <p class="card-text"><%=pet.raca%></p>
                     </div>
-                    <div class="col-md-3"> <a href="/pet/detalheAdocao">
-                            <div class="card" style="width: auto;">
-                                <img src="./images/ativo-40.png" class="card-img-top" alt="Nome do produto">
-                                <div class="card-body">
-                                    <h5 class="card-title">Região do Pet</h5>
-                                    <p class="card-text">Macho</p>
-                                </div>
-                            </div>
-                        </a> </div>
-                    <div class="col-md-3"> <a href="/pet/detalheAdocao">
-                            <div class="card" style="width: auto;">
-                                <img src="./images/ativo-47.png" class="card-img-top" alt="Nome do produto">
-                                <div class="card-body">
-                                    <h5 class="card-title">Região do Pet</h5>
-                                    <p class="card-text">Femea</p>
-                                </div>
-                            </div>
-                        </a></div>
-                    <div class="col-md-3"> <a href="/pet/detalheAdocao">
-                            <div class="card" style="width: auto;">
-                                <img src="./images/ativo-61.png" class="card-img-top" alt="Nome do produto">
-                                <div class="card-body">
-                                    <h5 class="card-title">Região do Pet</h5>
-                                    <p class="card-text">Femea</p>
-                                </div>
-                            </div>
-                        </a></div>
                 </div>
-
-            </div>
-            <div class="carousel-item">
-                <div class="row">
-                    <div class="col-md-3"> <a href="/pet/detalheAdocao">
-                            <div class="card" style="width: auto;">
-                                <img src="./images/ativo-6.png" class="card-img-top" alt="Nome do produto">
-                                <div class="card-body">
-                                    <h5 class="card-title">Região do Pet</h5>
-                                    <p class="card-text">Macho</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3"> <a href="/pet/detalheAdocao">
-                            <div class="card" style="width: auto;">
-                                <img src="./images/ativo-40.png" class="card-img-top" alt="Nome do produto">
-                                <div class="card-body">
-                                    <h5 class="card-title">Região do Pet</h5>
-                                    <p class="card-text">Macho</p>
-                                </div>
-                            </div>
-                        </a> </div>
-                    <div class="col-md-3"> <a href="/pet/detalheAdocao">
-                            <div class="card" style="width: auto;">
-                                <img src="./images/ativo-47.png" class="card-img-top" alt="Nome do produto">
-                                <div class="card-body">
-                                    <h5 class="card-title">Região do Pet</h5>
-                                    <p class="card-text">Femea</p>
-                                </div>
-                            </div>
-                        </a></div>
-                    <div class="col-md-3"> <a href="/pet/detalheAdocao">
-                            <div class="card" style="width: auto;">
-                                <img src="./images/ativo-61.png" class="card-img-top" alt="Nome do produto">
-                                <div class="card-body">
-                                    <h5 class="card-title">Região do Pet</h5>
-                                    <p class="card-text">Femea</p>
-                                </div>
-                            </div>
-                        </a></div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="row">
-                    <div class="col-md-3"> <a href="/pet/detalheAdocao">
-                            <div class="card" style="width: auto;">
-                                <img src="./images/ativo-6.png" class="card-img-top" alt="Nome do produto">
-                                <div class="card-body">
-                                    <h5 class="card-title">Região do Pet</h5>
-                                    <p class="card-text">Macho</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3"> <a href="/pet/detalheAdocao">
-                            <div class="card" style="width: auto;">
-                                <img src="./images/ativo-40.png" class="card-img-top" alt="Nome do produto">
-                                <div class="card-body">
-                                    <h5 class="card-title">Região do Pet</h5>
-                                    <p class="card-text">Macho</p>
-                                </div>
-                            </div>
-                        </a> </div>
-                    <div class="col-md-3"> <a href="/pet/detalheAdocao">
-                            <div class="card" style="width: auto;">
-                                <img src="./images/ativo-47.png" class="card-img-top" alt="Nome do produto">
-                                <div class="card-body">
-                                    <h5 class="card-title">Região do Pet</h5>
-                                    <p class="card-text">Femea</p>
-                                </div>
-                            </div>
-                        </a></div>
-                    <div class="col-md-3"> <a href="/pet/detalheAdocao">
-                            <div class="card" style="width: auto;">
-                                <img src="./images/ativo-61.png" class="card-img-top" alt="Nome do produto">
-                                <div class="card-body">
-                                    <h5 class="card-title">Região do Pet</h5>
-                                    <p class="card-text">Femea</p>
-                                </div>
-                            </div>
-                        </a></div>
-                </div>
-            </div>
+            </a>
         </div>
-        <a class="carousel-control-prev carrossel" href="#carouselExampleControls" role="button" data-slide="prev">
-            <i class="fas fa-chevron-left text-blue arrow"></i>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next carrossel" href="#carouselExampleControls" role="button" data-slide="next">
-            <i class="fas fa-chevron-right text-blue arrow"></i>
-            <span class="sr-only">Next</span>
-        </a>
+        <% } %>
+    </div>
+    </div>
     </div>
 </section>
 <%- include('./partials/footer') %>
