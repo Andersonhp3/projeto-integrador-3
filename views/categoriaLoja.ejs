@@ -5,32 +5,16 @@
             <div class="col-md-2 d-none d-md-block filtros">
                 <ul>
                     <div>
-                        <li>Categoria 1</li>
-                        <div class="opcao"><input type="checkbox" name="" id="">Opção 1</div>
-                        <div class="opcao"><input type="checkbox" name="" id="">Opção 2</div>
-                        <div class="opcao"><input type="checkbox" name="" id="">Opção 3</div>
-                        <div class="opcao"><input type="checkbox" name="" id="">Opção 4</div>
+                        <li>Categorias</li>
+                        <% for ( let categoria of categorias ) {%>
+                        <div class="opcao"><input type="checkbox" name="" id=""><%=categoria.categoria%></div>
+                        <%}%>
                     </div>
                     <div>
-                        <li>Categoria 2</li>
-                        <div class="opcao"><input type="checkbox" name="" id="">Opção 1</div>
-                        <div class="opcao"><input type="checkbox" name="" id="">Opção 2</div>
-                        <div class="opcao"><input type="checkbox" name="" id="">Opção 3</div>
-                        <div class="opcao"><input type="checkbox" name="" id="">Opção 4</div>
-                    </div>
-                    <div>
-                        <li>Categoria 3</li>
-                        <div class="opcao"><input type="checkbox" name="" id="">Opção 1</div>
-                        <div class="opcao"><input type="checkbox" name="" id="">Opção 2</div>
-                        <div class="opcao"><input type="checkbox" name="" id="">Opção 3</div>
-                        <div class="opcao"><input type="checkbox" name="" id="">Opção 4</div>
-                    </div>
-                    <div>
-                        <li>Categoria 4</li>
-                        <div class="opcao"><input type="checkbox" name="" id="">Opção 1</div>
-                        <div class="opcao"><input type="checkbox" name="" id="">Opção 2</div>
-                        <div class="opcao"><input type="checkbox" name="" id="">Opção 3</div>
-                        <div class="opcao"><input type="checkbox" name="" id="">Opção 4</div>
+                        <li>Preço</li>
+                        <div class="opcao"><input type="checkbox" name="" id="">Até R$200</div>
+                        <div class="opcao"><input type="checkbox" name="" id="">de R$200 a R$500</div>
+                        <div class="opcao"><input type="checkbox" name="" id="">Mais de R$500</div>
                     </div>
                 </ul>
             </div>
