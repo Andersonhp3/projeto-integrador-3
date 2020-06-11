@@ -37,6 +37,8 @@ const adocaoController = {
         });
     },
     home: async (req, res) => {
+        let usuario = req.session.usuario;
+
         let categorias = await CategoriaPet.findAll()
         let pets = await Pet.findAll({
             where: {
@@ -49,6 +51,7 @@ const adocaoController = {
             title: 'Adoção',
             css: 'homeAdocao',
             pets,
+            usuario,
             categorias
         });
     },
