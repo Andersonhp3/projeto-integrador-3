@@ -26,6 +26,12 @@ let Pet = (sequelize, DataTypes) => {
       raca: {
         type: DataTypes.STRING(45),
       },
+      genero: {
+        type: DataTypes.STRING(45),
+      },
+      adotado: {
+        type: DataTypes.BOOLEAN,
+      },
       categoria_pet_id: {
         type: DataTypes.INTEGER,
         allowNull: false

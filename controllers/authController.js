@@ -9,7 +9,8 @@ const {
   Cidade,
   Pedido,
   Produto,
-  Categoria
+  Categoria,
+  CategoriaPet
 } = require("../models");
 
 const authController = {
@@ -26,11 +27,11 @@ const authController = {
     });
 
     if (!user) {
-      res.redirect("/login");
+      res.redirect("/login?error=1");
     }
 
     if (!bcrypt.compareSync(senha, user.senha)) {
-      res.redirect("/login");
+      res.redirect("/login?error=1");
     }
 
     req.session.usuario = user;
@@ -101,11 +102,16 @@ const authController = {
   },
 
   showLogin: (req, res) => {
+
+    let erro = req.query.error
+
     res.render("login", {
       title: "Tela de Login",
       css: "login",
       nav: "",
       error: false,
+      erro,
+      mensagem: "Email incorreto ou senha incorreta. Tente Novamente."
     });
   },
 
@@ -253,7 +259,6 @@ const authController = {
     res.render("perfilVendas", {
       title: "Minha Vendas",
       css: "perfilVendas",
-      nav: "",
       error: false,
       usuario,
       produtos,
@@ -297,8 +302,10 @@ const authController = {
     });
   },
 
-  showDoar: (req, res) => {
+  showDoar: async (req, res) => {
     let usuario = req.session.usuario;
+
+    let categorias = await CategoriaPet.findAll()
 
     res.render("cadastroAdocao", {
       title: "Nova Adoção",
@@ -306,6 +313,7 @@ const authController = {
       nav: "",
       error: false,
       usuario,
+      categorias
     });
   },
 

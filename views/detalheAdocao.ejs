@@ -1,4 +1,4 @@
-<%- include('./partials/header') %>
+<%- include('./partials/header', {active: title}) %>
 
     <section id="descricao">
         <div class="container mt" id="campoGeral">
@@ -41,10 +41,10 @@
                         <h1>Nome do pet: <%=pet.nome%></h1>
                     </div>
 
-                    <p class="infoD"><strong>Sexo:</strong> Macho</p>
-                    <p class="infoD"><strong>Idade:</strong> <%=pet.idade%> anos</p>
-                    <p class="infoD"><strong>Raça:</strong> <%= pet.raca %> </p>
-                    <p class="infoD"><strong>Descrição:</strong> <%= pet.descricao %> </p>
+                    <p class="infoD"><strong>Sexo: </strong><%=pet.genero%></p>
+                    <p class="infoD"><strong>Idade: </strong><%=pet.idade%> anos</p>
+                    <p class="infoD"><strong>Raça: </strong><%= pet.raca%></p>
+                    <p class="infoD"><strong>Descrição: </strong><%= pet.descricao%></p>
                 </div>
             </div>
             <div class="row" id="infoDoador">
@@ -52,11 +52,11 @@
                     <h5>Informações do Doador:</h5>
                 </div>
                 <div class="col-md-1">
-                    <a href="/usuario/login" class="material-icons" id="iconeUser">account_circle</a>
+                    <img src="<%= pet.usuario.imagem%>" width="60px" alt="">
                 </div>
                 <div class="col-md-11">
-                    <p class="infoD"><strong>Nome:</strong><%= pet.usuario.nome %>  </p>
-                    <p class="infoD"><strong>Telefone:</strong> <%= pet.contato %> </p>
+                    <p class="infoD"><strong>Nome: </strong><%= pet.usuario.nome %></p>
+                    <p class="infoD"><strong>Telefone: </strong> <%= pet.contato %></p>
                 </div>
             </div>
         </div>

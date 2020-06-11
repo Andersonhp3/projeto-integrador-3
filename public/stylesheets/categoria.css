@@ -19,12 +19,14 @@ ul>div {
 }
 
 .filtros {
-    background-color: #fff;
-    border: 1px solid #707070;
     height: fit-content;
 }
 
 section#catLoja,
 section#catAdocao {
     margin-top: 135px;
+}
+
+input {
+    margin-right: 4px;
 }

@@ -2,11 +2,6 @@ section#navCategorias {
     margin-top: 110px;
 }
 
-section#newsletterShop .container {
-    border-radius: 30rem;
-    background-color: #f2a0a0;
-}
-
 section a.nav-link:hover {
     background-color: #f2a0a0;
     color: white !important;
@@ -15,9 +10,12 @@ section a.nav-link:hover {
 .carousel{
     display: flex;
 }
-.tamanho{
-    height:250px;
+
+#imagemProduto {
+    height: 150px;
 }
+
+
 
 .carousel-control-prev {
     height: 50px;

@@ -1,5 +1,7 @@
 'use strict';
 
+const { sequelize } = require("../models");
+
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('pedido_produto', { 
@@ -18,6 +20,12 @@ module.exports = {
           key: 'id'
         },
         allowNull: false
+      },
+      createdAt: {
+        type: sequelize.DATE,
+      },
+      updatedAt: {
+        type: sequelize.DATE
       }
     });
   },

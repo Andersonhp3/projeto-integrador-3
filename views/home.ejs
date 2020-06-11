@@ -1,18 +1,26 @@
-<%- include('./partials/header') %>
+<%- include('./partials/header', {active: title}) %>
 
     <section id="home" class="first container">
-        <div class="row ">
-            <div class="col-6 banner">
-                <a href="/adocao" type="button"><img src="./images/bannerAdocao.png" alt="Loja"></a>
-
+        <div class="row m-0 p-0">
+            <div class="col-6 banner m-0 p-0">
+                <div class="mr-sm-2 p-3 bg-white">
+                    <a href="/adocao" type="button">
+                        <img src="./images/bannerAdocao.svg" alt="Adoção">
+                        <div class="btn btn-site btn-adocao">Adoção</div>
+                    </a>
+                </div>
             </div>
-            <div class="col-6 banner">
-                <a href="/loja" type="button"><img src="./images/bannerLoja.png" alt="Adoção"></a>
-
+            <div class="col-6 banner m-0 p-0">
+                <div class="ml-sm-2 p-3 bg-white">
+                    <a href="/loja" type="button">
+                        <img src="./images/bannerLoja.svg" alt="Loja">
+                        <div class="btn btn-site btn-loja">Loja</div>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
-    <section class="container">
+    <section class="container mt-5">
         <h2 class="text-blue">Mais vendidos</h2>
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
@@ -208,6 +216,11 @@
             </a>
         </div>
     </section>
+
+    <% if(typeof(usuario) == 'undefined') { %>
+        <%- include('./partials/cadastrar') %>
+    <% } %>
+
     <section class="container">
         <h2 class="text-blue">Para adoção</h2>
         <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel">

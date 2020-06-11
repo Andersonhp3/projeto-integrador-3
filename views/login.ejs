@@ -1,27 +1,35 @@
-<%- include('./partials/header') %>
+<%- include('./partials/header', {active: title}) %>
 
 <section class="container first" id="login">
     <form action="/login" method="post">
         <div class="row form-group d-flex justify-content-center">
             <div class="col-sm-12 col-lg-6">
                 <div class="">
-                    <div class="d-flex justify-content-center">
-                        <span class="h3 mb-5 text-blue">Login</span>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <span class="h3 mb-3 text-blue">Login</span>
                     </div>
+                    <%if(erro == 1){%>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <span class="text-danger"><%= mensagem %> </span>
+                    </div>
+                    <%} %>
                     <div class="form-group mb-4 d-flex justify-content-center">
-                        <input id="email" class="form-control input-decoration" type="email" name="email" placeholder="E-Mail">
+                        <input id="email" class="form-control input-decoration" type="email" name="email"
+                            placeholder="E-Mail" />
                     </div>
                     <div class="form-group mb-4">
-                        <input id="senha" class="form-control input-decoration" type="password" name="senha" placeholder="Senha">
+                        <input id="senha" class="form-control input-decoration" type="password" name="senha"
+                            placeholder="Senha" />
                     </div>
                     <div class="row d-flex justify-content-around">
                         <label for="submit" class="btn btn-site">
                             Entrar
-                            <input class="form-control d-none" type="submit" id="submit" name="submit">
+                            <input class="form-control d-none" type="submit" id="submit" name="submit" />
                         </label>
                         <div class="">
-                            <a href="/cadastro"><button type="button"
-                                    class="btn btn-site botao">Cadastre-se</button></a>
+                            <a href="/cadastro"><button type="button" class="btn btn-site botao">
+                                    Cadastre-se
+                                </button></a>
                         </div>
                     </div>
                 </div>

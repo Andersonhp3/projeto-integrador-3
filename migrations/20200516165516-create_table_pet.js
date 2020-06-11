@@ -28,6 +28,12 @@ module.exports = {
       raca: {
         type: Sequelize.STRING(45),
       },
+      genero: {
+        type: Sequelize.STRING(45),
+      },
+      adotado: {
+        type: Sequelize.BOOLEAN,
+      },
       categoria_pet_id: {
         type: Sequelize.INTEGER,
         references: {

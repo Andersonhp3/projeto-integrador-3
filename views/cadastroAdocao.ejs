@@ -1,4 +1,4 @@
-<%- include('./partials/header') %>
+<%- include('./partials/header', {active: title}) %>
 
 <section class="first">
     <div class="container divInfo">
@@ -13,23 +13,25 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a href="/usuario"><i class="fas fa-user px-1"></i>Dados Cadastrais</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/usuario/compras"><i class="fas fa-shopping-bag px-1"></i>Minhas
-                            Compras</a>
-                    </li>
-                    <li class="nav-item">
+                      </li>
+                      <li class="nav-item">
+                        <a href="/usuario/compras"><i class="fas fa-shopping-bag px-1"></i>Minhas Compras</a>
+                      </li>
+                      <li class="nav-item">
                         <a href="/usuario/vendas"><i class="fas fa-clipboard-check px-1"></i>Minhas Vendas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/usuario/vendas"><i class="fab fa-product-hunt px-1"></i>Meus Produtos</a>
-                    </li>
-                    <li class="nav-item">
+                      </li>
+                      <li class="nav-item">
+                        <a href="/usuario/produtos"><i class="fas fa-box-open px-1"></i>Meus Produtos</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="/usuario/doacoes"><i class="fas fa-hand-holding-heart px-1"></i>Minhas Doações</a>
+                      </li>
+                      <li class="nav-item">
                         <a href="/usuario/vender"><i class="fas fa-handshake px-1"></i>Vender</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/usuario/doar" class="active"><i class="fas fa-paw px-1"></i>Doar</a>
-                    </li>
+                      </li>
+                      <li class="nav-item">
+                        <a class="active" href="/usuario/doar"><i class="fas fa-paw px-1"></i>Doar</a>
+                      </li>
                 </ul>
             </div>
         </nav>
@@ -42,7 +44,9 @@
                 <hr>
                 <a href="/usuario/vendas" class="text-blue"><i class="fas fa-clipboard-check px-1"></i>Minhas Vendas</a>
                 <hr>
-                <a href="/usuario/produtos" class="text-blue"><i class="fab fa-product-hunt px-1"></i>Meus Produtos</a>
+                <a href="/usuario/produtos" class="text-blue"><i class="fas fa-box-open px-1"></i>Meus Produtos</a>
+                <hr />
+                <a href="/usuario/doacoes" class="text-blue"><i class="fas fa-hand-holding-heart px-1"></i>Minhas Doações</a>
                 <hr />
                 <a href="/usuario/vender" class="text-blue"><i class="fas fa-handshake px-1"></i>Vender</a>
                 <hr>
@@ -58,43 +62,80 @@
                         </div>
                         <div class="d-flex justify-content-center">
                             <img src="/images/pets/default.png" alt="Foto/Logo" width="200px" height="200px"
-                                class="image-preview mb-5" id="logo">
+                                class="image-preview mb-5" id="image-preview">
                         </div>
                         <div class="d-flex justify-content-center">
-                            <label for="imagem" class="btn btn-site">
+                            <label for="image-selector" class="btn btn-site">
                                 Selecione Imagem
-                                <input class="form-control d-none" type="file" id="imagem" name="imagem">
+                                <input class="form-control d-none" type="file" id="image-selector" name="imagem">
                             </label>
                         </div>
                     </div>
                     <div class="col">
-                        <form action="" method="post">
+                        <form action="/pet/novo" method="post">
                             <div id="cadastro-dados">
                                 <div class="form-group mb-4">
-                                    <input id="nomePet" class="form-control input-decoration" type="text" name="nomePet"
+                                    <input id="nome" class="form-control input-decoration" type="text" name="nome"
                                         placeholder="Nome do Pet">
                                 </div>
                                 <div class="form-group mb-4">
                                     <textarea name="descricao" id="descricao" class="form-control input-decoration"
                                         rows="10" placeholder="Descrição" type="text"></textarea>
                                 </div>
-                                <div class="form-group mb-4 mw-75">
-                                    <input id="quantidade" class="form-control w-25 input-decoration" type="number"
-                                        name="quantidade" placeholder="Qtd" columns="4">
+                                <div class="d-flex">
+                                    <div class="form-group mb-4 mr-1">
+                                        <input id="raca" class="form-control input-decoration" type="text"
+                                            name="raca" placeholder="Raça" columns="4">
+                                    </div>
+                                    <div class="form-group mb-4 mr-1">
+                                        <input id="idade" class="form-control input-decoration" type="number"
+                                            name="idade" placeholder="Idade" columns="4">
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control input-decoration" id="exampleFormControlSelect1">
-                                        <option>Categoria</option>
-                                        <option>Cachorro</option>
-                                        <option>Gato</option>
-                                        <option>Peixe</option>
-                                        <option>Papagaio</option>
+                                    <select class="form-control input-decoration" id="categoria" name="categoria">
+                                        <% for(cat of categorias) { %>
+                                            <option name=<%= cat.id %> id=<%= cat.id %> ><%= cat.categoria %></option>
+                                        <% } %>
                                     </select>
                                 </div>
+                                <div class="d-flex">
+                                    <div class="form-group mb-4 mr-1">
+                                        <input id="contato" class="form-control input-decoration" type="text"
+                                            name="contato" placeholder="Contato" columns="4">
+                                    </div>
+                                </div>
+                                <input class="form-control d-none" type="hidden" name="imagemb64" id="imagemb64"
+                                    value="">
                                 <div class="botoes" id="botaocadastro">
                                     <button class="btn btn-site mr-5 mb-4 mt-3">Adicionar para adoção</button>
                                 </div>
                             </div>
+                            <div class="modal fade" id="image-cropper" data-backdrop="static" tabindex="-1"
+                                role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title text-blue" id="staticBackdropLabel">Ajuste da Imagem
+                                            </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div id="canvas">
+
+                                            </div>
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button id="pronto" type="button" class="btn btn-site"
+                                                data-dismiss="modal">Pronto</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -105,4 +146,5 @@
 </div>
 </div>
 </section>
+<script src="/public/javascripts/cadastro.js"></script>
 <%- include('./partials/footer') %>

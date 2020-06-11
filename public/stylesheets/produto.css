@@ -3,6 +3,10 @@
     width: 440px;
 }
 
+#nomeUser {
+    margin-left: 0px;
+}
+
 #foto-vendedor{
     font-size: 7em;
     display: flex;

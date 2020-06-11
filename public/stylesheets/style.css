@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&display=swap');
 
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #03658C !important;
+  opacity: 0.8 !important; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #03658C !important;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #03658C !important;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -56,6 +69,28 @@ section.first {
   color:white;
   border-radius: 2rem;
 }
+
+
+section#newsletter .container {
+  border-radius: 30rem;
+  background-color: #f2a0a0;
+}
+
+section#register .container {
+  border-radius: 30rem;
+  background-color: #03658C;
+  display: flex;
+  justify-content: center;
+}
+
+section#register .container .row{
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
 
 /* Inicio Header */
 

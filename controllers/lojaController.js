@@ -22,11 +22,28 @@ const lojaController = {
             itens
         })
     },
-    showProduto: (req, res) => {
+    showProduto: async (req, res) => {
+
+        let id = req.query.id
+
+        let produto = await Produto.findByPk(id, {include: ['usuario', 'imagem']})
+
         res.render('produto', {
             title: 'Detalhes do Produto',
             css: 'produto',
-            nav: ''
+            nav: '',
+            produto
+        })
+    },
+    showCategoria: async (req, res) => {
+
+        let categorias = await Categoria.findAll({include: ['produto']})
+
+        res.render('categoriaLoja', {
+            title: 'Busca Categoria',
+            css: 'categoria',
+            nav: '',
+            categorias
         })
     },
     novoProduto: async (req, res) => {
