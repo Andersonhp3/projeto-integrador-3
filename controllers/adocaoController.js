@@ -39,6 +39,9 @@ const adocaoController = {
     home: async (req, res) => {
         let categorias = await CategoriaPet.findAll()
         let pets = await Pet.findAll({
+            where: {
+                adotado: 0
+            },
             include: ['imagem']
         });
 
@@ -117,6 +120,7 @@ const adocaoController = {
             descricao,
             contato,
             raca,
+            adotado: false,
             categoria_pet_id,
             usuario_id
         }
