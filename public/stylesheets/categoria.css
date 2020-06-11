@@ -26,3 +26,7 @@ section#catLoja,
 section#catAdocao {
     margin-top: 135px;
 }
+
+input {
+    margin-right: 4px;
+}
