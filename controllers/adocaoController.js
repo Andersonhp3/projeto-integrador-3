@@ -10,17 +10,15 @@ const {
 
 const adocaoController = {
     home: async (req, res) => {
-
-        let pets = await Pet.findAll({include: ['imagem']})
-
-        console.log(pets)
+        let categorias = await CategoriaPet.findAll()
+        let pets = await Pet.findAll({include: ['imagem']});
 
         res.render("homeAdocao", {
             title: 'Adoção',
             css: 'homeAdocao',
-            nav: 'navAdocao',
-            pets
-        })
+            pets,
+            categorias
+        });
     },
     detalheAdocao: async (req, res) => {
 

@@ -24,7 +24,6 @@ const lojaController = {
         res.render("homeLoja", {
             title: 'Loja',
             css: 'homeLoja',
-            nav: 'navLoja',
             itens,
             filtro
         })

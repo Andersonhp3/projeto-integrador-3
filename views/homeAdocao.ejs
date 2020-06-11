@@ -1,4 +1,4 @@
-<%- include('./partials/header') %>
+<%- include('./partials/header', {active: title}) %>
 
 <section class="first" id="pesquisa">
     <div class="container">
@@ -9,15 +9,11 @@
                     <form class="container form-group" action="categoriaAdocao.html">
                         <div class="row justify-content-center align-items-center">
                             <div class="col-md-4">
-                                <div class="form-group">
-                                    <select class="form-control input-decoration" id="tipoPet">
-                                    <option selected>Escolha o tipo do pet...</option>
-                                      <option>Cachorro</option>
-                                      <option>Gato</option>
-                                      <option>Aves</option>
-                                      <option>Peixes</option>
-                                    </select>
-                                </div>
+                                <select class="form-control input-decoration" id="categoria">
+                                    <% for(cat of categorias) { %>
+                                    <option name=<%= cat.id %> id=<%= cat.id %>><%= cat.categoria %></option>
+                                    <% } %>
+                                </select>
                             </div>
                             <div class="col-md-2">
                                 <button class="btn btn-site btn-pesquisar">Pesquisar</button>
@@ -36,7 +32,8 @@
         <div class="col-md-3 p-1">
             <a href="/pet/detalheAdocao?id=<%=pet.id%> ">
                 <div class="card" style="width: auto;">
-                    <img src="<%= pet.imagem[0].imagem %> " class="card-img-top" height="142px" alt="Nome do produto" />
+                    <img src="<%= pet.imagem[0].imagem %> " class="card-img-top" height="200px" width="200px"
+                        alt="Nome do produto" />
                     <div class="card-body">
                         <h5 class="card-title"><%=pet.nome%></h5>
                         <p class="card-text"><%=pet.raca%></p>

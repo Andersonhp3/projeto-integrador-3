@@ -7,7 +7,6 @@ const contatoController = {
         res.render("contato", {
             title: 'Contato',
             css: 'contato',
-            nav: 'navContato'
         })
     }
 }
