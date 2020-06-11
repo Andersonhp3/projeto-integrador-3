@@ -216,6 +216,11 @@
             </a>
         </div>
     </section>
+
+    <% if(typeof(usuario) == 'undefined') { %>
+        <%- include('./partials/cadastrar') %>
+    <% } %>
+
     <section class="container">
         <h2 class="text-blue">Para adoção</h2>
         <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel">

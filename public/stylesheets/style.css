@@ -70,6 +70,25 @@ section.first {
   border-radius: 2rem;
 }
 
+
+section#newsletter .container {
+  border-radius: 30rem;
+  background-color: #f2a0a0;
+}
+
+section#register .container {
+  border-radius: 30rem;
+  background-color: #03658C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section#register .container .row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Inicio Header */
 
 .navbar-brand {
