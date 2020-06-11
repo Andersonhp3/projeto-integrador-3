@@ -46,15 +46,13 @@ const lojaController = {
     },
     showCategoria: async (req, res) => {
 
-        let id = req.query.id
-
-        let categoria = await Categoria.findByPk(id, {include: ['produto']})
+        let categorias = await Categoria.findAll({include: ['produto']})
 
         res.render('categoriaLoja', {
             title: 'Busca Categoria',
             css: 'categoria',
             nav: '',
-            categoria
+            categorias
         })
     },
     novoProduto: async (req, res) => {
