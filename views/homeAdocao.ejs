@@ -6,15 +6,15 @@
                 <div id="pesquisaBox" class="py-1 pt-3 mb-md-5 form-group">
                     <h1 class="text-blue">Pesquisar Pet</h1>
                     <form class="container form-group" action="categoriaAdocao.html">
-                        <div class="row justify-content-center align-items-center">
-                            <div class="col-md-4">
+                        <div class="row d-flex justify-content-center align-items-center">
+                            <div class="col-md-4 mt-1">
                                 <select class="form-control input-decoration" id="categoria">
                                     <% for(cat of categorias) { %>
                                     <option name=<%= cat.id %> id=<%= cat.id %>><%= cat.categoria %></option>
                                     <% } %>
                                 </select>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-2 mt-1">
                                 <button class="btn btn-site btn-pesquisar">Pesquisar</button>
                             </div>
                         </div>
