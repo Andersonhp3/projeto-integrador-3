@@ -254,7 +254,6 @@ const authController = {
     res.render("perfilVendas", {
       title: "Minha Vendas",
       css: "perfilVendas",
-      nav: "",
       error: false,
       usuario,
       produtos,
