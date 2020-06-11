@@ -16,6 +16,10 @@
     margin-bottom: 50px;
 }
 
+#imagemCard {
+    height: 250px;
+}
+
 h1 {
     text-align: center;
     font-size: 30px;

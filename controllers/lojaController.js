@@ -21,10 +21,13 @@ const lojaController = {
             })[0];
 
         }
+        let categorias = await Categoria.findAll({include: ['produto']})
+
         res.render("homeLoja", {
             title: 'Loja',
             css: 'homeLoja',
             itens,
+            categorias,
             filtro
         })
     },
@@ -39,6 +42,19 @@ const lojaController = {
             css: 'produto',
             nav: '',
             produto
+        })
+    },
+    showCategoria: async (req, res) => {
+
+        let id = req.query.id
+
+        let categoria = await Categoria.findByPk(id, {include: ['produto']})
+
+        res.render('categoriaLoja', {
+            title: 'Busca Categoria',
+            css: 'categoria',
+            nav: '',
+            categoria
         })
     },
     novoProduto: async (req, res) => {

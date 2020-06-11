@@ -32,8 +32,7 @@
         <div class="col-md-3 p-1">
             <a href="/pet/detalheAdocao?id=<%=pet.id%> ">
                 <div class="card" style="width: auto;">
-                    <img src="<%= pet.imagem[0].imagem %> " class="card-img-top" height="200px" width="200px"
-                        alt="Nome do produto" />
+                    <img src="<%= pet.imagem[0].imagem %> " id="imagemCard" class="card-img-top" height="142px" alt="Nome do produto" />
                     <div class="card-body">
                         <h5 class="card-title"><%=pet.nome%></h5>
                         <p class="card-text"><%=pet.raca%></p>
