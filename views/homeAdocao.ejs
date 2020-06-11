@@ -29,10 +29,10 @@
     <h2 class="text-blue">Pets disponíveis para adoção</h2>
     <div class="row">
         <% for (pet of pets) { %>
-        <div class="col-md-3 p-1">
+        <div class="col-sm-6 col-md-3 p-1">
             <a href="/pet/detalheAdocao?id=<%=pet.id%> ">
-                <div class="card" style="width: auto;">
-                    <img src="<%= pet.imagem[0].imagem %> " id="imagemCard" class="card-img-top" height="142px" alt="Nome do produto" />
+                <div class="card" >
+                    <img src="<%= pet.imagem[0].imagem %> " class="card-img-top" alt="Nome do pet" />
                     <div class="card-body">
                         <h5 class="card-title"><%=pet.nome%></h5>
                         <p class="card-text"><%=pet.raca%></p>
