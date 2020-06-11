@@ -9,7 +9,6 @@ const homeController = {
             'home', {
                 title: 'Home',
                 css: 'index',
-                nav: 'navHome',
                 usuario
             }
         );
