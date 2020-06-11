@@ -29,11 +29,17 @@ const lojaController = {
             filtro
         })
     },
-    showProduto: (req, res) => {
+    showProduto: async (req, res) => {
+
+        let id = req.query.id
+
+        let produto = await Produto.findByPk(id, {include: ['usuario', 'imagem']})
+
         res.render('produto', {
             title: 'Detalhes do Produto',
             css: 'produto',
-            nav: ''
+            nav: '',
+            produto
         })
     },
     novoProduto: async (req, res) => {

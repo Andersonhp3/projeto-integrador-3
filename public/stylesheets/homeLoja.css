@@ -15,8 +15,13 @@ section a.nav-link:hover {
 .carousel{
     display: flex;
 }
+
+#imagemProduto {
+    height: 150px;
+}
+
 .tamanho{
-    height:250px;
+    /* height:250px; */
 }
 
 .carousel-control-prev {
