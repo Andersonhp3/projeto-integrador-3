@@ -70,7 +70,7 @@ const adocaoController = {
         } else {
             let filetype = imagemb64.split(';base64,')[0].split('/')[1];
             let imgb64 = imagemb64.split(';base64,').pop();
-            var imagem = await decode_base64(imgb64, ('produto.' + filetype));
+            var imagem = await decode_base64(imgb64, ('pet.' + filetype));
         }
 
         categoria = await CategoriaPet.findOne({
