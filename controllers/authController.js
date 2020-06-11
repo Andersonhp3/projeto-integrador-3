@@ -27,11 +27,11 @@ const authController = {
     });
 
     if (!user) {
-      res.redirect("/login");
+      res.redirect("/login?error=1");
     }
 
     if (!bcrypt.compareSync(senha, user.senha)) {
-      res.redirect("/login");
+      res.redirect("/login?error=1");
     }
 
     req.session.usuario = user;
@@ -102,11 +102,16 @@ const authController = {
   },
 
   showLogin: (req, res) => {
+
+    let erro = req.query.error
+
     res.render("login", {
       title: "Tela de Login",
       css: "login",
       nav: "",
       error: false,
+      erro,
+      mensagem: "Email incorreto ou senha incorreta. Tente Novamente."
     });
   },
 
