@@ -81,13 +81,16 @@ section#register .container {
   background-color: #03658C;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
+
 section#register .container .row{
-  display: flex;
-  justify-content: center;
+  display: inline-flex;
+  justify-content: space-between;
   align-items: center;
 }
+
+
+
 
 /* Inicio Header */
 
