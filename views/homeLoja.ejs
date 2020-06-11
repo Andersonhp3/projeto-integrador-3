@@ -35,7 +35,7 @@
                         <div class="row justify-content-center">
                             <% for (let i = 1; i <=6; i++) {%>
                                 <div class="col-2 px-1">
-                                    <a href="produto.html" class="text-decoration-none text-blue">
+                                    <a href="/produto/detalheProduto?id=<%=itens[i-1].id%>" class="text-decoration-none text-blue">
                                         <div class="card tamanho">
                                             <img src="<%=filtro(i).imagem%>" id="imagemProduto" class="card-img-top" alt="Nome do produto">
                                             <div class="card-body">
