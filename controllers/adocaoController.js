@@ -9,9 +9,38 @@ const {
 
 
 const adocaoController = {
+    pesquisa: async (req, res) => {
+        let categoria = req.query
+
+        categoria = await CategoriaPet.findOne({
+            where: {
+                categoria: categoria.categoria
+            }
+        })
+
+        categoria_pet_id = categoria.dataValues.id
+
+        let categorias = await CategoriaPet.findAll()
+
+        let pets = await Pet.findAll({
+            where: {
+                categoria_pet_id
+            },
+            include: ['imagem']
+        });
+
+        res.render("homeAdocao", {
+            title: 'Adoção',
+            css: 'homeAdocao',
+            pets,
+            categorias
+        });
+    },
     home: async (req, res) => {
         let categorias = await CategoriaPet.findAll()
-        let pets = await Pet.findAll({include: ['imagem']});
+        let pets = await Pet.findAll({
+            include: ['imagem']
+        });
 
         res.render("homeAdocao", {
             title: 'Adoção',
@@ -24,7 +53,9 @@ const adocaoController = {
 
         let id = req.query.id
 
-        let pet = await Pet.findByPk(id, {include: ['usuario', 'imagem']})
+        let pet = await Pet.findByPk(id, {
+            include: ['usuario', 'imagem']
+        })
 
         console.log(pet)
 
@@ -91,17 +122,17 @@ const adocaoController = {
         }
 
         let pet_id = await Pet.create(novaAdocao)
-        .then()
-        .catch((err) => console.log(err));
+            .then()
+            .catch((err) => console.log(err));
         pet_id = pet_id.dataValues.id
 
         await ImagemPet.create({
-            id: null,
-            imagem,
-            pet_id
-        })
-        .then()
-        .catch((err) => console.log(err));
+                id: null,
+                imagem,
+                pet_id
+            })
+            .then()
+            .catch((err) => console.log(err));
 
         res.redirect('/usuario/doar');
     }

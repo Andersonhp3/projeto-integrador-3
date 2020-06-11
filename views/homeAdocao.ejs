@@ -5,10 +5,10 @@
             <div class="col-md-12">
                 <div id="pesquisaBox" class="py-1 pt-3 mb-md-5 form-group">
                     <h1 class="text-blue">Pesquisar Pet</h1>
-                    <form class="container form-group" action="categoriaAdocao.html">
+                    <form class="container form-group" action="/pet/pesquisa">
                         <div class="row d-flex justify-content-center align-items-center">
                             <div class="col-md-4 mt-1">
-                                <select class="form-control input-decoration" id="categoria">
+                                <select class="form-control input-decoration" id="categoria" name="categoria">
                                     <% for(cat of categorias) { %>
                                     <option name=<%= cat.id %> id=<%= cat.id %>><%= cat.categoria %></option>
                                     <% } %>
@@ -16,6 +16,9 @@
                             </div>
                             <div class="col-md-2 mt-1">
                                 <button class="btn btn-site btn-pesquisar">Pesquisar</button>
+                            </div>
+                            <div class="col-md-2 mt-1">
+                                <a class="btn btn-site" id="btn-limpar" href="/adocao">Limpar</a>
                             </div>
                         </div>
                     </form>
@@ -44,4 +47,5 @@
     </div>
     </div>
 </section>
+<script src="/public/javascripts/homeAdocao.js"></script>
 <%- include('./partials/footer') %>
