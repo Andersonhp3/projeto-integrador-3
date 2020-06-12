@@ -54,23 +54,41 @@
         <hr>
       </div>
       <div class="col-md-9 table">
-        <h1 class="text-blue">Meus Produtos</h1>
+        <h1 class="text-blue">Doações</h1>
         <table class="table table-striped">
           <thead>
             <tr>
-              <th scope="col">Nome do Produto</th>
-              <th scope="col">Valor</th>
-              <th scope="col">Qtd. em Estoque</th>
+              <th scope="col">ID</th>
+              <th scope="col">Foto</th>
+              <th scope="col">Pet</th>
+              <th scope="col">Adotado</th>
+              <th scope="col">Data de Cadastro</th>
+              <th scope="col">Ações</th>
             </tr>
           </thead>
           <tbody>
-            <% for (produto of produtos) {%>
-            <tr>
-              <td><%=produto.nome%></td>
-              <td><%=produto.preco%></td>
-              <td><%=produto.estoque%></td>
-            </tr>
+            <% if(!pets) { %>
+              <tr>
+                <th scope="row">0</th>
+                <td>Pets Cadastrados</td> <!-- // <%= //pedido.produto[0].nome %> -->
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            <% } else { %>
+              <% for(pet of pets) {%>
+                <tr>
+                  <th class="py-2" scope="row"><%= pet.id %></th>
+                  <td class="py-2"><img src="<%= pet.imagem[0].imagem %>" width="70px" alt=""></td>
+                  <td class="py-2"><%= pet.nome %></td>
+                  <td class="py-2"><%= pet.adotado ? 'Sim' : 'Não' %></td>
+                  <td class="py-2"><%= pet.dataCadastro.toLocaleDateString() %></td>
+                  <td class="py-2">Editar / Excluir</td> 
+                </tr>
+              <% } %>
             <% } %>
+
+            
           </tbody>
         </table>
       </div>
