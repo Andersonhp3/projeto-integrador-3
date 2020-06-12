@@ -2,3 +2,6 @@ node_modules
 .env
 *.webp
 teste.js
+*-avatar.png
+*-pet.png
+*-produto.png
