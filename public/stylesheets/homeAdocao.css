@@ -1,49 +1,4 @@
-::placeholder {
-    /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #03658C !important;
-    opacity: 0.8 !important;
-    /* Firefox */
-}
 
-:-ms-input-placeholder {
-    /* Internet Explorer 10-11 */
-    color: #03658C !important;
-}
-
-::-ms-input-placeholder {
-    /* Microsoft Edge */
-    color: #03658C !important;
-}
-
-select {
-    color: #03658C !important;
-    display: inline-block;
-    font: inherit;
-    line-height: 1.5em;
-    padding: 0.5em 3.5em 0.5em 1em;
-
-    /* reset */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-
-    background-image:
-        linear-gradient(45deg, transparent 50%, gray 50%),
-        linear-gradient(135deg, gray 50%, transparent 50%),
-        linear-gradient(to right, #ccc, #ccc);
-    background-position:
-        calc(100% - 20px) calc(1em + 2px),
-        calc(100% - 15px) calc(1em + 2px),
-        calc(100% - 2.5em) 0.5em;
-    background-size:
-        5px 5px,
-        5px 5px,
-        1px 1.5em;
-    background-repeat: no-repeat;
-}
-
-select option {
-    color: #03658C !important;
-}
 
 #pesquisaBox {
     background-color: white;
