@@ -77,7 +77,7 @@ const authController = {
     });
 
     if (user) {
-      res.redirect("/login");
+      res.redirect("/login?error=2");
     }
 
     let senhaHash = bcrypt.hashSync(senha, 12);
@@ -95,16 +95,21 @@ const authController = {
       .then()
       .catch((err) => console.log(err));
 
-    res.render("login", {
-      title: "Tela de Login",
-      css: "login",
-      error: false,
-    });
+    // res.render("login", {
+    //   title: "Tela de Login",
+    //   css: "login",
+    //   error: false,
+    //   mensagem: "Cadastro efetuado com Sucesso!"
+    // });
+
+    res.redirect('/login?cadastro=success')
   },
 
   showLogin: (req, res) => {
 
     let erro = req.query.error
+
+    let cadastroEfetuado = req.query.cadastro
 
     res.render("login", {
       title: "Tela de Login",
@@ -112,7 +117,10 @@ const authController = {
       nav: "",
       error: false,
       erro,
-      mensagem: "Email incorreto ou senha incorreta. Tente Novamente."
+      cadastroEfetuado,
+      mensagemSucesso: "Usuário cadastrado com sucesso!",
+      mensagemErro1: "Email incorreto ou senha incorreta. Tente Novamente.",
+      mensagemErro2: "Usuário já cadastrado, por favor efetue o Login"
     });
   },
 
