@@ -10,7 +10,8 @@ const {
   Pedido,
   Produto,
   Categoria,
-  CategoriaPet
+  CategoriaPet,
+  Pet
 } = require("../models");
 
 const authController = {
@@ -314,6 +315,27 @@ const authController = {
       error: false,
       usuario,
       categorias
+    });
+  },
+
+  showDoacoes: async (req, res) => {
+    let usuario = req.session.usuario;
+    let usuario_id = usuario.id
+
+    let pets = await Pet.findAll({
+      include: ['usuario', 'imagem'],
+      where: {
+        usuario_id
+      }
+    })
+    console.log(pets[0]);
+    
+    res.render("perfilDoacoes", {
+      title: "Doações",
+      css: "perfilDoacoes",
+      error: false,
+      usuario,
+      pets
     });
   },
 

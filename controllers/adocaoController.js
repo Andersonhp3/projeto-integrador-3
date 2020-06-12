@@ -63,8 +63,6 @@ const adocaoController = {
             include: ['usuario', 'imagem']
         })
 
-        console.log(pet)
-
         res.render('detalheAdocao', {
             title: 'Detalhes do pet',
             css: 'detalheAdocao',
@@ -83,6 +81,7 @@ const adocaoController = {
             raca,
             idade,
             categoria,
+            genero,
             contato,
             imagemb64
         } = req.body;
@@ -123,6 +122,8 @@ const adocaoController = {
             descricao,
             contato,
             raca,
+            genero,
+            dataCadastro: new Date().toString(),
             adotado: false,
             categoria_pet_id,
             usuario_id
