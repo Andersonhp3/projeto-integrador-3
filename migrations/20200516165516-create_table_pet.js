@@ -31,6 +31,9 @@ module.exports = {
       genero: {
         type: Sequelize.STRING(45),
       },
+      dataCadastro: {
+        type: Sequelize.DATE,
+      },
       adotado: {
         type: Sequelize.BOOLEAN,
       },

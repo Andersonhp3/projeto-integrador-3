@@ -29,6 +29,9 @@ let Pet = (sequelize, DataTypes) => {
       genero: {
         type: DataTypes.STRING(45),
       },
+      dataCadastro: {
+        type: DataTypes.DATE,
+      },
       adotado: {
         type: DataTypes.BOOLEAN,
       },

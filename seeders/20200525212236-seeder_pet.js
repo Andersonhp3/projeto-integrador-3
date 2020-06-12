@@ -11,6 +11,7 @@ module.exports = {
         contato: '9999-9999',
         raca: 'Beagle',
         genero: 'Macho',
+        dataCadastro: '2020-06-11',
         adotado: false,
         categoria_pet_id: 1,
         usuario_id: 1
@@ -23,6 +24,7 @@ module.exports = {
         contato: '1111-1111',
         raca: 'Chow Chow',
         genero: 'Macho',
+        dataCadastro: '2020-06-11',
         adotado: false,
         categoria_pet_id: 1,
         usuario_id: 1
@@ -35,6 +37,7 @@ module.exports = {
         contato: '3333-3333',
         raca: 'Dálmata',
         genero: 'Macho',
+        dataCadastro: '2020-06-11',
         adotado: false,
         categoria_pet_id: 1,
         usuario_id: 2
@@ -47,6 +50,7 @@ module.exports = {
         contato: '2233-3123',
         raca: 'Persa',
         genero: 'Macho',
+        dataCadastro: '2020-06-11',
         adotado: false,
         categoria_pet_id: 2,
         usuario_id: 3
@@ -59,6 +63,7 @@ module.exports = {
         contato: '2233-3123',
         raca: 'Siamês',
         genero: 'Macho',
+        dataCadastro: '2020-06-11',
         adotado: false,
         categoria_pet_id: 2,
         usuario_id: 7
@@ -71,6 +76,7 @@ module.exports = {
         contato: '2233-3123',
         raca: 'SRD',
         genero: 'Macho',
+        dataCadastro: '2020-06-11',
         adotado: false,
         categoria_pet_id: 3,
         usuario_id: 7
@@ -83,6 +89,7 @@ module.exports = {
         contato: '1111-1111',
         raca: 'SRD',
         genero: 'Macho',
+        dataCadastro: '2020-06-11',
         adotado: true,
         categoria_pet_id: 3,
         usuario_id: 2
@@ -95,6 +102,7 @@ module.exports = {
         contato: '1111-1111',
         raca: 'SRD',
         genero: 'Macho',
+        dataCadastro: '2020-06-11',
         adotado: true,
         categoria_pet_id: 4,
         usuario_id: 1
@@ -107,6 +115,7 @@ module.exports = {
         contato: '1111-1111',
         raca: 'SRD',
         genero: 'Macho',
+        dataCadastro: '2020-06-11',
         adotado: true,
         categoria_pet_id: 7,
         usuario_id: 6
@@ -119,6 +128,7 @@ module.exports = {
         contato: '6666-112321',
         raca: 'SRD',
         genero: 'Macho',
+        dataCadastro: '2020-06-11',
         adotado: true,
         categoria_pet_id: 3,
         usuario_id: 10
@@ -131,6 +141,7 @@ module.exports = {
         contato: '6666-112321',
         raca: 'Carpa',
         genero: 'Macho',
+        dataCadastro: '2020-06-11',
         adotado: true,
         categoria_pet_id: 5,
         usuario_id: 3
@@ -143,6 +154,7 @@ module.exports = {
         contato: '6666-112321',
         raca: 'Árabe',
         genero: 'Macho',
+        dataCadastro: '2020-06-11',
         adotado: true,
         categoria_pet_id: 6,
         usuario_id: 5
@@ -155,6 +167,7 @@ module.exports = {
         contato: '6666-112321',
         raca: 'Boxer',
         genero: 'Macho',
+        dataCadastro: '2020-06-11',
         adotado: true,
         categoria_pet_id: 1,
         usuario_id: 5
@@ -167,6 +180,7 @@ module.exports = {
         contato: '6666-112321',
         raca: 'Siberiano',
         genero: 'Macho',
+        dataCadastro: '2020-06-11',
         adotado: true,
         categoria_pet_id: 2,
         usuario_id: 2
