@@ -34,24 +34,237 @@
 <section id="featured" class="mb-3">
     <div class="container">
         <div class="h3 text-blue">Destaques</div>
-        <div class="row justify-content-center">
-            <% for (let i = 1; i <=6; i++) {%>
-            <div class="col-2 px-1">
-                <a href="/produto/detalheProduto?id=<%=itens[(itens.length -1) - i].id%>" class="text-decoration-none text-blue">
-                    <div class="card tamanho">
-                        <img id="imagemProduto" src="<%=itens[1].get().imagem[0].dataValues.imagem%>" id="imagemProduto" class="card-img-top" alt="Nome do produto">
-                        <div class="card-body">
-                            <h5 class="card-title text-truncate" id="nomeProduto"><%=itens[(itens.length -1) - i].nome%></h5>
-                            <p class="card-text" id="precoProduto">R$ <%=itens[(itens.length -1) - i].preco%></p>
+        <div id="carouselStoreDeals" class="carousel slide mb-3" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-2 px-1">
+                            <a href="produto.html" class="text-decoration-none text-blue">
+                                <div class="card">
+                                    <img id="imagemProduto" id="imagemProduto" src="images/homeLoja/homeLoja (1).png" class="card-img-top" alt="Nome do produto">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Nome do produto</h5>
+                                        <p class="card-text">R$ 00,00</p>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
+                        <div class="col-2 px-1">
+                            <a href="produto.html" class="text-decoration-none text-blue">
+                                <div class="card">
+                                    <img id="imagemProduto" id="imagemProduto" src="images/homeLoja/homeLoja (2).png" class="card-img-top" alt="Nome do produto">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Nome do produto</h5>
+                                        <p class="card-text">R$ 00,00</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-2 px-1">
+                            <a href="produto.html" class="text-decoration-none text-blue">
+                                <div class="card">
+                                    <img id="imagemProduto" id="imagemProduto" id="imagemProduto" src="images/homeLoja/homeLoja (3).png" class="card-img-top" alt="Nome do produto">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Nome do produto</h5>
+                                        <p class="card-text">R$ 00,00</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-2 px-1">
+                            <a href="produto.html" class="text-decoration-none text-blue">
+                                <div class="card">
+                                    <img id="imagemProduto" id="imagemProduto" src="images/homeLoja/homeLoja (4).png" class="card-img-top" alt="Nome do produto">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Nome do produto</h5>
+                                        <p class="card-text">R$ 00,00</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-2 px-1">
+                            <a href="produto.html" class="text-decoration-none text-blue">
+                                <div class="card">
+                                    <img id="imagemProduto" id="imagemProduto" src="images/homeLoja/homeLoja (5).png" class="card-img-top" alt="Nome do produto">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Nome do produto</h5>
+                                        <p class="card-text">R$ 00,00</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-2 px-1">
+                            <a href="produto.html" class="text-decoration-none text-blue">
+                                <div class="card">
+                                    <img id="imagemProduto" id="imagemProduto" src="images/homeLoja/homeLoja (6).png" class="card-img-top" alt="Nome do produto">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Nome do produto</h5>
+                                        <p class="card-text">R$ 00,00</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        
                     </div>
-                </a>
+
+                </div>
+                <div class="carousel-item active">
+                    <div class="row justify-content-center">
+                        <div class="col-2 px-1">
+                            <a href="produto.html" class="text-decoration-none text-blue">
+                                <div class="card">
+                                    <img id="imagemProduto" id="imagemProduto" src="images/homeLoja/homeLoja (7).png" class="card-img-top" alt="Nome do produto">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Nome do produto</h5>
+                                        <p class="card-text">R$ 00,00</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-2 px-1">
+                            <a href="produto.html" class="text-decoration-none text-blue">
+                                <div class="card">
+                                    <img id="imagemProduto" id="imagemProduto" src="images/homeLoja/homeLoja (8).png" class="card-img-top" alt="Nome do produto">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Nome do produto</h5>
+                                        <p class="card-text">R$ 00,00</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-2 px-1">
+                            <a href="produto.html" class="text-decoration-none text-blue">
+                                <div class="card">
+                                    <img id="imagemProduto" id="imagemProduto" src="images/homeLoja/homeLoja (9).png" class="card-img-top" alt="Nome do produto">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Nome do produto</h5>
+                                        <p class="card-text">R$ 00,00</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-2 px-1">
+                            <a href="produto.html" class="text-decoration-none text-blue">
+                                <div class="card">
+                                    <img id="imagemProduto" id="imagemProduto" src="images/homeLoja/homeLoja (10).png" class="card-img-top" alt="Nome do produto">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Nome do produto</h5>
+                                        <p class="card-text">R$ 00,00</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-2 px-1">
+                            <a href="produto.html" class="text-decoration-none text-blue">
+                                <div class="card">
+                                    <img id="imagemProduto" id="imagemProduto" src="images/homeLoja/homeLoja (11).png" class="card-img-top" alt="Nome do produto">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Nome do produto</h5>
+                                        <p class="card-text">R$ 00,00</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-2 px-1">
+                            <a href="produto.html" class="text-decoration-none text-blue">
+                                <div class="card">
+                                    <img id="imagemProduto" id="imagemProduto" src="images/homeLoja/homeLoja (12).png" class="card-img-top" alt="Nome do produto">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Nome do produto</h5>
+                                        <p class="card-text">R$ 00,00</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        
+                    </div>
+
+                </div>
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-2 px-1">
+                            <a href="produto.html" class="text-decoration-none text-blue">
+                                <div class="card">
+                                    <img id="imagemProduto" id="imagemProduto" src="images/homeLoja/homeLoja (13).png" class="card-img-top" alt="Nome do produto">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Nome do produto</h5>
+                                        <p class="card-text">R$ 00,00</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-2 px-1">
+                            <a href="produto.html" class="text-decoration-none text-blue">
+                                <div class="card">
+                                    <img id="imagemProduto" id="imagemProduto" src="images/homeLoja/homeLoja (14).png" class="card-img-top" alt="Nome do produto">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Nome do produto</h5>
+                                        <p class="card-text">R$ 00,00</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-2 px-1">
+                            <a href="produto.html" class="text-decoration-none text-blue">
+                                <div class="card">
+                                    <img id="imagemProduto" src="images/homeLoja/homeLoja (15).png" class="card-img-top" alt="Nome do produto">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Nome do produto</h5>
+                                        <p class="card-text">R$ 00,00</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-2 px-1">
+                            <a href="produto.html" class="text-decoration-none text-blue">
+                                <div class="card">
+                                    <img id="imagemProduto" src="images/homeLoja/homeLoja (16).png" class="card-img-top" alt="Nome do produto">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Nome do produto</h5>
+                                        <p class="card-text">R$ 00,00</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-2 px-1">
+                            <a href="produto.html" class="text-decoration-none text-blue">
+                                <div class="card">
+                                    <img id="imagemProduto" src="images/homeLoja/homeLoja (17).png" class="card-img-top" alt="Nome do produto">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Nome do produto</h5>
+                                        <p class="card-text">R$ 00,00</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-2 px-1">
+                            <a href="produto.html" class="text-decoration-none text-blue">
+                                <div class="card">
+                                    <img id="imagemProduto" src="images/homeLoja/homeLoja (18).png" class="card-img-top" alt="Nome do produto">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Nome do produto</h5>
+                                        <p class="card-text">R$ 00,00</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        
+                    </div>
+
+                </div>
             </div>
-            <%}%>
+            <a class="carousel-control-prev" href="#carouselStoreDeals" role="button" data-slide="prev">
+                <i class="fas fa-chevron-left text-blue arrow"></i>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselStoreDeals" role="button" data-slide="next">
+                <i class="fas fa-chevron-right text-blue arrow"></i>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
                     
-        </div>
-    </section><!-- featured -->
+    </div>
+</section><!-- featured -->
 
     <%- include('./partials/newsletter') %>
 
@@ -291,236 +504,25 @@
 
     <section id="newDeals">
         <div class="container">
-            <div class="h3 text-blue">Novos na loja</div>
-            <div id="carouselStoreNewDeals" class="carousel slide mb-3" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="col-2 px-1">
-                                <a href="produto.html" class="text-decoration-none text-blue">
-                                    <div class="card">
-                                        <img id="imagemProduto" src="images/homeLoja/homeLoja (1).png" class="card-img-top" alt="Nome do produto">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Nome do produto</h5>
-                                            <p class="card-text">R$ 00,00</p>
-                                        </div>
-                                    </div>
-                                </a>
+            <div class="container">
+                <div class="h3 text-blue">Novos na loja</div>
+                <div class="row justify-content-center">
+                    <% for (let i = 0; i <=5; i++) {%>
+                    <div class="col-2 px-1">
+                        <a href="/produto/detalheProduto?id=<%=itens[(itens.length -1) - i].id%>" class="text-decoration-none text-blue">
+                            <div class="card tamanho">
+                                <img id="imagemProduto" src="<%=itens[(itens.length -1) - i].get().imagem[0].dataValues.imagem%>" id="imagemProduto" class="card-img-top" alt="Nome do produto">
+                                <div class="card-body">
+                                    <h5 class="card-title text-truncate" id="nomeProduto"><%=itens[(itens.length -1) - i].nome%></h5>
+                                    <p class="card-text" id="precoProduto">R$ <%=itens[(itens.length -1) - i].preco%></p>
+                                </div>
                             </div>
-                            <div class="col-2 px-1">
-                                <a href="produto.html" class="text-decoration-none text-blue">
-                                    <div class="card">
-                                        <img id="imagemProduto" src="images/homeLoja/homeLoja (2).png" class="card-img-top" alt="Nome do produto">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Nome do produto</h5>
-                                            <p class="card-text">R$ 00,00</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-2 px-1">
-                                <a href="produto.html" class="text-decoration-none text-blue">
-                                    <div class="card">
-                                        <img id="imagemProduto" src="images/homeLoja/homeLoja (3).png" class="card-img-top" alt="Nome do produto">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Nome do produto</h5>
-                                            <p class="card-text">R$ 00,00</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-2 px-1">
-                                <a href="produto.html" class="text-decoration-none text-blue">
-                                    <div class="card">
-                                        <img id="imagemProduto" src="images/homeLoja/homeLoja (4).png" class="card-img-top" alt="Nome do produto">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Nome do produto</h5>
-                                            <p class="card-text">R$ 00,00</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-2 px-1">
-                                <a href="produto.html" class="text-decoration-none text-blue">
-                                    <div class="card">
-                                        <img id="imagemProduto" src="images/homeLoja/homeLoja (5).png" class="card-img-top" alt="Nome do produto">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Nome do produto</h5>
-                                            <p class="card-text">R$ 00,00</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-2 px-1">
-                                <a href="produto.html" class="text-decoration-none text-blue">
-                                    <div class="card">
-                                        <img id="imagemProduto" src="images/homeLoja/homeLoja (6).png" class="card-img-top" alt="Nome do produto">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Nome do produto</h5>
-                                            <p class="card-text">R$ 00,00</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            
-                        </div>
-    
+                        </a>
                     </div>
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="col-2 px-1">
-                                <a href="produto.html" class="text-decoration-none text-blue">
-                                    <div class="card">
-                                        <img id="imagemProduto" src="images/homeLoja/homeLoja (7).png" class="card-img-top" alt="Nome do produto">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Nome do produto</h5>
-                                            <p class="card-text">R$ 00,00</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-2 px-1">
-                                <a href="produto.html" class="text-decoration-none text-blue">
-                                    <div class="card">
-                                        <img id="imagemProduto" src="images/homeLoja/homeLoja (8).png" class="card-img-top" alt="Nome do produto">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Nome do produto</h5>
-                                            <p class="card-text">R$ 00,00</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-2 px-1">
-                                <a href="produto.html" class="text-decoration-none text-blue">
-                                    <div class="card">
-                                        <img id="imagemProduto" src="images/homeLoja/homeLoja (9).png" class="card-img-top" alt="Nome do produto">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Nome do produto</h5>
-                                            <p class="card-text">R$ 00,00</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-2 px-1">
-                                <a href="produto.html" class="text-decoration-none text-blue">
-                                    <div class="card">
-                                        <img id="imagemProduto" src="images/homeLoja/homeLoja (10).png" class="card-img-top" alt="Nome do produto">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Nome do produto</h5>
-                                            <p class="card-text">R$ 00,00</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-2 px-1">
-                                <a href="produto.html" class="text-decoration-none text-blue">
-                                    <div class="card">
-                                        <img id="imagemProduto" src="images/homeLoja/homeLoja (11).png" class="card-img-top" alt="Nome do produto">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Nome do produto</h5>
-                                            <p class="card-text">R$ 00,00</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-2 px-1">
-                                <a href="produto.html" class="text-decoration-none text-blue">
-                                    <div class="card">
-                                        <img id="imagemProduto" src="images/homeLoja/homeLoja (12).png" class="card-img-top" alt="Nome do produto">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Nome do produto</h5>
-                                            <p class="card-text">R$ 00,00</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            
-                        </div>
-    
-                    </div>
-                    <div class="carousel-item active">
-                        <div class="row justify-content-center">
-                            <div class="col-2 px-1">
-                                <a href="produto.html" class="text-decoration-none text-blue">
-                                    <div class="card">
-                                        <img id="imagemProduto" src="images/homeLoja/homeLoja (13).png" class="card-img-top" alt="Nome do produto">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Nome do produto</h5>
-                                            <p class="card-text">R$ 00,00</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-2 px-1">
-                                <a href="produto.html" class="text-decoration-none text-blue">
-                                    <div class="card">
-                                        <img id="imagemProduto" src="images/homeLoja/homeLoja (14).png" class="card-img-top" alt="Nome do produto">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Nome do produto</h5>
-                                            <p class="card-text">R$ 00,00</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-2 px-1">
-                                <a href="produto.html" class="text-decoration-none text-blue">
-                                    <div class="card">
-                                        <img id="imagemProduto" src="images/homeLoja/homeLoja (15).png" class="card-img-top" alt="Nome do produto">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Nome do produto</h5>
-                                            <p class="card-text">R$ 00,00</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-2 px-1">
-                                <a href="produto.html" class="text-decoration-none text-blue">
-                                    <div class="card">
-                                        <img id="imagemProduto" src="images/homeLoja/homeLoja (16).png" class="card-img-top" alt="Nome do produto">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Nome do produto</h5>
-                                            <p class="card-text">R$ 00,00</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-2 px-1">
-                                <a href="produto.html" class="text-decoration-none text-blue">
-                                    <div class="card">
-                                        <img id="imagemProduto" src="images/homeLoja/homeLoja (17).png" class="card-img-top" alt="Nome do produto">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Nome do produto</h5>
-                                            <p class="card-text">R$ 00,00</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-2 px-1">
-                                <a href="produto.html" class="text-decoration-none text-blue">
-                                    <div class="card">
-                                        <img id="imagemProduto" src="images/homeLoja/homeLoja (18).png" class="card-img-top" alt="Nome do produto">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Nome do produto</h5>
-                                            <p class="card-text">R$ 00,00</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            
-                        </div>
-    
-                    </div>
+                    <%}%>
                 </div>
-                <a class="carousel-control-prev" href="#carouselStoreNewDeals" role="button" data-slide="prev">
-                    <i class="fas fa-chevron-left text-blue arrow"></i>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselStoreNewDeals" role="button" data-slide="next">
-                    <i class="fas fa-chevron-right text-blue arrow"></i>
-                    <span class="sr-only">Next</span>
-                </a>
+                            
             </div>
-        </div>
     </section><!-- deals -->
     <script src="/javascripts/produtos.js"></script>
     
