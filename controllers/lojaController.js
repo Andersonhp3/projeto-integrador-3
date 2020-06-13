@@ -13,8 +13,8 @@ const {
 
 const lojaController = {
     home: async (req, res) => {
-        const itens = await Produto.findAll({include:[{model:ImagemProduto, as:"imagem",atributes:["imagem"]}]});
-        console.log(itens[1].get().imagem[0].dataValues.imagem)
+        let itens = await Produto.findAll({include:[{model:ImagemProduto, as:"imagem",atributes:["imagem"]}]});
+        
         res.render("homeLoja", {
             title: 'Loja',
             css: 'homeLoja',
