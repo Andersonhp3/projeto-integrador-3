@@ -9,6 +9,7 @@ module.exports = {
       preco: 49.99,
       descricao: 'Cama para cães e gatos nº1 com almofada e cesto',
       estoque: 5,
+      numero_vendas: 4,
       categoria_id: 4,
       usuario_id: 1
     },
@@ -18,6 +19,7 @@ module.exports = {
       preco: 39.99,
       descricao: 'Informações da caixa',
       estoque: 2,
+      numero_vendas: 6,
       categoria_id: 11,
       usuario_id: 5
     },
@@ -27,6 +29,7 @@ module.exports = {
       preco: 9.99,
       descricao: 'Sem Info',
       estoque: 40,
+      numero_vendas: 10,
       categoria_id: 3,
       usuario_id: 2
     },
@@ -36,6 +39,7 @@ module.exports = {
       preco: 9.99,
       descricao: 'Comedouro Pet em Aço Inox Tamanho M 250ml - Basic+.Imagens meramente ',
       estoque: 40,
+      numero_vendas: 2,
       categoria_id: 13,
       usuario_id: 2
     },
@@ -45,6 +49,7 @@ module.exports = {
       preco: 89.99,
       descricao: 'A Casinha decorativa serve como abrigo para seu animalzinho',
       estoque: 30,
+      numero_vendas: 0,
       categoria_id: 6,
       usuario_id: 7
     },
@@ -54,6 +59,7 @@ module.exports = {
       preco: 69.99,
       descricao: 'A Casinha decorativa serve como abrigo para seu animalzinho',
       estoque: 30,
+      numero_vendas: 1,
       categoria_id: 6,
       usuario_id: 8
     },
@@ -63,6 +69,7 @@ module.exports = {
       preco: 29.99,
       descricao: 'Roupa Casacos Poliéster Cão Gato Pet EleganteCasacos Roupa para Cão, Gato',
       estoque: 20,
+      numero_vendas: 4,
       categoria_id: 9,
       usuario_id: 10
     },
@@ -72,6 +79,7 @@ module.exports = {
       preco: 69.99,
       descricao: 'Roupa Casacos Poliéster Cão Gato Pet EleganteCasacos Roupa para Cão, Gato',
       estoque: 20,
+      numero_vendas: 2,
       categoria_id: 9,
       usuario_id: 10
     },
@@ -81,6 +89,7 @@ module.exports = {
       preco: 109.99,
       descricao: 'Roupa Casacos Poliéster Cão Gato Pet EleganteCasacos Roupa para Cão, Gato',
       estoque: 20,
+      numero_vendas: 2,
       categoria_id: 9,
       usuario_id: 10
     },
@@ -90,6 +99,7 @@ module.exports = {
       preco: 19.99,
       descricao: 'Descrição: Tipo de Item: Pet Car Cinto de Segurança Aplicável',
       estoque: 10,
+      numero_vendas: 2,
       categoria_id: 11,
       usuario_id: 10
     },
@@ -99,6 +109,7 @@ module.exports = {
       preco: 109.99,
       descricao: 'Madeira de Bell brinquedo bola de Pequenos Animais Coelho Guin¨¦',
       estoque: 110,
+      numero_vendas: 2,
       categoria_id: 5,
       usuario_id: 10
     },
@@ -108,6 +119,7 @@ module.exports = {
       preco: 209.99,
       descricao: 'Eles fazem parte da família e nos dão sua companhia e seu amor. ',
       estoque: 210,
+      numero_vendas: 39,
       categoria_id: 1,
       usuario_id: 6
     },
@@ -117,6 +129,7 @@ module.exports = {
       preco: 109.99,
       descricao: 'Eles fazem parte da família e nos dão sua companhia e seu amor. ',
       estoque: 110,
+      numero_vendas: 22,
       categoria_id: 1,
       usuario_id: 6
     },
@@ -126,6 +139,7 @@ module.exports = {
       preco: 249.99,
       descricao: '- Aquário 100 X 40 X 50 altura | Vidro de 6mm | Aprox 200 litros',
       estoque: 40,
+      numero_vendas: 22,
       categoria_id: 15,
       usuario_id: 6
     },
@@ -135,6 +149,7 @@ module.exports = {
       preco: 299.99,
       descricao: 'Especificações Do Filtro UV Ocean Tech 36W | Água verde nunca mais!',
       estoque: 40,
+      numero_vendas: 52,
       categoria_id: 15,
       usuario_id: 6
     },
@@ -144,6 +159,7 @@ module.exports = {
       preco: 399.99,
       descricao: 'Permita que seu bichano libere seus instintos com o Arranhador para Gatos com Três Bases Bege/Marrom Cat House.',
       estoque: 20,
+      numero_vendas: 3,
       categoria_id: 5,
       usuario_id: 2
     },
@@ -153,6 +169,7 @@ module.exports = {
       preco: 9.99,
       descricao: 'Sem Info',
       estoque: 10,
+      numero_vendas: 5,
       categoria_id: 1,
       usuario_id: 5
     },
@@ -162,6 +179,7 @@ module.exports = {
       preco: 199.99,
       descricao: 'Sem Info',
       estoque: 10,
+      numero_vendas: 6,
       categoria_id: 1,
       usuario_id: 5
     },
@@ -171,6 +189,7 @@ module.exports = {
       preco: 99.99,
       descricao: 'Sem Info',
       estoque: 10,
+      numero_vendas: 0,
       categoria_id: 11,
       usuario_id: 8
     },
@@ -180,6 +199,7 @@ module.exports = {
       preco: 99.99,
       descricao: 'SAÚDE E BEM-ESTAR - Estimula o apetite;- Excelente Energético;- ',
       estoque: 100,
+      numero_vendas: 1,
       categoria_id: 2,
       usuario_id: 3
     },
@@ -189,6 +209,7 @@ module.exports = {
       preco: 99.99,
       descricao: '- Indicado No Tratamento Das Seguintes Patologias Em Cães, Gatos E Equinos',
       estoque: 100,
+      numero_vendas: 6,
       categoria_id: 2,
       usuario_id: 3
     },
