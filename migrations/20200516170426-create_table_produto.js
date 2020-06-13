@@ -25,6 +25,11 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false
       },
+      numero_vendas: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+        defaultValue: '0'
+      },
       categoria_id: {
         type: Sequelize.INTEGER,
         references: {
