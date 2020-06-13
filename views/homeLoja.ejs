@@ -37,12 +37,12 @@
         <div class="row justify-content-center">
             <% for (let i = 1; i <=6; i++) {%>
             <div class="col-2 px-1">
-                <a href="/produto/detalheProduto?id=<%=itens[i-1].id%>" class="text-decoration-none text-blue">
+                <a href="/produto/detalheProduto?id=<%=itens[(itens.length -1) - i].id%>" class="text-decoration-none text-blue">
                     <div class="card tamanho">
-                        <img id="imagemProduto" src="<%=filtro(i).imagem%>" id="imagemProduto" class="card-img-top" alt="Nome do produto">
+                        <img id="imagemProduto" src="<%=itens[1].get().imagem[0].dataValues.imagem%>" id="imagemProduto" class="card-img-top" alt="Nome do produto">
                         <div class="card-body">
-                            <h5 class="card-title text-truncate" id="nomeProduto"><%=itens[i-1].nome%></h5>
-                            <p class="card-text" id="precoProduto">R$ <%=itens[i-1].preco%></p>
+                            <h5 class="card-title text-truncate" id="nomeProduto"><%=itens[(itens.length -1) - i].nome%></h5>
+                            <p class="card-text" id="precoProduto">R$ <%=itens[(itens.length -1) - i].preco%></p>
                         </div>
                     </div>
                 </a>
