@@ -23,6 +23,11 @@ let Produto = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false
       },
+      numero_vendas: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+        defaultValue: '0'
+      },
       categoria_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
