@@ -13,13 +13,23 @@ const {
 
 const lojaController = {
     home: async (req, res) => {
-        let itens = await Produto.findAll({include:[{model:ImagemProduto, as:"imagem",atributes:["imagem"]}]});
+        const itens = await Produto.findAll({include:[{model:ImagemProduto, as:"imagem",atributes:["imagem"]}]});
         
+        let destaques = await Produto.findAll({include:[{model:ImagemProduto, as:"imagem",atributes:["imagem"]}]});;
+
+        destaques = destaques.sort((a,b) => {
+            if(a.estoque > b.estoque) return -1;
+            if(a.estoque < b.estoque) return 1;
+            return 0;
+        })
+
+
         res.render("homeLoja", {
             title: 'Loja',
             css: 'homeLoja',
             nav: 'navLoja',
-            itens
+            itens,
+            destaques
         })
     },
     showProduto: async (req, res) => {
