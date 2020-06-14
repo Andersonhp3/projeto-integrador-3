@@ -22,13 +22,12 @@
 </section>
 <section class="container mt-5">
     <h2 class="text-blue">Mais vendidos</h2>
-    <div id="carouselStoreDeals" class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="row">
                     <% for( let i = 1; i <= 6; i++) {%>
-                    <div class="col-2">
-                         <a href="/produto/detalheProduto?id=<%=maisVendidos[ i - 1].id%>">
+                    <div class="col-2"> <a href="/produto/detalheProduto?id=<%=maisVendidos[ i - 1].id%>">
                             <div class="card" style="width: auto;">
                                 <img src="<%=maisVendidos[i -1].get().imagem[0].dataValues.imagem%>"
                                     class="card-img-top" alt="Nome do produto">
