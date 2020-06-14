@@ -13,6 +13,7 @@ module.exports = {
         genero: 'Macho',
         dataCadastro: '2020-06-11',
         adotado: false,
+        dataAdotado: null,
         categoria_pet_id: 1,
         usuario_id: 1
       },
@@ -26,6 +27,7 @@ module.exports = {
         genero: 'Macho',
         dataCadastro: '2020-06-11',
         adotado: false,
+        dataAdotado: null,
         categoria_pet_id: 1,
         usuario_id: 1
       },
@@ -39,6 +41,7 @@ module.exports = {
         genero: 'Macho',
         dataCadastro: '2020-06-11',
         adotado: false,
+        dataAdotado: null,
         categoria_pet_id: 1,
         usuario_id: 2
       },
@@ -52,6 +55,7 @@ module.exports = {
         genero: 'Macho',
         dataCadastro: '2020-06-11',
         adotado: false,
+        dataAdotado: null,
         categoria_pet_id: 2,
         usuario_id: 3
       },
@@ -65,6 +69,7 @@ module.exports = {
         genero: 'Macho',
         dataCadastro: '2020-06-11',
         adotado: false,
+        dataAdotado: null,
         categoria_pet_id: 2,
         usuario_id: 7
       },
@@ -78,6 +83,7 @@ module.exports = {
         genero: 'Macho',
         dataCadastro: '2020-06-11',
         adotado: false,
+        dataAdotado: null,
         categoria_pet_id: 3,
         usuario_id: 7
       },
@@ -91,6 +97,7 @@ module.exports = {
         genero: 'Macho',
         dataCadastro: '2020-06-11',
         adotado: true,
+        dataAdotado: '2020-06-12',
         categoria_pet_id: 3,
         usuario_id: 2
       },
@@ -104,6 +111,7 @@ module.exports = {
         genero: 'Macho',
         dataCadastro: '2020-06-11',
         adotado: true,
+        dataAdotado: '2020-06-12',
         categoria_pet_id: 4,
         usuario_id: 1
       },
@@ -117,6 +125,7 @@ module.exports = {
         genero: 'Macho',
         dataCadastro: '2020-06-11',
         adotado: true,
+        dataAdotado: '2020-06-12',
         categoria_pet_id: 7,
         usuario_id: 6
       },
@@ -130,6 +139,7 @@ module.exports = {
         genero: 'Macho',
         dataCadastro: '2020-06-11',
         adotado: true,
+        dataAdotado: '2020-06-12',
         categoria_pet_id: 3,
         usuario_id: 10
       },
@@ -143,6 +153,7 @@ module.exports = {
         genero: 'Macho',
         dataCadastro: '2020-06-11',
         adotado: true,
+        dataAdotado: '2020-06-12',
         categoria_pet_id: 5,
         usuario_id: 3
       },
@@ -156,6 +167,7 @@ module.exports = {
         genero: 'Macho',
         dataCadastro: '2020-06-11',
         adotado: true,
+        dataAdotado: '2020-06-12',
         categoria_pet_id: 6,
         usuario_id: 5
       },
@@ -169,6 +181,7 @@ module.exports = {
         genero: 'Macho',
         dataCadastro: '2020-06-11',
         adotado: true,
+        dataAdotado: '2020-06-12',
         categoria_pet_id: 1,
         usuario_id: 5
       },
@@ -182,6 +195,7 @@ module.exports = {
         genero: 'Macho',
         dataCadastro: '2020-06-11',
         adotado: true,
+        dataAdotado: '2020-06-12',
         categoria_pet_id: 2,
         usuario_id: 2
       },

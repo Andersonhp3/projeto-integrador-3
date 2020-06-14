@@ -34,6 +34,9 @@ module.exports = {
       dataCadastro: {
         type: Sequelize.DATE,
       },
+      dataAdotado: {
+        type: Sequelize.DATE,
+      },
       adotado: {
         type: Sequelize.BOOLEAN,
       },
