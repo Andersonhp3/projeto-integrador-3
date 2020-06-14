@@ -1,5 +1,6 @@
 const path = require('path')
 const fs = require('fs')
+const Sequelize = require('sequelize')
 
 const {
     Usuario,
@@ -12,6 +13,8 @@ const {
     ImagemProduto,
     Pet
 } = require("../models");
+
+const Op = Sequelize.Op
 
 
 
@@ -53,6 +56,21 @@ const homeController =  {
                 pets
             }
         );
+    },
+    pesquisa: async (req, res) => {
+        let pesquisa = req.query.search
+
+        let resultadoPesquisa = await Produto.findAll({where:{nome: {[Op.like]:`%${pesquisa}%`}}})
+
+        // res.render('pesquisa',{
+        //     title:'Resultado da Pesquisa',
+        //     css:'index',
+        //     usuario,
+        //     resultadoPesquisa
+            
+        // })
+
+        res.send(resultadoPesquisa)
     }
 
 }
