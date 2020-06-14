@@ -143,6 +143,50 @@ const adocaoController = {
             .catch((err) => console.log(err));
 
         res.redirect('/usuario/doar');
+    },
+    detalhePet: async (req, res) => {
+        let id = req.query.id;
+        let pet = await Pet.findByPk(id, {
+            include: ['usuario', 'imagem']
+        })
+        res.send(pet)
+    },
+    atualizar: async (req, res) => {
+        let {
+            id,
+            nome,
+            descricao,
+            contato,
+            adotado,
+            dataAdotado
+        } = req.body;
+
+        console.log(req.body);
+
+        if(dataAdotado == ''){
+            dataAdotado = null;
+        }
+        
+        if(adotado == 'on'){
+            adotado = true;
+        } else {
+            adotado = false;
+        };
+
+        let update = await Pet.update({
+            nome,
+            descricao,
+            contato,
+            adotado,
+            dataAdotado
+        }, {
+            where: {
+                id
+            }
+        })
+
+        
+        res.redirect('/usuario/doacoes')
     }
 }
 
