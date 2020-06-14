@@ -27,7 +27,6 @@ const lojaController = {
         res.render("homeLoja", {
             title: 'Loja',
             css: 'homeLoja',
-            nav: 'navLoja',
             itens,
             destaques
         })
@@ -41,7 +40,6 @@ const lojaController = {
         res.render('produto', {
             title: 'Detalhes do Produto',
             css: 'produto',
-            nav: '',
             produto
         })
     },
@@ -52,7 +50,6 @@ const lojaController = {
         res.render('categoriaLoja', {
             title: 'Busca Categoria',
             css: 'categoria',
-            nav: '',
             categorias
         })
     },

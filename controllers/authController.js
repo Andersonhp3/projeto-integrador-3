@@ -114,7 +114,6 @@ const authController = {
     res.render("login", {
       title: "Tela de Login",
       css: "login",
-      nav: "",
       error: false,
       erro,
       cadastroEfetuado,
@@ -128,7 +127,6 @@ const authController = {
     res.render("cadastro", {
       title: "Tela de Cadastro",
       css: "cadastro",
-      nav: undefined,
       error: false,
     });
   },
@@ -160,7 +158,6 @@ const authController = {
     res.render("perfil", {
       title: "Minha Conta",
       css: "perfil",
-      nav: "",
       error: false,
       usuario,
       endereco,
@@ -226,7 +223,6 @@ const authController = {
     res.render("perfilCompras", {
       title: "Minha Compras",
       css: "perfilCompras",
-      nav: "",
       error: false,
       usuario,
       pedidos,
@@ -289,7 +285,6 @@ const authController = {
     res.render("perfilProdutos", {
       title: "Meus Produtos",
       css: "perfilVendas",
-      nav: "",
       error: false,
       usuario,
       produtos
@@ -304,7 +299,6 @@ const authController = {
     res.render("cadastroProduto", {
       title: "Nova Venda",
       css: "cadastroProduto",
-      nav: "",
       error: false,
       usuario,
       categorias
@@ -319,7 +313,6 @@ const authController = {
     res.render("cadastroAdocao", {
       title: "Nova Adoção",
       css: "cadastroAdocao",
-      nav: "",
       error: false,
       usuario,
       categorias
@@ -336,7 +329,6 @@ const authController = {
         usuario_id
       }
     })
-    console.log(pets[0]);
     
     res.render("perfilDoacoes", {
       title: "Doações",
