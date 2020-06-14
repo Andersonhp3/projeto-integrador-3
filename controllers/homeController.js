@@ -9,7 +9,8 @@ const {
     Pedido,
     Produto,
     Categoria,
-    ImagemProduto
+    ImagemProduto,
+    Pet
 } = require("../models");
 
 
@@ -29,6 +30,13 @@ const homeController =  {
             }]
         });
 
+        let pets = await Pet.findAll({
+            where: {
+                adotado: 0
+            },
+            include: ['imagem']
+        });
+
         let maisVendidos = itens.sort((a,b) => {
             if(a.numero_vendas > b.numero_vendas) return -1;
             if(a.numero_vendas < b.numero_vendas) return 1;
@@ -41,7 +49,8 @@ const homeController =  {
                 title: 'Home',
                 css: 'index',
                 usuario,
-                maisVendidos
+                maisVendidos,
+                pets
             }
         );
     }
