@@ -1,6 +1,6 @@
 <%- include('./partials/header', {active: title}) %>
 
-<section class="first" id="perfilVendas">
+<section class="first" id="perfilDoacoes">
   <div class="container divInfo">
     <nav class="navbar navbar-expand-lg navbar-light bg-light d-md-none container opcoes">
       <a class="active-option px-3" href="#">Opções</a>
@@ -63,37 +63,77 @@
               <th scope="col">Pet</th>
               <th scope="col">Adotado</th>
               <th scope="col">Data de Cadastro</th>
-              <th scope="col">Ações</th>
+              <th scope="col">Editar</th>
+              <th scope="col">Excluir</th>
             </tr>
           </thead>
           <tbody>
             <% if(!pets) { %>
-              <tr>
-                <th scope="row">0</th>
-                <td>Pets Cadastrados</td> <!-- // <%= //pedido.produto[0].nome %> -->
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
+            <tr>
+              <th scope="row">0</th>
+              <td>Pets Cadastrados</td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
             <% } else { %>
-              <% for(pet of pets) {%>
-                <tr>
-                  <th class="py-2" scope="row"><%= pet.id %></th>
-                  <td class="py-2"><img src="<%= pet.imagem[0].imagem %>" width="70px" alt=""></td>
-                  <td class="py-2"><%= pet.nome %></td>
-                  <td class="py-2"><%= pet.adotado ? 'Sim' : 'Não' %></td>
-                  <td class="py-2"><%= pet.dataCadastro.toLocaleDateString() %></td>
-                  <td class="py-2">Editar / Excluir</td> 
-                </tr>
-              <% } %>
+            <% for(pet of pets) {%>
+            <tr>
+              <th class="py-2" id="th_<%= pet.id %>" scope="row"><%= pet.id %></th>
+              <td class="py-2"><img src="<%= pet.imagem[0].imagem %>" width="70px" alt=""></td>
+              <td class="py-2"><%= pet.nome %></td>
+              <td class="py-2"><%= pet.adotado ? 'Sim' : 'Não' %></td>
+              <td class="py-2"><%= pet.dataCadastro.toLocaleDateString() %></td>
+              <td class="py-2"><a href="#" class="edit"><i id="edit_<%= pet.id %>" class="fas fa-pencil-alt"></i></a>
+              </td>
+              <td class="py-2"><a href="#" class="delete"><i id="del_<%= pet.id %>" class="fas fa-trash-alt"></i></a>
+              </td>
+            </tr>
             <% } %>
-
-            
+            <% } %>
           </tbody>
         </table>
       </div>
     </div>
   </div>
+
+  <div class="modal fade" id="edit-modal" data-backdrop="static" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-blue" id="staticBackdropLabel">Editar
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="/pet/atualizar" method="post" id="form">
+            <div class="form-group">
+              <input type="hidden" name="id" id="id">
+              <input type="hidden" name="dataAdotado" id="dataAdotado">
+              <input id="nome" class="form-control input-decoration mb-2" type="text" name="nome" placeholder="Nome do Pet">
+              <textarea name="descricao" id="descricao" class="form-control input-decoration mb-2" rows="5"
+                placeholder="Descrição" type="text"></textarea>
+              <input id="contato" class="form-control input-decoration mb-2" type="text" name="contato" placeholder="Contato"
+                columns="4">
+              <div class="custom-control custom-switch mb-2">
+                <input type="checkbox" class="custom-control-input input-decoration" name="adotado" id="adotado">
+                <label class="custom-control-label text-blue" for="adotado">Adotado</label>
+              </div>
+              <button id="btn-atualizar" type="submit" class="btn btn-site">Atualizar</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button id="pronto" type="button" class="btn btn-site" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+<script src="/public/javascripts/perfilDoacoes.js"></script>
 
 <%- include('./partials/footer') %>
