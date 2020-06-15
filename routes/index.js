@@ -32,4 +32,7 @@ router.post('/cadastro', authController.cadastro);
 
 router.get('/sair', authController.sair)
 
+// Pesquisa
+router.get('/pesquisa',homeController.pesquisa);
+
 module.exports = router;
