@@ -33,12 +33,12 @@
                     <img src="/images/logoAzul.svg" height="50px" class="logo-azul" alt="Logo Pet Livre">
                     <a href="/" class="navbar-brand text-decoration-none text-reset text-uppercase py-0">pet livre</a>
                 </div>
-                <form action="" class="form-inline search-group">
+                <form action="/pesquisa" method="GET" class="form-inline search-group">
                     <div class="input-group">
                         <label for="search" class="sr-only">Pesquisar</label>
-                        <input id="search" type="text" class="form-control text-blue" placeholder="Pesquisa...">
+                        <input id="search" type="text" class="form-control text-blue" placeholder="Pesquisa..." name="search">
                         <div class="input-group-append">
-                            <button id="search-button" class="btn fas fa-search text-blue" type="button"></button>
+                            <button id="search-button" class="btn fas fa-search text-blue" type="submit"></button>
                         </div><!-- input-group-append -->
                     </div><!-- input-group -->
                 </form>

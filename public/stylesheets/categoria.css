@@ -27,6 +27,10 @@ section#catAdocao {
     margin-top: 135px;
 }
 
+.card {
+    height: 450px;
+}
+
 input {
     margin-right: 4px;
 }

@@ -58,19 +58,21 @@ const homeController =  {
         );
     },
     pesquisa: async (req, res) => {
+        let usuario = req.query.user
+
         let pesquisa = req.query.search
 
-        let resultadoPesquisa = await Produto.findAll({where:{nome: {[Op.like]:`%${pesquisa}%`}}})
-
-        // res.render('pesquisa',{
-        //     title:'Resultado da Pesquisa',
-        //     css:'index',
-        //     usuario,
-        //     resultadoPesquisa
+        let resultadoPesquisa = await Produto.findAll({where:{nome: {[Op.like]:`%${pesquisa}%`}}, include: ['imagem']})
+        
+        console.log(resultadoPesquisa)
+        res.render('pesquisa',{
+            title:'Resultado da Pesquisa',
+            css:'categoria',
+            usuario,
+            pesquisa,
+            resultadoPesquisa
             
-        // })
-
-        res.send(resultadoPesquisa)
+        })
     }
 
 }

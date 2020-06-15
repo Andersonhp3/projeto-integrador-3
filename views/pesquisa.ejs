@@ -1,0 +1,21 @@
+<%- include('./partials/header', {active: title}) %>
+<section class="container" id="catLoja">
+    <h3>Resultados para "<%=pesquisa%>" </h3>
+    <div class="container">
+        <div class="row">
+            <% for (resultado of resultadoPesquisa) {%>
+            <div class="col-md-4 col-12 justify-content-between mb-4">
+                <div class="card py-1">
+                    <img src="<%=resultado.imagem[0].imagem%>" class="card-img-top" alt="..." />
+                    <div class="card-body">
+                        <h5 class="card-title text-truncate"><%=resultado.nome%> </h5>
+                        <p class="card-text"><%=resultado.preco%> </p>
+                        <a href="produto?id=<%=resultado.id%> " class="btn btn-site">Comprar</a>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</section>
+<%- include('./partials/footer') %>
