@@ -214,6 +214,20 @@ header .nav-link.active {
     justify-content: center;
     align-items: center;
   }
+
+  body {
+    padding-bottom: 70px;
+  }
+
+  footer .desktop{
+    display: none;
+  }
+}
+
+@media (min-width: 767px){
+  footer .mobile{
+    display: none;
+  }
 }
 
 /* Fim Header */
