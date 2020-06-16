@@ -63,7 +63,7 @@ body {
   background-color: #f1f1f1;
   overflow-y:scroll;
   position: initial;
-  padding-bottom: 70px;
+  padding-bottom: 200px;
 }
 
 h3 {
@@ -224,6 +224,30 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
+  color: #f1f1f1;
+}
+
+.rowFooter {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+footer h5 {
+  font-size: 16px;
+}
+
+footer a {
+  font-size: 14px;
+  color: #f1f1f1;
+  list-style: none;
+}
+
+#textoLogo {
+  font-size: 22px;
+}
+
+footer a:hover {
+  color: #f1f1f1;
 }
 
 /* Fim Footer */
