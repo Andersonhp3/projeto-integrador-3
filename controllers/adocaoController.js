@@ -2,6 +2,7 @@ const path = require('path')
 const fs = require('fs')
 
 const {
+    usuario,
     Pet,
     ImagemPet,
     CategoriaPet
@@ -10,6 +11,7 @@ const {
 
 const adocaoController = {
     pesquisa: async (req, res) => {
+        let usuario = req.session.usuario;
         let categoria = req.query
 
         categoria = await CategoriaPet.findOne({
@@ -33,7 +35,8 @@ const adocaoController = {
             title: 'Adoção',
             css: 'homeAdocao',
             pets,
-            categorias
+            categorias,
+            usuario
         });
     },
     home: async (req, res) => {
@@ -56,6 +59,7 @@ const adocaoController = {
         });
     },
     detalheAdocao: async (req, res) => {
+        let usuario = req.session.usuario;
 
         let id = req.query.id
 
@@ -67,7 +71,8 @@ const adocaoController = {
             title: 'Detalhes do pet',
             css: 'detalheAdocao',
             nav: '',
-            pet
+            pet,
+            usuario
         })
     },
     novaAdocao: async (req, res) => {
@@ -145,6 +150,7 @@ const adocaoController = {
         res.redirect('/usuario/doar');
     },
     detalhePet: async (req, res) => {
+        let usuario = req.session.usuario;
         let id = req.query.id;
         let pet = await Pet.findByPk(id, {
             include: ['usuario', 'imagem']
@@ -152,6 +158,7 @@ const adocaoController = {
         res.send(pet)
     },
     atualizar: async (req, res) => {
+        let usuario = req.session.usuario;
         let {
             id,
             nome,

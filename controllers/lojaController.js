@@ -13,6 +13,7 @@ const {
 
 const lojaController = {
     home: async (req, res) => {
+        let usuario = req.session.usuario;
         const itens = await Produto.findAll({include:[{model:ImagemProduto, as:"imagem",atributes:["imagem"]}]});
         
         let destaques = await Produto.findAll({include:[{model:ImagemProduto, as:"imagem",atributes:["imagem"]}]});;
@@ -28,7 +29,8 @@ const lojaController = {
             title: 'Loja',
             css: 'homeLoja',
             itens,
-            destaques
+            destaques,
+            usuario
         })
     },
     showProduto: async (req, res) => {
