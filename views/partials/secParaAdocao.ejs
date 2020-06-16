@@ -1,0 +1,73 @@
+<section id="secParaAdocao" class="container mt-5">
+    <h2 class="text-blue">Para Adoção</h2>
+    <div id="carouselParaAdocao" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row">
+                    <% for( let i = 1; i <= 6; i++) {%>
+                        <div class="col-2 px-1">
+                            <a href="/pet/detalheAdocao?id=<%=pets[ i - 1].id%>">
+                                <div class="card" style="width: auto;">
+                                    <img src="<%=pets[i -1].get().imagem[0].dataValues.imagem%>"
+                                        class="card-img-top" alt="Nome do produto">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-truncate" id="nomePet"><%=pets[i -1].nome%></h5>
+                                        <p class="card-text" id="precoProduto"><%=pets[i -1].raca%></p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    <%}%>
+                </div>
+            </div>
+            <% if(pets.length > 7 && pets.length >= 13) {%>
+                <div class="carousel-item">
+                    <div class="row">
+                        <% for( let i = 7; i <= 12; i++) {%>
+                            <div class="col-2 px-1">
+                                <a href="/pet/detalheAdocao?id=<%=pets[ i - 1].id%>">
+                                    <div class="card" style="width: auto;">
+                                        <img src="<%=pets[i -1].get().imagem[0].dataValues.imagem%>"
+                                            class="card-img-top" alt="Nome do produto">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-truncate" id="nomePet"><%=pets[i -1].nome%></h5>
+                                            <p class="card-text" id="precoProduto"><%=pets[i -1].raca%></p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        <%}%>
+                    </div>
+                </div>
+            <% } %>
+            <% if(pets.length > 14 && pets.length >= 18) {%>
+                <div class="carousel-item">
+                    <div class="row">
+                        <% for( let i = 13; i <= 18; i++) {%>
+                            <div class="col-2 px-1">
+                                <a href="/pet/detalheAdocao?id=<%=pets[ i - 1].id%>">
+                                    <div class="card" style="width: auto;">
+                                        <img src="<%=pets[i -1].get().imagem[0].dataValues.imagem%>"
+                                            class="card-img-top" alt="Nome do produto">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-truncate" id="nomePet"><%=pets[i -1].nome%></h5>
+                                            <p class="card-text" id="precoProduto"><%=pets[i -1].raca%></p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        <%}%>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+            <a class="carousel-control-prev carrossel" href="#carouselParaAdocao" role="button" data-slide="prev">
+                <i class="fas fa-chevron-left text-blue arrow"></i>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next carrossel" href="#carouselParaAdocao" role="button" data-slide="next">
+                <i class="fas fa-chevron-right text-blue arrow"></i>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+</section>

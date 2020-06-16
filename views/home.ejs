@@ -20,504 +20,87 @@
         </div>
     </div>
 </section>
-<section class="container mt-5">
+<section id="secMaisVendidos" class="container mt-5">
     <h2 class="text-blue">Mais vendidos</h2>
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div id="carouselMaisVendidos" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="row">
                     <% for( let i = 1; i <= 6; i++) {%>
-                    <div class="col-2"> <a href="/produto/detalheProduto?id=<%=maisVendidos[ i - 1].id%>">
-                            <div class="card" style="width: auto;">
-                                <img src="<%=maisVendidos[i -1].get().imagem[0].dataValues.imagem%>"
-                                    class="card-img-top" alt="Nome do produto">
-                                <div class="card-body">
-                                    <h5 class="card-title text-truncate" id="nomeProduto"><%=maisVendidos[i -1].nome%>
-                                    </h5>
-                                    <p class="card-text" id="precoProduto">R$ <%=maisVendidos[i -1].preco%></p>
+                        <div class="col-2 px-1"> 
+                            <a href="/produto/detalheProduto?id=<%=maisVendidos[ i - 1].id%>">
+                                <div class="card" style="width: auto;">
+                                    <img src="<%=maisVendidos[i -1].get().imagem[0].dataValues.imagem%>"
+                                        class="card-img-top" alt="Nome do produto">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-truncate" id="nomeProduto"><%=maisVendidos[i -1].nome%></h5>
+                                        <p class="card-text" id="precoProduto">R$ <%=maisVendidos[i -1].preco%></p>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
+                            </a>
+                        </div>
                     <%}%>
-                    </div>
                 </div>
+            </div>
                 <div class="carousel-item">
                     <div class="row">
                         <% for( let i = 7; i <= 12; i++) {%>
-                    <div class="col-2"> <a href="/produto/detalheProduto?id=<%=maisVendidos[ i - 1].id%>">
-                            <div class="card" style="width: auto;">
-                                <img src="<%=maisVendidos[i -1].get().imagem[0].dataValues.imagem%>"
-                                    class="card-img-top" alt="Nome do produto">
-                                <div class="card-body">
-                                    <h5 class="card-title text-truncate" id="nomeProduto"><%=maisVendidos[i -1].nome%>
-                                    </h5>
-                                    <p class="card-text" id="precoProduto">R$ <%=maisVendidos[i -1].preco%></p>
-                                </div>
+                            <div class="col-2 px-1"> 
+                                <a href="/produto/detalheProduto?id=<%=maisVendidos[ i - 1].id%>">
+                                    <div class="card" style="width: auto;">
+                                        <img src="<%=maisVendidos[i -1].get().imagem[0].dataValues.imagem%>"
+                                        class="card-img-top" alt="Nome do produto">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-truncate" id="nomeProduto"><%=maisVendidos[i -1].nome%></h5>
+                                            <p class="card-text" id="precoProduto">R$ <%=maisVendidos[i -1].preco%></p>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
-                        </a>
-                    </div>
-                    <%}%>
+                        <%}%>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div class="row">
                         <% for( let i = 13; i <= 18; i++) {%>
-                    <div class="col-2"> <a href="/produto/detalheProduto?id=<%=maisVendidos[ i - 1].id%>">
-                            <div class="card" style="width: auto;">
-                                <img src="<%=maisVendidos[i -1].get().imagem[0].dataValues.imagem%>"
-                                    class="card-img-top" alt="Nome do produto">
-                                <div class="card-body">
-                                    <h5 class="card-title text-truncate" id="nomeProduto"><%=maisVendidos[i -1].nome%>
-                                    </h5>
-                                    <p class="card-text" id="precoProduto">R$ <%=maisVendidos[i -1].preco%></p>
-                                </div>
+                            <div class="col-2 px-1"> 
+                                <a href="/produto/detalheProduto?id=<%=maisVendidos[ i - 1].id%>">
+                                    <div class="card" style="width: auto;">
+                                        <img src="<%=maisVendidos[i -1].get().imagem[0].dataValues.imagem%>"
+                                        class="card-img-top" alt="Nome do produto">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-truncate" id="nomeProduto"><%=maisVendidos[i -1].nome%></h5>
+                                            <p class="card-text" id="precoProduto">R$ <%=maisVendidos[i -1].preco%></p>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
-                        </a>
-                    </div>
-                    <%}%>
+                        <%}%>
                     </div>
                 </div>
-            </div>
-            <a class="carousel-control-prev carrossel" href="#carouselExampleControls" role="button" data-slide="prev">
+        </div>
+            <a class="carousel-control-prev carrossel" href="#carouselMaisVendidos" role="button" data-slide="prev">
                 <i class="fas fa-chevron-left text-blue arrow"></i>
                 <span class="sr-only">Previous</span>
             </a>
-            <a class="carousel-control-next carrossel" href="#carouselExampleControls" role="button" data-slide="next">
+            <a class="carousel-control-next carrossel" href="#carouselMaisVendidos" role="button" data-slide="next">
                 <i class="fas fa-chevron-right text-blue arrow"></i>
                 <span class="sr-only">Next</span>
             </a>
         </div>
-    </section>
+</section>
 
-    <% if(typeof(usuario) == 'undefined') { %>
-                    <%- include('./partials/cadastrar') %>
-                    <% } %>
+<% if(typeof(usuario) == 'undefined') { %>
+    <%- include('./partials/cadastrar') %>
+<% } %>
 
-                    <section class="container">
-                        <h2 class="text-blue">Para adoção</h2>
-                        <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <div class="row">
-                                        <div class="col-2"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-2"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a> </div>
-                                        <div class="col-2 hidden"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a></div>
-                                        <div class="col-2 hidden"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a></div>
-                                        <div class="col-2 hidden"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a></div>
-                                        <div class="col-2 hidden"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a></div>
-                                    </div>
+<% if(pets.length >= 6) { %>
+    <%- include('./partials/secParaAdocao') %>
+<% } %>
 
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="row">
-                                        <div class="col-2"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-2"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a> </div>
-                                        <div class="col-2 hidden"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a></div>
-                                        <div class="col-2 hidden"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a></div>
-                                        <div class="col-2 hidden"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a></div>
-                                        <div class="col-2 hidden"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a></div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="row">
-                                        <div class="col-2"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-2"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a> </div>
-                                        <div class="col-2 hidden"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a></div>
-                                        <div class="col-2 hidden"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a></div>
-                                        <div class="col-2 hidden"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a></div>
-                                        <div class="col-2 hidden"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a class="carousel-control-prev carrossel" href="#carouselExampleControls1" role="button"
-                                data-slide="prev">
-                                <i class="fas fa-chevron-left text-blue arrow"></i>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next carrossel" href="#carouselExampleControls1" role="button"
-                                data-slide="next">
-                                <i class="fas fa-chevron-right text-blue arrow"></i>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
-                    </section>
-                    <section class="container">
-                        <h2 class="text-blue">Recém adotados</h2>
-                        <div id="carouselExampleControls2" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <div class="row">
-                                        <div class="col-2"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-2"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a> </div>
-                                        <div class="col-2 hidden"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a></div>
-                                        <div class="col-2 hidden"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a></div>
-                                        <div class="col-2 hidden"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a></div>
-                                        <div class="col-2 hidden"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a></div>
-                                    </div>
+<% if(adotados.length >= 6) { %>
+    <%- include('./partials/secRecemAdotados') %>
+<% } %>
 
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="row">
-                                        <div class="col-2"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-2"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a> </div>
-                                        <div class="col-2 hidden"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a></div>
-                                        <div class="col-2 hidden"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a></div>
-                                        <div class="col-2 hidden"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a></div>
-                                        <div class="col-2 hidden"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a></div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="row">
-                                        <div class="col-2"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-2"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a> </div>
-                                        <div class="col-2 hidden"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a></div>
-                                        <div class="col-2 hidden"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a></div>
-                                        <div class="col-2 hidden"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a></div>
-                                        <div class="col-2 hidden"> <a href="/pet/detalheAdocao">
-                                                <div class="card" style="width: auto;">
-                                                    <img src="./images/NoPath-2.png" class="card-img-top"
-                                                        alt="Nome do produto">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Nome do produto</h5>
-                                                        <p class="card-text">R$ 00,00</p>
-                                                    </div>
-                                                </div>
-                                            </a></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a class="carousel-control-prev carrossel" href="#carouselExampleControls2" role="button"
-                                data-slide="prev">
-                                <i class="fas fa-chevron-left text-blue arrow"></i>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next carrossel" href="#carouselExampleControls2" role="button"
-                                data-slide="next">
-                                <i class="fas fa-chevron-right text-blue arrow"></i>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
-                    </section>
-                    <%- include('./partials/footer') %>
+
+<%- include('./partials/footer') %>

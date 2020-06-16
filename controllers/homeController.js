@@ -37,7 +37,22 @@ const homeController =  {
             where: {
                 adotado: 0
             },
-            include: ['imagem']
+            order: [
+                ['dataCadastro', 'DESC'],
+            ],
+            include: ['imagem'],
+            limit: 18
+        });
+
+        let adotados = await Pet.findAll({
+            where: {
+                adotado: 1
+            },
+            order: [
+                ['dataAdotado', 'DESC'],
+            ],
+            include: ['imagem'],
+            limit: 18
         });
 
         let maisVendidos = itens.sort((a,b) => {
@@ -53,7 +68,8 @@ const homeController =  {
                 css: 'index',
                 usuario,
                 maisVendidos,
-                pets
+                pets,
+                adotados
             }
         );
     },
