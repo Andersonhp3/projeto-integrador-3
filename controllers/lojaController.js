@@ -78,7 +78,7 @@ const lojaController = {
             include: [{
                 model: Produto,
                 as: "categoria_pet_produto",
-                include: 'categoria'
+                include: ['categoria', "imagem"],
             }, ]
         });
 
@@ -93,7 +93,7 @@ const lojaController = {
             return 0;
         })
         
-        console.log(categoriaPet.categoria_pet_produto[0]);
+        console.log(categoriaPet.categoria_pet_produto[0].imagem);
         var novaCategoriasProduto = categoriasProduto.filter((dado, i) => categoriasProduto.indexOf(dado) === i);
 
 
