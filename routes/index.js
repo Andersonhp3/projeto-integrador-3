@@ -22,7 +22,8 @@ router.get('/adocao',adocaoController.home)
 router.get('/loja',lojaController.home)
 
 // contatoController
-router.get('/contato',contatoController.showContato)
+router.get('/contato',contatoController.showContato);
+router.post('/contato',contatoController.mandarMensagem);
 
 router.get('/login', authController.showLogin);
 router.post('/login', authController.login);
