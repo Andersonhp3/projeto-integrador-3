@@ -13,18 +13,10 @@
 
             <div class="container collapse navbar-collapse text-blue" id="myNavbarCategorias">
                 <div class="navbar-nav row">
+                    <% for (let categoria of categoriaPet) {%>
                     <a class="nav-link nav-item py-0 text-decoration-none text-reset active"
-                        href="/produto/categoriaProduto">Cachorros</a>
-                    <a class="nav-link nav-item py-0 text-decoration-none text-reset"
-                        href="/produto/categoriaProduto">Gatos</a>
-                    <a class="nav-link nav-item py-0 text-decoration-none text-reset"
-                        href="/produto/categoriaProduto">Passáros</a>
-                    <a class="nav-link nav-item py-0 text-decoration-none text-reset"
-                        href="/produto/categoriaProduto">Alimentos</a>
-                    <a class="nav-link nav-item py-0 text-decoration-none text-reset"
-                        href="/produto/categoriaProduto">Farmácia</a>
-                    <a class="nav-link nav-item py-0 text-decoration-none text-reset"
-                        href="/produto/categoriaProduto">Higiene</a>
+                        href="/produto/categoriaProduto?id=<%=categoria.id%>"><%=categoria.categoria%></a>
+                        <%}%>
                 </div><!-- navbar -->
             </div><!-- collapse -->
         </div>
