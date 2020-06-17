@@ -38,6 +38,14 @@ module.exports = {
         },
         allowNull: false,
       },
+      categoria_pet_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'categoria_pet',
+          key: 'id'
+        },
+        allowNull: false,
+      },
       usuario_id: {
         type: Sequelize.INTEGER,
         references: {
