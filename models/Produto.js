@@ -32,6 +32,10 @@ let Produto = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
+      categoria_pet_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+      },
       usuario_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -46,6 +50,11 @@ let Produto = (sequelize, DataTypes) => {
     produto.belongsTo(models.Categoria, {
       foreignKey: 'categoria_id',
       as: 'categoria'
+    });
+    
+    produto.belongsTo(models.CategoriaPet, {
+      foreignKey: 'categoria_pet_id',
+      as: 'produto'
     });
 
     produto.belongsTo(models.Usuario, {

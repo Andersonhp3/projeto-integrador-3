@@ -22,6 +22,10 @@ let CategoriaPet = (sequelize, DataTypes) => {
           foreignKey: 'categoria_pet_id',
           as: 'pet'
         })
+        categoria_pet.hasMany(models.Produto, {
+          foreignKey: 'categoria_pet_id',
+          as: 'categoria_pet_produto'
+        })
     }
 
     return categoria_pet;
