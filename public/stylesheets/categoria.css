@@ -2,6 +2,13 @@ ul {
     padding: 10px;
 }
 
+a {
+    color: black;
+}
+
+a:hover {
+    color: black;
+}
 
 div>li {
     list-style: none;
