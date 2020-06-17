@@ -1,6 +1,14 @@
 <%- include('./partials/header', {active: title}) %>    
 
     <section class="first" id="contact">
+        <div class="container">
+            <div class="alert  alert-success alert-dismissible fade show" id="enviadoSucesso" role="alert">
+                <strong>Mensagem enviada com sucesso</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
         <div class="container w-100 d-flex flex-row align-items-center ">
             <div class=" w-50 col-6 pad-0 divform">
                 <div>
@@ -19,7 +27,7 @@
                                 <textarea name="mensagem" id="mensagem" id="mensagem" class="form-control input-decoration" rows="5"
                                     placeholder="Mensagem"></textarea>
                             </div>
-                            <div class="alert alert-danger" role="alert">
+                            <div class="alert alert-danger" id="preencherCampo" role="alert">
                                 Preencha os campos!
                             </div>
                             <div class="input-group-append align-self-center col-md-3 botao px-0">

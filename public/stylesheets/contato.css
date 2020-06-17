@@ -13,7 +13,12 @@
     margin-bottom: 80px;
 }
 
-.alert {
+#enviadoSucesso {
+    text-align: center;
+    display: none;
+}
+
+#preencherCampo {
     display: none;
 }
 
