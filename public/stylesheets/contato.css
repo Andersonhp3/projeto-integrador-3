@@ -9,6 +9,14 @@
     border-radius: 16px;
 }
 
+.first {
+    margin-bottom: 80px;
+}
+
+.alert {
+    display: none;
+}
+
 @media (max-width:769px){
     .flex-row{
         flex-direction:column!important;
