@@ -74,6 +74,15 @@ const lojaController = {
 
         let id = req.query.id;
 
+        let categoriaPetAll = await CategoriaPet.findAll({
+            include: [{
+                model: Produto,
+                as: "categoria_pet_produto",
+                atributes: ["categoria_pet_produto"]
+            }]
+        });
+        
+
         let categoriaPet = await CategoriaPet.findByPk(id, {
             include: [{
                 model: Produto,
@@ -102,7 +111,8 @@ const lojaController = {
             title: 'Busca Categoria',
             css: 'categoria',
             novaCategoriasProduto,
-            categoriaPet
+            categoriaPet,
+            categoriaPetAll,
         })
     },
     novoProduto: async (req, res) => {
