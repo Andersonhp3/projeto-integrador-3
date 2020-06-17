@@ -1,6 +1,10 @@
 const path = require('path')
 const fs = require('fs')
 
+const {
+    Contato
+} = require("../models");
+
 
 const contatoController = {
     showContato: (req, res) => {
@@ -10,6 +14,21 @@ const contatoController = {
             css: 'contato',
             usuario
         })
+    },
+    mandarMensagem: async (req, res) => {
+        let {
+            nome,
+            email,
+            mensagem
+        } = req.body;
+        console.log(nome);
+        console.log(email);
+        console.log(mensagem);
+        await Contato.create({nome, email, mensagem})
+            .then()
+            .catch((err) => console.log(err));
+
+        res.redirect('/contato?sucesso=true')
     }
 }
 
