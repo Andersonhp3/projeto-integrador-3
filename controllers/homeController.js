@@ -74,7 +74,7 @@ const homeController =  {
         );
     },
     pesquisa: async (req, res) => {
-        let usuario = req.query.user
+        let usuario = req.session.usuario;
 
         let pesquisa = req.query.search
 
