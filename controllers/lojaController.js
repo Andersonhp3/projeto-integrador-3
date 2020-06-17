@@ -8,36 +8,60 @@ const {
     Pedido,
     Produto,
     Categoria,
-    ImagemProduto
+    ImagemProduto,
+    CategoriaPet
 } = require("../models");
+
 
 const lojaController = {
     home: async (req, res) => {
         let usuario = req.session.usuario;
-        const itens = await Produto.findAll({include:[{model:ImagemProduto, as:"imagem",atributes:["imagem"]}]});
-        
-        let destaques = await Produto.findAll({include:[{model:ImagemProduto, as:"imagem",atributes:["imagem"]}]});;
+        const itens = await Produto.findAll({
+            include: [{
+                model: ImagemProduto,
+                as: "imagem",
+                atributes: ["imagem"]
+            }]
+        });
 
-        destaques = destaques.sort((a,b) => {
-            if(a.estoque > b.estoque) return -1;
-            if(a.estoque < b.estoque) return 1;
+        let destaques = await Produto.findAll({
+            include: [{
+                model: ImagemProduto,
+                as: "imagem",
+                atributes: ["imagem"]
+            }]
+        });;
+
+        let categoriaPet = await CategoriaPet.findAll({
+            include: [{
+                model: Produto,
+                as: "categoria_pet_produto",
+                atributes: ["categoria_pet_produto"]
+            }]
+        });
+
+        destaques = destaques.sort((a, b) => {
+            if (a.estoque > b.estoque) return -1;
+            if (a.estoque < b.estoque) return 1;
             return 0;
         })
-
 
         res.render("homeLoja", {
             title: 'Loja',
             css: 'homeLoja',
             itens,
             destaques,
-            usuario
+            usuario,
+            categoriaPet
         })
     },
     showProduto: async (req, res) => {
 
         let id = req.query.id
 
-        let produto = await Produto.findByPk(id, {include: ['usuario', 'imagem']})
+        let produto = await Produto.findByPk(id, {
+            include: ['usuario', 'imagem']
+        })
 
         res.render('produto', {
             title: 'Detalhes do Produto',
@@ -47,12 +71,38 @@ const lojaController = {
     },
     showCategoria: async (req, res) => {
 
-        let categorias = await Categoria.findAll({include: ['produto']})
 
+        let id = req.query.id;
+
+        let categoriaPet = await CategoriaPet.findByPk(id, {
+            include: [{
+                model: Produto,
+                as: "categoria_pet_produto",
+                include: 'categoria'
+            }, ]
+        });
+
+        let categoriasProduto = []
+        for (let i = 0; i < categoriaPet.categoria_pet_produto.length; i++) {
+            categoriasProduto[i] = categoriaPet.categoria_pet_produto[i].categoria.categoria;
+        }
+
+        categoriasProduto = categoriasProduto.sort((a, b) => {
+            if (a < b) return -1;
+            if (a > b) return 1;
+            return 0;
+        })
+        
+        console.log(categoriaPet.categoria_pet_produto[0]);
+        var novaCategoriasProduto = categoriasProduto.filter((dado, i) => categoriasProduto.indexOf(dado) === i);
+
+
+        
         res.render('categoriaLoja', {
             title: 'Busca Categoria',
             css: 'categoria',
-            categorias
+            novaCategoriasProduto,
+            categoriaPet
         })
     },
     novoProduto: async (req, res) => {
@@ -111,17 +161,17 @@ const lojaController = {
         }
 
         let produto_id = await Produto.create(novoProduto)
-        .then()
-        .catch((err) => console.log(err));
+            .then()
+            .catch((err) => console.log(err));
         produto_id = produto_id.dataValues.id
 
         await ImagemProduto.create({
-            id: null,
-            imagem,
-            produto_id
-        })
-        .then()
-        .catch((err) => console.log(err));
+                id: null,
+                imagem,
+                produto_id
+            })
+            .then()
+            .catch((err) => console.log(err));
 
         res.redirect('/usuario/vender');
     }
