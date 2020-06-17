@@ -10,17 +10,20 @@
                     <div class="col ">
                         <form action="/contato" class="d-flex flex-column align-items-center " method="POST">
                             <div class="form-group mb-3 w-100">
-                                <input type="text" name="nome" class="form-control input-decoration" placeholder="Nome">
+                                <input type="text" name="nome" id="nome" class="form-control input-decoration" placeholder="Nome">
                             </div>
                             <div class="form-group mb-3 w-100">
-                                <input type="email" name="email" class="form-control input-decoration" placeholder="Email">
+                                <input type="email" name="email" id="email" class="form-control input-decoration" placeholder="Email">
                             </div>
                             <div class="form-group mb-3 w-100">
-                                <textarea name="mensagem" id="mensagem" class="form-control input-decoration" rows="5"
+                                <textarea name="mensagem" id="mensagem" id="mensagem" class="form-control input-decoration" rows="5"
                                     placeholder="Mensagem"></textarea>
                             </div>
+                            <div class="alert alert-danger" role="alert">
+                                Preencha os campos!
+                            </div>
                             <div class="input-group-append align-self-center col-md-3 botao px-0">
-                                <button class="btn btn-site w-100 px-0" type="submit">Enviar</button>
+                                <button class="btn btn-site w-100 px-0" type="submit" id="btnEnviar">Enviar</button>
                             </div>
                         </form>
                     </div>
@@ -30,6 +33,7 @@
                 <img class="w-100" src="./images/bannerContato.svg" alt="contato">
             </div>
         </div>
+        <script src="/public/javascripts/contato.js"></script>
     </section>
 
     <%- include('./partials/footer') %>
