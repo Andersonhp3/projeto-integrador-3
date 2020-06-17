@@ -21,9 +21,6 @@ const contatoController = {
             email,
             mensagem
         } = req.body;
-        console.log(nome);
-        console.log(email);
-        console.log(mensagem);
         await Contato.create({nome, email, mensagem})
             .then()
             .catch((err) => console.log(err));
