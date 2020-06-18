@@ -74,6 +74,7 @@ const lojaController = {
 
         let id = req.query.id;
 
+        //Todas as categorias de pet
         let categoriaPetAll = await CategoriaPet.findAll({
             include: [{
                 model: Produto,
@@ -82,7 +83,7 @@ const lojaController = {
             }]
         });
         
-
+        // Categoria correspondente com o id do pet
         let categoriaPet = await CategoriaPet.findByPk(id, {
             include: [{
                 model: Produto,
@@ -91,22 +92,30 @@ const lojaController = {
             }, ]
         });
 
+        // categoriasProduto para armazenar as categorias de acordo com o id categoriaPet
         let categoriasProduto = []
         for (let i = 0; i < categoriaPet.categoria_pet_produto.length; i++) {
-            categoriasProduto[i] = categoriaPet.categoria_pet_produto[i].categoria.categoria;
+            categoriasProduto.push({
+                id: categoriaPet.categoria_pet_produto[i].categoria.id,
+                categoria: categoriaPet.categoria_pet_produto[i].categoria.categoria
+            })
+            
         }
 
+        //Ordenação do array alfabeta de ordem crescente
         categoriasProduto = categoriasProduto.sort((a, b) => {
-            if (a < b) return -1;
-            if (a > b) return 1;
+            if (a.categoria < b.categoria) return -1;
+            if (a.categoria > b.categoria) return 1;
             return 0;
         })
         
-        console.log(categoriaPet.categoria_pet_produto[0].imagem);
-        var novaCategoriasProduto = categoriasProduto.filter((dado, i) => categoriasProduto.indexOf(dado) === i);
+        // console.log(categoriaPet.categoria_pet_produto[0].categoria.id);
+        // var novaCategoriasProduto = categoriasProduto.filter((dado, i) => categoriasProduto.indexOf('id' in dado) === i);
+        var novaCategoriasProduto = categoriasProduto.filter(function (a) {
+            return !this[JSON.stringify(a)] && (this[JSON.stringify(a)] = true);
+        }, Object.create(null))
 
-
-        
+        console.log(novaCategoriasProduto)
         res.render('categoriaLoja', {
             title: 'Busca Categoria',
             css: 'categoria',
