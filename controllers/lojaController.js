@@ -193,6 +193,9 @@ const lojaController = {
             .catch((err) => console.log(err));
 
         res.redirect('/usuario/vender');
+    },
+    carrinho: (req,res) => {
+        res.render('carrinho')
     }
 }
 
