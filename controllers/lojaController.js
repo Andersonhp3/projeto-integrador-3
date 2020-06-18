@@ -195,6 +195,10 @@ const lojaController = {
         res.redirect('/usuario/vender');
     },
     carrinho: (req,res) => {
+        let {id, quant} = req.query
+        
+        console.log(id)
+        console.log(quant)
         res.render('carrinho')
     }
 }
