@@ -196,10 +196,13 @@ const lojaController = {
     },
     carrinho: (req,res) => {
         let {id, quant} = req.query
-        
+
         console.log(id)
         console.log(quant)
-        res.render('carrinho')
+        res.render('carrinho',{
+            title: "Carrinho",
+            css: 'carrinho'
+        })
     }
 }
 
