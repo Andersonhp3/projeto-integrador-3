@@ -73,6 +73,7 @@ const lojaController = {
 
 
         let id = req.query.id;
+        let idCategoriaProduto = req.query.categoriaProdutoId;
 
         //Todas as categorias de pet
         let categoriaPetAll = await CategoriaPet.findAll({
@@ -91,6 +92,8 @@ const lojaController = {
                 include: ['categoria', "imagem"],
             }, ]
         });
+ 
+
 
         // categoriasProduto para armazenar as categorias de acordo com o id categoriaPet
         let categoriasProduto = []
@@ -109,19 +112,18 @@ const lojaController = {
             return 0;
         })
         
-        // console.log(categoriaPet.categoria_pet_produto[0].categoria.id);
-        // var novaCategoriasProduto = categoriasProduto.filter((dado, i) => categoriasProduto.indexOf('id' in dado) === i);
+        
         var novaCategoriasProduto = categoriasProduto.filter(function (a) {
             return !this[JSON.stringify(a)] && (this[JSON.stringify(a)] = true);
         }, Object.create(null))
 
-        console.log(novaCategoriasProduto)
         res.render('categoriaLoja', {
             title: 'Busca Categoria',
             css: 'categoria',
             novaCategoriasProduto,
             categoriaPet,
             categoriaPetAll,
+            idCategoriaProduto
         })
     },
     novoProduto: async (req, res) => {
