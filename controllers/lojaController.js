@@ -9,7 +9,8 @@ const {
     Produto,
     Categoria,
     ImagemProduto,
-    CategoriaPet
+    CategoriaPet,
+    Carrinho
 } = require("../models");
 
 
@@ -198,7 +199,7 @@ const lojaController = {
 
         res.redirect('/usuario/vender');
     },
-    carrinho: async (req, res) => {
+    comprar: async (req, res) => {
 
         let {id, quant} = req.query
 
@@ -208,15 +209,19 @@ const lojaController = {
             res.redirect('/login?error=login-required')
         }
 
-        let produto = await Produto.findByPk(id)
+        Carrinho.create({
+            usuario_id: usuario,
+            produto_id: id,
+            quantidade: quant,
+            ativo: true
+        })
 
-        console.log(produto)
-
+        res.redirect('/carrinho')
+    },
+    carrinho: (req, res) => {
         res.render('carrinho', {
-            title: "Carrinho",
-            css: 'carrinho',
-            produto,
-            quant
+            title: 'Carrinho',
+            css: 'carrinho'
         })
     }
 }
