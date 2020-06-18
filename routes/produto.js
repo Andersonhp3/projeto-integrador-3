@@ -6,6 +6,7 @@ const LojaController = require('../controllers/lojaController');
 router.get('/detalheProduto', LojaController.showProduto);
 router.get('/categoriaProduto', LojaController.showCategoria);
 router.post('/novo', LojaController.novoProduto);
+router.get('/carrinho', LojaController.carrinho);
 
 
 module.exports = router;
