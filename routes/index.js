@@ -20,6 +20,7 @@ router.get('/adocao',adocaoController.home)
 
 // lojaController
 router.get('/loja',lojaController.home)
+router.get('/carrinho', lojaController.carrinho);
 
 // contatoController
 router.get('/contato',contatoController.showContato);

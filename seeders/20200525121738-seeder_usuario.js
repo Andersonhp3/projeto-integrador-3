@@ -12,24 +12,17 @@ module.exports = {
         imagem: '/images/profiles/default.png'
       },
       {
-        nome: 'Bruno Ferraro',
-        email: 'bruno@teste.com',
-        senha: bcrypt.hashSync('123456', 12),
+        nome: 'Anderson Nicácio',
+        email: 'anderson@nicacio.com.br',
+        senha: bcrypt.hashSync('1', 12),
         cpf_cnpj: "22222222211",
-        imagem: '/images/profiles/default.png'
+        imagem: '/images/profiles/1592416011825-avatar.png'
       },
       {
         nome: 'Felipe Silva',
         email: 'felipe@teste.com',
         senha: bcrypt.hashSync('123456', 12),
         cpf_cnpj: "33322222211",
-        imagem: '/images/profiles/default.png'
-      },
-      {
-        nome: 'Igor Veloso',
-        email: 'igor@teste.com',
-        senha: bcrypt.hashSync('123456', 12),
-        cpf_cnpj: "44422222211",
         imagem: '/images/profiles/default.png'
       },
       {
@@ -70,6 +63,13 @@ module.exports = {
       {
         nome: 'Natalia Pereira',
         email: 'natalia@teste.com',
+        senha: bcrypt.hashSync('123456', 12),
+        cpf_cnpj: "10122222211",
+        imagem: '/images/profiles/default.png'
+      },
+      {
+        nome: 'Natalia Pereira',
+        email: 'natalia2@teste.com',
         senha: bcrypt.hashSync('123456', 12),
         cpf_cnpj: "10122222211",
         imagem: '/images/profiles/default.png'
