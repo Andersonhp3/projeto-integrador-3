@@ -54,7 +54,6 @@ const lojaController = {
             if (a.estoque < b.estoque) return 1;
             return 0;
         })
-
         res.render("homeLoja", {
             title: 'Loja',
             css: 'homeLoja',
@@ -79,7 +78,7 @@ const lojaController = {
             produto
         })
     },
-    showCategoria: async (req, res) => {
+    showCategoriaPet: async (req, res) => {
 
 
         let id = req.query.id;

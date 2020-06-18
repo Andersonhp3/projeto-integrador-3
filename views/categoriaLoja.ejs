@@ -12,9 +12,9 @@
 
             <div class="container collapse navbar-collapse text-blue" id="myNavbarCategorias">
                 <div class="navbar-nav row">
-                    <% for (let categoria of categoriaPetAll) {%>
+                    <% for (let categoria of categoriaPetAll) {%>   
                     <a class="nav-link nav-item py-0 text-decoration-none text-reset active"
-                        href="/produto/categoriaProduto?id=<%=categoria.id%>"><%=categoria.categoria%></a>
+                        href="/produto/categoriaPet?id=<%=categoria.id%>"><%=categoria.categoria%></a>
                         <%}%>
                 </div><!-- navbar -->
             </div><!-- collapse -->
@@ -26,28 +26,26 @@
             <div class="col-md-2 d-none d-md-block filtros">
                 <ul>
                     <div>
-                        <a href="" id="categoria-Pet"><li><%= categoriaPet.categoria %></li></a>
+                        <a href="/produto/categoriaPet?id=<%=categoriaPet.id%>" id="categoria-Pet"><li><%= categoriaPet.categoria %></li></a>
                         
                         <% for ( let i = 0; i < novaCategoriasProduto.length; i++  ) {%>
                             <div class="opcao">
-                                <a href="/produto/categoriaProduto?id=<%= categoriaPet.id%>&categoriaProdutoId=<%=novaCategoriasProduto[i].id%>%>">
+                                <a href="/produto/categoriaPet?id=<%= categoriaPet.id%>&categoriaProdutoId=<%=novaCategoriasProduto[i].id%>%>">
                                     <%=novaCategoriasProduto[i].categoria%></a>
                             </div>
                         <%}%>
                     </div>
                     <div>
                         <li>Preço</li>
-                        <div class="opcao"><input type="checkbox" name="" id="">Até R$200</div>
-                        <div class="opcao"><input type="checkbox" name="" id="">de R$200 a R$500</div>
-                        <div class="opcao"><input type="checkbox" name="" id="">Mais de R$500</div>
+                        <div class="opcao"><input type="checkbox" name="preco" id="">Até R$200</div>
+                        <div class="opcao"><input type="checkbox" name="preco" id="">de R$200 a R$500</div>
+                        <div class="opcao"><input type="checkbox" name="preco" id="">Mais de R$500</div>
                     </div>
                 </ul>
             </div>
             <div class="col-md-10 col-12">
                 <div class="container">
                     <div class="row">
-                        <%console.log(idCategoriaProduto)%>
-                        <%console.log(idCategoriaProduto == undefined)%>
                         <% if (idCategoriaProduto != undefined) {%>
                             <% for ( let i = 0; i < categoriaPet.categoria_pet_produto.length; i++) {%>
                                 <% if (categoriaPet.categoria_pet_produto[i].categoria.dataValues.id == idCategoriaProduto) { %>
