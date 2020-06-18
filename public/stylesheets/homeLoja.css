@@ -7,6 +7,37 @@ section a.nav-link:hover {
     color: white !important;
 }
 
+section#deals {
+    margin-top: 16px;
+}
+
+.categoriaLink {
+    width: 160px;
+    height: 160px;
+    background-color: white;
+    padding: 12px;
+    text-align: center;
+    color: #03658C;
+    font-size: 18px;
+    margin: 1px;
+}
+
+.categoriaLink p {
+    line-height: 19px;
+}
+
+.icon {
+    font-size: 48px;
+    margin: 25px auto 0px;
+}
+
+.categoriaLink:hover {
+    text-decoration: none;
+    color: white;
+    background-color: #03658C;
+    /* box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); */
+}
+
 .carousel{
     display: flex;
 }
@@ -15,6 +46,8 @@ section a.nav-link:hover {
     height: 160px;
     width: 177px;
 }
+
+
 
 
 
