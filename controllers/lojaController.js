@@ -82,7 +82,7 @@ const lojaController = {
                 atributes: ["categoria_pet_produto"]
             }]
         });
-        
+
         // Categoria correspondente com o id do pet
         let categoriaPet = await CategoriaPet.findByPk(id, {
             include: [{
@@ -99,7 +99,7 @@ const lojaController = {
                 id: categoriaPet.categoria_pet_produto[i].categoria.id,
                 categoria: categoriaPet.categoria_pet_produto[i].categoria.categoria
             })
-            
+
         }
 
         //Ordenação do array alfabeta de ordem crescente
@@ -108,7 +108,7 @@ const lojaController = {
             if (a.categoria > b.categoria) return 1;
             return 0;
         })
-        
+
         // console.log(categoriaPet.categoria_pet_produto[0].categoria.id);
         // var novaCategoriasProduto = categoriasProduto.filter((dado, i) => categoriasProduto.indexOf('id' in dado) === i);
         var novaCategoriasProduto = categoriasProduto.filter(function (a) {
@@ -194,14 +194,25 @@ const lojaController = {
 
         res.redirect('/usuario/vender');
     },
-    carrinho: (req,res) => {
+    carrinho: async (req, res) => {
+
         let {id, quant} = req.query
 
-        console.log(id)
-        console.log(quant)
-        res.render('carrinho',{
+        let usuario = req.session.usuario
+
+        if(!usuario){
+            res.redirect('/login?error=login-required')
+        }
+
+        let produto = await Produto.findByPk(id)
+
+        console.log(produto)
+
+        res.render('carrinho', {
             title: "Carrinho",
-            css: 'carrinho'
+            css: 'carrinho',
+            produto,
+            quant
         })
     }
 }

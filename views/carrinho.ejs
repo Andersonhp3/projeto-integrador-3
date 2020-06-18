@@ -9,10 +9,10 @@
             <ul class="list-group mb-3">
                 <li class="list-group-item d-flex justify-content-between lh-condensed py-3">
                     <div>
-                        <h6 class="my-0">Nome do produto</h6>
-                        <span class="text-muted">Quantidade: </span><input type="number">
+                        <h6 class="my-0"><%= produto.nome %> </h6>
+                        <span class="text-muted">Quantidade: </span><input type="number" value="<%=quant%>">
                     </div>
-                    <span class="text-muted">R$12</span>
+                    <span class="text-muted">R$<%=produto.preco%></span>
             </ul>
         </div>
         <div class="col-md-4">

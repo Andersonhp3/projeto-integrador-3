@@ -119,7 +119,8 @@ const authController = {
       cadastroEfetuado,
       mensagemSucesso: "Usuário cadastrado com sucesso!",
       mensagemErro1: "Email incorreto ou senha incorreta. Tente Novamente.",
-      mensagemErro2: "Usuário já cadastrado, por favor efetue o Login"
+      mensagemErro2: "Usuário já cadastrado, por favor efetue o Login",
+      mensagemLoginRequired: "Você precisa entrar para continuar"
     });
   },
 
