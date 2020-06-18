@@ -204,13 +204,16 @@ const lojaController = {
         let {id, quant} = req.query
 
         let usuario = req.session.usuario
+        
 
         if(!usuario){
             res.redirect('/login?error=login-required')
         }
 
-        Carrinho.create({
-            usuario_id: usuario,
+        let usuario_id = usuario.id
+
+       await Carrinho.create({
+            usuario_id,
             produto_id: id,
             quantidade: quant,
             ativo: true
@@ -219,6 +222,8 @@ const lojaController = {
         res.redirect('/carrinho')
     },
     carrinho: (req, res) => {
+
+
         res.render('carrinho', {
             title: 'Carrinho',
             css: 'carrinho'

@@ -1,6 +1,5 @@
-'use strict';
-module.exports = (sequelize, DataTypes) => {
-  const Carrinho = sequelize.define('Carrinho', {
+let Carrinho = (sequelize, DataTypes) => {
+  let carrinho = sequelize.define('Carrinho', {
     produto_id: {
       type: DataTypes.INTEGER,
       allowNull: false
@@ -17,16 +16,23 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BOOLEAN,
       allowNull: false
     }
-  }, {});
-  Carrinho.associate = function (models) {
-    Carrinho.belongsTo(models.Usuario, {
+  }, {
+    tableName: 'carrinho',
+    timestamps: true
+  });
+
+
+  carrinho.associate = (models) => {
+    carrinho.belongsTo(models.Usuario, {
       foreignKey: 'usuario_id',
       as: 'usuario'
-    })
-    Carrinho.belongsTo(models.Produto, {
+    });
+    carrinho.belongsTo(models.Produto, {
       foreignKey: 'produto_id',
       as: 'produto'
     })
   };
-  return Carrinho;
+  return carrinho;
 };
+
+module.exports = Carrinho
