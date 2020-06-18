@@ -75,6 +75,8 @@ const lojaController = {
         let id = req.query.id;
         let idCategoriaProduto = req.query.categoriaProdutoId;
 
+        // if(idCategoriaProduto == undefined)
+
         //Todas as categorias de pet
         let categoriaPetAll = await CategoriaPet.findAll({
             include: [{
