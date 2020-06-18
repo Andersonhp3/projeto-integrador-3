@@ -4,10 +4,29 @@ ul {
 
 a {
     color: black;
+    list-style: none;
+}
+
+h6 {
+    font-weight: normal;
+}
+
+#precoProduto {
+    font-weight: 400;
+    font-size: 19px;
 }
 
 a:hover {
     color: black;
+}
+
+section#navCategorias {
+    margin-top: 109px;
+}
+
+section a.nav-link:hover {
+    background-color: #f2a0a0;
+    color: white !important;
 }
 
 div>li {
@@ -29,15 +48,76 @@ ul>div {
     height: fit-content;
 }
 
-section#catLoja,
+section#catLoja{
+    margin-top: 30px;
+}
+
 section#catAdocao {
     margin-top: 135px;
 }
 
-.card {
-    height: 450px;
+.page-link {
+    color: black !important;
 }
 
 input {
     margin-right: 4px;
 }
+
+
+@media (max-width: 770px){
+
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .hidden{
+        visibility: hidden; 
+    }
+
+}
+@media (max-width: 641px){
+    section#navCategorias {
+        margin-top: 108px;
+    }
+    .col-2 {
+        flex: auto;
+        max-width: 50%
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    .hidden{
+        visibility: hidden; 
+    }
+
+}
+
+@media (max-width: 575px){
+    section#navCategorias {
+        margin-top: 151px;
+    }
+}
+
+@media (max-width: 480px){
+    .col-6 {
+        flex: auto;
+        max-width: 90%
+    }
+    .col-2 {
+        flex: auto;
+        max-width: 50%
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    .hidden{
+        visibility: hidden; 
+    }
+
+};
