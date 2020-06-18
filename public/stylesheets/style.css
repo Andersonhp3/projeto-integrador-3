@@ -185,6 +185,12 @@ header .nav-link.active {
   border-radius: 2rem;
 }
 
+.card:hover {
+  -webkit-box-shadow: 0px 12px 10px 5px rgba(171,171,171,1);
+  -moz-box-shadow: 0px 12px 10px 5px rgba(171,171,171,1);
+  box-shadow: 0px 12px 10px 5px rgba(171,171,171,1);
+}
+
 .shopping-cart {
   font-size: 35px !important;
 }
