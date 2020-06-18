@@ -31,7 +31,15 @@ const lojaController = {
                 as: "imagem",
                 atributes: ["imagem"]
             }]
-        });;
+        });
+        
+        let categoriaProduto = await Categoria.findAll({
+            include: [{
+                model: Produto,
+                as: "produto",
+                atributes: ["produto"]
+            }]
+        });
 
         let categoriaPet = await CategoriaPet.findAll({
             include: [{
@@ -53,7 +61,8 @@ const lojaController = {
             itens,
             destaques,
             usuario,
-            categoriaPet
+            categoriaPet,
+            categoriaProduto
         })
     },
     showProduto: async (req, res) => {
