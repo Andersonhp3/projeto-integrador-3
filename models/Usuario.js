@@ -52,6 +52,11 @@ let Usuario = (sequelize, DataTypes) => {
             foreignKey: 'usuario_id',
             as: 'endereco'
         })
+
+        usuario.hasMany(models.Carrinho, {
+            foreignKey: 'usuario_id',
+            as: 'carrinho'
+        })
     }
 
     return usuario;

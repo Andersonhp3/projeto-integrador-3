@@ -51,7 +51,7 @@ let Produto = (sequelize, DataTypes) => {
       foreignKey: 'categoria_id',
       as: 'categoria'
     });
-    
+
     produto.belongsTo(models.CategoriaPet, {
       foreignKey: 'categoria_pet_id',
       as: 'produto'
@@ -71,6 +71,11 @@ let Produto = (sequelize, DataTypes) => {
     produto.hasMany(models.ImagemProduto, {
       foreignKey: 'produto_id',
       as: 'imagem'
+    });
+
+    produto.hasMany(models.Carrinho, {
+      foreignKey: 'produto_id',
+      as: 'carrinho'
     })
   }
 
