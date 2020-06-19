@@ -64,11 +64,6 @@ module.exports = {
         pet_id: 12
       },
       {
-        id: 13,
-        imagem: '/images/pets/1592416560642-pet.png',
-        pet_id: 13
-      },
-      {
         id: 14,
         imagem: '/images/pets/1592417785728-pet.png',
         pet_id: 14
@@ -217,11 +212,6 @@ module.exports = {
         id: 43,
         imagem: '/images/pets/1592417034322-pet.png',
         pet_id: 43
-      },
-      {
-        id: 44,
-        imagem: '/images/pets/1592417306606-pet.png',
-        pet_id: 44
       },
       {
         id: 45,

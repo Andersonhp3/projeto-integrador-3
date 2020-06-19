@@ -5,7 +5,7 @@ module.exports = {
 
     return queryInterface.bulkInsert('categoria_pet', [{
         id: 1,
-        categoria: 'Cachorro',
+        categoria: 'Cachorros',
       },
       {
         id: 2,
@@ -13,7 +13,7 @@ module.exports = {
       },
       {
         id: 3,
-        categoria: 'Aves'
+        categoria: 'Pássaros'
       },
       {
         id: 4,
@@ -24,12 +24,8 @@ module.exports = {
         categoria: 'Peixes'
       },
       {
-        id: 6,
-        categoria: 'Cavalos'
-      },
-      {
         id: 7,
-        categoria: 'Coelhos'
+        categoria: 'Répteis'
       },
       {
         id: 8,

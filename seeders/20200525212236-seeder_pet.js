@@ -172,20 +172,6 @@ module.exports = {
         usuario_id: 2
       },
       {
-        id: 13,
-        nome: 'Jon Snow',
-        idade: 3,
-        descricao: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, magnam?",
-        contato: '6666-112321',
-        raca: 'Árabe',
-        genero: 'Macho',
-        dataCadastro: '2020-06-09',
-        adotado: false,
-        dataAdotado: null,
-        categoria_pet_id: 6,
-        usuario_id: 2
-      },
-      {
         id: 14,
         nome: 'Hobbit',
         idade: 3,
@@ -600,20 +586,6 @@ module.exports = {
         raca: 'SRD',
         genero: 'Fêmea',
         dataCadastro: '2020-06-04',
-        adotado: true,
-        dataAdotado: '2020-06-12',
-        categoria_pet_id: 7,
-        usuario_id: 2
-      },
-      {
-        id: 44,
-        nome: 'LOréal',
-        idade: 1,
-        descricao: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, magnam?",
-        contato: '6666-112321',
-        raca: 'Paris',
-        genero: 'Fêmea',
-        dataCadastro: '2020-06-01',
         adotado: true,
         dataAdotado: '2020-06-12',
         categoria_pet_id: 7,
