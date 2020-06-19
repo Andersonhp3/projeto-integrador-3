@@ -12,7 +12,7 @@ const calculaTotais = (carrinho) => {
     console.log(total)
 }
 
-let mudaQtd = evt => {
+const mudaQtd = evt => {
     console.log(evt)
     console.log(quantidade)
     calculaTotais(carrinho)
