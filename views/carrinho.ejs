@@ -7,14 +7,20 @@
                 <span>Resumo do Pedido</span>
             </h4>
             <ul class="list-group mb-3">
-                <% for (item of carrinho) {%> 
-                <li class="list-group-item d-flex justify-content-between lh-condensed py-3">
-                    <div>
+                <% for (item of carrinho) {%>
+                <li class="list-group-item d-flex justify-content-between lh-condensed py-3" id="listaCarrinho">
+                    <div class="col-9">
                         <h6 class="my-0"><%=item.produto.nome%></h6>
-                        <span class="text-muted">Quantidade: </span><input type="number" value=<%= item.quantidade%>>
+                        <span class="text-muted"> Quantidade: </span>
+                        <input type="number" class="ml-2" value=<%= item.quantidade%> id="<%= item.id %>">
                     </div>
-                    <span class="text-muted">R$<%=item.produto.preco%></span>
-                <%} %> 
+                    <div class="col-3 d-flex align-items-center">
+                        <span class="text-muted">R$<%=item.produto.preco%></span>
+                        <form>
+                            <button class="btn btn-site ml-2"><i class="fas fa-trash"></i></button>
+                        </form>
+                    </div>
+                    <%} %>
             </ul>
         </div>
         <div class="col-md-4">

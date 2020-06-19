@@ -1,30 +1,28 @@
 let total = 0
+let quantidade = 0
 
-const calculaTotal = (valores) => {
-    for (valor of valores){
-        total = total + parseFloat(valor)
+const calculaTotais = (carrinho) => {
+    for (item of carrinho) {
+        quantidade = document.getElementById(item.id).value
+        let valor = parseFloat(item.produto.preco)
+        let totalProduto = valor * quantidade
+
+        total += totalProduto
     }
     console.log(total)
 }
-let valores = []
 
-for (item of carrinho){
-    valores.push(item.produto.preco)
+let mudaQtd = evt => {
+    console.log(evt)
+    console.log(quantidade)
+    calculaTotais(carrinho)
 }
 
-console.log(valores)
+let input = document.querySelector('input[type="number"]')
 
-calculaTotal(valores)
-
-const exibeTotais = () => {
-    let totalProdutos = document.getElementById('totalProdutos')
-    totalProdutos.innerText = `R$ ${total}`
-
-    let totalGeral = document.getElementById('total')
-    totalGeral.innerText = `R$ ${total}`
-}
-
-exibeTotais()
+input.addEventListener('change', mudaQtd)
 
 
+
+calculaTotais(carrinho)
 
