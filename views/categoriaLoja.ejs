@@ -26,20 +26,20 @@
             <div class="col-md-2 d-none d-md-block filtros">
                 <ul>
                     <div>
-                        <a href="/produto/categoriaPet?id=<%=categoriaPet.id%>" id="categoria-Pet"><li><%= categoriaPet.categoria %></li></a>
+                        <a class="text-decoration-none text-blue" href="/produto/categoriaPet?id=<%=categoriaPet.id%>" id="categoria-Pet"><li><%= categoriaPet.categoria %></li></a>
                         
                         <% for ( let i = 0; i < novaCategoriasProduto.length; i++  ) {%>
                             <div class="opcao">
-                                <a href="/produto/categoriaPet?id=<%= categoriaPet.id%>&categoriaProdutoId=<%=novaCategoriasProduto[i].id%>%>">
+                                <a class="text-decoration-none text-blue" href="/produto/categoriaPet?id=<%= categoriaPet.id%>&categoriaProdutoId=<%=novaCategoriasProduto[i].id%>%>">
                                     <%=novaCategoriasProduto[i].categoria%></a>
                             </div>
                         <%}%>
                     </div>
                     <div>
-                        <li>Preço</li>
-                        <div class="opcao"><input type="checkbox" name="preco" id="">Até R$200</div>
-                        <div class="opcao"><input type="checkbox" name="preco" id="">de R$200 a R$500</div>
-                        <div class="opcao"><input type="checkbox" name="preco" id="">Mais de R$500</div>
+                        <li class="text-decoration-none text-blue">Preço</li>
+                        <div class="opcao text-decoration-none text-blue"><input type="checkbox" name="preco" id="">Até R$200</div>
+                        <div class="opcao text-decoration-none text-blue"><input type="checkbox" name="preco" id="">de R$200 a R$500</div>
+                        <div class="opcao text-decoration-none text-blue"><input type="checkbox" name="preco" id="">Mais de R$500</div>
                     </div>
                 </ul>
             </div>
@@ -50,7 +50,7 @@
                             <% for ( let i = 0; i < categoriaPet.categoria_pet_produto.length; i++) {%>
                                 <% if (categoriaPet.categoria_pet_produto[i].categoria.dataValues.id == idCategoriaProduto) { %>
                                     <div class="col-md-3 col-12 justify-content-between mb-4">
-                                    <a href="/produto/detalheProduto?id=<%=categoriaPet.categoria_pet_produto[i].id%>">
+                                    <a class="text-decoration-none text-blue" href="/produto/detalheProduto?id=<%=categoriaPet.categoria_pet_produto[i].id%>">
                                        <div class="card" style="width: auto;">
                                            <img src="<%=categoriaPet.categoria_pet_produto[i].imagem[0].dataValues.imagem%>"
                                                class="card-img-top" alt="Nome do produto">
@@ -68,7 +68,7 @@
                             
                             <% for ( let i = 0; i < categoriaPet.categoria_pet_produto.length; i++) {%>
                                 <div class="col-md-3 col-12 justify-content-between mb-4">
-                                <a href="/produto/detalheProduto?id=<%=categoriaPet.categoria_pet_produto[i].id%>">
+                                <a class="text-decoration-none text-blue" href="/produto/detalheProduto?id=<%=categoriaPet.categoria_pet_produto[i].id%>">
                                    <div class="card" style="width: auto;">
                                        <img src="<%=categoriaPet.categoria_pet_produto[i].imagem[0].dataValues.imagem%>"
                                            class="card-img-top" alt="Nome do produto">
