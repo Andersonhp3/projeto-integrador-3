@@ -79,6 +79,25 @@ const lojaController = {
             usuario
         })
     },
+    showCategoriaProduto: async (req, res) => {
+        let usuario = req.session.usuario;
+        let id = req.query.id;
+
+        let categoriaProduto = await CategoriafindByPk(id, {
+            include: ['usuario', 'imagem']
+        });
+
+        let produto = await Produto.findByPk(id, {
+            include: ['usuario', 'imagem']
+        });
+
+        res.render('produto', {
+            title: 'Detalhes do Produto',
+            css: 'produto',
+            produto,
+            usuario
+        });
+    },
     showCategoriaPet: async (req, res) => {
 
 
