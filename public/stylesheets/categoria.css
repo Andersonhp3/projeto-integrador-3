@@ -3,7 +3,6 @@ ul {
 }
 
 a {
-    color: black;
     list-style: none;
 }
 
@@ -16,9 +15,6 @@ h6 {
     font-size: 19px;
 }
 
-a:hover {
-    color: black;
-}
 
 section#navCategorias {
     margin-top: 109px;
