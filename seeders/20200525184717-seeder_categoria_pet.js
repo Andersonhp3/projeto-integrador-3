@@ -31,6 +31,10 @@ module.exports = {
         id: 7,
         categoria: 'Coelhos'
       },
+      {
+        id: 8,
+        categoria: 'Não Aplicavel'
+      },
     ],
      {});
 
