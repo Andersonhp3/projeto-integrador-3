@@ -252,7 +252,8 @@ const lojaController = {
         res.render('carrinho', {
             title: 'Carrinho',
             css: 'carrinho',
-            carrinho
+            carrinho,
+            usuario
         })
     }
 }

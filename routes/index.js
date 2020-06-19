@@ -21,7 +21,7 @@ router.get('/adocao',adocaoController.home)
 // lojaController
 router.get('/loja',lojaController.home)
 router.get('/comprar', lojaController.comprar);
-router.get('/carrinho', lojaController.carrinho);
+router.get('/carrinho', verificaUsuarioLogado, lojaController.carrinho);
 
 // contatoController
 router.get('/contato',contatoController.showContato);

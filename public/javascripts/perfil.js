@@ -1,3 +1,4 @@
+// API buscaCep
 let cepInput = document.querySelector('#cep')
 let ruaInput = document.querySelector('#logradouro')
 let bairroInput = document.querySelector('#bairro')
@@ -16,7 +17,7 @@ const buscaCep = () => {
 addEventListener('input', buscaCep)
 
 
-
+//Select de cidade de acordo com o estado
 const selectEstado = document.getElementById('estado')
 
 let selectCidade = document.getElementById('cidade')
