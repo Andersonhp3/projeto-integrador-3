@@ -32,7 +32,7 @@
                     <div class="row">
                         <% for( let i = 1; i <= 6; i++) {%>
                             <div class="col-2 ">
-                                 <a href="/produto/detalheProduto?id=<%=destaques[ i - 1].id%>">
+                                 <a href="/produto/detalheProduto?id=<%=destaques[ i - 1].id%>" class="text-decoration-none text-blue">
                                     <div class="card" style="width: auto;">
                                         <img src="<%=destaques[i -1].get().imagem[0].dataValues.imagem%>"
                                             class="card-img-top" alt="Nome do produto">
@@ -51,7 +51,7 @@
                     <div class="row justify-content-center">
                         <% for( let i = 7; i <= 12; i++) {%>
                             <div class="col-2">
-                                 <a href="/produto/detalheProduto?id=<%=destaques[ i - 1].id%>">
+                                 <a href="/produto/detalheProduto?id=<%=destaques[ i - 1].id%>" class="text-decoration-none text-blue">
                                     <div class="card" style="width: auto;">
                                         <img src="<%=destaques[i -1].get().imagem[0].dataValues.imagem%>"
                                             class="card-img-top" alt="Nome do produto">
@@ -72,7 +72,7 @@
                     <div class="row justify-content-center">
                         <% for( let i = 13; i <= 18; i++) {%>
                             <div class="col-2">
-                                 <a href="/produto/detalheProduto?id=<%=destaques[ i - 1].id%>">
+                                 <a href="/produto/detalheProduto?id=<%=destaques[ i - 1].id%> " class="text-decoration-none text-blue">
                                     <div class="card" style="width: auto;">
                                         <img src="<%=destaques[i -1].get().imagem[0].dataValues.imagem%>"
                                             class="card-img-top" alt="Nome do produto">
@@ -112,7 +112,7 @@
                 <div class="h3 text-blue">Novos na loja</div>
                 <div class="row justify-content-center">
                     <% for (let i = 0; i <=5; i++) {%>
-                    <div class="col-2 px-1">
+                    <div class="col-md-2 col-12 px-1">
                         <a href="/produto/detalheProduto?id=<%=itens[(itens.length -1) - i].id%>" class="text-decoration-none text-blue">
                             <div class="card tamanho">
                                 <img id="imagemProduto" src="<%=itens[(itens.length -1) - i].get().imagem[0].dataValues.imagem%>" id="imagemProduto" class="card-img-top" alt="Nome do produto">
@@ -133,7 +133,7 @@
     <section id="deals">
         <div class="container">
             <div class="h3 text-blue">Categorias populares</div>
-            <div class="row">    
+            <div class="row justify-content-center">    
                 <a href="/produtos/categoriaProduto?id=<%=categoriaProduto[0].id%>" class="categoriaLink justify-content-center">
                     <div class="icon">
                         <i class="fas fa-carrot"></i>
