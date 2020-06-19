@@ -239,12 +239,20 @@ const lojaController = {
 
         res.redirect('/carrinho')
     },
-    carrinho: (req, res) => {
+    carrinho: async (req, res) => {
 
+        let usuario = req.session.usuario
+
+        let usuario_id = usuario.id
+        
+        let carrinho = await Carrinho.findAll({where: {usuario_id, ativo: 1}, include:['produto']}) 
+
+        console.log(carrinho[0].produto)
 
         res.render('carrinho', {
             title: 'Carrinho',
-            css: 'carrinho'
+            css: 'carrinho',
+            carrinho
         })
     }
 }
