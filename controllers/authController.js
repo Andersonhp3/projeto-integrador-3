@@ -1,6 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 const bcrypt = require("bcrypt");
+const { Op } = require("sequelize");
 
 const {
   Usuario,
@@ -309,7 +310,13 @@ const authController = {
   showDoar: async (req, res) => {
     let usuario = req.session.usuario;
 
-    let categorias = await CategoriaPet.findAll()
+    let categorias = await CategoriaPet.findAll({
+      where: {
+        id: {
+          [Op.ne]: 8
+        }
+      }
+    })
 
     res.render("cadastroAdocao", {
       title: "Nova Adoção",
