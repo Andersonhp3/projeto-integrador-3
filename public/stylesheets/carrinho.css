@@ -7,3 +7,7 @@ input {
     font-size: 1em;
     text-align: center;
 }
+
+.valor {
+    width: 100px;
+}
