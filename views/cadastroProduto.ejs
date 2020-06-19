@@ -84,19 +84,27 @@
                                 </div>
                                 <div class="d-flex">
                                     <div class="form-group mb-4 mw-75 mr-1">
-                                        <input id="quantidade" class="form-control input-decoration" type="number"
+                                        <input id="quantidade" class="form-control input-decoration" type="number" min="0"
                                             name="quantidade" placeholder="Quantidade" columns="4">
                                     </div>
                                     <div class="form-group mb-4 mw-75 ml-1">
-                                        <input id="preco" class="form-control input-decoration" type="number"
+                                        <input id="preco" class="form-control input-decoration" type="number" step=0.01 min="0"
                                             name="preco" placeholder="Preço" columns="4">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control input-decoration" id="exampleFormControlSelect1"
+                                    <select class="form-control input-decoration" id="categoria"
                                         name="categoria">
                                         <% for(cat of categorias) { %>
                                             <option name=<%= cat.id %> id=<%= cat.id %> ><%= cat.categoria %></option>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control input-decoration" id="categoria-pet"
+                                        name="categoria_pet">
+                                        <% for(cat_pet of categorias_pet) { %>
+                                            <option name=<%= cat_pet.id %> id=<%= cat_pet.id %> ><%= cat_pet.categoria %></option>
                                         <% } %>
                                     </select>
                                 </div>

@@ -296,14 +296,17 @@ const authController = {
   showVender: async (req, res) => {
     let usuario = req.session.usuario;
 
-    let categorias = await Categoria.findAll()
+    let categorias = await Categoria.findAll();
+
+    let categorias_pet = await CategoriaPet.findAll();
 
     res.render("cadastroProduto", {
       title: "Nova Venda",
       css: "cadastroProduto",
       error: false,
       usuario,
-      categorias
+      categorias,
+      categorias_pet
     });
   },
 
@@ -316,7 +319,7 @@ const authController = {
           [Op.ne]: 8
         }
       }
-    })
+    });
 
     res.render("cadastroAdocao", {
       title: "Nova Adoção",

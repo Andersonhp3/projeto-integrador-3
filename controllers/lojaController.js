@@ -149,6 +149,7 @@ const lojaController = {
             quantidade,
             preco,
             categoria,
+            categoria_pet,
             imagemb64
         } = req.body;
 
@@ -177,9 +178,16 @@ const lojaController = {
             where: {
                 categoria
             }
-        })
+        });
+
+        categoria_pet = await CategoriaPet.findOne({
+            where: {
+                categoria : categoria_pet
+            }
+        });
 
         let categoria_id = categoria.id;
+        let categoria_pet_id = categoria_pet.id;
         let estoque = quantidade;
         let nome = nomeProduto;
 
@@ -190,6 +198,7 @@ const lojaController = {
             descricao,
             estoque,
             categoria_id,
+            categoria_pet_id,
             usuario_id
         }
 
