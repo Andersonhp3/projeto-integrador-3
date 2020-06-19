@@ -15,7 +15,7 @@
                         <input type="number" class="ml-2" value=<%= item.quantidade%> id="<%= item.id %>">
                     </div>
                     <div class="col-3 d-flex align-items-center">
-                        <span class="text-muted">R$<%=item.produto.preco%></span>
+                        <span class="text-muted" id="valor<%= item.id %>"> R$<%=item.produto.preco%></span>
                         <form>
                             <button class="btn btn-site ml-2"><i class="fas fa-trash"></i></button>
                         </form>
