@@ -64,6 +64,8 @@ const lojaController = {
             categoriaProduto
         })
     },
+
+    
     showProduto: async (req, res) => {
         let usuario = req.session.usuario;
         let id = req.query.id
@@ -79,25 +81,38 @@ const lojaController = {
             usuario
         })
     },
+    
+
     showCategoriaProduto: async (req, res) => {
         let usuario = req.session.usuario;
         let id = req.query.id;
 
-        let categoriaProduto = await CategoriafindByPk(id, {
+        let categoriaPetAll = await CategoriaPet.findAll({
+            include: [{
+                model: Produto,
+                as: "categoria_pet_produto",
+                atributes: ["categoria_pet_produto"]
+            }]
+        });
+
+        let categoriaProduto = await Categoria.findByPk(id, {
             include: ['usuario', 'imagem']
         });
 
-        let produto = await Produto.findByPk(id, {
-            include: ['usuario', 'imagem']
-        });
+        // let produto = await Produto.findByPk(id, {
+        //     include: ['usuario', 'imagem']
+        // });
 
-        res.render('produto', {
-            title: 'Detalhes do Produto',
-            css: 'produto',
-            produto,
+        res.render('categoriaProduto', {
+            title: 'Categoria Produto',
+            css: 'categoria',
+            // produto,
+            categoriaPetAll,
             usuario
         });
     },
+
+
     showCategoriaPet: async (req, res) => {
 
 
