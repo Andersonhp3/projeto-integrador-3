@@ -65,7 +65,7 @@ const lojaController = {
         })
     },
     showProduto: async (req, res) => {
-
+        let usuario = req.session.usuario;
         let id = req.query.id
 
         let produto = await Produto.findByPk(id, {
@@ -75,7 +75,8 @@ const lojaController = {
         res.render('produto', {
             title: 'Detalhes do Produto',
             css: 'produto',
-            produto
+            produto,
+            usuario
         })
     },
     showCategoriaPet: async (req, res) => {
