@@ -1,5 +1,7 @@
 const path = require('path')
 const fs = require('fs')
+var Sequelize = require('sequelize');   
+const Op = Sequelize.Op;
 const {
     Usuario,
     Endereco,
@@ -87,6 +89,17 @@ const lojaController = {
         let usuario = req.session.usuario;
         let id = req.query.id;
 
+        let preco = req.query.preco;
+
+        if(preco == undefined){
+            preco = 100000;
+        }
+
+        let urlAtual = req.url
+        if(urlAtual.indexOf('preco')){
+            urlAtual = '/categoriaProduto?id=' + id
+        }
+        console.log(urlAtual.indexOf("preco"))
         let categoriaPetAll = await CategoriaPet.findAll({
             include: [{
                 model: Produto,
@@ -98,11 +111,16 @@ const lojaController = {
         let categoriaProduto = await Categoria.findByPk(id, {
             include: [{
                 model: Produto,
+                where: {
+                    preco: {
+                        [Op.between]: [0, preco]
+                    }
+                },
                 as: "produto",
                 include: ['categoriaPet', 'imagem'],
             }]
         });
-
+        console.log(urlAtual)
         // let produto = await Produto.findByPk(id, {
         //     include: ['usuario', 'imagem']
         // });
@@ -113,7 +131,8 @@ const lojaController = {
             // produto,
             categoriaPetAll,
             usuario,
-            categoriaProduto
+            categoriaProduto,
+            urlAtual
         });
     },
 
@@ -144,7 +163,13 @@ const lojaController = {
             }, ]
         });
  
-
+        let categoriaProduto = await Categoria.findAll({
+            include: [{
+                model: Produto,
+                as: "produto",
+                atributes: ["produto"]
+            }]
+        });
 
         // categoriasProduto para armazenar as categorias de acordo com o id categoriaPet
         let categoriasProduto = []
@@ -174,7 +199,9 @@ const lojaController = {
             novaCategoriasProduto,
             categoriaPet,
             categoriaPetAll,
-            idCategoriaProduto
+            idCategoriaProduto,
+            categoriaProduto
+            
         })
     },
     novoProduto: async (req, res) => {
