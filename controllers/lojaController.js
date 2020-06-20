@@ -289,6 +289,17 @@ const lojaController = {
             carrinho,
             usuario
         })
+    },
+    deletarItemCarrinho: async (req, res) => {
+        let item = req.body.item;
+
+        await Carrinho.update({
+            ativo: false
+        },{
+            where: {id: item}
+        })
+
+        res.redirect('/carrinho')
     }
 }
 
