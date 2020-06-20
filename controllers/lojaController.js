@@ -163,7 +163,7 @@ const lojaController = {
             return !this[JSON.stringify(a)] && (this[JSON.stringify(a)] = true);
         }, Object.create(null))
 
-        res.render('categoriaLoja', {
+        res.render('categoriaPet', {
             title: 'Busca Categoria',
             css: 'categoria',
             novaCategoriasProduto,
