@@ -2,10 +2,12 @@
 
 <section id="shopCart" class="container">
     <div class="row">
+        <% if (carrinho.length > 0){ %> 
         <div class="col-md-8">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
                 <span>Resumo do Pedido</span>
             </h4>
+            
             <ul class="list-group mb-3">
                 <% for (item of carrinho) {%>
                 <li class="list-group-item d-flex justify-content-between lh-condensed py-3" id="listaCarrinho">
@@ -23,7 +25,7 @@
                     </div>
                     <%} %>
             </ul>
-        </div>
+        
         <div class="col-md-4">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
                 <span>Seu carrinho</span>
@@ -110,6 +112,13 @@
                     </div>
                 </div>
             </div>
+            <%} else { %> 
+                <div class="w-100">
+                <h3>Seu carrinho está vazio</h3><br>
+                <p class="text-center">Adicione algo na <a href="/loja">Loja</a></p>
+                </div>
+            </div>
+        <%} %> 
         </div>
     </div>
 </section>

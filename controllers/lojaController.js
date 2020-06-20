@@ -281,7 +281,6 @@ const lojaController = {
         
         let carrinho = await Carrinho.findAll({where: {usuario_id, ativo: 1}, include:['produto']}) 
 
-        console.log(carrinho[0].produto)
 
         res.render('carrinho', {
             title: 'Carrinho',
