@@ -54,7 +54,7 @@ let Produto = (sequelize, DataTypes) => {
 
     produto.belongsTo(models.CategoriaPet, {
       foreignKey: 'categoria_pet_id',
-      as: 'produto'
+      as: 'categoriaPet'
     });
 
     produto.belongsTo(models.Usuario, {

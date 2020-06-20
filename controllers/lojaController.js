@@ -96,19 +96,24 @@ const lojaController = {
         });
 
         let categoriaProduto = await Categoria.findByPk(id, {
-            include: ['usuario', 'imagem']
+            include: [{
+                model: Produto,
+                as: "produto",
+                include: ['categoriaPet', 'imagem'],
+            }]
         });
 
         // let produto = await Produto.findByPk(id, {
         //     include: ['usuario', 'imagem']
         // });
-
+        
         res.render('categoriaProduto', {
             title: 'Categoria Produto',
             css: 'categoria',
             // produto,
             categoriaPetAll,
-            usuario
+            usuario,
+            categoriaProduto
         });
     },
 
