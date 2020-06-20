@@ -294,13 +294,25 @@ const lojaController = {
             usuario
         })
     },
+    mudaQtd: async (req, res) => {
+        let {qtd, id} = req.query
+
+        await Carrinho.update({
+            quantidade: qtd
+        },{
+            where: {id}
+        })
+
+        res.redirect('/carrinho')
+
+    },
     deletarItemCarrinho: async (req, res) => {
-        let item = req.body.item;
+        let id = req.body;
 
         await Carrinho.update({
             ativo: false
         },{
-            where: {id: item}
+            where: {id: id.id}
         })
 
         res.redirect('/carrinho')
