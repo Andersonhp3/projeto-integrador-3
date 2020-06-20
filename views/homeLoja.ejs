@@ -34,7 +34,7 @@
                             <div class="col-md-2 col-12 px-1">  
                                 <a href="/produto/detalheProduto?id=<%=destaques[ i - 1].id%>" class="text-decoration-none text-blue">
                                     <div class="card" style="width: auto;">
-                                        <img src="<%=destaques[i -1].get().imagem[0].dataValues.imagem%>"
+                                        <img src="<%=destaques[i -1].get().imagem[0].imagem%>"
                                             class="card-img-top" alt="Nome do produto">
                                         <div class="card-body">
                                             <h5 class="card-title text-truncate" id="nomeProduto"><%=destaques[i -1].nome%></h5>
@@ -52,7 +52,7 @@
                                 <div class="col-md-2 col-12 px-1">  
                                     <a href="/produto/detalheProduto?id=<%=destaques[ i - 1].id%>" class="text-decoration-none text-blue">
                                         <div class="card" style="width: auto;">
-                                            <img src="<%=destaques[i -1].get().imagem[0].dataValues.imagem%>"
+                                            <img src="<%=destaques[i -1].get().imagem[0].imagem%>"
                                                 class="card-img-top" alt="Nome do produto">
                                             <div class="card-body">
                                                 <h5 class="card-title text-truncate" id="nomeProduto"><%=destaques[i -1].nome%></h5>
@@ -70,7 +70,7 @@
                                 <div class="col-md-2 col-12 px-1">  
                                     <a href="/produto/detalheProduto?id=<%=destaques[ i - 1].id%>" class="text-decoration-none text-blue">
                                         <div class="card" style="width: auto;">
-                                            <img src="<%=destaques[i -1].get().imagem[0].dataValues.imagem%>"
+                                            <img src="<%=destaques[i -1].get().imagem[0].imagem%>"
                                                 class="card-img-top" alt="Nome do produto">
                                             <div class="card-body">
                                                 <h5 class="card-title text-truncate" id="nomeProduto"><%=destaques[i -1].nome%></h5>
@@ -109,7 +109,7 @@
                     <div class="col-md-2 col-12 px-1">
                         <a href="/produto/detalheProduto?id=<%=itens[(itens.length -1) - i].id%>" class="text-decoration-none text-blue">
                             <div class="card tamanho">
-                                <img id="imagemProduto" src="<%=itens[(itens.length -1) - i].get().imagem[0].dataValues.imagem%>" id="imagemProduto" class="card-img-top" alt="Nome do produto">
+                                <img id="imagemProduto" src="<%=itens[(itens.length -1) - i].get().imagem[0].imagem%>" id="imagemProduto" class="card-img-top" alt="Nome do produto">
                                 <div class="card-body">
                                     <h5 class="card-title text-truncate" id="nomeProduto"><%=itens[(itens.length -1) - i].nome%></h5>
                                     <p class="card-text" id="precoProduto">R$ <%=itens[(itens.length -1) - i].preco%></p>
@@ -128,85 +128,85 @@
         <div class="container">
             <div class="h3 text-blue">Categorias populares</div>
             <div class="row justify-content-center">    
-                <a href="/produtos/categoriaProduto?id=<%=categoriaProduto[0].id%>" class="categoriaLink justify-content-center">
+                <a href="/produto/categoriaProduto?id=<%=categoriaProduto[0].id%>" class="categoriaLink justify-content-center">
                     <div class="icon">
                         <i class="fas fa-carrot"></i>
                     </div>
                     <p>Alimentação</p>
                 </a>                
-                <a href="/produtos/categoriaProduto?id=<%=categoriaProduto[1].id%>" class="categoriaLink justify-content-center">
+                <a href="/produto/categoriaProduto?id=<%=categoriaProduto[1].id%>" class="categoriaLink justify-content-center">
                     <div class="icon">
                         <i class="fas fa-pills"></i>
                     </div>
                     <p>Farmácia</p>
                 </a>
-                <a href="/produtos/categoriaProduto?id=<%=categoriaProduto[2].id%>" class="categoriaLink justify-content-center">
+                <a href="/produto/categoriaProduto?id=<%=categoriaProduto[2].id%>" class="categoriaLink justify-content-center">
                     <div class="icon">
                         <i class="fas fa-soap"></i>
                     </div>
                     <p>Higiene</p>
                 </a>
-                <a href="/produtos/categoriaProduto?id=<%=categoriaProduto[3].id%>" class="categoriaLink justify-content-center">
+                <a href="/produto/categoriaProduto?id=<%=categoriaProduto[3].id%>" class="categoriaLink justify-content-center">
                     <div class="icon">
                         <i class="fas fa-sleigh"></i>
                     </div>
                     <p>Camas</p>
                 </a>
-                <a href="/produtos/categoriaProduto?id=<%=categoriaProduto[4].id%>" class="categoriaLink justify-content-center">
+                <a href="/produto/categoriaProduto?id=<%=categoriaProduto[4].id%>" class="categoriaLink justify-content-center">
                     <div class="icon">
                         <i class="fab fa-cloudsmith"></i>
                     </div>
                     <p>Brinquedos</p>
                 </a>
-                <a href="/produtos/categoriaProduto?id=<%=categoriaProduto[5].id%>" class="categoriaLink justify-content-center">
+                <a href="/produto/categoriaProduto?id=<%=categoriaProduto[5].id%>" class="categoriaLink justify-content-center">
                     <div class="icon">
                         <i class="fas fa-home"></i>
                     </div>
                     <p>Casinhas e Acessórios</p>
                 </a>
-                <a href="/produtos/categoriaProduto?id=<%=categoriaProduto[6].id%>" class="categoriaLink justify-content-center">
+                <a href="/produto/categoriaProduto?id=<%=categoriaProduto[6].id%>" class="categoriaLink justify-content-center">
                     <div class="icon">
                         <i class="fas fa-baby-carriage"></i>
                     </div>
                     <p>Passeio</p>
                 </a>
-                <a href="/produtos/categoriaProduto?id=<%=categoriaProduto[8].id%>" class="categoriaLink justify-content-center">
+                <a href="/produto/categoriaProduto?id=<%=categoriaProduto[8].id%>" class="categoriaLink justify-content-center">
                     <div class="icon">
                         <i class="fas fa-atlas"></i>
                     </div>
                     <p>Adestramento</p>
                 </a>
-                <a href="/produtos/categoriaProduto?id=<%=categoriaProduto[9].id%>" class="categoriaLink justify-content-center">
+                <a href="/produto/categoriaProduto?id=<%=categoriaProduto[9].id%>" class="categoriaLink justify-content-center">
                     <div class="icon">
                         <i class="fas fa-hat-wizard"></i>
                     </div>
                     <p>Roupas e Acessórios</p>
                 </a>
-                <a href="/produtos/categoriaProduto?id=<%=categoriaProduto[10].id%>" class="categoriaLink justify-content-center">
+                <a href="/produto/categoriaProduto?id=<%=categoriaProduto[10].id%>" class="categoriaLink justify-content-center">
                     <div class="icon">
                         <i class="fas fa-ruler-vertical"></i>
                     </div>
                     <p>Arranhadores</p>
                 </a>
-                <a href="/produtos/categoriaProduto?id=<%=categoriaProduto[12].id%>" class="categoriaLink justify-content-center">
+                <a href="/produto/categoriaProduto?id=<%=categoriaProduto[12].id%>" class="categoriaLink justify-content-center">
                     <div class="icon">
                         <i class="fas fa-neuter"></i>
                     </div>
                     <p>Coleiras</p>
                 </a>
-                <a href="/produtos/categoriaProduto?id=<%=categoriaProduto[13].id%>" class="categoriaLink justify-content-center">
+                <a href="/produto/categoriaProduto?id=<%=categoriaProduto[13].id%>" class="categoriaLink justify-content-center">
                     <div class="icon">
                         <i class="fas fa-stroopwafel"></i>
                     </div>
                     <p>Comedouros e Bebedouros</p>
                 </a>
-                <a href="/produtos/categoriaProduto?id=<%=categoriaProduto[15].id%>" class="categoriaLink justify-content-center">
+                <a href="/produto/categoriaProduto?id=<%=categoriaProduto[15].id%>" class="categoriaLink justify-content-center">
                     <div class="icon">
                         <i class="far fa-calendar"></i>
                     </div>
                     <p>Aquário</p>
                 </a>
-                <a href="/produtos/categoriaProduto?id=<%=categoriaProduto[18].id%>" class="categoriaLink justify-content-center">
+                <a href="/produto/categoriaProduto?id=<%=categoriaProduto[18].id%>" class="categoriaLink justify-content-center">
                     <div class="icon">
                         <i class="fas fa-solar-panel"></i>
                     </div>
