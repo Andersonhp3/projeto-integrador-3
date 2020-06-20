@@ -1,5 +1,7 @@
 const path = require('path')
 const fs = require('fs')
+var Sequelize = require('sequelize');   
+const Op = Sequelize.Op;
 const {
     Usuario,
     Endereco,
@@ -87,6 +89,17 @@ const lojaController = {
         let usuario = req.session.usuario;
         let id = req.query.id;
 
+        let preco = req.query.preco;
+
+        if(preco == undefined){
+            preco = 100000;
+        }
+
+        let queryAtual = req.url
+        if(queryAtual.indexOf('preco')){
+            queryAtual = '/categoriaProduto?id=' + id
+        }
+        console.log(queryAtual.indexOf("preco"))
         let categoriaPetAll = await CategoriaPet.findAll({
             include: [{
                 model: Produto,
@@ -98,11 +111,16 @@ const lojaController = {
         let categoriaProduto = await Categoria.findByPk(id, {
             include: [{
                 model: Produto,
+                where: {
+                    preco: {
+                        [Op.between]: [0, preco]
+                    }
+                },
                 as: "produto",
                 include: ['categoriaPet', 'imagem'],
             }]
         });
-
+        console.log(queryAtual)
         // let produto = await Produto.findByPk(id, {
         //     include: ['usuario', 'imagem']
         // });
@@ -113,7 +131,8 @@ const lojaController = {
             // produto,
             categoriaPetAll,
             usuario,
-            categoriaProduto
+            categoriaProduto,
+            queryAtual
         });
     },
 
@@ -123,6 +142,21 @@ const lojaController = {
 
         let id = req.query.id;
         let idCategoriaProduto = req.query.categoriaProdutoId;
+
+        let queryAtual = req.url
+        if(queryAtual.indexOf('preco')){
+            queryAtual = '/categoriaProduto?id=' + id
+        }
+
+        if(queryAtual.indexOf('preco') >-1 && queryAtual.indexOf('categoriaProdutoId') >-1 && queryAtual.indexOf('preco')){
+            queryAtual = '/categoriaPet?id=' + id +"&categoriaProdutoId=" + idCategoriaProduto;
+        }
+        console.log(queryAtual.indexOf('ProdutoId'))
+        let preco = req.query.preco;
+
+        if(preco == undefined){
+            preco = 100000;
+        }
 
         // if(idCategoriaProduto == undefined)
 
@@ -144,7 +178,18 @@ const lojaController = {
             }, ]
         });
  
-
+        let categoriaProduto = await Categoria.findAll({
+            include: [{
+                model: Produto,
+                where: {
+                    preco: {
+                        [Op.between]: [0, preco]
+                    }
+                },
+                as: "produto",
+                atributes: ["produto"]
+            }]
+        });
 
         // categoriasProduto para armazenar as categorias de acordo com o id categoriaPet
         let categoriasProduto = []
@@ -174,7 +219,10 @@ const lojaController = {
             novaCategoriasProduto,
             categoriaPet,
             categoriaPetAll,
-            idCategoriaProduto
+            idCategoriaProduto,
+            categoriaProduto,
+            queryAtual
+            
         })
     },
     novoProduto: async (req, res) => {
