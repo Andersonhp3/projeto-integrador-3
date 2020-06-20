@@ -11,6 +11,10 @@ let Produto = (sequelize, DataTypes) => {
         type: DataTypes.STRING(100),
         allowNull: false
       },
+      marca: {
+        type: DataTypes.STRING(100),
+        allowNull: false
+      },
       preco: {
         type: DataTypes.FLOAT,
         allowNull: false

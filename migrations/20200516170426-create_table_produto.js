@@ -13,6 +13,10 @@ module.exports = {
         type: Sequelize.STRING(100),
         allowNull: false
       },
+      marca: {
+        type: Sequelize.STRING(100),
+        allowNull: false
+      },
       preco: {
         type: Sequelize.FLOAT,
         allowNull: false
