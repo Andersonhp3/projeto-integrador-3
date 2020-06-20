@@ -37,14 +37,26 @@
                     </div>
                     <div>
                         <li class="text-decoration-none text-blue">Preço</li>
-                        <div class="opcao text-decoration-none text-blue"><input type="checkbox" name="preco" id="">Até R$200</div>
-                        <div class="opcao text-decoration-none text-blue"><input type="checkbox" name="preco" id="">de R$200 a R$500</div>
-                        <div class="opcao text-decoration-none text-blue"><input type="checkbox" name="preco" id="">Mais de R$500</div>
+                        <div class="opcao"><a href="/produto<%=queryAtual%>&preco=200"  class="text-decoration-none text-blue">Até R$200</a></div>
+                        <div class="opcao"><a href="/produto<%=queryAtual%>&preco=500"  class="text-decoration-none text-blue">Até R$500</a></div>
+                        <div class="opcao"><a href="/produto<%=queryAtual%>&preco=100000" class="text-decoration-none text-blue">Mais de R$500</a></div>
                     </div>
                 </ul>
             </div>
             <div class="col-md-10 col-12">
                 <div class="container">
+                    <div class="col-12">
+                        <div class="dropdown my-2">
+                            <a class="btn dropdown-toggle btn-sm text-decoration-none text-blue" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Filtrar por:
+                            </a>
+                          
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                              <a class="dropdown-item text-decoration-none text-blue" href="/produto<%=queryAtual%>pordem=DESC">Maior preço</a>
+                              <a class="dropdown-item text-decoration-none text-blue" href="/produto<%=queryAtual%>&ordem=ASC">Menor preço</a>
+                            </div>
+                          </div>
+                    </div>
                     <div class="row">
                         <% if (idCategoriaProduto != undefined) {%>
                             <% for ( let i = 0; i < categoriaPet.categoria_pet_produto.length; i++) {%>
