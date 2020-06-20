@@ -7,15 +7,13 @@ const calculaTotais = (carrinho) => {
         let valor = parseFloat(item.produto.preco)
         let totalProduto = valor * quantidade
         document.getElementById(`valor${item.id}`).innerText = `R$ ${totalProduto}`
+        document.getElementById('total').innerText = `R$${total}`
 
         total += totalProduto
     }
-    console.log(total)
 }
 
 const mudaQtd = evt => {
-    console.log(evt)
-    console.log(quantidade)
     calculaTotais(carrinho)
 }
 
@@ -24,7 +22,7 @@ for (item of carrinho){
     input.addEventListener('change', mudaQtd)
 }
 
-
-
 calculaTotais(carrinho)
+
+
 
