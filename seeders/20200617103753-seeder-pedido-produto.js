@@ -8,17 +8,14 @@ module.exports = {
         {
           pedido_id: 1,
           produto_id: 5,
-          quantidade: 1
         },
         {
           pedido_id: 2,
           produto_id: 8,
-          quantidade: 2
         },
         {
           pedido_id: 3,
           produto_id: 1,
-          quantidade: 1
         },
       ],
       {}
