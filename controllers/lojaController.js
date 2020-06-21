@@ -376,6 +376,7 @@ const lojaController = {
     },
     novoProduto: async (req, res) => {
         let usuario = req.session.usuario;
+        let usuario_id = usuario.id;
 
         let {
             nomeProduto,
