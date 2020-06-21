@@ -19,11 +19,11 @@ module.exports = {
         imagem: '/images/profiles/1592416011825-avatar.png'
       },
       {
-        nome: 'Felipe Silva',
-        email: 'felipe@teste.com',
+        nome: 'Alex Silva',
+        email: 'alex@alex.com',
         senha: bcrypt.hashSync('123456', 12),
-        cpf_cnpj: "33322222211",
-        imagem: '/images/profiles/default.png'
+        cpf_cnpj: "12345678910",
+        imagem: '/images/profiles/1592602832421-avatar.png'
       },
       {
         nome: 'Igor Veloso',
