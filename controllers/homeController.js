@@ -11,7 +11,8 @@ const {
     Produto,
     Categoria,
     ImagemProduto,
-    Pet
+    Pet,
+    Carrinho
 } = require("../models");
 
 const Op = Sequelize.Op
@@ -60,6 +61,13 @@ const homeController =  {
             if(a.numero_vendas < b.numero_vendas) return 1;
             return 0;
         })
+        let carrinho = await Carrinho.findAll({
+            where:{
+                usuario_id:11
+            }})
+        
+        
+        
 
 
         res.render(
@@ -69,7 +77,8 @@ const homeController =  {
                 usuario,
                 maisVendidos,
                 pets,
-                adotados
+                adotados,
+                carrinho
             }
         );
     },
@@ -79,6 +88,10 @@ const homeController =  {
         let pesquisa = req.query.search
 
         let resultadoPesquisa = await Produto.findAll({where:{nome: {[Op.like]:`%${pesquisa}%`}}, include: ['imagem']})
+        let carrinho = await Carrinho.findAll({
+            where:{
+                usuario_id:11
+            }})
         
         console.log(resultadoPesquisa)
         res.render('pesquisa',{
@@ -86,7 +99,8 @@ const homeController =  {
             css:'categoria',
             usuario,
             pesquisa,
-            resultadoPesquisa
+            resultadoPesquisa,
+            carrinho
             
         })
     }

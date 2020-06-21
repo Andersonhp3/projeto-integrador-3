@@ -54,6 +54,10 @@ const lojaController = {
             if (a.estoque < b.estoque) return 1;
             return 0;
         })
+        let carrinho = await Carrinho.findAll({
+            where:{
+                usuario_id:11
+            }})
         res.render("homeLoja", {
             title: 'Loja',
             css: 'homeLoja',
@@ -61,7 +65,8 @@ const lojaController = {
             destaques,
             usuario,
             categoriaPet,
-            categoriaProduto
+            categoriaProduto,
+            carrinho
         })
     },
 
@@ -73,12 +78,17 @@ const lojaController = {
         let produto = await Produto.findByPk(id, {
             include: ['usuario', 'imagem']
         })
+        let carrinho = await Carrinho.findAll({
+            where:{
+                usuario_id:11
+            }})
 
         res.render('produto', {
             title: 'Detalhes do Produto',
             css: 'produto',
             produto,
-            usuario
+            usuario,
+            carrinho
         })
     },
     
@@ -106,6 +116,10 @@ const lojaController = {
         // let produto = await Produto.findByPk(id, {
         //     include: ['usuario', 'imagem']
         // });
+        let carrinho = await Carrinho.findAll({
+            where:{
+                usuario_id:11
+            }})
         
         res.render('categoriaProduto', {
             title: 'Categoria Produto',
@@ -113,7 +127,8 @@ const lojaController = {
             // produto,
             categoriaPetAll,
             usuario,
-            categoriaProduto
+            categoriaProduto,
+            carrinho
         });
     },
 
@@ -168,13 +183,19 @@ const lojaController = {
             return !this[JSON.stringify(a)] && (this[JSON.stringify(a)] = true);
         }, Object.create(null))
 
+        let carrinho = await Carrinho.findAll({
+            where:{
+                usuario_id:11
+            }})
+
         res.render('categoriaPet', {
             title: 'Busca Categoria',
             css: 'categoria',
             novaCategoriasProduto,
             categoriaPet,
             categoriaPetAll,
-            idCategoriaProduto
+            idCategoriaProduto,
+            carrinho
         })
     },
     novoProduto: async (req, res) => {
@@ -286,7 +307,7 @@ const lojaController = {
         
         let carrinho = await Carrinho.findAll({where: {usuario_id, ativo: 1}, include:['produto']}) 
 
-
+        
         res.render('carrinho', {
             title: 'Carrinho',
             css: 'carrinho',
