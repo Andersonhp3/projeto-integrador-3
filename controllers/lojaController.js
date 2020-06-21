@@ -659,7 +659,13 @@ const lojaController = {
             }
         })
 
-        res.redirect('/home')
+        res.redirect('/pedidoSucesso')
+    },
+    sucesso: (req, res) => {
+        res.render('pedidoSucesso', {
+            title: "Pedido efetuado com Sucesso!",
+            css: "index"
+        })
     }
 }
 
