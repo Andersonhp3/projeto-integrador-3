@@ -12,7 +12,8 @@ const {
   Produto,
   Categoria,
   CategoriaPet,
-  Pet
+  Pet,
+  Carrinho
 } = require("../models");
 
 const authController = {
@@ -135,7 +136,7 @@ const authController = {
 
   showPerfil: async (req, res) => {
     let usuario = req.session.usuario;
-
+    let carrinho = undefined
     let usuario_id = usuario.id;
 
     console.log(`Usuario: ${usuario_id}`);
@@ -157,6 +158,14 @@ const authController = {
       .then()
       .catch((err) => console.log(err));
 
+      if(usuario){
+        carrinho = await Carrinho.findAll({
+            where:{
+                usuario_id:usuario.id, 
+                ativo: 1
+            }})
+        }
+
     res.render("perfil", {
       title: "Minha Conta",
       css: "perfil",
@@ -165,6 +174,7 @@ const authController = {
       endereco,
       estados,
       cidades,
+      carrinho
     });
   },
 
@@ -203,7 +213,7 @@ const authController = {
 
   showCompras: async (req, res) => {
     let usuario = req.session.usuario;
-
+    let carrinho = undefined
     let usuario_id = usuario.id;
 
     let pedidos = await Pedido.findAll({
@@ -221,7 +231,13 @@ const authController = {
     let produtos = await Produto.findAll()
       .then()
       .catch((err) => console.log(err));
-
+      if(usuario){
+        carrinho = await Carrinho.findAll({
+            where:{
+                usuario_id:usuario.id, 
+                ativo: 1
+            }})
+        }
     res.render("perfilCompras", {
       title: "Minha Compras",
       css: "perfilCompras",
@@ -229,12 +245,13 @@ const authController = {
       usuario,
       pedidos,
       produtos,
+      carrinho
     });
   },
 
   showVendas: async (req, res) => {
     let usuario = req.session.usuario;
-
+    let carrinho = undefined
     let usuario_id = usuario.id;
 
     let pedidos = await Pedido.findAll({
@@ -262,20 +279,27 @@ const authController = {
         "pedido",
       ],
     });
-
+    if(usuario){
+      carrinho = await Carrinho.findAll({
+          where:{
+              usuario_id:usuario.id, 
+              ativo: 1
+          }})
+      }
     res.render("perfilVendas", {
       title: "Minha Vendas",
       css: "perfilVendas",
       error: false,
       usuario,
       produtos,
-      pedidos
+      pedidos,
+      carrinho
     });
   },
 
   showProdutos: async (req, res) => {
     let usuario = req.session.usuario;
-
+    let carrinho = undefined
     let usuario_id = usuario.id
 
     let produtos = await Produto.findAll({
@@ -283,22 +307,38 @@ const authController = {
         usuario_id
       }
     })
+    if(usuario){
+      carrinho = await Carrinho.findAll({
+          where:{
+              usuario_id:usuario.id, 
+              ativo: 1
+          }})
+      }
 
     res.render("perfilProdutos", {
       title: "Meus Produtos",
       css: "perfilVendas",
       error: false,
       usuario,
-      produtos
+      produtos,
+      carrinho
     })
   },
 
   showVender: async (req, res) => {
     let usuario = req.session.usuario;
-
+    let usuario_id = usuario.id
+    let carrinho = undefined
     let categorias = await Categoria.findAll();
 
     let categorias_pet = await CategoriaPet.findAll();
+    if(usuario){
+      carrinho = await Carrinho.findAll({
+          where:{
+              usuario_id:usuario.id, 
+              ativo: 1
+          }})
+      }
 
     res.render("cadastroProduto", {
       title: "Nova Venda",
@@ -306,13 +346,15 @@ const authController = {
       error: false,
       usuario,
       categorias,
-      categorias_pet
+      categorias_pet,
+      carrinho
     });
   },
 
   showDoar: async (req, res) => {
     let usuario = req.session.usuario;
-
+    let usuario_id = usuario.id
+    let carrinho = undefined
     let categorias = await CategoriaPet.findAll({
       where: {
         id: {
@@ -320,20 +362,28 @@ const authController = {
         }
       }
     });
+    if(usuario){
+      carrinho = await Carrinho.findAll({
+          where:{
+              usuario_id:usuario.id, 
+              ativo: 1
+          }})
+      }
 
     res.render("cadastroAdocao", {
       title: "Nova Adoção",
       css: "cadastroAdocao",
       error: false,
       usuario,
-      categorias
+      categorias,
+      carrinho
     });
   },
 
   showDoacoes: async (req, res) => {
     let usuario = req.session.usuario;
     let usuario_id = usuario.id
-
+    let carrinho = undefined
     let pets = await Pet.findAll({
       include: ['usuario', 'imagem'],
       where: {
@@ -341,12 +391,24 @@ const authController = {
       }
     })
     
+    if(usuario){
+      carrinho = await Carrinho.findAll({
+          where:{
+              usuario_id:usuario.id, 
+              ativo: 1
+          }})
+        carrinho = carrinho.filter((result)=>{
+          return result.ativo = true
+        })
+        console.log(carrinho.ativo)
+      }
     res.render("perfilDoacoes", {
       title: "Doações",
       css: "perfilDoacoes",
       error: false,
       usuario,
-      pets
+      pets,
+      carrinho
     });
   },
 

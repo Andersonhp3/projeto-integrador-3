@@ -72,7 +72,7 @@
                     <a class="nav-link nav-item text-decoration-none text-reset font-weight-bold" href="/login">Login</a>
                     <a class="nav-link nav-item text-decoration-none text-reset font-weight-bold" href="/cadastro">Cadastre-se</a>
                     <% } else { %>
-                    <span class="badge badge-danger badge-pill">0</span>
+                    <span class="badge badge-danger badge-pill"><%=carrinho.length%></span>
                     <a href="/carrinho"
                         class="text-decoration-none text-white material-icons shopping-cart">shopping_cart</a>
                     <div class="dropdown">
