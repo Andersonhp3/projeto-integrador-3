@@ -59,17 +59,20 @@
                     </div>
                     <div class="row">
                         <% if (idCategoriaProduto != undefined) {%>
-                            <% for ( let i = 0; i < categoriaPet.categoria_pet_produto.length; i++) {%>
-                                <% if (categoriaPet.categoria_pet_produto[i].categoria.dataValues.id == idCategoriaProduto) { %>
+                            <% for ( let i = 0; i < produtoAll.length; i++) {%>
+                                <%console.log(produtoAll[i].categoria_id)%>
+                                <%console.log(produtoAll[i])%>
+                                <%console.log('id cate ' + idCategoriaProduto)%>
+                                <% if (produtoAll[i].categoria_id == idCategoriaProduto) { %>
                                     <div class="col-md-3 col-12 justify-content-between mb-4">
-                                    <a class="text-decoration-none text-blue" href="/produto/detalheProduto?id=<%=categoriaPet.categoria_pet_produto[i].id%>">
+                                    <a class="text-decoration-none text-blue" href="/produto/detalheProduto?id=<%=produtoAll[i].id%>">
                                        <div class="card" style="width: auto;">
-                                           <img src="<%=categoriaPet.categoria_pet_produto[i].imagem[0].dataValues.imagem%>"
+                                           <img src="<%=produtoAll[i].imagem[0].imagem%>"
                                                class="card-img-top" alt="Nome do produto">
                                            <div class="card-body">
-                                               <h6 class="card-title text-truncate" id="nomeProduto"><%=categoriaPet.categoria_pet_produto[i].nome%>
+                                               <h6 class="card-title text-truncate" id="nomeProduto"><%=produtoAll[i].nome%>
                                                </h6>
-                                               <p class="card-text" id="precoProduto">R$ <%=categoriaPet.categoria_pet_produto[i].preco%></p>
+                                               <p class="card-text" id="precoProduto">R$ <%=produtoAll[i].preco%></p>
                                             </div>  
                                        </div>
                                    </a>

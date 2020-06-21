@@ -212,7 +212,8 @@ const lojaController = {
             queryAtual,
             produtoAll,
             carrinho,
-            queryAtual
+            queryAtual,
+            
         });
     },
 
@@ -259,7 +260,7 @@ const lojaController = {
             {
                 include: 'imagem',
                 where: {
-                    categoria_id: id,
+                    categoria_pet_id: id,
                     preco: {
                         [Op.between]: [0, preco]
                     }
@@ -270,7 +271,7 @@ const lojaController = {
             {
                 include: 'imagem',
                 where: {
-                    categoria_id: id,
+                    categoria_pet_id: id,
                     preco: {
                         [Op.between]: [0, preco]
                     }
@@ -355,7 +356,7 @@ const lojaController = {
                 }})
             }
 
-        console.log(ordemPreco)
+        
 
         
         res.render('categoriaPet', {
@@ -368,7 +369,8 @@ const lojaController = {
             categoriaProduto,
             queryAtual,
             carrinho,
-            usuario
+            usuario,
+            produtoAll
             
         })
     },
