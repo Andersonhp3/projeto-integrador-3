@@ -17,10 +17,6 @@ let pedidoProduto = (sequelize, DataTypes) => {
         },
         allowNull: false
       },
-      quantidade: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-      }
     }, {
       tableName: "pedido_produto",
       timestamps: false
