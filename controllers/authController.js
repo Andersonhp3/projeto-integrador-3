@@ -12,7 +12,8 @@ const {
   Produto,
   Categoria,
   CategoriaPet,
-  Pet
+  Pet,
+  Carrinho
 } = require("../models");
 
 const authController = {
@@ -157,6 +158,11 @@ const authController = {
       .then()
       .catch((err) => console.log(err));
 
+    let carrinho = await Carrinho.findAll({
+      where:{
+          usuario_id:11
+      }})
+
     res.render("perfil", {
       title: "Minha Conta",
       css: "perfil",
@@ -165,6 +171,7 @@ const authController = {
       endereco,
       estados,
       cidades,
+      carrinho
     });
   },
 
@@ -221,7 +228,10 @@ const authController = {
     let produtos = await Produto.findAll()
       .then()
       .catch((err) => console.log(err));
-
+    let carrinho = await Carrinho.findAll({
+      where:{
+          usuario_id:11
+      }})
     res.render("perfilCompras", {
       title: "Minha Compras",
       css: "perfilCompras",
@@ -229,6 +239,7 @@ const authController = {
       usuario,
       pedidos,
       produtos,
+      carrinho
     });
   },
 
@@ -262,14 +273,18 @@ const authController = {
         "pedido",
       ],
     });
-
+    let carrinho = await Carrinho.findAll({
+      where:{
+          usuario_id:11
+      }})
     res.render("perfilVendas", {
       title: "Minha Vendas",
       css: "perfilVendas",
       error: false,
       usuario,
       produtos,
-      pedidos
+      pedidos,
+      carrinho
     });
   },
 
@@ -283,13 +298,18 @@ const authController = {
         usuario_id
       }
     })
+    let carrinho = await Carrinho.findAll({
+      where:{
+          usuario_id:11
+      }})
 
     res.render("perfilProdutos", {
       title: "Meus Produtos",
       css: "perfilVendas",
       error: false,
       usuario,
-      produtos
+      produtos,
+      carrinho
     })
   },
 
@@ -299,6 +319,10 @@ const authController = {
     let categorias = await Categoria.findAll();
 
     let categorias_pet = await CategoriaPet.findAll();
+    let carrinho = await Carrinho.findAll({
+      where:{
+          usuario_id:11
+      }})
 
     res.render("cadastroProduto", {
       title: "Nova Venda",
@@ -306,7 +330,8 @@ const authController = {
       error: false,
       usuario,
       categorias,
-      categorias_pet
+      categorias_pet,
+      carrinho
     });
   },
 
@@ -320,13 +345,18 @@ const authController = {
         }
       }
     });
+    let carrinho = await Carrinho.findAll({
+      where:{
+          usuario_id:11
+      }})
 
     res.render("cadastroAdocao", {
       title: "Nova Adoção",
       css: "cadastroAdocao",
       error: false,
       usuario,
-      categorias
+      categorias,
+      carrinho
     });
   },
 
@@ -340,13 +370,17 @@ const authController = {
         usuario_id
       }
     })
-    
+    let carrinho = await Carrinho.findAll({
+      where:{
+          usuario_id:11
+      }})
     res.render("perfilDoacoes", {
       title: "Doações",
       css: "perfilDoacoes",
       error: false,
       usuario,
-      pets
+      pets,
+      carrinho
     });
   },
 

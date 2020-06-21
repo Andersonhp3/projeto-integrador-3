@@ -5,7 +5,8 @@ const {
     usuario,
     Pet,
     ImagemPet,
-    CategoriaPet
+    CategoriaPet,
+    Carrinho
 } = require('../models')
 
 
@@ -31,12 +32,18 @@ const adocaoController = {
             include: ['imagem']
         });
 
+        let carrinho = await Carrinho.findAll({
+            where:{
+                usuario_id:11
+            }})
+
         res.render("homeAdocao", {
             title: 'Adoção',
             css: 'homeAdocao',
             pets,
             categorias,
-            usuario
+            usuario,
+            carrinho
         });
     },
     home: async (req, res) => {
@@ -49,13 +56,18 @@ const adocaoController = {
             },
             include: ['imagem']
         });
+        let carrinho = await Carrinho.findAll({
+            where:{
+                usuario_id:11
+            }})
 
         res.render("homeAdocao", {
             title: 'Adoção',
             css: 'homeAdocao',
             pets,
             usuario,
-            categorias
+            categorias,
+            carrinho
         });
     },
     detalheAdocao: async (req, res) => {
@@ -66,13 +78,17 @@ const adocaoController = {
         let pet = await Pet.findByPk(id, {
             include: ['usuario', 'imagem']
         })
-
+        let carrinho = await Carrinho.findAll({
+            where:{
+                usuario_id:11
+            }})
         res.render('detalheAdocao', {
             title: 'Detalhes do pet',
             css: 'detalheAdocao',
             nav: '',
             pet,
-            usuario
+            usuario,
+            carrinho
         })
     },
     novaAdocao: async (req, res) => {

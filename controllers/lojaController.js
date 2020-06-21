@@ -159,7 +159,8 @@ const lojaController = {
         let idCategoriaProduto = req.query.categoriaProdutoId;
         let preco = req.query.preco;
         let ordemPreco = req.query.ordem;
-        let queryAtual = req.url
+        let queryAtual = req.url;
+        let usuario = req.session.usuario;
 
         
 
@@ -255,6 +256,8 @@ const lojaController = {
             }})
 
         console.log(ordemPreco)
+
+        
         res.render('categoriaPet', {
             title: 'Busca Categoria',
             css: 'categoria',
@@ -264,7 +267,8 @@ const lojaController = {
             idCategoriaProduto,
             categoriaProduto,
             queryAtual,
-            carrinho
+            carrinho,
+            usuario
             
         })
     },
