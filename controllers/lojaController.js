@@ -1,5 +1,7 @@
 const path = require('path')
 const fs = require('fs')
+var Sequelize = require('sequelize');   
+const Op = Sequelize.Op;
 const {
     Usuario,
     Endereco,
@@ -97,6 +99,17 @@ const lojaController = {
         let usuario = req.session.usuario;
         let id = req.query.id;
 
+        let preco = req.query.preco;
+
+        if(preco == undefined){
+            preco = 100000;
+        }
+
+        let queryAtual = req.url
+        if(queryAtual.indexOf('preco')){
+            queryAtual = '/categoriaProduto?id=' + id
+        }
+    
         let categoriaPetAll = await CategoriaPet.findAll({
             include: [{
                 model: Produto,
@@ -108,11 +121,16 @@ const lojaController = {
         let categoriaProduto = await Categoria.findByPk(id, {
             include: [{
                 model: Produto,
+                where: {
+                    preco: {
+                        [Op.between]: [0, preco]
+                    }
+                },
                 as: "produto",
                 include: ['categoriaPet', 'imagem'],
             }]
         });
-
+    
         // let produto = await Produto.findByPk(id, {
         //     include: ['usuario', 'imagem']
         // });
@@ -128,7 +146,8 @@ const lojaController = {
             categoriaPetAll,
             usuario,
             categoriaProduto,
-            carrinho
+            carrinho,
+            queryAtual
         });
     },
 
@@ -138,6 +157,31 @@ const lojaController = {
 
         let id = req.query.id;
         let idCategoriaProduto = req.query.categoriaProdutoId;
+        let preco = req.query.preco;
+        let ordemPreco = req.query.ordem;
+        let queryAtual = req.url
+
+        
+
+        if(queryAtual.indexOf('preco')){
+            queryAtual = '/categoriaPet?id=' + id
+        }
+
+        if(queryAtual.indexOf('preco') && queryAtual.indexOf('categoriaProdutoId')){
+            queryAtual = '/categoriaPet?id=' + id +"&categoriaProdutoId=" + idCategoriaProduto;
+        }
+        
+        if(queryAtual.indexOf('preco') >-1 && queryAtual.indexOf('categoriaProdutoId') >-1 && queryAtual.indexOf('preco')){
+            queryAtual = '/categoriaPet?id=' + id +"&categoriaProdutoId=" + idCategoriaProduto;
+        }
+       
+       if(ordemPreco == undefined){
+
+       } 
+
+        if(preco == undefined){
+            preco = 100000;
+        }
 
         // if(idCategoriaProduto == undefined)
 
@@ -154,13 +198,35 @@ const lojaController = {
         let categoriaPet = await CategoriaPet.findByPk(id, {
             include: [{
                 model: Produto,
+                where: {
+                    preco: {
+                        [Op.between]: [0, preco]
+                    }
+                },
+                order: [
+                    ['roduto.preco', "ASC"]
+                ],
                 as: "categoria_pet_produto",
                 include: ['categoria', "imagem"],
             }, ]
         });
  
-
-
+        let categoriaProduto = await Categoria.findAll({
+            include: [{
+                model: Produto,
+                where: {
+                    preco: {
+                        [Op.between]: [0, preco]
+                    }
+                },
+                order: [
+                    ['preco', 'ASC']
+                ],
+                as: "produto",
+                atributes: ["produto"]
+            }]
+        });
+        
         // categoriasProduto para armazenar as categorias de acordo com o id categoriaPet
         let categoriasProduto = []
         for (let i = 0; i < categoriaPet.categoria_pet_produto.length; i++) {
@@ -188,6 +254,7 @@ const lojaController = {
                 usuario_id:11
             }})
 
+        console.log(ordemPreco)
         res.render('categoriaPet', {
             title: 'Busca Categoria',
             css: 'categoria',
@@ -195,7 +262,10 @@ const lojaController = {
             categoriaPet,
             categoriaPetAll,
             idCategoriaProduto,
+            categoriaProduto,
+            queryAtual,
             carrinho
+            
         })
     },
     novoProduto: async (req, res) => {
@@ -315,13 +385,25 @@ const lojaController = {
             usuario
         })
     },
+    mudaQtd: async (req, res) => {
+        let {qtd, id} = req.query
+
+        await Carrinho.update({
+            quantidade: qtd
+        },{
+            where: {id}
+        })
+
+        res.redirect('/carrinho')
+
+    },
     deletarItemCarrinho: async (req, res) => {
-        let item = req.body.item;
+        let id = req.body;
 
         await Carrinho.update({
             ativo: false
         },{
-            where: {id: item}
+            where: {id: id.id}
         })
 
         res.redirect('/carrinho')

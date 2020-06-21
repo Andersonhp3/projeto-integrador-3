@@ -1,6 +1,6 @@
 #imagemGrande {
-    width: 445px;
-    height: 350px;
+    height: 440px;
+    width: 440px;
 }
 
 .btn-Adotar {
@@ -38,9 +38,5 @@ h1 {
 }
 
 #infoDoador {
-    margin-top: 30px;
-}
-
-section#descricao {
-    margin-top: 150px;
+    padding-bottom: 15px;
 }

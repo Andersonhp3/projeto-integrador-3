@@ -16,6 +16,10 @@ let pedidoProduto = (sequelize, DataTypes) => {
           key:"id"
         },
         allowNull: false
+      },
+      quantidade: {
+        type: DataTypes.INTEGER,
+        allowNull: false
       }
     }, {
       tableName: "pedido_produto",

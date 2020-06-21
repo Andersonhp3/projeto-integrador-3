@@ -14,18 +14,18 @@
                     <div class="col-8">
                         <h6 class="my-0"><%=item.produto.nome%></h6>
                         <span class="text-muted"> Quantidade: </span>
-                        <input type="number" min="1" class="ml-2" value=<%= item.quantidade%> id="<%= item.id %>">
+                        <input type="number" min="1" class="ml-2 qtd" value=<%= item.quantidade%> id="<%= item.id %>">
                     </div>
                     <div class="col-4 d-flex align-items-center">
                         <span class="text-muted valor" id="valor<%= item.id %>"> R$<%=item.produto.preco%></span>
-                        <form action="/deletaritemcarrinho" method="POST">
-                            <input type="text" value="<%= item.id %>" class="d-none" name="item">
+                        <form class="deleteItem" action="/deletaritemcarrinho" method="POST">
+                            <input type="text" value="<%= item.id %>" class="d-none item">
                             <button class="btn btn-site ml-2"><i class="fas fa-trash"></i></button>
                         </form>
                     </div>
                     <%} %>
             </ul>
-        
+        </div>
         <div class="col-md-4">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
                 <span>Seu carrinho</span>
@@ -33,10 +33,11 @@
             <ul class="list-group mb-3">
                 <li class="list-group-item d-flex justify-content-between">
                     <span>Total (BRL)</span>
-                    <strong id="total">R$15</strong>
+                    <strong id="total"></strong>
                 </li>
             </ul>
-            <button class="btn btn-site">Finalizar Pedido</button>
+                <button class="btn btn-site">Finalizar Pedido</button>
+            
         </div>
     </div>
     <h2>Quem comprou também viu:</h2>
@@ -122,7 +123,7 @@
         </div>
     </div>
 </section>
-
+<script src="/javascripts/jquery-3.5.1.js"></script>
 <script src="/javascripts/carrinho.js"></script>
 
 <%- include('./partials/footer') %>

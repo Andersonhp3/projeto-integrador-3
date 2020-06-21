@@ -44,6 +44,10 @@ ul>div {
     height: fit-content;
 }
 
+.dropdown {
+    text-align: end;
+}
+
 section#catLoja{
     margin-top: 30px;
 }

@@ -21,6 +21,10 @@ module.exports = {
         },
         allowNull: false
       },
+      quantidade : {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
       createdAt: {
         type: Sequelize.DATE,
       },
