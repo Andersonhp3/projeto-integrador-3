@@ -57,23 +57,24 @@
                             </a>
                           
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                              <a class="dropdown-item text-decoration-none text-blue" href="/produto<%=queryAtual%>">Normal</a>
                               <a class="dropdown-item text-decoration-none text-blue" href="/produto<%=queryAtual%>&ordem=DESC">Maior preço</a>
                               <a class="dropdown-item text-decoration-none text-blue" href="/produto<%=queryAtual%>&ordem=ASC">Menor preço</a>
                             </div>
                           </div>
                     </div>
                     <div class="row">
-                            <% for ( let i = 0; i < categoriaProduto.produto.length; i++) {%>
+                            <% for ( let i = 0; i < produtoAll.length; i++) {%>
                                 
                                     <div class="col-md-3 col-12 justify-content-between mb-4">
-                                    <a class="text-decoration-none text-blue" href="/produto/detalheProduto?id=<%=categoriaProduto.produto[i].id%>">
+                                    <a class="text-decoration-none text-blue" href="/produto/detalheProduto?id=<%=produtoAll[i].id%>">
                                        <div class="card" style="width: auto;">
-                                           <img src="<%=categoriaProduto.produto[i].imagem[0].imagem%>"
+                                           <img src="<%=produtoAll[i].imagem[0].imagem%>"
                                                class="card-img-top" alt="Nome do produto">
                                            <div class="card-body">
-                                               <h6 class="card-title text-truncate" id="nomeProduto"><%=categoriaProduto.produto[i].nome%>
+                                               <h6 class="card-title text-truncate" id="nomeProduto"><%=produtoAll[i].nome%>
                                                </h6>
-                                               <p class="card-text" id="precoProduto">R$ <%=categoriaProduto.produto[i].preco%></p>
+                                               <p class="card-text" id="precoProduto">R$ <%=produtoAll[i].preco%></p>
                                             </div>  
                                        </div>
                                    </a>
