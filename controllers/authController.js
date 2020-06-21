@@ -136,7 +136,7 @@ const authController = {
 
   showPerfil: async (req, res) => {
     let usuario = req.session.usuario;
-
+    let carrinho = undefined
     let usuario_id = usuario.id;
 
     console.log(`Usuario: ${usuario_id}`);
@@ -158,10 +158,13 @@ const authController = {
       .then()
       .catch((err) => console.log(err));
 
-    let carrinho = await Carrinho.findAll({
-      where:{
-          usuario_id:11
-      }})
+      if(usuario){
+        carrinho = await Carrinho.findAll({
+            where:{
+                usuario_id:usuario.id, 
+                ativo: 1
+            }})
+        }
 
     res.render("perfil", {
       title: "Minha Conta",
@@ -210,7 +213,7 @@ const authController = {
 
   showCompras: async (req, res) => {
     let usuario = req.session.usuario;
-
+    let carrinho = undefined
     let usuario_id = usuario.id;
 
     let pedidos = await Pedido.findAll({
@@ -228,10 +231,13 @@ const authController = {
     let produtos = await Produto.findAll()
       .then()
       .catch((err) => console.log(err));
-    let carrinho = await Carrinho.findAll({
-      where:{
-          usuario_id:11
-      }})
+      if(usuario){
+        carrinho = await Carrinho.findAll({
+            where:{
+                usuario_id:usuario.id, 
+                ativo: 1
+            }})
+        }
     res.render("perfilCompras", {
       title: "Minha Compras",
       css: "perfilCompras",
@@ -245,7 +251,7 @@ const authController = {
 
   showVendas: async (req, res) => {
     let usuario = req.session.usuario;
-
+    let carrinho = undefined
     let usuario_id = usuario.id;
 
     let pedidos = await Pedido.findAll({
@@ -273,10 +279,13 @@ const authController = {
         "pedido",
       ],
     });
-    let carrinho = await Carrinho.findAll({
-      where:{
-          usuario_id:11
-      }})
+    if(usuario){
+      carrinho = await Carrinho.findAll({
+          where:{
+              usuario_id:usuario.id, 
+              ativo: 1
+          }})
+      }
     res.render("perfilVendas", {
       title: "Minha Vendas",
       css: "perfilVendas",
@@ -290,7 +299,7 @@ const authController = {
 
   showProdutos: async (req, res) => {
     let usuario = req.session.usuario;
-
+    let carrinho = undefined
     let usuario_id = usuario.id
 
     let produtos = await Produto.findAll({
@@ -298,10 +307,13 @@ const authController = {
         usuario_id
       }
     })
-    let carrinho = await Carrinho.findAll({
-      where:{
-          usuario_id:11
-      }})
+    if(usuario){
+      carrinho = await Carrinho.findAll({
+          where:{
+              usuario_id:usuario.id, 
+              ativo: 1
+          }})
+      }
 
     res.render("perfilProdutos", {
       title: "Meus Produtos",
@@ -315,14 +327,18 @@ const authController = {
 
   showVender: async (req, res) => {
     let usuario = req.session.usuario;
-
+    let usuario_id = usuario.id
+    let carrinho = undefined
     let categorias = await Categoria.findAll();
 
     let categorias_pet = await CategoriaPet.findAll();
-    let carrinho = await Carrinho.findAll({
-      where:{
-          usuario_id:11
-      }})
+    if(usuario){
+      carrinho = await Carrinho.findAll({
+          where:{
+              usuario_id:usuario.id, 
+              ativo: 1
+          }})
+      }
 
     res.render("cadastroProduto", {
       title: "Nova Venda",
@@ -337,7 +353,8 @@ const authController = {
 
   showDoar: async (req, res) => {
     let usuario = req.session.usuario;
-
+    let usuario_id = usuario.id
+    let carrinho = undefined
     let categorias = await CategoriaPet.findAll({
       where: {
         id: {
@@ -345,10 +362,13 @@ const authController = {
         }
       }
     });
-    let carrinho = await Carrinho.findAll({
-      where:{
-          usuario_id:11
-      }})
+    if(usuario){
+      carrinho = await Carrinho.findAll({
+          where:{
+              usuario_id:usuario.id, 
+              ativo: 1
+          }})
+      }
 
     res.render("cadastroAdocao", {
       title: "Nova Adoção",
@@ -363,17 +383,25 @@ const authController = {
   showDoacoes: async (req, res) => {
     let usuario = req.session.usuario;
     let usuario_id = usuario.id
-
+    let carrinho = undefined
     let pets = await Pet.findAll({
       include: ['usuario', 'imagem'],
       where: {
         usuario_id
       }
     })
-    let carrinho = await Carrinho.findAll({
-      where:{
-          usuario_id:11
-      }})
+    
+    if(usuario){
+      carrinho = await Carrinho.findAll({
+          where:{
+              usuario_id:usuario.id, 
+              ativo: 1
+          }})
+        carrinho = carrinho.filter((result)=>{
+          return result.ativo = true
+        })
+        console.log(carrinho.ativo)
+      }
     res.render("perfilDoacoes", {
       title: "Doações",
       css: "perfilDoacoes",

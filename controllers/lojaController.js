@@ -19,6 +19,7 @@ const {
 const lojaController = {
     home: async (req, res) => {
         let usuario = req.session.usuario;
+        let carrinho = undefined
         const itens = await Produto.findAll({
             include: [{
                 model: ImagemProduto,
@@ -56,10 +57,13 @@ const lojaController = {
             if (a.estoque < b.estoque) return 1;
             return 0;
         })
-        let carrinho = await Carrinho.findAll({
-            where:{
-                usuario_id:11
-            }})
+        if(usuario){
+            carrinho = await Carrinho.findAll({
+                where:{
+                    usuario_id:usuario.id, 
+                    ativo: 1
+                }})
+            }
         res.render("homeLoja", {
             title: 'Loja',
             css: 'homeLoja',
@@ -76,14 +80,19 @@ const lojaController = {
     showProduto: async (req, res) => {
         let usuario = req.session.usuario;
         let id = req.query.id
+        let carrinho = undefined
+        
 
         let produto = await Produto.findByPk(id, {
             include: ['usuario', 'imagem']
         })
-        let carrinho = await Carrinho.findAll({
-            where:{
-                usuario_id:11
-            }})
+        if(usuario){
+            carrinho = await Carrinho.findAll({
+                where:{
+                    usuario_id:usuario.id,
+                    ativo: 1
+                }})
+            }
 
         res.render('produto', {
             title: 'Detalhes do Produto',
@@ -98,6 +107,7 @@ const lojaController = {
     showCategoriaProduto: async (req, res) => {
         let usuario = req.session.usuario;
         let id = req.query.id;
+        let carrinho = undefined
 
         let preco = req.query.preco;
 
@@ -134,10 +144,13 @@ const lojaController = {
         // let produto = await Produto.findByPk(id, {
         //     include: ['usuario', 'imagem']
         // });
-        let carrinho = await Carrinho.findAll({
-            where:{
-                usuario_id:11
-            }})
+        if(usuario){
+            carrinho = await Carrinho.findAll({
+                where:{
+                    usuario_id:usuario.id, 
+                    ativo: 1
+                }})
+            }
         
         res.render('categoriaProduto', {
             title: 'Categoria Produto',
@@ -161,6 +174,8 @@ const lojaController = {
         let ordemPreco = req.query.ordem;
         let queryAtual = req.url;
         let usuario = req.session.usuario;
+        let carrinho = und
+        
 
         
 
@@ -250,10 +265,13 @@ const lojaController = {
             return !this[JSON.stringify(a)] && (this[JSON.stringify(a)] = true);
         }, Object.create(null))
 
-        let carrinho = await Carrinho.findAll({
-            where:{
-                usuario_id:11
-            }})
+        if(usuario){
+            carrinho = await Carrinho.findAll({
+                where:{
+                    usuario_id:usuario.id, 
+                    ativo: 1
+                }})
+            }
 
         console.log(ordemPreco)
 
@@ -274,8 +292,6 @@ const lojaController = {
     },
     novoProduto: async (req, res) => {
         let usuario = req.session.usuario;
-
-        let usuario_id = usuario.id
 
         let {
             nomeProduto,
@@ -376,9 +392,7 @@ const lojaController = {
     carrinho: async (req, res) => {
 
         let usuario = req.session.usuario
-
         let usuario_id = usuario.id
-        
         let carrinho = await Carrinho.findAll({where: {usuario_id, ativo: 1}, include:['produto']}) 
 
         

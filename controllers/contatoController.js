@@ -10,10 +10,14 @@ const {
 const contatoController =  {
     showContato: async(req, res) => {
         let usuario = req.session.usuario;
-        let carrinho = await Carrinho.findAll({
-            where:{
-                usuario_id:11
-            }})
+        let carrinho =undefined
+        if(usuario){
+            carrinho = await Carrinho.findAll({
+                where:{
+                    usuario_id:usuario.id, 
+                    ativo: 1
+                }})
+            }
         res.render("contato", {
             title: 'Contato',
             css: 'contato',
