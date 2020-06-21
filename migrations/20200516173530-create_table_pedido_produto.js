@@ -11,7 +11,8 @@ module.exports = {
           model: 'pedido',
           key: 'id'
         },
-        allowNull: false
+        allowNull: false,
+        primaryKey: true
       },
       produto_id: {
         type: Sequelize.INTEGER,
@@ -19,7 +20,8 @@ module.exports = {
           model: 'produto',
           key: 'id'
         },
-        allowNull: false
+        allowNull: false,
+        primaryKey: true
       },
       createdAt: {
         type: Sequelize.DATE,
