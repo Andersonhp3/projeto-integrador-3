@@ -22,6 +22,7 @@ router.get('/adocao',adocaoController.home)
 router.get('/loja',lojaController.home)
 router.get('/comprar', lojaController.comprar);
 router.get('/carrinho', verificaUsuarioLogado, lojaController.carrinho);
+router.get('/mudaQtd', verificaUsuarioLogado, lojaController.mudaQtd);
 router.post('/deletaritemcarrinho', lojaController.deletarItemCarrinho);
 
 // contatoController
