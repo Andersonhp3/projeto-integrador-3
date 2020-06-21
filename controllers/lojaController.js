@@ -99,7 +99,7 @@ const lojaController = {
         if(queryAtual.indexOf('preco')){
             queryAtual = '/categoriaProduto?id=' + id
         }
-        console.log(queryAtual.indexOf("preco"))
+    
         let categoriaPetAll = await CategoriaPet.findAll({
             include: [{
                 model: Produto,
@@ -120,7 +120,7 @@ const lojaController = {
                 include: ['categoriaPet', 'imagem'],
             }]
         });
-        console.log(queryAtual)
+    
         // let produto = await Produto.findByPk(id, {
         //     include: ['usuario', 'imagem']
         // });
@@ -142,17 +142,27 @@ const lojaController = {
 
         let id = req.query.id;
         let idCategoriaProduto = req.query.categoriaProdutoId;
-
+        let preco = req.query.preco;
+        let ordemPreco = req.query.ordem;
         let queryAtual = req.url
+
+        
+
         if(queryAtual.indexOf('preco')){
-            queryAtual = '/categoriaProduto?id=' + id
+            queryAtual = '/categoriaPet?id=' + id
         }
 
+        if(queryAtual.indexOf('preco') && queryAtual.indexOf('categoriaProdutoId')){
+            queryAtual = '/categoriaPet?id=' + id +"&categoriaProdutoId=" + idCategoriaProduto;
+        }
+        
         if(queryAtual.indexOf('preco') >-1 && queryAtual.indexOf('categoriaProdutoId') >-1 && queryAtual.indexOf('preco')){
             queryAtual = '/categoriaPet?id=' + id +"&categoriaProdutoId=" + idCategoriaProduto;
         }
-        console.log(queryAtual.indexOf('ProdutoId'))
-        let preco = req.query.preco;
+       
+       if(ordemPreco == undefined){
+
+       } 
 
         if(preco == undefined){
             preco = 100000;
@@ -173,6 +183,14 @@ const lojaController = {
         let categoriaPet = await CategoriaPet.findByPk(id, {
             include: [{
                 model: Produto,
+                where: {
+                    preco: {
+                        [Op.between]: [0, preco]
+                    }
+                },
+                order: [
+                    ['roduto.preco', "ASC"]
+                ],
                 as: "categoria_pet_produto",
                 include: ['categoria', "imagem"],
             }, ]
@@ -186,11 +204,14 @@ const lojaController = {
                         [Op.between]: [0, preco]
                     }
                 },
+                order: [
+                    ['preco', 'ASC']
+                ],
                 as: "produto",
                 atributes: ["produto"]
             }]
         });
-
+        
         // categoriasProduto para armazenar as categorias de acordo com o id categoriaPet
         let categoriasProduto = []
         for (let i = 0; i < categoriaPet.categoria_pet_produto.length; i++) {
@@ -212,7 +233,7 @@ const lojaController = {
         var novaCategoriasProduto = categoriasProduto.filter(function (a) {
             return !this[JSON.stringify(a)] && (this[JSON.stringify(a)] = true);
         }, Object.create(null))
-
+        console.log(ordemPreco)
         res.render('categoriaPet', {
             title: 'Busca Categoria',
             css: 'categoria',
