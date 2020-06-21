@@ -12,7 +12,7 @@
                 <% for (item of carrinho) {%>
                 <li class="list-group-item d-flex justify-content-between lh-condensed py-3" id="listaCarrinho">
                     <div class="col-8">
-                        <h6 class="my-0"><%=item.produto.nome%></h6>
+                        <h6 class="my-0" ><%=item.produto.nome%></h6>
                         <span class="text-muted"> Quantidade: </span>
                         <input type="number" min="1" class="ml-2 qtd" value=<%= item.quantidade%> id="<%= item.id %>">
                     </div>
@@ -36,7 +36,7 @@
                     <strong id="total"></strong>
                 </li>
             </ul>
-                <button class="btn btn-site">Finalizar Pedido</button>
+                <a href="/finalizarPedido"><button class="btn btn-site">Finalizar Pedido</button></a>
             
         </div>
     </div>
