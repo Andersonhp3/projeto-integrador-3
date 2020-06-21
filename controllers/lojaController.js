@@ -226,16 +226,16 @@ const lojaController = {
         let ordemPreco = req.query.ordem;
         let queryAtual = req.url;
         let usuario = req.session.usuario;
-        let carrinho = und
+        let carrinho = undefined;
         
 
         
 
-        if(queryAtual.indexOf('preco')){
+        if(queryAtual.indexOf('preco') > -1){
             queryAtual = '/categoriaPet?id=' + id
         }
 
-        if(queryAtual.indexOf('preco') && queryAtual.indexOf('categoriaProdutoId')){
+        if(queryAtual.indexOf('preco') || queryAtual.indexOf('categoriaProdutoId')){
             queryAtual = '/categoriaPet?id=' + id +"&categoriaProdutoId=" + idCategoriaProduto;
         }
         
@@ -251,7 +251,40 @@ const lojaController = {
             preco = 100000;
         }
 
-        // if(idCategoriaProduto == undefined)
+        let produtoAllOrder;
+
+        // verificando order para pesquisar
+        if(ordemPreco == undefined){
+            produtoAllOrder = 
+            {
+                include: 'imagem',
+                where: {
+                    categoria_id: id,
+                    preco: {
+                        [Op.between]: [0, preco]
+                    }
+                },
+            }
+        }else {
+            produtoAllOrder = 
+            {
+                include: 'imagem',
+                where: {
+                    categoria_id: id,
+                    preco: {
+                        [Op.between]: [0, preco]
+                    }
+                },
+                order: [
+                    ['preco', ordemPreco]
+                ]
+            }
+        }
+        
+        
+        let produtoAll = await Produto.findAll(
+            produtoAllOrder
+        )
 
         //Todas as categorias de pet
         let categoriaPetAll = await CategoriaPet.findAll({
