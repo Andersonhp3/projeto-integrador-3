@@ -1,6 +1,6 @@
 const path = require('path')
 const fs = require('fs')
-var Sequelize = require('sequelize');   
+var Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 const {
     Usuario,
@@ -12,7 +12,8 @@ const {
     Categoria,
     ImagemProduto,
     CategoriaPet,
-    Carrinho
+    Carrinho,
+    pedidoProduto
 } = require("../models");
 
 
@@ -37,7 +38,7 @@ const lojaController = {
                 atributes: ["imagem"]
             }]
         });
-        
+
         let categoriaProduto = await Categoria.findAll({
             include: [{
                 model: Produto,
@@ -59,13 +60,14 @@ const lojaController = {
             if (a.estoque < b.estoque) return 1;
             return 0;
         })
-        if(usuario){
+        if (usuario) {
             carrinho = await Carrinho.findAll({
-                where:{
-                    usuario_id:usuario.id, 
+                where: {
+                    usuario_id: usuario.id,
                     ativo: 1
-                }})
-            }
+                }
+            })
+        }
         res.render("homeLoja", {
             title: 'Loja',
             css: 'homeLoja',
@@ -78,23 +80,24 @@ const lojaController = {
         })
     },
 
-    
+
     showProduto: async (req, res) => {
         let usuario = req.session.usuario;
         let id = req.query.id
         let carrinho = undefined
-        
+
 
         let produto = await Produto.findByPk(id, {
             include: ['usuario', 'imagem']
         })
-        if(usuario){
+        if (usuario) {
             carrinho = await Carrinho.findAll({
-                where:{
-                    usuario_id:usuario.id,
+                where: {
+                    usuario_id: usuario.id,
                     ativo: 1
-                }})
-            }
+                }
+            })
+        }
 
         res.render('produto', {
             title: 'Detalhes do Produto',
@@ -104,7 +107,7 @@ const lojaController = {
             carrinho
         })
     },
-    
+
 
     showCategoriaProduto: async (req, res) => {
         let usuario = req.session.usuario;
@@ -114,27 +117,27 @@ const lojaController = {
         let preco = req.query.preco;
         let ordemPreco = req.query.ordem;
 
-        if(preco == undefined){
+        if (preco == undefined) {
             preco = 100000;
         }
 
-        
+
 
         let verificarQuery = (...query) => {
 
         }
 
         let queryAtual = req.url
-        if(queryAtual.indexOf('preco')){
+        if (queryAtual.indexOf('preco')) {
             queryAtual = '/categoriaProduto?id=' + id
         }
 
-        if(queryAtual.indexOf('preco') < -1 && queryAtual.indexOf('categoriaProdutoId')){
-            queryAtual = '/categoriaPet?id=' + id +"&categoriaProdutoId=" + idCategoriaProduto;
+        if (queryAtual.indexOf('preco') < -1 && queryAtual.indexOf('categoriaProdutoId')) {
+            queryAtual = '/categoriaPet?id=' + id + "&categoriaProdutoId=" + idCategoriaProduto;
         }
 
 
-    
+
         let categoriaPetAll = await CategoriaPet.findAll({
             include: [{
                 model: Produto,
@@ -146,9 +149,8 @@ const lojaController = {
         let produtoAllOrder;
 
         // verificando order para pesquisar
-        if(ordemPreco == undefined){
-            produtoAllOrder = 
-            {
+        if (ordemPreco == undefined) {
+            produtoAllOrder = {
                 include: 'imagem',
                 where: {
                     categoria_id: id,
@@ -157,9 +159,8 @@ const lojaController = {
                     }
                 },
             }
-        }else {
-            produtoAllOrder = 
-            {
+        } else {
+            produtoAllOrder = {
                 include: 'imagem',
                 where: {
                     categoria_id: id,
@@ -172,8 +173,8 @@ const lojaController = {
                 ]
             }
         }
-        
-        
+
+
         let produtoAll = await Produto.findAll(
             produtoAllOrder
         )
@@ -188,20 +189,21 @@ const lojaController = {
                 },
                 as: "produto",
                 include: ['categoriaPet', 'imagem'],
-            },],
+            }, ],
         });
-    
+
         // let produto = await Produto.findByPk(id, {
         //     include: ['usuario', 'imagem']
         // });
-        if(usuario){
+        if (usuario) {
             carrinho = await Carrinho.findAll({
-                where:{
-                    usuario_id:usuario.id, 
+                where: {
+                    usuario_id: usuario.id,
                     ativo: 1
-                }})
-            }
-        
+                }
+            })
+        }
+
         res.render('categoriaProduto', {
             title: 'Categoria Produto',
             css: 'categoria',
@@ -213,7 +215,7 @@ const lojaController = {
             produtoAll,
             carrinho,
             queryAtual,
-            
+
         });
     },
 
@@ -228,36 +230,35 @@ const lojaController = {
         let queryAtual = req.url;
         let usuario = req.session.usuario;
         let carrinho = undefined;
-        
 
-        
 
-        if(queryAtual.indexOf('preco') > -1){
+
+
+        if (queryAtual.indexOf('preco') > -1) {
             queryAtual = '/categoriaPet?id=' + id
         }
 
-        if(queryAtual.indexOf('preco') || queryAtual.indexOf('categoriaProdutoId')){
-            queryAtual = '/categoriaPet?id=' + id +"&categoriaProdutoId=" + idCategoriaProduto;
+        if (queryAtual.indexOf('preco') || queryAtual.indexOf('categoriaProdutoId')) {
+            queryAtual = '/categoriaPet?id=' + id + "&categoriaProdutoId=" + idCategoriaProduto;
         }
-        
-        if(queryAtual.indexOf('preco') >-1 && queryAtual.indexOf('categoriaProdutoId') >-1 && queryAtual.indexOf('preco')){
-            queryAtual = '/categoriaPet?id=' + id +"&categoriaProdutoId=" + idCategoriaProduto;
+
+        if (queryAtual.indexOf('preco') > -1 && queryAtual.indexOf('categoriaProdutoId') > -1 && queryAtual.indexOf('preco')) {
+            queryAtual = '/categoriaPet?id=' + id + "&categoriaProdutoId=" + idCategoriaProduto;
         }
-       
-       if(ordemPreco == undefined){
 
-       } 
+        if (ordemPreco == undefined) {
 
-        if(preco == undefined){
+        }
+
+        if (preco == undefined) {
             preco = 100000;
         }
 
         let produtoAllOrder;
 
         // verificando order para pesquisar
-        if(ordemPreco == undefined){
-            produtoAllOrder = 
-            {
+        if (ordemPreco == undefined) {
+            produtoAllOrder = {
                 include: 'imagem',
                 where: {
                     categoria_pet_id: id,
@@ -266,9 +267,8 @@ const lojaController = {
                     }
                 },
             }
-        }else {
-            produtoAllOrder = 
-            {
+        } else {
+            produtoAllOrder = {
                 include: 'imagem',
                 where: {
                     categoria_pet_id: id,
@@ -281,8 +281,8 @@ const lojaController = {
                 ]
             }
         }
-        
-        
+
+
         let produtoAll = await Produto.findAll(
             produtoAllOrder
         )
@@ -304,14 +304,13 @@ const lojaController = {
                     preco: {
                         [Op.between]: [0, preco]
                     }
-                },    
+                },
                 as: "categoria_pet_produto",
                 include: ['categoria', "imagem"],
-            },
-         ], 
+            }, ],
 
         });
- 
+
         let categoriaProduto = await Categoria.findAll({
             include: [{
                 model: Produto,
@@ -325,7 +324,7 @@ const lojaController = {
             }],
 
         });
-        
+
         // categoriasProduto para armazenar as categorias de acordo com o id categoriaPet
         let categoriasProduto = []
         for (let i = 0; i < categoriaPet.categoria_pet_produto.length; i++) {
@@ -342,23 +341,24 @@ const lojaController = {
             if (a.categoria > b.categoria) return 1;
             return 0;
         })
-        
-        
+
+
         var novaCategoriasProduto = categoriasProduto.filter(function (a) {
             return !this[JSON.stringify(a)] && (this[JSON.stringify(a)] = true);
         }, Object.create(null))
 
-        if(usuario){
+        if (usuario) {
             carrinho = await Carrinho.findAll({
-                where:{
-                    usuario_id:usuario.id, 
+                where: {
+                    usuario_id: usuario.id,
                     ativo: 1
-                }})
-            }
+                }
+            })
+        }
 
-        
 
-        
+
+
         res.render('categoriaPet', {
             title: 'Busca Categoria',
             css: 'categoria',
@@ -371,7 +371,7 @@ const lojaController = {
             carrinho,
             usuario,
             produtoAll
-            
+
         })
     },
     novoProduto: async (req, res) => {
@@ -417,7 +417,7 @@ const lojaController = {
 
         categoria_pet = await CategoriaPet.findOne({
             where: {
-                categoria : categoria_pet
+                categoria: categoria_pet
             }
         });
 
@@ -454,18 +454,21 @@ const lojaController = {
     },
     comprar: async (req, res) => {
 
-        let {id, quant} = req.query
+        let {
+            id,
+            quant
+        } = req.query
 
         let usuario = req.session.usuario
-        
 
-        if(!usuario){
+
+        if (!usuario) {
             res.redirect('/login?error=login-required')
         }
 
         let usuario_id = usuario.id
 
-       await Carrinho.create({
+        await Carrinho.create({
             usuario_id,
             produto_id: id,
             quantidade: quant,
@@ -478,9 +481,15 @@ const lojaController = {
 
         let usuario = req.session.usuario
         let usuario_id = usuario.id
-        let carrinho = await Carrinho.findAll({where: {usuario_id, ativo: 1}, include:['produto']}) 
+        let carrinho = await Carrinho.findAll({
+            where: {
+                usuario_id,
+                ativo: 1
+            },
+            include: ['produto']
+        })
 
-        
+
         res.render('carrinho', {
             title: 'Carrinho',
             css: 'carrinho',
@@ -489,12 +498,17 @@ const lojaController = {
         })
     },
     mudaQtd: async (req, res) => {
-        let {qtd, id} = req.query
+        let {
+            qtd,
+            id
+        } = req.query
 
         await Carrinho.update({
             quantidade: qtd
-        },{
-            where: {id}
+        }, {
+            where: {
+                id
+            }
         })
 
         res.redirect('/carrinho')
@@ -505,11 +519,147 @@ const lojaController = {
 
         await Carrinho.update({
             ativo: false
-        },{
-            where: {id: id.id}
+        }, {
+            where: {
+                id: id.id
+            }
         })
 
         res.redirect('/carrinho')
+    },
+    finalizar: async (req, res) => {
+        let usuario = req.session.usuario
+
+        let carrinho = await Carrinho.findAll({
+            where: {
+                usuario_id: usuario.id,
+                ativo: 1
+            }
+        })
+
+        let pedidos = []
+
+        for (item of carrinho) {
+            switch (item.quantidade) {
+                case 2:
+                    pedidos.push({
+                        produto: item.produto_id,
+                        usuario: item.usuario_id,
+                    });
+                    pedidos.push({
+                        produto: item.produto_id,
+                        usuario: item.usuario_id,
+                    })
+                    break;
+                case 3:
+                    pedidos.push({
+                        produto: item.produto_id,
+                        usuario: item.usuario_id,
+                    });
+                    pedidos.push({
+                        produto: item.produto_id,
+                        usuario: item.usuario_id,
+                    });
+                    pedidos.push({
+                        produto: item.produto_id,
+                        usuario: item.usuario_id,
+                    })
+                    break;
+                case 4:
+                    pedidos.push({
+                        produto: item.produto_id,
+                        usuario: item.usuario_id,
+                    });
+                    pedidos.push({
+                        produto: item.produto_id,
+                        usuario: item.usuario_id,
+                    });
+                    pedidos.push({
+                        produto: item.produto_id,
+                        usuario: item.usuario_id,
+                    });
+                    pedidos.push({
+                        produto: item.produto_id,
+                        usuario: item.usuario_id,
+                    })
+                    break;
+                case 5:
+                    pedidos.push({
+                        produto: item.produto_id,
+                        usuario: item.usuario_id,
+                    });
+                    pedidos.push({
+                        produto: item.produto_id,
+                        usuario: item.usuario_id,
+                    });
+                    pedidos.push({
+                        produto: item.produto_id,
+                        usuario: item.usuario_id,
+                    });
+                    pedidos.push({
+                        produto: item.produto_id,
+                        usuario: item.usuario_id,
+                    });
+                    pedidos.push({
+                        produto: item.produto_id,
+                        usuario: item.usuario_id,
+                    })
+                    break;
+                case 6:
+                    pedidos.push({
+                        produto: item.produto_id,
+                        usuario: item.usuario_id,
+                    });
+                    pedidos.push({
+                        produto: item.produto_id,
+                        usuario: item.usuario_id,
+                    });
+                    pedidos.push({
+                        produto: item.produto_id,
+                        usuario: item.usuario_id,
+                    });
+                    pedidos.push({
+                        produto: item.produto_id,
+                        usuario: item.usuario_id,
+                    });
+                    pedidos.push({
+                        produto: item.produto_id,
+                        usuario: item.usuario_id,
+                    });
+                    pedidos.push({
+                        produto: item.produto_id,
+                        usuario: item.usuario_id,
+                    })
+                    break;
+                default:
+                    pedidos.push({
+                        produto: item.produto_id,
+                        usuario: item.usuario_id,
+                    })
+            }
+        }
+
+        for (pedido of pedidos){
+            let novoPedido = await Pedido.create({
+                data: new Date(),
+                usuario_id: pedido.usuario
+            })
+
+            await pedidoProduto.create({
+                pedido_id: novoPedido.id,
+                produto_id: pedido.produto
+            })
+        }
+
+        await Carrinho.update({
+            ativo: false
+        }, {
+            where: {
+                usuario_id: usuario.id
+            }
+        })
+
+        res.redirect('/home')
     }
 }
 
