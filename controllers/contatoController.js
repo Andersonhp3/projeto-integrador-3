@@ -2,17 +2,27 @@ const path = require('path')
 const fs = require('fs')
 
 const {
-    Contato
+    Contato,
+    Carrinho
 } = require("../models");
 
 
-const contatoController = {
-    showContato: (req, res) => {
+const contatoController =  {
+    showContato: async(req, res) => {
         let usuario = req.session.usuario;
+        let carrinho =undefined
+        if(usuario){
+            carrinho = await Carrinho.findAll({
+                where:{
+                    usuario_id:usuario.id, 
+                    ativo: 1
+                }})
+            }
         res.render("contato", {
             title: 'Contato',
             css: 'contato',
-            usuario
+            usuario,
+            carrinho
         })
     },
     mandarMensagem: async (req, res) => {

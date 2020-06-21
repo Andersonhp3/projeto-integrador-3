@@ -5,7 +5,8 @@ const {
     usuario,
     Pet,
     ImagemPet,
-    CategoriaPet
+    CategoriaPet,
+    Carrinho
 } = require('../models')
 
 
@@ -13,7 +14,7 @@ const adocaoController = {
     pesquisa: async (req, res) => {
         let usuario = req.session.usuario;
         let categoria = req.query
-
+        let carrinho = undefined
         categoria = await CategoriaPet.findOne({
             where: {
                 categoria: categoria.categoria
@@ -31,17 +32,26 @@ const adocaoController = {
             include: ['imagem']
         });
 
+        if(usuario){
+            carrinho = await Carrinho.findAll({
+                where:{
+                    usuario_id:usuario.id, 
+                    ativo: 1
+                }})
+            }
+
         res.render("homeAdocao", {
             title: 'Adoção',
             css: 'homeAdocao',
             pets,
             categorias,
-            usuario
+            usuario,
+            carrinho
         });
     },
     home: async (req, res) => {
         let usuario = req.session.usuario;
-
+        let carrinho = undefined
         let categorias = await CategoriaPet.findAll()
         let pets = await Pet.findAll({
             where: {
@@ -49,36 +59,49 @@ const adocaoController = {
             },
             include: ['imagem']
         });
+        if(usuario){
+            carrinho = await Carrinho.findAll({
+                where:{
+                    usuario_id:usuario.id, 
+                    ativo: 1
+                }})
+            }
 
         res.render("homeAdocao", {
             title: 'Adoção',
             css: 'homeAdocao',
             pets,
             usuario,
-            categorias
+            categorias,
+            carrinho
         });
     },
     detalheAdocao: async (req, res) => {
         let usuario = req.session.usuario;
-
+        let carrinho = undefined
         let id = req.query.id
 
         let pet = await Pet.findByPk(id, {
             include: ['usuario', 'imagem']
         })
-
+        if(usuario){
+            carrinho = await Carrinho.findAll({
+                where:{
+                    usuario_id:usuario.id, 
+                    ativo: 1
+                }})
+            }
         res.render('detalheAdocao', {
             title: 'Detalhes do pet',
             css: 'detalheAdocao',
             nav: '',
             pet,
-            usuario
+            usuario,
+            carrinho
         })
     },
     novaAdocao: async (req, res) => {
         let usuario = req.session.usuario;
-
-        let usuario_id = usuario.id
 
         let {
             nome,
