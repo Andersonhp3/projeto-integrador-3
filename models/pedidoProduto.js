@@ -1,13 +1,14 @@
 let pedidoProduto = (sequelize, DataTypes) => {
   let pedido_produto = sequelize.define(
-    "PedidoProduto", {
+    "pedidoProduto", {
       pedido_id: {
         type: DataTypes.INTEGER,
         references: {
           model:"Pedido",
           key: "id"
         },
-        allowNull: false
+        allowNull: false,
+        primaryKey: true
       },
       produto_id: {
         type: DataTypes.INTEGER,
@@ -15,11 +16,12 @@ let pedidoProduto = (sequelize, DataTypes) => {
           model: "Produto",
           key:"id"
         },
-        allowNull: false
+        allowNull: false,
+        primaryKey: true
       },
     }, {
       tableName: "pedido_produto",
-      timestamps: false
+      timestamps: true
     }
   );
 
