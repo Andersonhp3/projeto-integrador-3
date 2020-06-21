@@ -9,7 +9,6 @@ const calculaTotais = (carrinho) => {
         let totalProduto = valor * quantidade
         document.getElementById(`valor${item.id}`).innerText = `R$ ${totalProduto}`
         totais.push(totalProduto)
-        console.log(totais)
     }
     total = totais.reduce((total, elemento)=> total+elemento)
     document.getElementById('total').innerText = `R$${total}`
@@ -62,6 +61,10 @@ for (item of carrinho){
     let excluirItem = document.querySelector(".deleteItem")
     excluirItem.addEventListener('submit', onFormsubmit)
 }
+
+let nomeProduto = document.querySelectorAll('h6.nome')
+
+console.log(nomeProduto)
 
 calculaTotais(carrinho)
 
