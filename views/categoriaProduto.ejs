@@ -74,7 +74,7 @@
                                            <div class="card-body">
                                                <h6 class="card-title text-truncate" id="nomeProduto"><%=produtoAll[i].nome%>
                                                </h6>
-                                               <p class="card-text" id="precoProduto">R$ <%=produtoAll[i].preco%></p>
+                                               <p class="card-text" id="precoProduto"><%=produtoAll[i].preco.toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'})%></p>
                                             </div>  
                                        </div>
                                    </a>
