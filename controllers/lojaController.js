@@ -670,6 +670,29 @@ const lojaController = {
             title: "Pedido efetuado com Sucesso!",
             css: "index"
         })
+    },
+    atualizarProduto: async (req, res) => {
+        let usuario = req.session.usuario;
+
+        let {
+            id,
+            nome,
+            marca,
+            descricao
+        } = req.body;
+
+        let update = await Produto.update({
+            nome,
+            marca,
+            descricao
+        }, {
+            where: {
+                id
+            }
+        })
+
+        
+        res.redirect('/usuario/produtos')
     }
 }
 

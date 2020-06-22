@@ -301,6 +301,8 @@ const authController = {
     let usuario = req.session.usuario;
     let carrinho = undefined
     let usuario_id = usuario.id
+    let categorias = await Categoria.findAll();
+    let categorias_pet = await CategoriaPet.findAll();
 
     let produtos = await Produto.findAll({
       where: {
@@ -321,7 +323,9 @@ const authController = {
       error: false,
       usuario,
       produtos,
-      carrinho
+      carrinho,
+      categorias,
+      categorias_pet
     })
   },
 

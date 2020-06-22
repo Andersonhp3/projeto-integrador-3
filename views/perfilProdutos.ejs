@@ -65,13 +65,15 @@
 
           </ul>
         </nav>
-        <table id="table" class="table table-sm table-striped table-responsive-sm">
+        <table id="table" class="table table-sm table-striped table-responsive">
           <thead>
             <tr>
               <th scope="col">ID</th>
               <th scope="col">Nome do Produto</th>
               <th scope="col">Valor</th>
               <th scope="col">Estoque</th>
+              <th scope="col">Editar</th>
+              <th scope="col">Excluir</th>
             </tr>
           </thead>
           <tbody>
@@ -81,10 +83,80 @@
               <td class="text-truncate"><%=produto.nome%></td>
               <td><%=produto.preco%></td>
               <td><%=produto.estoque%></td>
+              <td class="py-2"><a href="javascript:void(0)" class="edit"><i id="edit_<%= produto.id %>"
+                    class="fas fa-pencil-alt"></i></a></td>
+              <td class="py-2"><a href="javascript:void(0)" class="delete"><i id="del_<%= produto.id %>"
+                    class="fas fa-trash-alt"></i></a></td>
             </tr>
             <% } %>
           </tbody>
         </table>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="edit-modal" data-backdrop="static" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-blue" id="staticBackdropLabel">Editar
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="/produto/atualizar" method="post" id="form" class="container">
+            <div class="form-group">
+              <input type="hidden" name="id" id="id">
+              <div class="form-group mb-2">
+                <input id="nome" class="form-control input-decoration" type="text" name="nome"
+                  placeholder="Nome do Produto" maxlength="100" required>
+              </div>
+              <div class="form-group mb-2">
+                <input id="marca" class="form-control input-decoration" type="text" name="marca"
+                  placeholder="Marca do Produto" maxlength="100" required>
+              </div>
+              <div class="form-group mb-2">
+                <textarea name="descricao" id="descricao" class="form-control input-decoration" rows="5"
+                  placeholder="Descrição" type="text" maxlength="200" required></textarea>
+              </div>
+              <div class="d-flex">
+                <div class="form-group mb-2 mw-75 mr-1">
+                  <input id="estoque" class="form-control input-decoration" type="number" min="0" name="estoque"
+                    placeholder="Quantidade" required>
+                </div>
+                <div class="form-group mb-2 mw-75 ml-1">
+                  <input id="preco" class="form-control input-decoration" type="number" step=0.01 min="0" name="preco"
+                    placeholder="Preço" required>
+                </div>
+              </div>
+              <div class="form-group mb-2">
+                <select class="form-control input-decoration" id="categoria" name="categoria">
+                  <% for(cat of categorias) { %>
+                  <option name=<%= cat.id %> id=<%= cat.id %>><%= cat.categoria %></option>
+                  <% } %>
+                </select>
+              </div>
+              <div class="form-group mb-2">
+                <select class="form-control input-decoration" id="categoria-pet" name="categoria_pet">
+                  <% for(cat_pet of categorias_pet) { %>
+                  <option name=<%= cat_pet.id %> id=<%= cat_pet.id %>><%= cat_pet.categoria %></option>
+                  <% } %>
+                </select>
+              </div>
+
+
+
+
+
+              <button id="btn-atualizar" type="submit" class="btn btn-site">Atualizar</button>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button id="pronto" type="button" class="btn btn-site" data-dismiss="modal">Fechar</button>
+        </div>
       </div>
     </div>
   </div>
