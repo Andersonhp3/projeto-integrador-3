@@ -667,9 +667,11 @@ const lojaController = {
             let produto = await Produto.findByPk(pedido.produto)
 
             let novoEstoque = produto.estoque - 1
+            let vendas = produto.numero_vendas + 1
 
             await Produto.update({
-                estoque: novoEstoque
+                estoque: novoEstoque,
+                numero_vendas: vendas
             }, {
                 where: {
                     id: pedido.produto
