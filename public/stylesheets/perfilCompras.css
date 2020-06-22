@@ -29,10 +29,6 @@ p {
     margin-bottom: 50px;
 }
 
-.table {
-    padding-right: 30px;
-}
-
 #links {
     padding: 25px;
     border-right: grey solid 1px;
@@ -45,6 +41,12 @@ p {
 
 .active, li.active {
     color: #f2a0a0;
+}
+
+@media (max-width: 576px){
+    .row{
+        margin: 0;
+    }
 }
 
 /* Hover na imagem do usuario */
