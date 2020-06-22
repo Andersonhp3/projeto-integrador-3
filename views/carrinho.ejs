@@ -51,17 +51,19 @@
     </div>
     <h2>Quem comprou também viu:</h2>
     <div class="row">
+        <% for (let i = 0; i < 4; i++){%> 
         <div class="col-sm-6 col-md-3 p-1">
-            <a href="/pet/detalheAdocao?id=">
+            <a href="produto/detalheProduto?id=<%= relacionados[i].id %> ">
                 <div class="card" >
-                    <img src="" class="card-img-top" alt="Nome do pet" />
+                    <img src="<%= relacionados[i].imagem[0].imagem %> " class="card-img-top" alt="Nome do pet" />
                     <div class="card-body">
-                        <h5 class="card-title"></h5>
-                        <p class="card-text"></p>
+                        <h5 class="card-title text-truncate"><%= relacionados[i].nome %> </h5>
+                        <p class="card-text"><%= relacionados[i].preco.toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'}) %> </p>
                     </div>
                 </div>
             </a>
         </div>
+    <%} %> 
     </div>
     <%} else { %>
     <div class="w-100">

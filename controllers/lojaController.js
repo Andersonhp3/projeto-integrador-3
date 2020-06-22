@@ -503,12 +503,19 @@ const lojaController = {
             include: ['produto']
         })
 
+        let relacionados = await Produto.findAll({
+            where: {
+                categoria_pet_id: carrinho[0].produto.categoria_pet_id
+            },
+            include: ['imagem']
+        })
 
         res.render('carrinho', {
             title: 'Carrinho',
             css: 'carrinho',
             carrinho,
-            usuario
+            usuario,
+            relacionados
         })
     },
     mudaQtd: async (req, res) => {
