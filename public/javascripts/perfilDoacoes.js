@@ -5,14 +5,9 @@ let updateForm = document.getElementById('form-atualizar');
 
 async function onClickEdit(e) {
     let id = (e.target.id).replace('edit_','');
-    console.log(id)
-
     let pet = await fetch('/pet?id='+ id)
         .then(response => response.json())
         .then(data => {return data})
-    
-    console.log(pet)
-
     document.getElementById('id').value = pet.id;
     document.getElementById('nome').value = pet.nome;
     document.getElementById('descricao').value = pet.descricao;
@@ -22,11 +17,7 @@ async function onClickEdit(e) {
     } else {
         document.getElementById('adotado').checked = false;
     }
-    
-
     $('#edit-modal').modal('show');
-
-    
 };
 
 const onChangeAdotado = (e) => {
@@ -44,6 +35,7 @@ for(edit of editAll) {
 
 chkAdotado.addEventListener('change', onChangeAdotado);
 
+// Pagination Start
 
 let numberOfItems = $('#table .table-items').length;
 let limitPerPage = 5;
@@ -148,3 +140,5 @@ function hidePagination() {
     $(".pagination li.current-page").eq(($(".pagination li.current-page").length - 1)).show();
     $(".pagination li.current-page").slice(minLength, maxLength).show();
 }
+
+// Pagination End
