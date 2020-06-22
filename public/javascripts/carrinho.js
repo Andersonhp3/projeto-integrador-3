@@ -7,11 +7,11 @@ const calculaTotais = (carrinho) => {
         quantidade = document.getElementById(item.id).value
         let valor = parseFloat(item.produto.preco)
         let totalProduto = valor * quantidade
-        document.getElementById(`valor${item.id}`).innerText = `R$ ${totalProduto}`
+        document.getElementById(`valor${item.id}`).innerText = totalProduto.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
         totais.push(totalProduto)
     }
     total = totais.reduce((total, elemento)=> total+elemento)
-    document.getElementById('total').innerText = `R$${total}`
+    document.getElementById('total').innerText = total.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
 }
 
 const mudaQtd = evt => {
