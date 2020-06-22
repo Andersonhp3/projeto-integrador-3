@@ -11,6 +11,7 @@ module.exports = {
         descricao: 'Linha: Premium Indicação: Alimentação diária de cães adultos Pet: Cachorros Porte de Raça: Grande, Pequeno e Médio Idade: Adulto Sabor: Frango e Carne',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 1,
         categoria_pet_id: 1,
         usuario_id: 2
@@ -23,6 +24,7 @@ module.exports = {
         descricao: 'Linha: Premium Pet: Cachorros Porte de Raça: Grande, Médio e Pequeno Idade: Adulto Sabor: Salmão e Cordeiro',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 1,
         categoria_pet_id: 1,
         usuario_id: 2
@@ -35,6 +37,7 @@ module.exports = {
         descricao: 'Linha: Super Premium Pet: Cachorros Porte de Raça: Grande Idade: Adulto Quantidade: 12Kg',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 1,
         categoria_pet_id: 1,
         usuario_id: 2
@@ -47,6 +50,7 @@ module.exports = {
         descricao: 'Linha: Premium Indicação: Castração Pet: Gatos Idade: Adulto Sabor: Frango',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 1,
         categoria_pet_id: 2,
         usuario_id: 2
@@ -59,6 +63,7 @@ module.exports = {
         descricao: 'Linha: Super Premium Pet: Gatos Idade: Adulto Sabor: Atum e Arroz integral',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 1,
         categoria_pet_id: 2,
         usuario_id: 2
@@ -71,6 +76,7 @@ module.exports = {
         descricao: 'Linha: Prescrita Indicação: Alimentação auxiliar para cães e gatos Pet: Cachorros e Gatos Porte de Raça: Médio, Pequeno e Grande Idade: Filhote, Adulto e Sênior Sabor: Carne',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 1,
         categoria_pet_id: 2,
         usuario_id: 2
@@ -83,6 +89,7 @@ module.exports = {
         descricao: 'Pet: Pássaros Sabor: Maçã',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 1,
         categoria_pet_id: 3,
         usuario_id: 2
@@ -95,6 +102,7 @@ module.exports = {
         descricao: 'Pet: Pássaros',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 1,
         categoria_pet_id: 3,
         usuario_id: 2
@@ -107,6 +115,7 @@ module.exports = {
         descricao: 'Pet: Araras Idade: Filhote',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 1,
         categoria_pet_id: 3,
         usuario_id: 2
@@ -119,6 +128,7 @@ module.exports = {
         descricao: 'Pet: Roedores e Twisters Porte de Raça: Pequeno, Grande e Médio Idade: Filhote, Adulto e Sênior',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 1,
         categoria_pet_id: 4,
         usuario_id: 2
@@ -131,6 +141,7 @@ module.exports = {
         descricao: 'Pet: Roedores',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 1,
         categoria_pet_id: 4,
         usuario_id: 2
@@ -143,6 +154,7 @@ module.exports = {
         descricao: 'Pet: Roedores',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 1,
         categoria_pet_id: 4,
         usuario_id: 2
@@ -155,6 +167,7 @@ module.exports = {
         descricao: 'Tipo: Roedores Apresentação: Disponível em embalagem com 500g',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 1,
         categoria_pet_id: 1,
         usuario_id: 2
@@ -167,6 +180,7 @@ module.exports = {
         descricao: '- Indicada para peixes; - Alimento extrusado completo',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 1,
         categoria_pet_id: 5,
         usuario_id: 2
@@ -179,6 +193,7 @@ module.exports = {
         descricao: 'Indicação: Alcon Neon é um alimento completo',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 1,
         categoria_pet_id: 5,
         usuario_id: 2
@@ -191,6 +206,7 @@ module.exports = {
         descricao: '- Indicado para peixes de pequeno porte; - Não contém corantes artificiais;',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 1,
         categoria_pet_id: 5,
         usuario_id: 2
@@ -203,6 +219,7 @@ module.exports = {
         descricao: 'Pet: Peixes Quantidade: 25gr',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 1,
         categoria_pet_id: 5,
         usuario_id: 2
@@ -215,6 +232,7 @@ module.exports = {
         descricao: '- Indicada para tartaruga; - Alimentação mais saudável para seu pet,',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 1,
         categoria_pet_id: 7,
         usuario_id: 2
@@ -227,6 +245,7 @@ module.exports = {
         descricao: '- Indicado para repteis; - Ideal para repteis aquáticos em fase de crescimento;',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 1,
         categoria_pet_id: 7,
         usuario_id: 2
@@ -239,6 +258,7 @@ module.exports = {
         descricao: 'Pet: Répteis Quantidade: 55g Sabor: Raffy Mineral',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 1,
         categoria_pet_id: 7,
         usuario_id: 2
@@ -251,6 +271,7 @@ module.exports = {
         descricao: 'Indicação: Tratamento e Preventivo Pet: Gatos e Cachorros Porte de Raça: Pequeno, Grande e Médio',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 2,
         categoria_pet_id: 1,
         usuario_id: 2
@@ -263,6 +284,7 @@ module.exports = {
         descricao: 'Indicação: Prevenção e tratamento de pulgas e carrapatos em cães com mais de 8 semanas de vida Pet: Cachorros Porte de Raça: Pequeno Idade: Filhote, Adulto e Sênior',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 2,
         categoria_pet_id: 1,
         usuario_id: 2
@@ -275,6 +297,7 @@ module.exports = {
         descricao: '- Indicado para cães; - Auxilia na prevenção do vômito agudo;',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 2,
         categoria_pet_id: 1,
         usuario_id: 2
@@ -287,6 +310,7 @@ module.exports = {
         descricao: 'Pet: Gatos Porte de Raça: Médio Idade: Adulto',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 2,
         categoria_pet_id: 2,
         usuario_id: 2
@@ -299,6 +323,7 @@ module.exports = {
         descricao: 'Indicação: Tratamento Pet: Cachorros e Gatos Porte de Raça: Pequeno, Médio e Grande Idade: Sênior, Filhote e Adulto',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 2,
         categoria_pet_id: 2,
         usuario_id: 2
@@ -311,6 +336,7 @@ module.exports = {
         descricao: 'Indicação: Eliminar vermes de gatos com mais de 8 semanas de idade e com peso superior a 500g Pet: Gatos Idade: Filhote, Sênior e Adulto',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 2,
         categoria_pet_id: 2,
         usuario_id: 2
@@ -323,6 +349,7 @@ module.exports = {
         descricao: 'Indicação: Tratamento Pet: Pássaros',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 2,
         categoria_pet_id: 3,
         usuario_id: 2
@@ -335,6 +362,7 @@ module.exports = {
         descricao: 'Pet: Pássaros Composição: benzoato de denatônio, óleo de limão,veículo q.s.p Espécie: Aves em geral',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 2,
         categoria_pet_id: 3,
         usuario_id: 2
@@ -347,6 +375,7 @@ module.exports = {
         descricao: 'Pet: Roedores, Cachorros, Gatos, Répteis e Pássaros Porte de Raça: Pequeno, Grande e Médio Idade: Adulto, Sênior e Filhote',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 2,
         categoria_pet_id: 3,
         usuario_id: 2
@@ -359,6 +388,7 @@ module.exports = {
         descricao: 'Linha: Super Premium Pet: Roedores Composição: Uva passa, alfafa peletizada, ervilha, cenoura desidratada, linhaça',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 2,
         categoria_pet_id: 4,
         usuario_id: 2
@@ -371,6 +401,7 @@ module.exports = {
         descricao: 'Indicação: Tratamento Idade: Adulto e Filhote Quantidade: 1 frasco 15ml. Composição: vitaminas A, D3, C, E,',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 2,
         categoria_pet_id: 4,
         usuario_id: 2
@@ -383,6 +414,7 @@ module.exports = {
         descricao: 'Indicação: Coelhos, Chinchilas, Porquinhos da Índia e Roedores no geral. Pet: Roedores',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 2,
         categoria_pet_id: 4,
         usuario_id: 2
@@ -395,6 +427,7 @@ module.exports = {
         descricao: 'Pet: Cachorros Porte de Raça: Médio, Grande e Pequeno Idade: Sênior, Filhote e Adulto',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 3,
         categoria_pet_id: 1,
         usuario_id: 2
@@ -407,6 +440,7 @@ module.exports = {
         descricao: 'Pet: Cachorros e Gatos Porte de Raça: Pequeno, Médio e Grande Idade: Filhote, Adulto e Sênior',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 3,
         categoria_pet_id: 1,
         usuario_id: 2
@@ -419,6 +453,7 @@ module.exports = {
         descricao: 'Porte de Raça: Médio, Pequeno e Grande Idade: Filhote e Adulto Composição: Fibra de celulose e Polietileno',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 3,
         categoria_pet_id: 1,
         usuario_id: 2
@@ -431,6 +466,7 @@ module.exports = {
         descricao: 'Pet: Gatos Idade: Filhote, Sênior e Adulto Tipo: Areia',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 3,
         categoria_pet_id: 2,
         usuario_id: 2
@@ -443,6 +479,7 @@ module.exports = {
         descricao: 'Material: Plástico e borracha Medidas aproximadas: Comprimento: 57,5cm Largura: 37,5cm Altura: 20cm',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 3,
         categoria_pet_id: 2,
         usuario_id: 2
@@ -455,6 +492,7 @@ module.exports = {
         descricao: 'Material: Plástico eaço inoxidável Tipo: Tesoura',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 3,
         categoria_pet_id: 2,
         usuario_id: 2
@@ -467,6 +505,7 @@ module.exports = {
         descricao: 'Tipo: Granulado de madeira para higiene de roedores Apresentação: Disponível em embalagens de 2,5kg e 10kg',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 3,
         categoria_pet_id: 4,
         usuario_id: 2
@@ -479,6 +518,7 @@ module.exports = {
         descricao: 'Material: Calcário mineral Tipo: Pó para banho',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 3,
         categoria_pet_id: 4,
         usuario_id: 2
@@ -491,6 +531,7 @@ module.exports = {
         descricao: 'Material: Plástico Tipo: Pente e Escova',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 3,
         categoria_pet_id: 4,
         usuario_id: 2
@@ -503,6 +544,7 @@ module.exports = {
         descricao: 'Material: Plástico, Gel Atóxico Medidas aproximadas: Para cães até 34 Kg',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 4,
         categoria_pet_id: 1,
         usuario_id: 2
@@ -515,6 +557,7 @@ module.exports = {
         descricao: 'Material: 50% Algodão e 50% Poliéster',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 4,
         categoria_pet_id: 1,
         usuario_id: 2
@@ -527,6 +570,7 @@ module.exports = {
         descricao: 'Medidas aproximadas: Tamanho P - Altura 16.5 cm Largura 40.6 cm Profundidade 40.6 cm',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 4,
         categoria_pet_id: 1,
         usuario_id: 2
@@ -539,6 +583,7 @@ module.exports = {
         descricao: 'Material: Poliéster Medidas aproximadas: Circunferência: 48cm',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 4,
         categoria_pet_id: 2,
         usuario_id: 2
@@ -551,6 +596,7 @@ module.exports = {
         descricao: 'Material: Poliéster e Pena Medidas aproximadas: 44 x 44cm',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 4,
         categoria_pet_id: 2,
         usuario_id: 2
@@ -563,6 +609,7 @@ module.exports = {
         descricao: 'Idade: Filhote, Adulto e Sênior Material: alumínio e fibra sintética',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 4,
         categoria_pet_id: 2,
         usuario_id: 2
@@ -575,6 +622,7 @@ module.exports = {
         descricao: 'Indicação: Abrigo para cães em áreas externas ou internas Pet: Cachorros',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 6,
         categoria_pet_id: 1,
         usuario_id: 2
@@ -587,6 +635,7 @@ module.exports = {
         descricao: 'Indicação: Abrigo para cães em áreas internas e externas',
         estoque: 100,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 6,
         categoria_pet_id: 1,
         usuario_id: 2
@@ -599,6 +648,7 @@ module.exports = {
         descricao: 'Material: Reciclável',
         estoque: 100,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 6,
         categoria_pet_id: 1,
         usuario_id: 2
@@ -611,6 +661,7 @@ module.exports = {
         descricao: 'Medidas aproximadas: Altura: 40cm / Largura: 46cm / Profundidade: 40cm',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 6,
         categoria_pet_id: 2,
         usuario_id: 2
@@ -623,6 +674,7 @@ module.exports = {
         descricao: 'Composição: Produto a base de polietileno de Baixa Densidade (PEBD)',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 6,
         categoria_pet_id: 2,
         usuario_id: 2
@@ -635,6 +687,7 @@ module.exports = {
         descricao: 'Composição: Produto a base de polietileno de Baixa Densidade (PEBD)',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 6,
         categoria_pet_id: 2,
         usuario_id: 2
@@ -647,6 +700,7 @@ module.exports = {
         descricao: 'Medidas aproximadas: 60x30x50',
         estoque: 50,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 15,
         categoria_pet_id: 5,
         usuario_id: 2
@@ -659,6 +713,7 @@ module.exports = {
         descricao: 'Tipo: Controle das infestações e tratamento das infecções parasitárias',
         estoque: 100,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 15,
         categoria_pet_id: 5,
         usuario_id: 2
@@ -671,6 +726,7 @@ module.exports = {
         descricao: 'Medidas aproximadas: 3,5 Litros Altura: 20cm / Comprimento: 20cm / Largura: 25cm',
         estoque: 50,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 15,
         categoria_pet_id: 5,
         usuario_id: 2
@@ -683,6 +739,7 @@ module.exports = {
         descricao: 'Material: Cascalho de Domolita Moída com PH Alcalino',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 15,
         categoria_pet_id: 3,
         usuario_id: 2
@@ -695,6 +752,7 @@ module.exports = {
         descricao: 'Medidas aproximadas: 13x2x0,10cm',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 15,
         categoria_pet_id: 5,
         usuario_id: 2
@@ -707,6 +765,7 @@ module.exports = {
         descricao: 'Material: Resina Termo Plástica Apresentação: Disponível em embalagem com 1 unidade',
         estoque: 200,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 15,
         categoria_pet_id: 5,
         usuario_id: 2
@@ -719,6 +778,7 @@ module.exports = {
         descricao: 'Apresentação: Disponível nos tamanhos 1 e 3',
         estoque: 100,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 15,
         categoria_pet_id: 5,
         usuario_id: 2
@@ -731,6 +791,7 @@ module.exports = {
         descricao: 'A Lã Acrílica Prodac Filtro Aquário possui uma lã especial sintética.',
         estoque: 100,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 15,
         categoria_pet_id: 5,
         usuario_id: 2
@@ -743,6 +804,7 @@ module.exports = {
         descricao: 'Tipo: Bomba Espécie: Peixe de água doce e Peixe de Água salgada',
         estoque: 214,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 15,
         categoria_pet_id: 5,
         usuario_id: 2
@@ -755,6 +817,7 @@ module.exports = {
         descricao: 'Tipo: Bomba Cor: Preto Espécie: Tartaruga, Peixe de água doce, Cobra, Peixe de água salgada e Sapo',
         estoque: 198,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 15,
         categoria_pet_id: 5,
         usuario_id: 2
@@ -767,6 +830,7 @@ module.exports = {
         descricao: 'Material: Plástico Tipo: Bomba Espécie: Peixes de água doce e Peixes de água salgada',
         estoque: 150,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 15,
         categoria_pet_id: 5,
         usuario_id: 2
@@ -779,6 +843,7 @@ module.exports = {
         descricao: 'Medida do pescoço: 24cm / Regulagem da cintura: 29cm a 41cm',
         estoque: 251,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 12,
         categoria_pet_id: 1,
         usuario_id: 2
@@ -791,6 +856,7 @@ module.exports = {
         descricao: 'Medida do pescoço: 24cm / Regulagem da cintura: 29cm a 41cm',
         estoque: 152,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 12,
         categoria_pet_id: 1,
         usuario_id: 2
@@ -803,6 +869,7 @@ module.exports = {
         descricao: 'Largura da tira: 1cm / Comprimento: 120cm',
         estoque: 126,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 12,
         categoria_pet_id: 1,
         usuario_id: 2
@@ -815,6 +882,7 @@ module.exports = {
         descricao: 'Largura da Tira: 1cm / Regulagem do pescoço: 26cm a 41cm',
         estoque: 145,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 12,
         categoria_pet_id: 2,
         usuario_id: 2
@@ -827,6 +895,7 @@ module.exports = {
         descricao: 'Peitoral com guia: Regulagem do pescoço:20cm a 30cm / Regulagem da barriga: 26cm a 41cm / Comprimento da guia: 120cm',
         estoque: 124,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 12,
         categoria_pet_id: 2,
         usuario_id: 2
@@ -839,6 +908,7 @@ module.exports = {
         descricao: 'Medidas aproximadas: Circunferência Pescoço:32cm Circunferência Cintura: 28 a 44cm',
         estoque: 49,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 12,
         categoria_pet_id: 2,
         usuario_id: 2
@@ -851,6 +921,7 @@ module.exports = {
         descricao: 'Medidas aproximadas: Altura: 24.5 cm Comprimento: 42.5 cm Largura: 24.5 cm',
         estoque: 186,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 10,
         categoria_pet_id: 2,
         usuario_id: 2
@@ -863,6 +934,7 @@ module.exports = {
         descricao: 'Medidas aproximadas: Altura: 185cm / Largura: 120cm / Profundidade: 80cm',
         estoque: 53,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 10,
         categoria_pet_id: 2,
         usuario_id: 2
@@ -875,6 +947,7 @@ module.exports = {
         descricao: 'Material: Sisal e Pelúcia Cor: Estampado e marrom',
         estoque: 268,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 10,
         categoria_pet_id: 2,
         usuario_id: 2
@@ -887,6 +960,7 @@ module.exports = {
         descricao: 'Fragrância: Mel Composição: Extrato de Mel',
         estoque: 122,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 8,
         categoria_pet_id: 1,
         usuario_id: 2
@@ -899,6 +973,7 @@ module.exports = {
         descricao: 'Material: Plástico Tipo: Adestramento Cor: Preto',
         estoque: 111,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 8,
         categoria_pet_id: 1,
         usuario_id: 2
@@ -911,6 +986,7 @@ module.exports = {
         descricao: 'Material: Borracha e sisal Cor: Colorido',
         estoque: 542,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 5,
         categoria_pet_id: 2,
         usuario_id: 2
@@ -923,6 +999,7 @@ module.exports = {
         descricao: 'Material: Pelúcia e mecanismo de corda Medidas aproximadas: 10 x 3cm',
         estoque: 315,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 5,
         categoria_pet_id: 2,
         usuario_id: 2
@@ -935,6 +1012,7 @@ module.exports = {
         descricao: 'Pelucia',
         estoque: 95,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 5,
         categoria_pet_id: 1,
         usuario_id: 2
@@ -947,6 +1025,7 @@ module.exports = {
         descricao: 'Medidas aproximadas: Altura: 30cm / Largura: 8cm / Profundidade: 5cm',
         estoque: 145,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 5,
         categoria_pet_id: 1,
         usuario_id: 2
@@ -959,6 +1038,7 @@ module.exports = {
         descricao: 'Medidas aproximadas: 43cmx37cmx28cm Tipo: Bolsa de Transporte',
         estoque: 59,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 7,
         categoria_pet_id: 1,
         usuario_id: 2
@@ -971,6 +1051,7 @@ module.exports = {
         descricao: 'Comprimento: 71 cm Largura: 51 cm Altura: 50 cm Peso: 5,5 Kg Suporta até 15 Kg',
         estoque: 49,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 7,
         categoria_pet_id: 1,
         usuario_id: 2
@@ -983,6 +1064,7 @@ module.exports = {
         descricao: 'Tamanho 2 - Altura – 6cm Circunferência base – 9cm Circunferência boca – 13cm',
         estoque: 75,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 13,
         categoria_pet_id: 1,
         usuario_id: 2
@@ -995,6 +1077,7 @@ module.exports = {
         descricao: 'Medidas aproximadas: 20cm x 19cm x 34cm',
         estoque: 88,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 14,
         categoria_pet_id: 2,
         usuario_id: 2
@@ -1007,6 +1090,7 @@ module.exports = {
         descricao: 'Quantidade: 120ml Material: Plástico e Inox',
         estoque: 178,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 13,
         categoria_pet_id: 4,
         usuario_id: 2
@@ -1019,6 +1103,7 @@ module.exports = {
         descricao: 'Medidas aproximadas: Tamanho 10: Circunferência pescoço: 24cm / Circunferência tórax: 44cm / Comprimento dorso: 25cm',
         estoque: 56,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 9,
         categoria_pet_id: 1,
         usuario_id: 2
@@ -1031,6 +1116,7 @@ module.exports = {
         descricao: 'Medidas aproximadas: Tamanho PP:Circunferência Pescoço: 30cm / Circunferência Peitoral: 36cm / Comprimento das Costas: 26cm',
         estoque: 42,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 9,
         categoria_pet_id: 1,
         usuario_id: 2
@@ -1043,6 +1129,7 @@ module.exports = {
         descricao: 'Material: Plástico Medidas aproximadas: Largura: 120cm x Altura: 60cm x Profundidade: 50cm',
         estoque: 44,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 18,
         categoria_pet_id: 4,
         usuario_id: 2
@@ -1055,6 +1142,7 @@ module.exports = {
         descricao: 'Medidas aproximadas: Comprimento: 35cm Largura: 51cm Altura: 61cm',
         estoque: 43,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 18,
         categoria_pet_id: 4,
         usuario_id: 2
@@ -1067,6 +1155,7 @@ module.exports = {
         descricao: 'Medidas aproximadas: Altura: 66cm / Largura: 48cm / Profundidade: 48cm',
         estoque: 68,
         numero_vendas: 0,
+        ativo: true,
         categoria_id: 18,
         categoria_pet_id: 4,
         usuario_id: 2

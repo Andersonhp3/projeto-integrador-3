@@ -40,6 +40,9 @@ module.exports = {
       adotado: {
         type: Sequelize.BOOLEAN,
       },
+      ativo: {
+        type: Sequelize.BOOLEAN,
+      },
       categoria_pet_id: {
         type: Sequelize.INTEGER,
         references: {

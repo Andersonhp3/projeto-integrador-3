@@ -129,20 +129,14 @@ const adocaoController = {
         };
 
         if (!imagemb64) {
-            var imagem = "/images/pet/default.png";
+            var imagem = "/images/pets/default.png";
         } else {
             let filetype = imagemb64.split(';base64,')[0].split('/')[1];
             let imgb64 = imagemb64.split(';base64,').pop();
             var imagem = await decode_base64(imgb64, ('pet.' + filetype));
         }
 
-        categoria = await CategoriaPet.findOne({
-            where: {
-                categoria
-            }
-        })
-
-        let categoria_pet_id = categoria.id;
+        let categoria_pet_id = categoria;
 
         let novaAdocao = {
             id: null,
@@ -154,14 +148,15 @@ const adocaoController = {
             genero,
             dataCadastro: new Date().toString(),
             adotado: false,
+            ativo: true,
             categoria_pet_id,
             usuario_id
-        }
+        };
 
         let pet_id = await Pet.create(novaAdocao)
             .then()
             .catch((err) => console.log(err));
-        pet_id = pet_id.dataValues.id
+        pet_id = pet_id.dataValues.id;
 
         await ImagemPet.create({
                 id: null,
@@ -215,8 +210,6 @@ const adocaoController = {
                 id
             }
         })
-
-        
         res.redirect('/usuario/doacoes')
     }
 }
