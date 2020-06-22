@@ -216,7 +216,7 @@ const lojaController = {
             }, ],
         });
 
-        
+
 
         if (usuario) {
             carrinho = await Carrinho.findAll({
@@ -663,7 +663,7 @@ const lojaController = {
             }
         }
 
-        for (pedido of pedidos){
+        for (pedido of pedidos) {
             let novoPedido = await Pedido.create({
                 data: new Date(),
                 usuario_id: pedido.usuario
@@ -672,6 +672,18 @@ const lojaController = {
             await pedidoProduto.create({
                 pedido_id: novoPedido.id,
                 produto_id: pedido.produto
+            })
+
+            let produto = await Produto.findByPk(pedido.produto)
+
+            let novoEstoque = produto.estoque - 1
+
+            await Produto.update({
+                estoque: novoEstoque
+            }, {
+                where: {
+                    id: pedido.produto
+                }
             })
         }
 
@@ -686,7 +698,8 @@ const lojaController = {
         res.redirect('/pedidoSucesso')
     },
     sucesso: async (req, res) => {
-        
+        let usuario = req.session.usuario
+
         let pets = await Pet.findAll({
             where: {
                 adotado: 0
@@ -698,10 +711,21 @@ const lojaController = {
             limit: 18
         });
 
+
+        let carrinho = await Carrinho.findAll({
+            where: {
+                usuario_id: usuario.id,
+                ativo: 1
+            }
+        })
+
+
         res.render('pedidoSucesso', {
             title: "Pedido efetuado com Sucesso!",
             css: "index",
-            pets
+            pets,
+            usuario,
+            carrinho
         })
     },
     atualizarProduto: async (req, res) => {
@@ -745,7 +769,7 @@ const lojaController = {
             }
         })
 
-        
+
         res.redirect('/usuario/produtos')
     }
 }

@@ -299,6 +299,8 @@ const authController = {
         "pedido",
       ],
     });
+
+    console.log(produtos)
     if(usuario){
       carrinho = await Carrinho.findAll({
           where:{
@@ -306,6 +308,8 @@ const authController = {
               ativo: 1
           }})
       }
+
+    
     res.render("perfilVendas", {
       title: "Minha Vendas",
       css: "perfilVendas",
