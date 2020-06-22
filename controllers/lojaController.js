@@ -686,6 +686,7 @@ const lojaController = {
         res.redirect('/pedidoSucesso')
     },
     sucesso: async (req, res) => {
+        let usuario = req.session.usuario
         
         let pets = await Pet.findAll({
             where: {
@@ -701,7 +702,8 @@ const lojaController = {
         res.render('pedidoSucesso', {
             title: "Pedido efetuado com Sucesso!",
             css: "index",
-            pets
+            pets,
+            usuario
         })
     },
     atualizarProduto: async (req, res) => {
