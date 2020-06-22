@@ -107,7 +107,11 @@ const lojaController = {
             carrinho
         })
     },
-
+    detalheProduto: async (req, res) => {
+        let id = req.query.id;
+        let produto = await Produto.findByPk(id)
+        res.send(produto)
+    },
 
     showCategoriaProduto: async (req, res) => {
         let usuario = req.session.usuario;
@@ -379,9 +383,10 @@ const lojaController = {
         let usuario_id = usuario.id;
 
         let {
-            nomeProduto,
+            nome,
+            marca,
             descricao,
-            quantidade,
+            estoque,
             preco,
             categoria,
             categoria_pet,
@@ -423,12 +428,11 @@ const lojaController = {
 
         let categoria_id = categoria.id;
         let categoria_pet_id = categoria_pet.id;
-        let estoque = quantidade;
-        let nome = nomeProduto;
 
         let novoProduto = {
             id: null,
             nome,
+            marca,
             preco,
             descricao,
             estoque,
