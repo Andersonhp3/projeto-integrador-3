@@ -1,3 +1,30 @@
+let editAll = document.querySelectorAll('a.edit');
+
+async function onClickEdit(e) {
+    let id = (e.target.id).replace('edit_','');
+    let produto = await fetch('/produto?id='+ id)
+        .then(response => response.json())
+        .then(data => {return data})
+    document.getElementById('id').value = produto.id;
+    document.getElementById('nome').value = produto.nome;
+    document.getElementById('marca').value = produto.marca;
+    document.getElementById('descricao').value = produto.descricao;
+    document.getElementById('estoque').value = produto.estoque;
+    document.getElementById('preco').value = produto.preco;
+
+    console.log(produto);
+
+
+    $('#edit-modal').modal('show');
+};
+
+for(edit of editAll) {
+    edit.addEventListener('click', onClickEdit);
+}
+
+
+// Pagination Start
+
 let numberOfItems = $('#table .table-items').length;
 let limitPerPage = 10;
 let totalPages = Math.ceil(numberOfItems / limitPerPage);
@@ -101,3 +128,5 @@ function hidePagination() {
     $(".pagination li.current-page").eq(($(".pagination li.current-page").length - 1)).show();
     $(".pagination li.current-page").slice(minLength, maxLength).show();
 }
+
+// Pagination End

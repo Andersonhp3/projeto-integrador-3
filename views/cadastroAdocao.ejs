@@ -74,33 +74,33 @@
                     <div class="col">
                         <form action="/pet/novo" method="post">
                             <div id="cadastro-dados">
-                                <div class="form-group mb-4">
+                                <div class="form-group mb-2">
                                     <input id="nome" class="form-control input-decoration" type="text" name="nome"
-                                        placeholder="Nome do Pet">
+                                        placeholder="Nome do Pet" maxlength="100" required>
                                 </div>
-                                <div class="form-group mb-4">
+                                <div class="form-group mb-2">
                                     <textarea name="descricao" id="descricao" class="form-control input-decoration"
-                                        rows="10" placeholder="Descrição" type="text"></textarea>
+                                        rows="5" placeholder="Descrição" type="text" maxlength="200" required></textarea>
                                 </div>
                                 <div class="d-flex">
-                                    <div class="form-group mb-4 mr-1">
+                                    <div class="form-group mb-2 mr-1 w-75">
                                         <input id="raca" class="form-control input-decoration" type="text"
-                                            name="raca" placeholder="Raça" columns="4">
+                                            name="raca" placeholder="Raça" maxlength="45" required>
                                     </div>
-                                    <div class="form-group mb-4 ml-1">
+                                    <div class="form-group mb-2 ml-1 w-25">
                                         <input id="idade" class="form-control input-decoration" type="number"
-                                            name="idade" placeholder="Idade" columns="4">
+                                            name="idade" placeholder="Idade" min="0" max="99" required>
                                     </div>
                                 </div>
                                 <div class="d-flex">
-                                    <div class="form-group mb-4 mr-1 w-50">
+                                    <div class="form-group mb-2 mr-1 w-50">
                                         <select class="form-control input-decoration" id="categoria" name="categoria">
                                             <% for(cat of categorias) { %>
                                                 <option name=<%= cat.id %> id=<%= cat.id %> ><%= cat.categoria %></option>
                                             <% } %>
                                         </select>
                                     </div>
-                                    <div class="form-group mb-4 ml-1 w-50">
+                                    <div class="form-group mb-2 ml-1 w-50">
                                         <select class="form-control input-decoration" id="categoria" name="genero">
                                             <option>Macho</option>
                                             <option>Fêmea</option>
@@ -108,9 +108,9 @@
                                     </div>  
                                 </div>
                                 <div class="d-flex">
-                                    <div class="form-group mb-4 mr-1">
+                                    <div class="form-group mb-2 mr-1">
                                         <input id="contato" class="form-control input-decoration" type="text"
-                                            name="contato" placeholder="Contato" columns="4">
+                                            name="contato" placeholder="Contato" columns="4" maxlength="45" required>
                                     </div>
                                 </div>
                                 <input class="form-control d-none" type="hidden" name="imagemb64" id="imagemb64"
