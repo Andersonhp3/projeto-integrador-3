@@ -34,7 +34,7 @@
                                         class="card-img-top" alt="Nome do produto">
                                     <div class="card-body">
                                         <h5 class="card-title text-truncate" id="nomeProduto"><%=maisVendidos[i -1].nome%></h5>
-                                        <p class="card-text" id="precoProduto">R$ <%=maisVendidos[i -1].preco%></p>
+                                        <p class="card-text" id="precoProduto"><%=maisVendidos[i -1].preco.toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'})%></p>
                                     </div>
                                 </div>
                             </a>
@@ -52,7 +52,7 @@
                                         class="card-img-top" alt="Nome do produto">
                                         <div class="card-body">
                                             <h5 class="card-title text-truncate" id="nomeProduto"><%=maisVendidos[i -1].nome%></h5>
-                                            <p class="card-text" id="precoProduto">R$ <%=maisVendidos[i -1].preco%></p>
+                                            <p class="card-text" id="precoProduto"><%=maisVendidos[i -1].preco.toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'})%></p>
                                         </div>
                                     </div>
                                 </a>
@@ -70,7 +70,7 @@
                                         class="card-img-top" alt="Nome do produto">
                                         <div class="card-body">
                                             <h5 class="card-title text-truncate" id="nomeProduto"><%=maisVendidos[i -1].nome%></h5>
-                                            <p class="card-text" id="precoProduto">R$ <%=maisVendidos[i -1].preco%></p>
+                                            <p class="card-text" id="precoProduto"><%=maisVendidos[i -1].preco.toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'})%></p>
                                         </div>
                                     </div>
                                 </a>

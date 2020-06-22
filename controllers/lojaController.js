@@ -13,7 +13,8 @@ const {
     ImagemProduto,
     CategoriaPet,
     Carrinho,
-    pedidoProduto
+    pedidoProduto,
+    Pet
 } = require("../models");
 
 
@@ -183,6 +184,25 @@ const lojaController = {
             produtoAllOrder
         )
 
+        let marcasProduto = []
+        for (let i = 0; i < produtoAll.length; i++) {
+            marcasProduto.push({
+                marca: produtoAll[i].marca
+            })
+        }
+
+        marcasProduto = marcasProduto.sort((a, b) => {
+            if (a.marca < b.marca) return -1;
+            if (a.marca > b.marca) return 1;
+            return 0;
+        });
+
+        var marcasOrdenadas = marcasProduto.filter(function (a) {
+            return !this[JSON.stringify(a)] && (this[JSON.stringify(a)] = true);
+        }, Object.create(null));
+
+        console.log(marcasOrdenadas)
+
         let categoriaProduto = await Categoria.findByPk(id, {
             include: [{
                 model: Produto,
@@ -196,9 +216,8 @@ const lojaController = {
             }, ],
         });
 
-        // let produto = await Produto.findByPk(id, {
-        //     include: ['usuario', 'imagem']
-        // });
+        
+
         if (usuario) {
             carrinho = await Carrinho.findAll({
                 where: {
@@ -219,6 +238,7 @@ const lojaController = {
             produtoAll,
             carrinho,
             queryAtual,
+            marcasOrdenadas
 
         });
     },
@@ -467,7 +487,7 @@ const lojaController = {
 
 
         if (!usuario) {
-            res.redirect('/login?error=login-required')
+            res.redirect(`/login?error=login-required&id=${id}&quant=${quant}`)
         }
 
         let usuario_id = usuario.id
@@ -665,10 +685,23 @@ const lojaController = {
 
         res.redirect('/pedidoSucesso')
     },
-    sucesso: (req, res) => {
+    sucesso: async (req, res) => {
+        
+        let pets = await Pet.findAll({
+            where: {
+                adotado: 0
+            },
+            order: [
+                ['dataCadastro', 'DESC'],
+            ],
+            include: ['imagem'],
+            limit: 18
+        });
+
         res.render('pedidoSucesso', {
             title: "Pedido efetuado com Sucesso!",
-            css: "index"
+            css: "index",
+            pets
         })
     },
     atualizarProduto: async (req, res) => {

@@ -18,8 +18,7 @@
                     </div>
                     <div class="col-4 d-flex align-items-center">
                         <span class="text-muted valor" id="valor<%= item.id %>"> R$<%=item.produto.preco%></span>
-                        <form class="deleteItem" action="/deletaritemcarrinho" method="POST">
-                            <input type="text" value="<%= item.id %>" class="d-none item">
+                        <form class="deleteItem<%= item.id %>" id="<%= item.id %> ">
                             <button class="btn btn-site ml-2"><i class="fas fa-trash"></i></button>
                         </form>
                     </div>

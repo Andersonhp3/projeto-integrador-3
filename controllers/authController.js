@@ -20,7 +20,10 @@ const authController = {
   login: async (req, res) => {
     const {
       email,
-      senha
+      senha,
+      erro,
+      id,
+      quant
     } = req.body;
 
     const user = await Usuario.findOne({
@@ -38,6 +41,20 @@ const authController = {
     }
 
     req.session.usuario = user;
+
+    
+
+    if (erro == "login-required"){
+      let usuario_id = req.session.usuario.id
+      await Carrinho.create({
+        usuario_id,
+        produto_id: id,
+        quantidade: quant,
+        ativo: true
+      })
+
+    res.redirect('/carrinho')
+    }
 
     res.redirect("/home");
   },
@@ -110,6 +127,7 @@ const authController = {
   showLogin: (req, res) => {
 
     let erro = req.query.error
+    let {id, quant} = req.query
 
     let cadastroEfetuado = req.query.cadastro
 
@@ -118,6 +136,8 @@ const authController = {
       css: "login",
       error: false,
       erro,
+      id,
+      quant,
       cadastroEfetuado,
       mensagemSucesso: "Usuário cadastrado com sucesso!",
       mensagemErro1: "Email incorreto ou senha incorreta. Tente Novamente.",

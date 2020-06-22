@@ -38,7 +38,7 @@
                                             class="card-img-top" alt="Nome do produto">
                                         <div class="card-body">
                                             <h5 class="card-title text-truncate" id="nomeProduto"><%=destaques[i -1].nome%></h5>
-                                            <p class="card-text" id="precoProduto">R$ <%=destaques[i -1].preco%></p>
+                                            <p class="card-text" id="precoProduto"><%=destaques[i -1].preco.toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'})%></p>
                                         </div>
                                     </div>
                                 </a>
@@ -56,7 +56,7 @@
                                                 class="card-img-top" alt="Nome do produto">
                                             <div class="card-body">
                                                 <h5 class="card-title text-truncate" id="nomeProduto"><%=destaques[i -1].nome%></h5>
-                                                <p class="card-text" id="precoProduto">R$ <%=destaques[i -1].preco%></p>
+                                                <p class="card-text" id="precoProduto"><%=destaques[i -1].preco.toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'})%></p>
                                             </div>
                                         </div>
                                     </a>
@@ -74,7 +74,7 @@
                                                 class="card-img-top" alt="Nome do produto">
                                             <div class="card-body">
                                                 <h5 class="card-title text-truncate" id="nomeProduto"><%=destaques[i -1].nome%></h5>
-                                                <p class="card-text" id="precoProduto">R$ <%=destaques[i -1].preco%></p>
+                                                <p class="card-text" id="precoProduto"><%=destaques[i -1].preco.toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'})%></p>
                                             </div>
                                         </div>
                                     </a>
@@ -112,7 +112,7 @@
                                 <img id="imagemProduto" src="<%=itens[(itens.length -1) - i].get().imagem[0].imagem%>" id="imagemProduto" class="card-img-top" alt="Nome do produto">
                                 <div class="card-body">
                                     <h5 class="card-title text-truncate" id="nomeProduto"><%=itens[(itens.length -1) - i].nome%></h5>
-                                    <p class="card-text" id="precoProduto">R$ <%=itens[(itens.length -1) - i].preco%></p>
+                                    <p class="card-text" id="precoProduto"><%=itens[(itens.length -1) - i].preco.toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'})%></p>
                                 </div>
                             </div>
                         </a>

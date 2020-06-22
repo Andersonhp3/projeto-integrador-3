@@ -36,9 +36,9 @@
                     </div>
                     <div>
                         <li class="text-decoration-none text-blue"> Marcas</li>
-                        <div class="opcao text-decoration-none text-blue"><a href="" class="text-decoration-none text-blue">---</a></div>
-                        <div class="opcao text-decoration-none text-blue"><a href="" class="text-decoration-none text-blue">---</a></div>
-                        <div class="opcao text-decoration-none text-blue"><a href="" class="text-decoration-none text-blue">---</a></div>
+                        <% for ( let i = 0; i < marcasOrdenadas.length; i++  ) {%>
+                        <div class="opcao text-decoration-none text-blue"><a href="<%= categoriaProduto.id%>" class="text-decoration-none text-blue"><%=marcasOrdenadas[i].marca%></a></a></div>
+                        <%}%>
                     </div>
                     <div>
                         <li class="text-decoration-none text-blue">Preço</li>
@@ -74,7 +74,7 @@
                                            <div class="card-body">
                                                <h6 class="card-title text-truncate" id="nomeProduto"><%=produtoAll[i].nome%>
                                                </h6>
-                                               <p class="card-text" id="precoProduto">R$ <%=produtoAll[i].preco%></p>
+                                               <p class="card-text" id="precoProduto"><%=produtoAll[i].preco.toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'})%></p>
                                             </div>  
                                        </div>
                                    </a>

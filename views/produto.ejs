@@ -49,7 +49,7 @@
                     <span class="mt-2"><strong class="text-pink">Quantidade: </strong></span>
                     <input class="mx-0 my-0 form-control input-decoration px-3" type="number" style="width: 60px;"
                         name="quant" value="1" min="0">
-                    <p class="mt-2 text-blue"><strong class="text-pink">Preço: </strong><%=produto.preco%></p><br>
+                    <p class="mt-2 text-blue"><strong class="text-pink">Preço: </strong><%=produto.preco.toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'})%></p><br>
                     <button type="submit" class="btn btn-site m-2">Comprar</button><br>
                 </form>
             </div>
