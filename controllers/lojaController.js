@@ -464,7 +464,7 @@ const lojaController = {
 
 
         if (!usuario) {
-            res.redirect('/login?error=login-required')
+            res.redirect(`/login?error=login-required&id=${id}&quant=${quant}`)
         }
 
         let usuario_id = usuario.id
