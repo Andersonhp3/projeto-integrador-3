@@ -711,13 +711,34 @@ const lojaController = {
             id,
             nome,
             marca,
-            descricao
+            descricao,
+            categoria,
+            categoria_pet
         } = req.body;
+
+        categoria = await Categoria.findOne({
+            where: {
+                categoria
+            }
+        });
+
+        categoria_pet = await CategoriaPet.findOne({
+            where: {
+                categoria: categoria_pet
+            }
+        });
+
+        let categoria_id = categoria.id;
+        let categoria_pet_id = categoria_pet.id;
 
         let update = await Produto.update({
             nome,
             marca,
-            descricao
+            descricao,
+            estoque,
+            preco,
+            categoria_id,
+            categoria_pet_id
         }, {
             where: {
                 id
