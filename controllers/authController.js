@@ -299,8 +299,14 @@ const authController = {
         "pedido",
       ],
     });
+    let vendas = []
+    for (produto of produtos) {
+      if(produto.pedido.length > 0){
+        vendas.push(produto)
+      }
+    }
 
-    console.log(produtos)
+    console.log(vendas)
     if(usuario){
       carrinho = await Carrinho.findAll({
           where:{
@@ -315,8 +321,7 @@ const authController = {
       css: "perfilVendas",
       error: false,
       usuario,
-      produtos,
-      pedidos,
+      vendas,
       carrinho
     });
   },

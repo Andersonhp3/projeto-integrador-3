@@ -55,6 +55,7 @@
       </div>
       <div class="col-md-9">
         <h1 class="text-blue">Vendas</h1>
+        <% if(vendas.length > 0) {%>
         <nav aria-label="Page navigation example">
           <ul class="pagination pagination-sm">
             <li id="previous-page" class='page-item'>
@@ -74,9 +75,8 @@
             </tr>
           </thead>
           <tbody>
-            <% for (produto of produtos) {
-              if (produto.pedido.length > 0){
-                for (pedido of produto.pedido){
+            <% for (venda of vendas) {
+                for (pedido of venda.pedido){
               let d = new Date(pedido.data) 
               let dia = d.getDate() 
               let mes = d.getMonth()+1 
@@ -90,11 +90,15 @@
               data = `${dia}/${mes}/${ano}` }%>
 
             <tr class="table-items">
-              <td><%=produto.nome%></td>
-              <td><%=produto.preco.toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'})%></td>
+              <td><%=venda.nome%></td>
+              <td><%=venda.preco.toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'})%></td>
               <td><%=data%></td>
             </tr>
-            <% }}} %>
+            <% }}} else {%>
+            <div class="container d-flex justify-content-center align-items-center" style="height: 300px;">
+              <h4 class="text-center">Você ainda não fez nenhuma compra</h4>
+            </div>
+            <% } %>
           </tbody>
         </table>
       </div>
