@@ -13,7 +13,8 @@ const {
     ImagemProduto,
     CategoriaPet,
     Carrinho,
-    pedidoProduto
+    pedidoProduto,
+    Pet
 } = require("../models");
 
 
@@ -661,10 +662,23 @@ const lojaController = {
 
         res.redirect('/pedidoSucesso')
     },
-    sucesso: (req, res) => {
+    sucesso: async (req, res) => {
+        
+        let pets = await Pet.findAll({
+            where: {
+                adotado: 0
+            },
+            order: [
+                ['dataCadastro', 'DESC'],
+            ],
+            include: ['imagem'],
+            limit: 18
+        });
+
         res.render('pedidoSucesso', {
             title: "Pedido efetuado com Sucesso!",
-            css: "index"
+            css: "index",
+            pets
         })
     }
 }
