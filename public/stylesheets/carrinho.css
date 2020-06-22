@@ -11,3 +11,13 @@ input {
 .valor {
     width: 100px;
 }
+
+@media (max-width: 576px){
+.list-group-item {
+    padding-left: 0;
+    padding-right: 0;
+}
+div.preco{
+    height: 50%;
+}
+}

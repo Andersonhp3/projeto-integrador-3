@@ -2,25 +2,34 @@
 
 <section id="shopCart" class="container">
     <div class="row">
-        <% if (carrinho.length > 0){ %> 
+        <% if (carrinho.length > 0){ %>
         <div class="col-md-8">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
                 <span>Resumo do Pedido</span>
             </h4>
-            
+
             <ul class="list-group mb-3">
                 <% for (item of carrinho) {%>
-                <li class="list-group-item d-flex justify-content-between lh-condensed py-3" id="listaCarrinho">
+                <li class="list-group-item d-flex justify-content-between lh-condensed py-2" id="listaCarrinho">
                     <div class="col-8">
-                        <h6 class="my-0" ><%=item.produto.nome%></h6>
-                        <span class="text-muted"> Quantidade: </span>
-                        <input type="number" min="1" class="ml-2 qtd" value=<%= item.quantidade%> id="<%= item.id %>">
+                        <div class="col-12 px-0 py-1">
+                            <h6 class="my-0"><%=item.produto.nome%></h6>
+                        </div>
+                        <div class="col-12 px-0 py-1"><span class="text-muted"> Quantidade: </span>
+                            <input type="number" min="1" class="ml-2 qtd" value=<%= item.quantidade%>
+                                id="<%= item.id %>"></div>
                     </div>
-                    <div class="col-4 d-flex align-items-center">
-                        <span class="text-muted valor" id="valor<%= item.id %>"> R$<%=item.produto.preco%></span>
-                        <form class="deleteItem<%= item.id %>" id="<%= item.id %> ">
-                            <button class="btn btn-site ml-2"><i class="fas fa-trash"></i></button>
-                        </form>
+                    <div class="col-4">
+                        <div class="col-12 text-right preco">
+                            <span class="text-muted valor" id="valor<%= item.id %>"> R$<%=item.produto.preco%></span>
+                        </div>
+
+                        <div class="col-12 text-right delete">
+                            <form class="deleteItem<%= item.id %>" id="<%= item.id %> ">
+                                <button class="btn btn-site"><i class="fas fa-trash"></i></button>
+                            </form>
+                        </div>
+
                     </div>
                     <%} %>
             </ul>
@@ -31,96 +40,38 @@
             </h4>
             <ul class="list-group mb-3">
                 <li class="list-group-item d-flex justify-content-between">
-                    <span>Total (BRL)</span>
-                    <strong id="total"></strong>
+                    <div class="col-12 d-flex justify-content-between">
+                        <span>Total (BRL)</span>
+                        <strong class="text-right" id="total"></strong>
+                    </div>
                 </li>
             </ul>
-                <a href="/finalizarPedido"><button class="btn btn-site">Finalizar Pedido</button></a>
-            
+            <a href="/finalizarPedido"><button class="btn btn-site">Finalizar Pedido</button></a>
         </div>
     </div>
     <h2>Quem comprou também viu:</h2>
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active container">
-                <div class="row">
-                    <div class="col-4 col-md-2">
-                        <a href="./login.html">
-                            <div class="card" style="width: auto;">
-                                <img src="./images/produtos/default.png" class="card-img-top" alt="Nome do produto">
-                                <div class="card-body">
-                                    <h5 class="card-title">Nome do produto</h5>
-                                    <p class="card-text">R$ 00,00</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-4 col-md-2">
-                        <a href="./login.html">
-                            <div class="card" style="width: auto;">
-                                <img src="./images/produtos/default.png" class="card-img-top" alt="Nome do produto">
-                                <div class="card-body">
-                                    <h5 class="card-title">Nome do produto</h5>
-                                    <p class="card-text">R$ 00,00</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-4 col-md-2">
-                        <a href="./login.html">
-                            <div class="card" style="width: auto;">
-                                <img src="./images/produtos/default.png" class="card-img-top" alt="Nome do produto">
-                                <div class="card-body">
-                                    <h5 class="card-title">Nome do produto</h5>
-                                    <p class="card-text">R$ 00,00</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-4 col-md-2">
-                        <a href="./login.html">
-                            <div class="card" style="width: auto;">
-                                <img src="./images/produtos/default.png" class="card-img-top" alt="Nome do produto">
-                                <div class="card-body">
-                                    <h5 class="card-title">Nome do produto</h5>
-                                    <p class="card-text">R$ 00,00</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-4 col-md-2">
-                        <a href="./login.html">
-                            <div class="card" style="width: auto;">
-                                <img src="./images/produtos/default.png" class="card-img-top" alt="Nome do produto">
-                                <div class="card-body">
-                                    <h5 class="card-title">Nome do produto</h5>
-                                    <p class="card-text">R$ 00,00</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-4 col-md-2">
-                        <a href="./login.html">
-                            <div class="card" style="width: auto;">
-                                <img src="./images/produtos/default.png" class="card-img-top" alt="Nome do produto">
-                                <div class="card-body">
-                                    <h5 class="card-title">Nome do produto</h5>
-                                    <p class="card-text">R$ 00,00</p>
-                                </div>
-                            </div>
-                        </a>
+    <div class="row">
+        <div class="col-sm-6 col-md-3 p-1">
+            <a href="/pet/detalheAdocao?id=">
+                <div class="card" >
+                    <img src="" class="card-img-top" alt="Nome do pet" />
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text"></p>
                     </div>
                 </div>
-            </div>
-            <%} else { %> 
-                <div class="w-100">
-                <h3>Seu carrinho está vazio</h3><br>
-                <p class="text-center">Adicione algo na <a href="/loja">Loja</a></p>
-                </div>
-            </div>
-        <%} %> 
+            </a>
         </div>
     </div>
+    <%} else { %>
+    <div class="w-100">
+        <h3>Seu carrinho está vazio</h3><br>
+        <p class="text-center">Adicione algo na <a href="/loja">Loja</a></p>
+    </div>
+
+    <%} %>
+    </div>
+
 </section>
 <script src="/javascripts/jquery-3.5.1.js"></script>
 <script src="/javascripts/carrinho.js"></script>
