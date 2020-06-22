@@ -413,6 +413,7 @@ const lojaController = {
             imagemb64
         } = req.body;
 
+
         async function decode_base64(base64str, filename) {
             let buff = Buffer.from(base64str, 'base64');
             let file = ('/images/produtos/' + Date.now().toString() + '-' + filename);
@@ -434,20 +435,8 @@ const lojaController = {
             var imagem = await decode_base64(imgb64, ('produto.' + filetype));
         }
 
-        categoria = await Categoria.findOne({
-            where: {
-                categoria
-            }
-        });
-
-        categoria_pet = await CategoriaPet.findOne({
-            where: {
-                categoria: categoria_pet
-            }
-        });
-
-        let categoria_id = categoria.id;
-        let categoria_pet_id = categoria_pet.id;
+        let categoria_id = categoria;
+        let categoria_pet_id = categoria_pet;
 
         let novoProduto = {
             id: null,
@@ -456,6 +445,7 @@ const lojaController = {
             preco,
             descricao,
             estoque,
+            ativo: true,
             categoria_id,
             categoria_pet_id,
             usuario_id

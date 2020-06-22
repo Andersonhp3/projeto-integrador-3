@@ -136,13 +136,7 @@ const adocaoController = {
             var imagem = await decode_base64(imgb64, ('pet.' + filetype));
         }
 
-        categoria = await CategoriaPet.findOne({
-            where: {
-                categoria
-            }
-        })
-
-        let categoria_pet_id = categoria.id;
+        let categoria_pet_id = categoria;
 
         let novaAdocao = {
             id: null,
@@ -154,6 +148,7 @@ const adocaoController = {
             genero,
             dataCadastro: new Date().toString(),
             adotado: false,
+            ativo: true,
             categoria_pet_id,
             usuario_id
         }
