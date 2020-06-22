@@ -36,7 +36,7 @@ const mudaQtd = evt => {
 
 const onFormsubmit = (e) => {
     e.preventDefault();
-    let id = document.querySelector('.item').value;
+    let id = Number(e.target.id)
     console.log(id)
     $.ajax({
         url:'/deletaritemcarrinho',
@@ -58,7 +58,7 @@ const onFormsubmit = (e) => {
 for (item of carrinho){
     let input = document.getElementById(item.id)
     input.addEventListener('change', mudaQtd)
-    let excluirItem = document.querySelector(".deleteItem")
+    let excluirItem = document.querySelector(`.deleteItem${item.id}`)
     excluirItem.addEventListener('submit', onFormsubmit)
 }
 
