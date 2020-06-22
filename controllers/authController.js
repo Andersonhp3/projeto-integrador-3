@@ -416,7 +416,10 @@ const authController = {
       include: ['usuario', 'imagem'],
       where: {
         usuario_id
-      }
+      },
+      order: [
+          ['dataCadastro', 'DESC'],
+      ]
     })
     
     if(usuario){
