@@ -23,9 +23,9 @@ router.get('/loja',lojaController.home)
 router.get('/comprar', lojaController.comprar);
 router.get('/carrinho', verificaUsuarioLogado, lojaController.carrinho);
 router.get('/mudaQtd', verificaUsuarioLogado, lojaController.mudaQtd);
-router.post('/deletaritemcarrinho', lojaController.deletarItemCarrinho);
-router.get('/finalizarPedido', lojaController.finalizar);
-router.get('/pedidoSucesso', lojaController.sucesso)
+router.post('/deletaritemcarrinho', verificaUsuarioLogado, lojaController.deletarItemCarrinho);
+router.get('/finalizarPedido', verificaUsuarioLogado, lojaController.finalizar);
+router.get('/pedidoSucesso',verificaUsuarioLogado, lojaController.sucesso)
 
 // contatoController
 router.get('/contato',contatoController.showContato);
