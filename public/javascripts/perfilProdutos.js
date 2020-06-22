@@ -1,3 +1,5 @@
+
+// Edit Start
 let editAll = document.querySelectorAll('a.edit');
 
 async function onClickEdit(e) {
@@ -11,24 +13,21 @@ async function onClickEdit(e) {
     document.getElementById('descricao').value = produto.descricao;
     document.getElementById('estoque').value = produto.estoque;
     document.getElementById('preco').value = produto.preco;
-
-    console.log(produto);
-
-
+    document.getElementById('categoria').value = produto.categoria_id;
+    document.getElementById('categoria-pet').value = produto.categoria_pet_id;
     $('#edit-modal').modal('show');
 };
 
 for(edit of editAll) {
     edit.addEventListener('click', onClickEdit);
 }
-
+// Edit End
 
 // Pagination Start
 
 let numberOfItems = $('#table .table-items').length;
 let limitPerPage = 10;
 let totalPages = Math.ceil(numberOfItems / limitPerPage);
-
 
 $("#table .table-items").slice(limitPerPage).hide();
 $(".pagination").append("<li class='page-item current-page active'><a class='page-link' href='javascript:void(0)'>" + 1 + "</a></li>");
@@ -38,8 +37,6 @@ for (let i = 2; i <= totalPages; i++) {
 }
 
 $(".pagination").append("<li id='next-page' class='page-item'><a class='page-link' href='javascript:void(0)' aria-label='Next'><span aria-hidden='true'>&raquo;</span><span class='sr-only'>Next</span></a></li>");
-
-
 
 $(".pagination li.current-page").on("click", function () {
     if ($(this).hasClass("active")) {
@@ -60,9 +57,7 @@ $(".pagination li.current-page").on("click", function () {
     };
 });
 
-
 hidePagination();
-
 
 $("#next-page").on("click", function () {
     let currentPage = $(".pagination li.active").index();
@@ -128,5 +123,4 @@ function hidePagination() {
     $(".pagination li.current-page").eq(($(".pagination li.current-page").length - 1)).show();
     $(".pagination li.current-page").slice(minLength, maxLength).show();
 }
-
 // Pagination End

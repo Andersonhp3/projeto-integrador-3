@@ -100,7 +100,7 @@
                                     <select class="form-control input-decoration" id="categoria"
                                         name="categoria">
                                         <% for(cat of categorias) { %>
-                                            <option name=<%= cat.id %> id=<%= cat.id %> ><%= cat.categoria %></option>
+                                            <option value=<%= cat.id %> id=<%= cat.id %> ><%= cat.categoria %></option>
                                         <% } %>
                                     </select>
                                 </div>
@@ -108,7 +108,7 @@
                                     <select class="form-control input-decoration" id="categoria-pet"
                                         name="categoria_pet">
                                         <% for(cat_pet of categorias_pet) { %>
-                                            <option name=<%= cat_pet.id %> id=<%= cat_pet.id %> ><%= cat_pet.categoria %></option>
+                                            <option value=<%= cat_pet.id %> id=<%= cat_pet.id %> ><%= cat_pet.categoria %></option>
                                         <% } %>
                                     </select>
                                 </div>
