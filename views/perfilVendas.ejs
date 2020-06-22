@@ -76,7 +76,8 @@
           <tbody>
             <% for (produto of produtos) {
               if (produto.pedido.length > 0){
-              let d = new Date(produto.pedido[0].data) 
+                for (pedido of produto.pedido){
+              let d = new Date(pedido.data) 
               let dia = d.getDate() 
               let mes = d.getMonth()+1 
               let ano = d.getFullYear()
@@ -93,7 +94,7 @@
               <td><%=produto.preco.toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'})%></td>
               <td><%=data%></td>
             </tr>
-            <% }} %>
+            <% }}} %>
           </tbody>
         </table>
       </div>
