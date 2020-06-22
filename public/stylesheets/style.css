@@ -10,15 +10,18 @@
 :-ms-input-placeholder {
   /* Internet Explorer 10-11 */
   color: #03658C !important;
+  opacity: 0.8 !important;
 }
 
 ::-ms-input-placeholder {
   /* Microsoft Edge */
   color: #03658C !important;
+  opacity: 0.8 !important;
 }
 
 select {
   color: #03658C !important;
+  opacity: 0.8 !important;
   display: inline-block;
   font: inherit;
   line-height: 1.5em;
@@ -45,6 +48,7 @@ select {
 
 select option {
   color: #03658C !important;
+  opacity: 0.8 !important;
 }
 
 * {
@@ -70,6 +74,10 @@ h3 {
   text-transform: uppercase;
   color: #03658C ;
   text-align: center;
+}
+
+textarea {
+  resize: none;
 }
 
 section.first {
