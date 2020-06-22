@@ -88,7 +88,7 @@
             <tr>
               <th scope="row">1</th>
               <td><%= pedido.produto[0].nome %></td>
-              <td><%= pedido.produto[0].preco %></td>
+              <td><%= pedido.produto[0].preco.toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'}) %></td>
               <td><%=data%></td>
             </tr>
             <% } %>

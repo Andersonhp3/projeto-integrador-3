@@ -68,21 +68,32 @@
         <table id="table" class="table table-sm table-striped table-responsive-sm">
           <thead>
             <tr>
-              <th scope="col">Qtd</th>
               <th scope="col">Nome do Produto</th>
               <th scope="col">Valor</th>
               <th scope="col">Data da Venda</th>
             </tr>
           </thead>
           <tbody>
-            <% for (produto of produtos) {%>
+            <% for (produto of produtos) {
+              if (produto.pedido.length > 0){
+              let d = new Date(produto.pedido[0].data) 
+              let dia = d.getDate() 
+              let mes = d.getMonth()+1 
+              let ano = d.getFullYear()
+
+              let data = ''
+            
+            if(mes<10){ 
+              data = `${dia}/0${mes}/${ano}`
+            } else { 
+              data = `${dia}/${mes}/${ano}` }%>
+
             <tr class="table-items">
-              <th scope="row"><%=produto.id%></th>
-              <td><%=produto.pedido%></td>
-              <td>R$ 99.00</td>
-              <td>12/12/2019</td>
+              <td><%=produto.nome%></td>
+              <td><%=produto.preco.toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'})%></td>
+              <td><%=data%></td>
             </tr>
-            <% } %>
+            <% }} %>
           </tbody>
         </table>
       </div>
