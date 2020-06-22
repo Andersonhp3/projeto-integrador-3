@@ -9,8 +9,8 @@
                     <img src="<%=resultado.imagem[0].imagem%>" class="card-img-top" alt="..." />
                     <div class="card-body">
                         <h5 class="card-title text-truncate"><%=resultado.nome%> </h5>
-                        <p class="card-text"><%=resultado.preco%> </p>
-                        <a href="produto?id=<%=resultado.id%> " class="btn btn-site">Comprar</a>
+                        <p class="card-text"><%=resultado.preco..toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'})%> </p>
+                        <a href="/produto/detalheProduto?id=<%=resultado.id%> " class="btn btn-site">Comprar</a>
                     </div>
                 </div>
             </div>
