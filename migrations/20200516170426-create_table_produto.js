@@ -34,6 +34,9 @@ module.exports = {
         allowNull: true,
         defaultValue: '0'
       },
+      ativo: {
+        type: Sequelize.BOOLEAN,
+      },
       categoria_id: {
         type: Sequelize.INTEGER,
         references: {

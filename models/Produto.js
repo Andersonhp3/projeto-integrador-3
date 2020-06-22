@@ -32,6 +32,9 @@ let Produto = (sequelize, DataTypes) => {
         allowNull: true,
         defaultValue: '0'
       },
+      ativo: {
+        type: DataTypes.BOOLEAN,
+      },
       categoria_id: {
         type: DataTypes.INTEGER,
         allowNull: false,

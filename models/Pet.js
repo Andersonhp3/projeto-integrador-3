@@ -38,6 +38,9 @@ let Pet = (sequelize, DataTypes) => {
       dataAdotado: {
         type: DataTypes.DATE,
       },
+      ativo: {
+        type: DataTypes.BOOLEAN,
+      },
       categoria_pet_id: {
         type: DataTypes.INTEGER,
         allowNull: false
