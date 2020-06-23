@@ -271,6 +271,16 @@ const lojaController = {
             }        
         }
 
+        let condOrdemPreco;
+        console.log(ordemPreco)
+        if(ordemPreco != undefined){
+            condOrdemPreco = [['preco', ordemPreco]]
+        }else {
+            condOrdemPreco = []
+        }
+
+        let condOrdem = [...condOrdemPreco]
+        console.log(condOrdem)
 
         let condIdCateProduto;
 
@@ -297,7 +307,12 @@ const lojaController = {
             queryAtual = '/categoriaPet?id=' + id
         }
 
-        if (queryAtual.indexOf('preco') || queryAtual.indexOf('categoriaProdutoId')) {
+        if(queryAtual.indexOf('ordem') > -1){
+            queryAtual = queryAtual.replace("&ordem="+ordemPreco,"")
+            console.log(queryAtual)
+        }
+
+        if (queryAtual.indexOf('preco') > -1 && queryAtual.indexOf('categoriaProdutoId') > -1) {
             queryAtual = '/categoriaPet?id=' + id + "&categoriaProdutoId=" + idCategoriaProduto;
         }
 
@@ -312,28 +327,16 @@ const lojaController = {
         let produtoAllOrder;
 
         let { page = 1 } = req.query;
-        // verificando order para pesquisar
-        if (ordemPreco == undefined) {
-            produtoAllOrder = {
-                include: 'imagem',
-                where: condTotal,
-                limit:16,
-                offset: (page-1) * 16
-            }
-        } else {
-            produtoAllOrder = {
+
+
+        let { count: total, rows:produtoAll } = await Produto.findAndCountAll(
+            {
                 include: 'imagem',
                 where: condTotal,
                 limit:16,
                 offset: (page-1) * 16,
-                order: [
-                    ['preco', ordemPreco]
-                ]
+                order: condOrdem
             }
-        }
-
-        let { count: total, rows:produtoAll } = await Produto.findAndCountAll(
-            produtoAllOrder
         )
         let totalPagina = Math.ceil(total/16);
 
@@ -350,11 +353,6 @@ const lojaController = {
         let categoriaPet = await CategoriaPet.findByPk(id, {
             include: [{
                 model: Produto,
-                where: {
-                    preco: {
-                        [Op.between]: [0, preco]
-                    }
-                },
                 as: "categoria_pet_produto",
                 include: ['categoria', "imagem"],
             }, ],
@@ -364,11 +362,6 @@ const lojaController = {
         let categoriaProduto = await Categoria.findAll({
             include: [{
                 model: Produto,
-                where: {
-                    preco: {
-                        [Op.between]: [0, preco]
-                    }
-                },
                 as: "produto",
                 atributes: ["produto"]
             }],
@@ -405,7 +398,7 @@ const lojaController = {
             })
         }
 
-
+        
 
 
         res.render('categoriaPet', {
