@@ -56,46 +56,46 @@
         <h1 class="text-blue">Meus Produtos</h1>
 
         <% if (produtos.length === 0) {%>
-        <nav aria-label="Page navigation example">
-          <ul class="pagination pagination-sm">
-            <li id="previous-page" class='page-item'>
-              <a class='page-link' href="javascript:void(0)" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-                <span class="sr-only">Previous</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <table id="table" class="table table-sm table-striped table-responsive">
-          <thead>
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Nome do Produto</th>
-              <th scope="col">Valor</th>
-              <th scope="col">Estoque</th>
-              <th scope="col">Editar</th>
-              <th scope="col">Excluir</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% for (produto of produtos) {%>
-            <tr class="table-items">
-              <th scope="row"><%=produto.id%></th>
-              <td class="text-truncate"><%=produto.nome%></td>
-              <td><%=produto.preco.toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'})%></td>
-              <td><%=produto.estoque%></td>
-              <td class="py-2"><a href="javascript:void(0)" class="edit"><i id="edit_<%= produto.id %>"
-                    class="fas fa-pencil-alt"></i></a></td>
-              <td class="py-2"><a href="javascript:void(0)" class="delete"><i id="del_<%= produto.id %>"
-                    class="fas fa-trash-alt"></i></a></td>
-            </tr>
-            <% } %>
-          </tbody>
-        </table>
+          <div class="container d-flex justify-content-center align-items-center" style="height: 300px;">
+            <h4 class="text-center text-blue">Você ainda não colocou nenhum produto à venda!</h4>
+          </div>
         <% } else { %>
-        <div class="container d-flex justify-content-center align-items-center" style="height: 300px;">
-          <h4 class="text-center text-blue">Você ainda não colocou nenhum produto à venda!</h4>
-        </div>
+          <nav aria-label="Page navigation example">
+            <ul class="pagination pagination-sm">
+              <li id="previous-page" class='page-item'>
+                <a class='page-link' href="javascript:void(0)" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                  <span class="sr-only">Previous</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <table id="table" class="table table-sm table-striped table-responsive">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nome do Produto</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Estoque</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Excluir</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for (produto of produtos) {%>
+              <tr class="table-items">
+                <th scope="row"><%=produto.id%></th>
+                <td class="text-truncate"><%=produto.nome%></td>
+                <td><%=produto.preco.toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'})%></td>
+                <td><%=produto.estoque%></td>
+                <td class="py-2"><a href="javascript:void(0)" class="edit"><i id="edit_<%= produto.id %>"
+                      class="fas fa-pencil-alt"></i></a></td>
+                <td class="py-2"><a href="javascript:void(0)" class="delete"><i id="del_<%= produto.id %>"
+                      class="fas fa-trash-alt"></i></a></td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
         <% } %>
       </div>
     </div>
