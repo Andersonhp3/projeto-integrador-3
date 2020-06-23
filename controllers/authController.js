@@ -163,10 +163,6 @@ const authController = {
     let usuario = req.session.usuario;
     let carrinho = undefined;
     let usuario_id = usuario.id;
-    
-    const user = await Usuario.findByPk(usuario_id);
-    usuario = user.dataValues;
-
 
     let endereco = await Endereco.findOne({
       where: {
@@ -482,9 +478,6 @@ const authController = {
     let usuario = req.session.usuario;
     let id = usuario.id;
     
-    const user = await Usuario.findByPk(id);
-    usuario = user.dataValues;
-
     let = {
       imagemb64
     } = req.body;
@@ -505,7 +498,7 @@ const authController = {
     if (!imagemb64) {
       var imagem = user.imagem;
     } else {
-      fs.unlinkSync('./public' + user.imagem)
+      fs.unlinkSync('./public' + usuario.imagem)
       let filetype = imagemb64.split(';base64,')[0].split('/')[1];
       let imgb64 = imagemb64.split(';base64,').pop();
       var imagem = await decode_base64(imgb64, ('avatar.' + filetype));
@@ -519,7 +512,7 @@ const authController = {
       }
     })
     
-    console.log(id, update, user.imagem);
+    req.session.usuario.imagem = imagem;
     res.redirect('/usuario');
   }
 };
