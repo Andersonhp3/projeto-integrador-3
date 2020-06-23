@@ -6,7 +6,7 @@ module.exports = {
     return queryInterface.bulkInsert('produto', [{
         id: 1,
         nome: 'Ração Golden Special Sabor Frango e Carne para Cães Adultos',
-        marca: "Placeholder",
+        marca: "PremieRpet",
         preco: 139,
         descricao: 'Linha: Premium Indicação: Alimentação diária de cães adultos Pet: Cachorros Porte de Raça: Grande, Pequeno e Médio Idade: Adulto Sabor: Frango e Carne',
         estoque: 200,
@@ -19,7 +19,7 @@ module.exports = {
       {
         id: 2,
         nome: 'Ração Golden Duo para Cães Adultos Sabor Salmão com Ervas e Cordeiro com Arroz - 15kg',
-        marca: "Placeholder",
+        marca: "PremieRpet",
         preco: 129,
         descricao: 'Linha: Premium Pet: Cachorros Porte de Raça: Grande, Médio e Pequeno Idade: Adulto Sabor: Salmão e Cordeiro',
         estoque: 200,
@@ -32,7 +32,7 @@ module.exports = {
       {
         id: 3,
         nome: 'Ração Premier Raças Específicas Golden Retriever para Cães Adultos - 12kg',
-        marca: "Placeholder",
+        marca: "PremieRpet",
         preco: 174,
         descricao: 'Linha: Super Premium Pet: Cachorros Porte de Raça: Grande Idade: Adulto Quantidade: 12Kg',
         estoque: 200,
@@ -45,7 +45,7 @@ module.exports = {
       {
         id: 4,
         nome: 'Ração Golden para Gatos Adultos Castrados Sabor Frango',
-        marca: "Placeholder",
+        marca: "PremieRpet",
         preco: 19,
         descricao: 'Linha: Premium Indicação: Castração Pet: Gatos Idade: Adulto Sabor: Frango',
         estoque: 200,
@@ -58,7 +58,7 @@ module.exports = {
       {
         id: 5,
         nome: 'Ração Úmida Premier Gourmet Para Gatos sabor Atum e Arroz integral 70g',
-        marca: "Placeholder",
+        marca: "PremieRpet",
         preco: 5,
         descricao: 'Linha: Super Premium Pet: Gatos Idade: Adulto Sabor: Atum e Arroz integral',
         estoque: 200,
@@ -71,7 +71,7 @@ module.exports = {
       {
         id: 6,
         nome: 'Recovery Royal Canin Veterinary Ração Lata Cães e Gatos 195 g',
-        marca: "Placeholder",
+        marca: "PremieRpet",
         preco: 21,
         descricao: 'Linha: Prescrita Indicação: Alimentação auxiliar para cães e gatos Pet: Cachorros e Gatos Porte de Raça: Médio, Pequeno e Grande Idade: Filhote, Adulto e Sênior Sabor: Carne',
         estoque: 200,
@@ -84,7 +84,7 @@ module.exports = {
       {
         id: 7,
         nome: 'Bastão Petz para Calopsitas com Maçã 90g',
-        marca: "Placeholder",
+        marca: "Petz",
         preco: 11,
         descricao: 'Pet: Pássaros Sabor: Maçã',
         estoque: 200,
@@ -97,7 +97,7 @@ module.exports = {
       {
         id: 8,
         nome: 'Ração Nutrópica Natural para Arara',
-        marca: "Placeholder",
+        marca: "Nutrópica",
         preco: 172,
         descricao: 'Pet: Pássaros',
         estoque: 200,
@@ -110,7 +110,7 @@ module.exports = {
       {
         id: 9,
         nome: 'Ração Nutrópica Papinha para Arara - 500g',
-        marca: "Placeholder",
+        marca: "Nutrópica",
         preco: 50,
         descricao: 'Pet: Araras Idade: Filhote',
         estoque: 200,
@@ -123,7 +123,7 @@ module.exports = {
       {
         id: 10,
         nome: 'Ração Nutrópica Twister para Roedores - 500g',
-        marca: "Placeholder",
+        marca: "Nutrópica",
         preco: 25,
         descricao: 'Pet: Roedores e Twisters Porte de Raça: Pequeno, Grande e Médio Idade: Filhote, Adulto e Sênior',
         estoque: 200,
@@ -136,7 +136,7 @@ module.exports = {
       {
         id: 11,
         nome: 'Ração Nutrópica Gourmet para Hamster - 300g',
-        marca: "Placeholder",
+        marca: "Nutrópica",
         preco: 24,
         descricao: 'Pet: Roedores',
         estoque: 200,
@@ -149,7 +149,7 @@ module.exports = {
       {
         id: 12,
         nome: 'Ração Alcon Club Para Pequenos Roedores',
-        marca: "Placeholder",
+        marca: "Alcon",
         preco: 7,
         descricao: 'Pet: Roedores',
         estoque: 200,
@@ -162,7 +162,7 @@ module.exports = {
       {
         id: 13,
         nome: 'Ração Alcon Club Para Roedores Alfafa Sticks',
-        marca: "Placeholder",
+        marca: "Alcon",
         preco: 20,
         descricao: 'Tipo: Roedores Apresentação: Disponível em embalagem com 500g',
         estoque: 200,
@@ -175,7 +175,7 @@ module.exports = {
       {
         id: 14,
         nome: 'Ração Alcon Carnívoros para Peixes',
-        marca: "Placeholder",
+        marca: "Alcon",
         preco: 22,
         descricao: '- Indicada para peixes; - Alimento extrusado completo',
         estoque: 200,
@@ -188,7 +188,7 @@ module.exports = {
       {
         id: 15,
         nome: 'Alimento para Peixe Alcon Gold Neon 30gr',
-        marca: "Placeholder",
+        marca: "Alcon",
         preco: 12,
         descricao: 'Indicação: Alcon Neon é um alimento completo',
         estoque: 200,
@@ -201,7 +201,7 @@ module.exports = {
       {
         id: 16,
         nome: 'Alimento para Peixe Alcon Gold Neon 30gr',
-        marca: "Placeholder",
+        marca: "Neon",
         preco: 12,
         descricao: '- Indicado para peixes de pequeno porte; - Não contém corantes artificiais;',
         estoque: 200,
@@ -214,7 +214,7 @@ module.exports = {
       {
         id: 17,
         nome: 'Ração Alcon Guard Herbal para Peixe 25g',
-        marca: "Placeholder",
+        marca: "Alcon",
         preco: 11.99,
         descricao: 'Pet: Peixes Quantidade: 25gr',
         estoque: 200,
@@ -227,7 +227,7 @@ module.exports = {
       {
         id: 18,
         nome: 'Ração Extrusada Megazoo para Tartarugas 280g',
-        marca: "Placeholder",
+        marca: "Megazoo",
         preco: 72.99,
         descricao: '- Indicada para tartaruga; - Alimentação mais saudável para seu pet,',
         estoque: 200,
@@ -240,7 +240,7 @@ module.exports = {
       {
         id: 19,
         nome: 'Ração Nutricon Turtle Baby Extrusada 10g',
-        marca: "Placeholder",
+        marca: "Nutricon",
         preco: 6.99,
         descricao: '- Indicado para repteis; - Ideal para repteis aquáticos em fase de crescimento;',
         estoque: 200,
@@ -253,7 +253,7 @@ module.exports = {
       {
         id: 20,
         nome: 'Suplemento Alimentar Sera Répteis Raffy Mineral - 55g',
-        marca: "Placeholder",
+        marca: "Raffy",
         preco: 46.99,
         descricao: 'Pet: Répteis Quantidade: 55g Sabor: Raffy Mineral',
         estoque: 200,
@@ -266,7 +266,7 @@ module.exports = {
       {
         id: 21,
         nome: 'Removedor de Lágrimas Crystal Eye para Cães',
-        marca: "Placeholder",
+        marca: "Chalesco",
         preco: 52.28,
         descricao: 'Indicação: Tratamento e Preventivo Pet: Gatos e Cachorros Porte de Raça: Pequeno, Grande e Médio',
         estoque: 200,
@@ -279,7 +279,7 @@ module.exports = {
       {
         id: 22,
         nome: 'Antipulgas e Carrapatos Bravecto MSD para Cães de 4,5 a 10 kg',
-        marca: "Placeholder",
+        marca: "Bravecto",
         preco: 171.9,
         descricao: 'Indicação: Prevenção e tratamento de pulgas e carrapatos em cães com mais de 8 semanas de vida Pet: Cachorros Porte de Raça: Pequeno Idade: Filhote, Adulto e Sênior',
         estoque: 200,
@@ -292,7 +292,7 @@ module.exports = {
       {
         id: 23,
         nome: 'Cerenia Zoetis 60mg 4 Comprimidos',
-        marca: "Placeholder",
+        marca: "Zoetis",
         preco: 144.9,
         descricao: '- Indicado para cães; - Auxilia na prevenção do vômito agudo;',
         estoque: 200,
@@ -305,7 +305,7 @@ module.exports = {
       {
         id: 24,
         nome: 'Antipulgas Bravecto Transdermal MSD para Gatos 2,8 a 6,25kg',
-        marca: "Placeholder",
+        marca: "Bravecto",
         preco: 171.9,
         descricao: 'Pet: Gatos Porte de Raça: Médio Idade: Adulto',
         estoque: 200,
@@ -318,7 +318,7 @@ module.exports = {
       {
         id: 25,
         nome: 'Synulox Zoetis 50mg 10 Comprimidos',
-        marca: "Placeholder",
+        marca: "Zoetis",
         preco: 56.9,
         descricao: 'Indicação: Tratamento Pet: Cachorros e Gatos Porte de Raça: Pequeno, Médio e Grande Idade: Sênior, Filhote e Adulto',
         estoque: 200,
@@ -331,7 +331,7 @@ module.exports = {
       {
         id: 26,
         nome: 'Profender SpotOn para Gatos de 2,5 até 5kg 0,7ml',
-        marca: "Placeholder",
+        marca: "Profender",
         preco: 53.5,
         descricao: 'Indicação: Eliminar vermes de gatos com mais de 8 semanas de idade e com peso superior a 500g Pet: Gatos Idade: Filhote, Sênior e Adulto',
         estoque: 200,
@@ -344,7 +344,7 @@ module.exports = {
       {
         id: 27,
         nome: 'Hidrovit Ventil para Pássaros Roedores',
-        marca: "Placeholder",
+        marca: "Hidrovit",
         preco: 21.99,
         descricao: 'Indicação: Tratamento Pet: Pássaros',
         estoque: 200,
@@ -357,7 +357,7 @@ module.exports = {
       {
         id: 28,
         nome: 'Repelente Piusana Papick 100ml',
-        marca: "Placeholder",
+        marca: "Piusana",
         preco: 23.99,
         descricao: 'Pet: Pássaros Composição: benzoato de denatônio, óleo de limão,veículo q.s.p Espécie: Aves em geral',
         estoque: 200,
@@ -370,7 +370,7 @@ module.exports = {
       {
         id: 29,
         nome: 'Suplemento Organnact Glicol Pet',
-        marca: "Placeholder",
+        marca: "Organnact",
         preco: 17.5,
         descricao: 'Pet: Roedores, Cachorros, Gatos, Répteis e Pássaros Porte de Raça: Pequeno, Grande e Médio Idade: Adulto, Sênior e Filhote',
         estoque: 200,
@@ -383,7 +383,7 @@ module.exports = {
       {
         id: 30,
         nome: 'Suplemento Zootekna para Roedores 80g',
-        marca: "Placeholder",
+        marca: "Zootekna",
         preco: 13.99,
         descricao: 'Linha: Super Premium Pet: Roedores Composição: Uva passa, alfafa peletizada, ervilha, cenoura desidratada, linhaça',
         estoque: 200,
@@ -396,7 +396,7 @@ module.exports = {
       {
         id: 31,
         nome: 'Suplemento Labcon Roedores Roevit',
-        marca: "Placeholder",
+        marca: "Labcon",
         preco: 11.99,
         descricao: 'Indicação: Tratamento Idade: Adulto e Filhote Quantidade: 1 frasco 15ml. Composição: vitaminas A, D3, C, E,',
         estoque: 200,
@@ -409,7 +409,7 @@ module.exports = {
       {
         id: 32,
         nome: 'Suplemento Jaal para Roedores Alfafa Fracionada 900g',
-        marca: "Placeholder",
+        marca: "Jaal",
         preco: 46.99,
         descricao: 'Indicação: Coelhos, Chinchilas, Porquinhos da Índia e Roedores no geral. Pet: Roedores',
         estoque: 200,
@@ -422,7 +422,7 @@ module.exports = {
       {
         id: 33,
         nome: 'Escova de Dente Chalesco para Cães',
-        marca: "Placeholder",
+        marca: "Chalesco",
         preco: 19.99,
         descricao: 'Pet: Cachorros Porte de Raça: Médio, Grande e Pequeno Idade: Sênior, Filhote e Adulto',
         estoque: 200,
@@ -435,7 +435,7 @@ module.exports = {
       {
         id: 34,
         nome: 'Perfume Chalesco para Cães e Gatos Four Paws Intenso Ouro',
-        marca: "Placeholder",
+        marca: "Chalesco",
         preco: 85.99,
         descricao: 'Pet: Cachorros e Gatos Porte de Raça: Pequeno, Médio e Grande Idade: Filhote, Adulto e Sênior',
         estoque: 200,
@@ -448,7 +448,7 @@ module.exports = {
       {
         id: 35,
         nome: 'Tapete Higiênico Super Secão Max para Cães 30 unidades',
-        marca: "Placeholder",
+        marca: "Supersecão",
         preco: 73.9,
         descricao: 'Porte de Raça: Médio, Pequeno e Grande Idade: Filhote e Adulto Composição: Fibra de celulose e Polietileno',
         estoque: 200,
@@ -461,7 +461,7 @@ module.exports = {
       {
         id: 36,
         nome: 'Areia Nestlé Purina Tidy Cats para Gatos - 2kg',
-        marca: "Placeholder",
+        marca: "Nestlé Purina",
         preco: 21.9,
         descricao: 'Pet: Gatos Idade: Filhote, Sênior e Adulto Tipo: Areia',
         estoque: 200,
@@ -474,7 +474,7 @@ module.exports = {
       {
         id: 37,
         nome: 'Banheiro Furba Chalesco Gatos',
-        marca: "Placeholder",
+        marca: "Chalesco",
         preco: 148.9,
         descricao: 'Material: Plástico e borracha Medidas aproximadas: Comprimento: 57,5cm Largura: 37,5cm Altura: 20cm',
         estoque: 200,
@@ -487,7 +487,7 @@ module.exports = {
       {
         id: 38,
         nome: 'Cortador de Unha para Gatos Chalesco',
-        marca: "Placeholder",
+        marca: "Chalesco",
         preco: 17.99,
         descricao: 'Material: Plástico eaço inoxidável Tipo: Tesoura',
         estoque: 200,
@@ -500,7 +500,7 @@ module.exports = {
       {
         id: 39,
         nome: 'Granulado Higiênico CarePet de Madeira para Roedores',
-        marca: "Placeholder",
+        marca: "CarePet",
         preco: 10.99,
         descricao: 'Tipo: Granulado de madeira para higiene de roedores Apresentação: Disponível em embalagens de 2,5kg e 10kg',
         estoque: 200,
@@ -513,7 +513,7 @@ module.exports = {
       {
         id: 40,
         nome: 'Pó Banho a Seco Zootekna Roedores',
-        marca: "Placeholder",
+        marca: "Zootekna",
         preco: 13.99,
         descricao: 'Material: Calcário mineral Tipo: Pó para banho',
         estoque: 200,
@@ -526,7 +526,7 @@ module.exports = {
       {
         id: 41,
         nome: 'Conjunto de escovas Ferplast Grooming GRO 5998 Para Coelhos',
-        marca: "Placeholder",
+        marca: "Ferplast",
         preco: 76.49,
         descricao: 'Material: Plástico Tipo: Pente e Escova',
         estoque: 200,
@@ -539,7 +539,7 @@ module.exports = {
       {
         id: 42,
         nome: 'Tapete Gelado Chalesco Pet Cooling Mat para Cães',
-        marca: "Placeholder",
+        marca: "Chalesco",
         preco: 94.99,
         descricao: 'Material: Plástico, Gel Atóxico Medidas aproximadas: Para cães até 34 Kg',
         estoque: 200,
@@ -552,7 +552,7 @@ module.exports = {
       {
         id: 43,
         nome: 'Cama Triângulo Petz para Cães Azul',
-        marca: "Placeholder",
+        marca: "Petz",
         preco: 179.99,
         descricao: 'Material: 50% Algodão e 50% Poliéster',
         estoque: 200,
@@ -565,7 +565,7 @@ module.exports = {
       {
         id: 44,
         nome: 'Cama Pawise para Cães Round Azul',
-        marca: "Placeholder",
+        marca: "Pawise",
         preco: 109.99,
         descricao: 'Medidas aproximadas: Tamanho P - Altura 16.5 cm Largura 40.6 cm Profundidade 40.6 cm',
         estoque: 200,
@@ -578,7 +578,7 @@ module.exports = {
       {
         id: 45,
         nome: 'Cama Pawise para Gatos Deluxe Round',
-        marca: "Placeholder",
+        marca: "Pawise",
         preco: 99.99,
         descricao: 'Material: Poliéster Medidas aproximadas: Circunferência: 48cm',
         estoque: 200,
@@ -591,7 +591,7 @@ module.exports = {
       {
         id: 46,
         nome: 'Rede Pawise para Gatos',
-        marca: "Placeholder",
+        marca: "Pawise",
         preco: 54.99,
         descricao: 'Material: Poliéster e Pena Medidas aproximadas: 44 x 44cm',
         estoque: 200,
@@ -604,7 +604,7 @@ module.exports = {
       {
         id: 47,
         nome: 'Cama Divinna Casa Chaise Argila para Cães e Gatos',
-        marca: "Placeholder",
+        marca: "Chaise",
         preco: 499.99,
         descricao: 'Idade: Filhote, Adulto e Sênior Material: alumínio e fibra sintética',
         estoque: 200,
@@ -617,7 +617,7 @@ module.exports = {
       {
         id: 48,
         nome: 'Dogvilla Ferplast Casa Para Cães',
-        marca: "Placeholder",
+        marca: "Ferplast",
         preco: 799.99,
         descricao: 'Indicação: Abrigo para cães em áreas externas ou internas Pet: Cachorros',
         estoque: 200,
@@ -630,7 +630,7 @@ module.exports = {
       {
         id: 49,
         nome: 'Casa Furacão para Cães Preta',
-        marca: "Placeholder",
+        marca: "Furacão Pet",
         preco: 49.99,
         descricao: 'Indicação: Abrigo para cães em áreas internas e externas',
         estoque: 100,
@@ -643,7 +643,7 @@ module.exports = {
       {
         id: 50,
         nome: 'Casinha Recriar Pet para Cães Iglu Ecológica',
-        marca: "Placeholder",
+        marca: "Furacão Pet",
         preco: 69.99,
         descricao: 'Material: Reciclável',
         estoque: 100,
@@ -656,7 +656,7 @@ module.exports = {
       {
         id: 51,
         nome: 'Toca Pet Games Octa Cat para Gatos',
-        marca: "Placeholder",
+        marca: "Pet Games",
         preco: 49.9,
         descricao: 'Medidas aproximadas: Altura: 40cm / Largura: 46cm / Profundidade: 40cm',
         estoque: 200,
@@ -669,7 +669,7 @@ module.exports = {
       {
         id: 52,
         nome: 'Toca Recriar Pet Ecológica para Gatos Azul',
-        marca: "Placeholder",
+        marca: "Recriar Pet",
         preco: 149.99,
         descricao: 'Composição: Produto a base de polietileno de Baixa Densidade (PEBD)',
         estoque: 200,
@@ -682,7 +682,7 @@ module.exports = {
       {
         id: 53,
         nome: 'Toca Recriar Pet Ecológica para Gatos com 2 Andares Rosa',
-        marca: "Placeholder",
+        marca: "Recriar Pet",
         preco: 199.99,
         descricao: 'Composição: Produto a base de polietileno de Baixa Densidade (PEBD)',
         estoque: 200,
@@ -695,7 +695,7 @@ module.exports = {
       {
         id: 54,
         nome: 'Aquário Boyu Curvo Preto EC-600 66L',
-        marca: "Placeholder",
+        marca: "Boyu",
         preco: 899.99,
         descricao: 'Medidas aproximadas: 60x30x50',
         estoque: 50,
@@ -708,7 +708,7 @@ module.exports = {
       {
         id: 55,
         nome: 'Parasiticida Atlantys Mundo Animal para Peixes 15ml',
-        marca: "Placeholder",
+        marca: "Atlantys",
         preco: 24.96,
         descricao: 'Tipo: Controle das infestações e tratamento das infecções parasitárias',
         estoque: 100,
@@ -721,7 +721,7 @@ module.exports = {
       {
         id: 56,
         nome: 'Aquário Aquaterrário com Sump Nano para Peixes',
-        marca: "Placeholder",
+        marca: "Furacão Pet",
         preco: 189.99,
         descricao: 'Medidas aproximadas: 3,5 Litros Altura: 20cm / Comprimento: 20cm / Largura: 25cm',
         estoque: 50,
@@ -734,7 +734,7 @@ module.exports = {
       {
         id: 57,
         nome: 'Substrato para Aquários Aqua Pedras Dolomita',
-        marca: "Placeholder",
+        marca: "Aqua Pedra",
         preco: 4.99,
         descricao: 'Material: Cascalho de Domolita Moída com PH Alcalino',
         estoque: 200,
@@ -747,7 +747,7 @@ module.exports = {
       {
         id: 58,
         nome: 'Termômetro Digital Soma para Aquários com Sensor',
-        marca: "Placeholder",
+        marca: "Soma",
         preco: 64.99,
         descricao: 'Medidas aproximadas: 13x2x0,10cm',
         estoque: 200,
@@ -760,7 +760,7 @@ module.exports = {
       {
         id: 59,
         nome: 'Válvula Anti Retorno Vigoar',
-        marca: "Placeholder",
+        marca: "Vigoar",
         preco: 27.99,
         descricao: 'Material: Resina Termo Plástica Apresentação: Disponível em embalagem com 1 unidade',
         estoque: 200,
@@ -773,7 +773,7 @@ module.exports = {
       {
         id: 60,
         nome: 'Filtro Mr.Pet Bolsa Material Filtrante',
-        marca: "Placeholder",
+        marca: "Mr.Pet",
         preco: 14.99,
         descricao: 'Apresentação: Disponível nos tamanhos 1 e 3',
         estoque: 100,
@@ -786,7 +786,7 @@ module.exports = {
       {
         id: 61,
         nome: 'Lã Acrílica Prodac Filtro Aquário',
-        marca: "Placeholder",
+        marca: "Prodac",
         preco: 24.99,
         descricao: 'A Lã Acrílica Prodac Filtro Aquário possui uma lã especial sintética.',
         estoque: 100,
@@ -799,7 +799,7 @@ module.exports = {
       {
         id: 62,
         nome: 'Bomba Submersa Boyu SP-500',
-        marca: "Placeholder",
+        marca: "Boyu",
         preco: 61.99,
         descricao: 'Tipo: Bomba Espécie: Peixe de água doce e Peixe de Água salgada',
         estoque: 214,
@@ -812,7 +812,7 @@ module.exports = {
       {
         id: 63,
         nome: 'Bomba Sarlo Better 2000',
-        marca: "Placeholder",
+        marca: "Sarlo Better",
         preco: 198.99,
         descricao: 'Tipo: Bomba Cor: Preto Espécie: Tartaruga, Peixe de água doce, Cobra, Peixe de água salgada e Sapo',
         estoque: 198,
@@ -825,7 +825,7 @@ module.exports = {
       {
         id: 64,
         nome: 'Bomba Compressora Boyu A Pilha Para Aquários D-200 1.5',
-        marca: "Placeholder",
+        marca: "Boyu",
         preco: 75.99,
         descricao: 'Material: Plástico Tipo: Bomba Espécie: Peixes de água doce e Peixes de água salgada',
         estoque: 150,
@@ -838,7 +838,7 @@ module.exports = {
       {
         id: 65,
         nome: 'Peitoral Zeedog Phantom para Cães',
-        marca: "Placeholder",
+        marca: "Zee.Dog",
         preco: 55.19,
         descricao: 'Medida do pescoço: 24cm / Regulagem da cintura: 29cm a 41cm',
         estoque: 251,
@@ -851,7 +851,7 @@ module.exports = {
       {
         id: 66,
         nome: 'Peitoral Zeedog Phantom Air Plus para Cães',
-        marca: "Placeholder",
+        marca: "Zee.Dog",
         preco: 55.49,
         descricao: 'Medida do pescoço: 24cm / Regulagem da cintura: 29cm a 41cm',
         estoque: 152,
@@ -864,7 +864,7 @@ module.exports = {
       {
         id: 67,
         nome: 'Guia Zeedog Patagônia para Cães',
-        marca: "Placeholder",
+        marca: "Zee.Dog",
         preco: 79,
         descricao: 'Largura da tira: 1cm / Comprimento: 120cm',
         estoque: 126,
@@ -877,7 +877,7 @@ module.exports = {
       {
         id: 68,
         nome: 'Coleira Zeecat Ella para Gatos',
-        marca: "Placeholder",
+        marca: "Zee.Dog",
         preco: 39.99,
         descricao: 'Largura da Tira: 1cm / Regulagem do pescoço: 26cm a 41cm',
         estoque: 145,
@@ -890,7 +890,7 @@ module.exports = {
       {
         id: 69,
         nome: 'Peitoral e Guia ZeeCat Lisa Simpson para Gatos',
-        marca: "Placeholder",
+        marca: "Zee.Dog",
         preco: 115.99,
         descricao: 'Peitoral com guia: Regulagem do pescoço:20cm a 30cm / Regulagem da barriga: 26cm a 41cm / Comprimento da guia: 120cm',
         estoque: 124,
@@ -903,7 +903,7 @@ module.exports = {
       {
         id: 70,
         nome: 'Peitoral Tchucco Cat Neo Black para Gatos',
-        marca: "Placeholder",
+        marca: "Tchucoo",
         preco: 99.99,
         descricao: 'Medidas aproximadas: Circunferência Pescoço:32cm Circunferência Cintura: 28 a 44cm',
         estoque: 49,
@@ -916,7 +916,7 @@ module.exports = {
       {
         id: 71,
         nome: 'Arranhador de Rampa Furacão Pet para gatos',
-        marca: "Placeholder",
+        marca: "Furacão Pet",
         preco: 38.99,
         descricao: 'Medidas aproximadas: Altura: 24.5 cm Comprimento: 42.5 cm Largura: 24.5 cm',
         estoque: 186,
@@ -929,7 +929,7 @@ module.exports = {
       {
         id: 72,
         nome: 'Brinquedo Arranhador São Pet Olimpus para Gatos Marrom',
-        marca: "Placeholder",
+        marca: "São Pet",
         preco: 1499.99,
         descricao: 'Medidas aproximadas: Altura: 185cm / Largura: 120cm / Profundidade: 80cm',
         estoque: 53,
@@ -942,7 +942,7 @@ module.exports = {
       {
         id: 73,
         nome: 'Brinquedo Arranhador São Pet para Gatos 1 Plataforma Girafa',
-        marca: "Placeholder",
+        marca: "São Pet",
         preco: 44.99,
         descricao: 'Material: Sisal e Pelúcia Cor: Estampado e marrom',
         estoque: 268,
@@ -955,7 +955,7 @@ module.exports = {
       {
         id: 74,
         nome: 'Educador Sanitário Atrativo Good Pet Cães Filhotes',
-        marca: "Placeholder",
+        marca: "Mundo Animal",
         preco: 17.89,
         descricao: 'Fragrância: Mel Composição: Extrato de Mel',
         estoque: 122,
@@ -968,7 +968,7 @@ module.exports = {
       {
         id: 75,
         nome: 'Clicker Adestramento Chalesco para Cães',
-        marca: "Placeholder",
+        marca: "Chalesco",
         preco: 20.99,
         descricao: 'Material: Plástico Tipo: Adestramento Cor: Preto',
         estoque: 111,
@@ -981,7 +981,7 @@ module.exports = {
       {
         id: 76,
         nome: 'Brinquedo Chalesco Para Gatos Kit Bola Ratinho Colorido',
-        marca: "Placeholder",
+        marca: "Chalesco",
         preco: 14.9,
         descricao: 'Material: Borracha e sisal Cor: Colorido',
         estoque: 542,
@@ -994,7 +994,7 @@ module.exports = {
       {
         id: 77,
         nome: 'Brinquedo Chalesco Kit com 2 Ratinhos de Corda',
-        marca: "Placeholder",
+        marca: "Chalesco",
         preco: 29.99,
         descricao: 'Material: Pelúcia e mecanismo de corda Medidas aproximadas: 10 x 3cm',
         estoque: 315,
@@ -1007,7 +1007,7 @@ module.exports = {
       {
         id: 78,
         nome: 'Macaco Chalesco Brinquedo Para Cães Pelúcia Marrom',
-        marca: "Placeholder",
+        marca: "Chalesco",
         preco: 23.99,
         descricao: 'Pelucia',
         estoque: 95,
@@ -1020,7 +1020,7 @@ module.exports = {
       {
         id: 79,
         nome: 'Brinquedo Chalesco Para Cães Frango de Látex',
-        marca: "Placeholder",
+        marca: "Chalesco",
         preco: 24.99,
         descricao: 'Medidas aproximadas: Altura: 30cm / Largura: 8cm / Profundidade: 5cm',
         estoque: 145,
@@ -1033,7 +1033,7 @@ module.exports = {
       {
         id: 80,
         nome: 'Carrinho Chalesco Para Cães e Gatos Confort Ride Preto',
-        marca: "Placeholder",
+        marca: "Chalesco",
         preco: 699.99,
         descricao: 'Medidas aproximadas: 43cmx37cmx28cm Tipo: Bolsa de Transporte',
         estoque: 59,
@@ -1046,7 +1046,7 @@ module.exports = {
       {
         id: 81,
         nome: 'Caixa de Transporte Chalesco Gulliver Cinza Com Rodinhas',
-        marca: "Placeholder",
+        marca: "Chalesco",
         preco: 685.9,
         descricao: 'Comprimento: 71 cm Largura: 51 cm Altura: 50 cm Peso: 5,5 Kg Suporta até 15 Kg',
         estoque: 49,
@@ -1059,7 +1059,7 @@ module.exports = {
       {
         id: 82,
         nome: 'Comedouro Chalesco Para Cães Duplo Inox',
-        marca: "Placeholder",
+        marca: "Chalesco",
         preco: 39.99,
         descricao: 'Tamanho 2 - Altura – 6cm Circunferência base – 9cm Circunferência boca – 13cm',
         estoque: 75,
@@ -1072,7 +1072,7 @@ module.exports = {
       {
         id: 83,
         nome: 'Fonte Bebedouro Furacão Pet para Cães e Gatos Azul',
-        marca: "Placeholder",
+        marca: "Furacão Pet",
         preco: 199.99,
         descricao: 'Medidas aproximadas: 20cm x 19cm x 34cm',
         estoque: 88,
@@ -1085,7 +1085,7 @@ module.exports = {
       {
         id: 84,
         nome: 'Bebedouro Bico Inox Mr. Pet Roedores Azul',
-        marca: "Placeholder",
+        marca: "Mr. Pet",
         preco: 18.9,
         descricao: 'Quantidade: 120ml Material: Plástico e Inox',
         estoque: 178,
@@ -1098,7 +1098,7 @@ module.exports = {
       {
         id: 85,
         nome: 'Casaco de Moletom Urban Puppy com Capuz Rosa Fluorescente para Cães e Gatos',
-        marca: "Placeholder",
+        marca: "Urban Puppy",
         preco: 89.99,
         descricao: 'Medidas aproximadas: Tamanho 10: Circunferência pescoço: 24cm / Circunferência tórax: 44cm / Comprimento dorso: 25cm',
         estoque: 56,
@@ -1111,7 +1111,7 @@ module.exports = {
       {
         id: 86,
         nome: 'Camiseta Snoopy Charlie Zooz Pets para Cães Sleep Amarela',
-        marca: "Placeholder",
+        marca: "Zee.Dog",
         preco: 29.99,
         descricao: 'Medidas aproximadas: Tamanho PP:Circunferência Pescoço: 30cm / Circunferência Peitoral: 36cm / Comprimento das Costas: 26cm',
         estoque: 42,
@@ -1124,7 +1124,7 @@ module.exports = {
       {
         id: 87,
         nome: 'Gaiola Ferplast Para Roedores Krolik Cinza',
-        marca: "Placeholder",
+        marca: "Ferplast",
         preco: 559.99,
         descricao: 'Material: Plástico Medidas aproximadas: Largura: 120cm x Altura: 60cm x Profundidade: 50cm',
         estoque: 44,
@@ -1150,7 +1150,7 @@ module.exports = {
       {
         id: 89,
         nome: 'Gaiola Bragança Passeio Verde Para Coelhos e Roedores',
-        marca: "Placeholder",
+        marca: "Bragança",
         preco: 499.99,
         descricao: 'Medidas aproximadas: Altura: 66cm / Largura: 48cm / Profundidade: 48cm',
         estoque: 68,
