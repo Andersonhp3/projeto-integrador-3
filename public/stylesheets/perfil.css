@@ -45,6 +45,10 @@ p {
     border-radius: 50%;
 }
 
+#divFotoUser {
+    text-align: center;
+}
+
 .active, li.active {
     color: #f2a0a0;
 }
@@ -53,10 +57,6 @@ p {
 #iconeUser:hover {
     text-decoration: none;
     color: #03658c;
-}
-
-#fotoUser {
-    text-align: center;
 }
 
 .campo-info {

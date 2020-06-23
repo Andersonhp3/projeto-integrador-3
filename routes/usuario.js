@@ -14,6 +14,8 @@ router.get('/produtos', verificaUsuarioLogado, authController.showProdutos);
 router.get('/vender', verificaUsuarioLogado ,authController.showVender);
 router.get('/doar', verificaUsuarioLogado ,authController.showDoar);
 router.get('/doacoes', verificaUsuarioLogado ,authController.showDoacoes);
+router.post('/atualizarFoto', verificaUsuarioLogado ,authController.atualizarFoto);
+
 
 
 

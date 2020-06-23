@@ -1,7 +1,9 @@
 const path = require("path");
 const fs = require("fs");
 const bcrypt = require("bcrypt");
-const { Op } = require("sequelize");
+const {
+  Op
+} = require("sequelize");
 
 const {
   Usuario,
@@ -42,9 +44,9 @@ const authController = {
 
     req.session.usuario = user;
 
-    
 
-    if (erro == "login-required"){
+
+    if (erro == "login-required") {
       let usuario_id = req.session.usuario.id
       await Carrinho.create({
         usuario_id,
@@ -53,7 +55,7 @@ const authController = {
         ativo: true
       })
 
-    res.redirect('/carrinho')
+      res.redirect('/carrinho')
     }
 
     res.redirect("/home");
@@ -88,7 +90,7 @@ const authController = {
       let imgb64 = imagemb64.split(';base64,').pop();
       var imagem = await decode_base64(imgb64, ('avatar.' + filetype));
     }
-    
+
     const user = await Usuario.findOne({
       where: {
         email
@@ -127,7 +129,10 @@ const authController = {
   showLogin: (req, res) => {
 
     let erro = req.query.error
-    let {id, quant} = req.query
+    let {
+      id,
+      quant
+    } = req.query
 
     let cadastroEfetuado = req.query.cadastro
 
@@ -156,10 +161,12 @@ const authController = {
 
   showPerfil: async (req, res) => {
     let usuario = req.session.usuario;
-    let carrinho = undefined
+    let carrinho = undefined;
     let usuario_id = usuario.id;
+    
+    const user = await Usuario.findByPk(usuario_id);
+    usuario = user.dataValues;
 
-    console.log(`Usuario: ${usuario_id}`);
 
     let endereco = await Endereco.findOne({
       where: {
@@ -168,7 +175,6 @@ const authController = {
       include: ["estado", "cidade"],
     });
 
-    console.log(endereco);
 
     let estados = await Estado.findAll()
       .then()
@@ -178,13 +184,14 @@ const authController = {
       .then()
       .catch((err) => console.log(err));
 
-      if(usuario){
-        carrinho = await Carrinho.findAll({
-            where:{
-                usuario_id:usuario.id, 
-                ativo: 1
-            }})
+    if (usuario) {
+      carrinho = await Carrinho.findAll({
+        where: {
+          usuario_id: usuario.id,
+          ativo: 1
         }
+      })
+    }
 
     res.render("perfil", {
       title: "Minha Conta",
@@ -203,7 +210,7 @@ const authController = {
 
     let usuario_id = usuario.id;
 
-    console.log(`Usuario: ${usuario_id}`);
+
 
     let {
       cep,
@@ -236,6 +243,7 @@ const authController = {
     let carrinho = undefined
     let usuario_id = usuario.id;
 
+
     let pedidos = await Pedido.findAll({
       where: {
         usuario_id
@@ -251,13 +259,14 @@ const authController = {
     let produtos = await Produto.findAll()
       .then()
       .catch((err) => console.log(err));
-      if(usuario){
-        carrinho = await Carrinho.findAll({
-            where:{
-                usuario_id:usuario.id, 
-                ativo: 1
-            }})
+    if (usuario) {
+      carrinho = await Carrinho.findAll({
+        where: {
+          usuario_id: usuario.id,
+          ativo: 1
         }
+      })
+    }
     res.render("perfilCompras", {
       title: "Minha Compras",
       css: "perfilCompras",
@@ -273,6 +282,7 @@ const authController = {
     let usuario = req.session.usuario;
     let carrinho = undefined
     let usuario_id = usuario.id;
+
 
     let pedidos = await Pedido.findAll({
       where: {
@@ -301,21 +311,22 @@ const authController = {
     });
     let vendas = []
     for (produto of produtos) {
-      if(produto.pedido.length > 0){
+      if (produto.pedido.length > 0) {
         vendas.push(produto)
       }
     }
 
     console.log(vendas)
-    if(usuario){
+    if (usuario) {
       carrinho = await Carrinho.findAll({
-          where:{
-              usuario_id:usuario.id, 
-              ativo: 1
-          }})
-      }
+        where: {
+          usuario_id: usuario.id,
+          ativo: 1
+        }
+      })
+    }
 
-    
+
     res.render("perfilVendas", {
       title: "Minha Vendas",
       css: "perfilVendas",
@@ -333,18 +344,21 @@ const authController = {
     let categorias = await Categoria.findAll();
     let categorias_pet = await CategoriaPet.findAll();
 
+
+
     let produtos = await Produto.findAll({
       where: {
         usuario_id
       }
     })
-    if(usuario){
+    if (usuario) {
       carrinho = await Carrinho.findAll({
-          where:{
-              usuario_id:usuario.id, 
-              ativo: 1
-          }})
-      }
+        where: {
+          usuario_id: usuario.id,
+          ativo: 1
+        }
+      })
+    }
 
     res.render("perfilProdutos", {
       title: "Meus Produtos",
@@ -361,17 +375,19 @@ const authController = {
   showVender: async (req, res) => {
     let usuario = req.session.usuario;
     let usuario_id = usuario.id
+
     let carrinho = undefined
     let categorias = await Categoria.findAll();
 
     let categorias_pet = await CategoriaPet.findAll();
-    if(usuario){
+    if (usuario) {
       carrinho = await Carrinho.findAll({
-          where:{
-              usuario_id:usuario.id, 
-              ativo: 1
-          }})
-      }
+        where: {
+          usuario_id: usuario.id,
+          ativo: 1
+        }
+      })
+    }
 
     res.render("cadastroProduto", {
       title: "Nova Venda",
@@ -386,7 +402,8 @@ const authController = {
 
   showDoar: async (req, res) => {
     let usuario = req.session.usuario;
-    let usuario_id = usuario.id
+    let usuario_id = usuario.id;
+
     let carrinho = undefined
     let categorias = await CategoriaPet.findAll({
       where: {
@@ -395,13 +412,14 @@ const authController = {
         }
       }
     });
-    if(usuario){
+    if (usuario) {
       carrinho = await Carrinho.findAll({
-          where:{
-              usuario_id:usuario.id, 
-              ativo: 1
-          }})
-      }
+        where: {
+          usuario_id: usuario.id,
+          ativo: 1
+        }
+      })
+    }
 
     res.render("cadastroAdocao", {
       title: "Nova Adoção",
@@ -415,7 +433,9 @@ const authController = {
 
   showDoacoes: async (req, res) => {
     let usuario = req.session.usuario;
-    let usuario_id = usuario.id
+    let usuario_id = usuario.id;
+
+
     let carrinho = undefined
     let pets = await Pet.findAll({
       include: ['usuario', 'imagem'],
@@ -426,21 +446,22 @@ const authController = {
         }
       },
       order: [
-          ['dataCadastro', 'DESC'],
+        ['dataCadastro', 'DESC'],
       ]
     })
-    
-    if(usuario){
+
+    if (usuario) {
       carrinho = await Carrinho.findAll({
-          where:{
-              usuario_id:usuario.id, 
-              ativo: 1
-          }})
-        carrinho = carrinho.filter((result)=>{
-          return result.ativo = true
-        })
-        console.log(carrinho.ativo)
-      }
+        where: {
+          usuario_id: usuario.id,
+          ativo: 1
+        }
+      })
+      carrinho = carrinho.filter((result) => {
+        return result.ativo = true
+      })
+      console.log(carrinho.ativo)
+    }
     res.render("perfilDoacoes", {
       title: "Doações",
       css: "perfilDoacoes",
@@ -456,6 +477,51 @@ const authController = {
 
     res.redirect("/home");
   },
+
+  atualizarFoto: async (req, res) => {
+    let usuario = req.session.usuario;
+    let id = usuario.id;
+    
+    const user = await Usuario.findByPk(id);
+    usuario = user.dataValues;
+
+    let = {
+      imagemb64
+    } = req.body;
+
+    async function decode_base64(base64str, filename) {
+      let buff = Buffer.from(base64str, 'base64');
+      let file = ('/images/profiles/' + Date.now().toString() + '-' + filename);
+      fs.writeFile('./public' + file, buff, (error) => {
+        if (error) {
+          throw error;
+        } else {
+          return true;
+        };
+      });
+      return file;
+    };
+
+    if (!imagemb64) {
+      var imagem = user.imagem;
+    } else {
+      fs.unlinkSync('./public' + user.imagem)
+      let filetype = imagemb64.split(';base64,')[0].split('/')[1];
+      let imgb64 = imagemb64.split(';base64,').pop();
+      var imagem = await decode_base64(imgb64, ('avatar.' + filetype));
+    }
+
+    let update = await Usuario.update({
+      imagem
+    }, {
+      where: {
+        id
+      }
+    })
+    
+    console.log(id, update, user.imagem);
+    res.redirect('/usuario');
+  }
 };
 
 module.exports = authController;

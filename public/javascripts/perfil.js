@@ -1,3 +1,60 @@
+// vars
+let upload = document.querySelector('#image-selector'),
+    result = document.querySelector("#canvas"),
+    save = document.querySelector("#pronto"),
+    cropper = "",
+    btnCancelar = document.querySelector('#cancel'),
+    btnConfirmar = document.querySelector('#submit'),
+    preview = document.querySelector("#fotoUser");
+
+// on change show image with crop options
+btnCancelar.addEventListener('click', (e) => {
+    e.preventDefault();
+    document.getElementById('imagemb64').value = "";
+    btnCancelar.parentElement.classList.add("d-none");
+    btnConfirmar.parentElement.classList.add("d-none");
+});
+
+upload.addEventListener("change", (e) => {
+    if (e.target.files.length) {
+        // start file reader
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            if (e.target.result) {
+                // create new image
+                let img = document.createElement("img");
+                img.id = "image";
+                img.src = e.target.result;
+                // clean result before
+                result.innerHTML = "";
+                // append new image
+                result.appendChild(img);
+                // init cropper
+                cropper = new Cropper(img, {
+                    aspectRatio: 1,
+                    dragMode: 'move',
+                    minContainerWidth: 400,
+                    minContainerHeight: 400,
+                });
+            }
+        };
+        reader.readAsDataURL(e.target.files[0]);
+    }
+    $('#image-cropper').modal('show');
+});
+
+save.addEventListener('click', (e) => {
+    e.preventDefault();
+    let imgSrc = cropper
+    .getCroppedCanvas()
+    .toDataURL();
+    preview.src = imgSrc;
+    document.getElementById('imagemb64').value = imgSrc;
+    btnCancelar.parentElement.classList.remove("d-none");
+    btnConfirmar.parentElement.classList.remove("d-none");
+});
+
+
 // API buscaCep
 let cepInput = document.querySelector('#cep')
 let ruaInput = document.querySelector('#logradouro')
@@ -14,7 +71,7 @@ const buscaCep = () => {
     }
 }
 
-addEventListener('input', buscaCep)
+// addEventListener('input', buscaCep)
 
 
 //Select de cidade de acordo com o estado
@@ -35,9 +92,8 @@ const mostrarCidades = (estado) => {
 }
 
 const onChangeOption = (evt) =>{
-    console.log(evt)
     selectCidade.innerHTML = '<option value="0" selected disabled>Cidade</option>'
     mostrarCidades(event.target.value)
 }
 
-selectEstado.addEventListener('change', onChangeOption);
+// selectEstado.addEventListener('change', onChangeOption);
