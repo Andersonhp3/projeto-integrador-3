@@ -23,7 +23,7 @@ module.exports = {
         email: 'alex@alex.com',
         senha: bcrypt.hashSync('123456', 12),
         cpf_cnpj: "12345678910",
-        imagem: '/images/profiles/1592602832421-avatar.png'
+        imagem: '/images/profiles/1592404832747-avatar.png'
       },
       {
         nome: 'Igor Veloso',
