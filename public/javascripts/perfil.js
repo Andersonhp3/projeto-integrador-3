@@ -7,12 +7,14 @@ let upload = document.querySelector('#image-selector'),
     btnConfirmar = document.querySelector('#submit'),
     preview = document.querySelector("#fotoUser");
 
-// on change show image with crop options
+let tmpImagem = preview.src;
+
 btnCancelar.addEventListener('click', (e) => {
     e.preventDefault();
     document.getElementById('imagemb64').value = "";
     btnCancelar.parentElement.classList.add("d-none");
     btnConfirmar.parentElement.classList.add("d-none");
+    preview.src = tmpImagem
 });
 
 upload.addEventListener("change", (e) => {
