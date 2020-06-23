@@ -62,10 +62,6 @@ for (item of carrinho){
     excluirItem.addEventListener('submit', onFormsubmit)
 }
 
-let nomeProduto = document.querySelectorAll('h6.nome')
-
-console.log(nomeProduto)
-
 calculaTotais(carrinho)
 
 
