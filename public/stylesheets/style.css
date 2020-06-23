@@ -122,6 +122,18 @@ section#newsletter .container {
   background-color: #f2a0a0;
 }
 
+.divCart {
+  display: flex;
+  position: relative;
+}
+
+.divCart span{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 1rem;
+}
+
 section#register .container {
   border-radius: 30rem;
   background-color: #03658C;
