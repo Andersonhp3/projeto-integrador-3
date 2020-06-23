@@ -127,26 +127,68 @@ const lojaController = {
 
         let preco = req.query.preco;
         let ordemPreco = req.query.ordem;
+        let marca = req.query.marca;
 
-        if (preco == undefined) {
-            preco = 100000;
+        if(preco == undefined) {
+            preco = 100000
+        }
+
+        let condPreco = {
+            preco: {
+                [Op.between]: [0, preco]
+            }        
+        }
+
+        let condOrdemPreco;
+        if(ordemPreco != undefined){
+            console.log("passou")
+            condOrdemPreco = [['preco', ordemPreco]]
+        }else {
+            condOrdemPreco = []
+        }
+        
+        let condMarca;
+        
+        if(marca != undefined){
+            condMarca = {
+                marca: marca
+            }
+        }else {
+            condMarca = {}
+        }
+
+        let condOrdem = [...condOrdemPreco]
+        console.log(condOrdem)
+        let condIdProdu = {
+            categoria_id: id
         }
 
         let { page = 1 } = req.query;
 
-        let verificarQuery = (...query) => {
-
+        let condTotal = {
+            ...condIdProdu,
+            ...condPreco,
+            ...condMarca,
         }
 
         let queryAtual = req.url
-        if (queryAtual.indexOf('preco')) {
+
+        if (queryAtual.indexOf('preco') > -1) {
+            queryAtual = queryAtual.replace("&preco="+preco,"")
+        }
+
+
+        if(queryAtual.indexOf('ordem') > -1){
+            queryAtual = queryAtual.replace("&ordem="+ordemPreco,"")
+        }
+        
+        if(queryAtual.indexOf('page') > -1){
+            queryAtual = queryAtual.replace("&page="+page,"")
+        }
+
+        if(queryAtual.indexOf('marca') > -1){
             queryAtual = '/categoriaProduto?id=' + id
         }
-
-        if (queryAtual.indexOf('preco') < -1 && queryAtual.indexOf('categoriaProdutoId')) {
-            queryAtual = '/categoriaPet?id=' + id + "&categoriaProdutoId=" + idCategoriaProduto;
-        }
-
 
 
         let categoriaPetAll = await CategoriaPet.findAll({
@@ -159,39 +201,16 @@ const lojaController = {
 
         let produtoAllOrder;
 
-        // verificando order para pesquisar
-        if (ordemPreco == undefined) {
-            produtoAllOrder = {
-                include: 'imagem',
-                where: {
-                    categoria_id: id,
-                    preco: {
-                        [Op.between]: [0, preco]
-                    }
-                },
-                limit:16,
-                offset: (page-1) * 16
-            }
-        } else {
-            produtoAllOrder = {
-                include: 'imagem',
-                where: {
-                    categoria_id: id,
-                    preco: {
-                        [Op.between]: [0, preco]
-                    }
-                },
-                order: [
-                    ['preco', ordemPreco]
-                ],
-                limit:16,
-                offset: (page-1) * 16
-            }
-        }
 
 
         let { count: total, rows:produtoAll } = await Produto.findAndCountAll(
-            produtoAllOrder
+            {
+                include: 'imagem',
+                where: condTotal,
+                limit:16,
+                offset: (page-1) * 16,
+                order:condOrdem
+            }
         )
         let totalPagina = Math.ceil(total/16);
        
@@ -272,7 +291,7 @@ const lojaController = {
         }
 
         let condOrdemPreco;
-        console.log(ordemPreco)
+
         if(ordemPreco != undefined){
             condOrdemPreco = [['preco', ordemPreco]]
         }else {
@@ -280,7 +299,7 @@ const lojaController = {
         }
 
         let condOrdem = [...condOrdemPreco]
-        console.log(condOrdem)
+
 
         let condIdCateProduto;
 
@@ -301,33 +320,24 @@ const lojaController = {
             ...condIdCateProduto,
             ...condIdCatePet
         }
-
+        let { page = 1 } = req.query;
         
         if (queryAtual.indexOf('preco') > -1) {
-            queryAtual = '/categoriaPet?id=' + id
+            queryAtual = queryAtual.replace("&preco="+preco,"")
         }
 
         if(queryAtual.indexOf('ordem') > -1){
             queryAtual = queryAtual.replace("&ordem="+ordemPreco,"")
-            console.log(queryAtual)
+        }
+        
+        if(queryAtual.indexOf('page') > -1){
+            queryAtual = queryAtual.replace("&page="+page,"")
         }
 
-        if (queryAtual.indexOf('preco') > -1 && queryAtual.indexOf('categoriaProdutoId') > -1) {
-            queryAtual = '/categoriaPet?id=' + id + "&categoriaProdutoId=" + idCategoriaProduto;
-        }
-
-        if (queryAtual.indexOf('preco') > -1 && queryAtual.indexOf('categoriaProdutoId') > -1 && queryAtual.indexOf('preco')) {
-            queryAtual = '/categoriaPet?id=' + id + "&categoriaProdutoId=" + idCategoriaProduto;
-        }
 
         if (preco == undefined) {
             preco = 100000;
         }
-
-        let produtoAllOrder;
-
-        let { page = 1 } = req.query;
-
 
         let { count: total, rows:produtoAll } = await Produto.findAndCountAll(
             {
