@@ -211,6 +211,17 @@ const adocaoController = {
             }
         })
         res.redirect('/usuario/doacoes')
+    },
+    deletar: async (req, res) => {
+        let id = req.query.id;
+        let update = await Pet.update({
+            ativo: false,
+        }, {
+            where: {
+                id
+            }
+        })
+        res.send(update)
     }
 }
 

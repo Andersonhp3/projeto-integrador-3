@@ -420,7 +420,10 @@ const authController = {
     let pets = await Pet.findAll({
       include: ['usuario', 'imagem'],
       where: {
-        usuario_id
+        usuario_id,
+        ativo: {
+          [Op.ne]: false
+        }
       },
       order: [
           ['dataCadastro', 'DESC'],
