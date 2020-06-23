@@ -49,4 +49,8 @@ p {
     }
 }
 
+.pagination li.active a {
+    background-color: #03658c !important;
+    color: white !important;
+}
 /* Hover na imagem do usuario */
