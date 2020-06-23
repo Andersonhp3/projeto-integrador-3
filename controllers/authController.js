@@ -203,11 +203,7 @@ const authController = {
 
   cadastroEndereco: async (req, res) => {
     let usuario = req.session.usuario;
-
     let usuario_id = usuario.id;
-
-
-
     let {
       cep,
       logradouro,
@@ -216,6 +212,8 @@ const authController = {
       estado,
       cidade
     } = req.body;
+
+    cep = cep.replace("-", "");
 
     let novoEndereco = {
       cep,
@@ -227,9 +225,34 @@ const authController = {
       cidade_id: cidade,
     };
 
-    await Endereco.create(novoEndereco)
+    let hasAddress = await Endereco.findOne(
+      {
+        where: {
+          usuario_id
+        }
+      }
+    );
+    
+    if(hasAddress == null){
+      await Endereco.create(novoEndereco)
       .then()
       .catch((err) => console.log(err));
+    } else {
+      let id = hasAddress.dataValues.id;
+      await Endereco.update({
+        cep,
+        logradouro,
+        numero,
+        bairro,
+        usuario_id,
+        estado_id: estado,
+        cidade_id: cidade,
+      },{
+        where: {
+          id
+        }
+      })
+    };
 
     res.redirect("/usuario/perfil");
   },

@@ -64,13 +64,13 @@ let ruaInput = document.querySelector('#logradouro')
 let bairroInput = document.querySelector('#bairro')
 
 const buscaCep = () => {
-    if(cepInput.value.length == 8){
-    fetch(`https://viacep.com.br/ws/${cepInput.value}/json/`)
-    .then(res => res.json())
-    .then(dados => {
-        ruaInput.value = dados.logradouro;
-        bairroInput.value = dados.bairro;
-    })
+    if(cepInput.value.length == 9){
+        fetch(`https://viacep.com.br/ws/${cepInput.value}/json/`)
+        .then(res => res.json())
+        .then(dados => {
+            ruaInput.value = dados.logradouro;
+            bairroInput.value = dados.bairro;
+        })
     }
 }
 
