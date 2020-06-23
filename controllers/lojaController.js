@@ -781,6 +781,17 @@ const lojaController = {
 
 
         res.redirect('/usuario/produtos')
+    },
+    desativar: async (req, res) => {
+        let id = req.query.id;
+        let update = await Produto.update({
+            ativo: false,
+        }, {
+            where: {
+                id
+            }
+        })
+        res.send(update)
     }
 }
 

@@ -9,6 +9,7 @@ router.get('/categoriaPet', LojaController.showCategoriaPet);
 router.get('/categoriaProduto', LojaController.showCategoriaProduto);
 router.post('/novo', LojaController.novoProduto);
 router.post('/atualizar', LojaController.atualizarProduto);
+router.get('/desativar', LojaController.desativar);
 
 
 module.exports = router;

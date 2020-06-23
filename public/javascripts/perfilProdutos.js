@@ -1,6 +1,7 @@
 
 // Edit Start
-let editAll = document.querySelectorAll('a.edit');
+let btnEditAll = document.querySelectorAll('a.edit');
+let btnDeleteAll = document.querySelectorAll('a.delete');
 
 async function onClickEdit(e) {
     let id = (e.target.id).replace('edit_','');
@@ -18,8 +19,25 @@ async function onClickEdit(e) {
     $('#edit-modal').modal('show');
 };
 
-for(edit of editAll) {
-    edit.addEventListener('click', onClickEdit);
+for(btnEdit of btnEditAll) {
+    btnEdit.addEventListener('click', onClickEdit);
+}
+
+for(btnDelete of btnDeleteAll) {
+    btnDelete.addEventListener('click', onClickDelete);
+}
+
+async function onClickDelete(e){
+    let id = (e.target.id).replace('del_','');
+    if(!window.confirm("Desativar produto?")){
+        return;
+    }
+    let data = await fetch('/produto/desativar?id='+ id)
+    .then(response => response.json())
+    .then(data => {return data});
+    if(data[0] == 1) {
+        window.location.reload(true);
+    };
 }
 // Edit End
 
