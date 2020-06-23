@@ -28,24 +28,26 @@
     </div>
 </section>
 <section class="container" id="petDisp">
-    <h2 class="text-blue">Pets disponíveis para adoção</h2>
-    <div class="row">
-        <% for (pet of pets) { %>
-        <div class="col-sm-6 col-md-3 p-1">
-            <a href="/pet/detalheAdocao?id=<%=pet.id%> ">
-                <div class="card" >
-                    <img src="<%= pet.imagem[0].imagem %> " class="card-img-top" alt="Nome do pet" />
-                    <div class="card-body">
-                        <h5 class="card-title"><%=pet.nome%></h5>
-                        <p class="card-text"><%=pet.raca%></p>
+    <% if(pets.length == 0) {%>
+        <h2 class="text-blue">Sem pets para adoção!</h2>
+    <% } else {%>
+        <h2 class="text-blue">Pets disponíveis para adoção</h2>
+        <div class="row">
+            <% for (pet of pets) { %>
+            <div class="col-sm-6 col-md-3 p-1">
+                <a href="/pet/detalheAdocao?id=<%=pet.id%> ">
+                    <div class="card" >
+                        <img src="<%= pet.imagem[0].imagem %> " class="card-img-top" alt="Nome do pet" />
+                        <div class="card-body">
+                            <h5 class="card-title"><%=pet.nome%></h5>
+                            <p class="card-text"><%=pet.raca%></p>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
+            <% } %>
         </div>
-        <% } %>
-    </div>
-    </div>
-    </div>
+    <% } %>
+    
 </section>
-<script src="/public/javascripts/homeAdocao.js"></script>
 <%- include('./partials/footer') %>

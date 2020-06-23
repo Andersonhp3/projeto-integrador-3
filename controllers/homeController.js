@@ -1,6 +1,7 @@
-const path = require('path')
-const fs = require('fs')
-const Sequelize = require('sequelize')
+const path = require('path');
+const fs = require('fs');
+const Sequelize = require('sequelize');
+const { Op } = require("sequelize");
 
 const {
     Usuario,
@@ -14,8 +15,6 @@ const {
     Pet,
     Carrinho
 } = require("../models");
-
-const Op = Sequelize.Op
 
 
 
@@ -35,7 +34,10 @@ const homeController =  {
 
         let pets = await Pet.findAll({
             where: {
-                adotado: 0
+                adotado: 0,
+                ativo: {
+                    [Op.ne]: false
+                }
             },
             order: [
                 ['dataCadastro', 'DESC'],

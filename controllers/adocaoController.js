@@ -1,6 +1,6 @@
 const path = require('path')
 const fs = require('fs')
-
+const { Op } = require("sequelize");
 const {
     usuario,
     Pet,
@@ -23,11 +23,20 @@ const adocaoController = {
 
         categoria_pet_id = categoria.dataValues.id
 
-        let categorias = await CategoriaPet.findAll()
+        let categorias = await CategoriaPet.findAll({
+            where: {
+              id: {
+                [Op.ne]: 8
+              }
+            }
+          });
 
         let pets = await Pet.findAll({
             where: {
-                categoria_pet_id
+                categoria_pet_id,
+                ativo: {
+                    [Op.ne]: false
+                }
             },
             include: ['imagem']
         });
@@ -55,7 +64,10 @@ const adocaoController = {
         let categorias = await CategoriaPet.findAll()
         let pets = await Pet.findAll({
             where: {
-                adotado: 0
+                adotado: 0,
+                ativo: {
+                    [Op.ne]: false
+                }
             },
             include: ['imagem']
         });

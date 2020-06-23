@@ -2,6 +2,7 @@ const path = require('path')
 const fs = require('fs')
 var Sequelize = require('sequelize');
 const Op = Sequelize.Op;
+
 const {
     Usuario,
     Endereco,
