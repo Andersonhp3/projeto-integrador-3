@@ -55,6 +55,11 @@
       </div>
       <div class="col-md-9">
         <h1 class="text-blue">Doações</h1>
+        <% if(pets.length == 0) { %>
+        <div class="container d-flex justify-content-center align-items-center" style="height: 300px;">
+          <h4 class="text-center text-blue">Você ainda não colocou nenhum pet para adoção!</h4>
+        </div>
+        <% } else { %>
         <nav aria-label="Page navigation example">
           <ul class="pagination pagination-sm">
             <li id="previous-page" class='page-item'>
@@ -78,15 +83,6 @@
             </tr>
           </thead>
           <tbody>
-            <% if(!pets) { %>
-            <tr class="table-items">
-              <th scope="row">0</th>
-              <td>Pets Cadastrados</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <% } else { %>
             <% for(pet of pets) {%>
             <tr class="table-items">
               <th class="py-2" id="th_<%= pet.id %>" scope="row"><%= pet.id %></th>
@@ -94,12 +90,16 @@
               <td class="py-2"><%= pet.nome %></td>
               <td class="py-2"><%= pet.adotado ? 'Sim' : 'Não' %></td>
               <td class="py-2"><%= pet.dataCadastro.toLocaleDateString() %></td>
-              <td class="py-2"><a href="javascript:void(0)" class="edit"><i id="edit_<%= pet.id %>" class="fas fa-pencil-alt"></i></a></td>
-              <td class="py-2"><a href="javascript:void(0)" class="delete"><i id="del_<%= pet.id %>" class="fas fa-trash-alt"></i></a></td>
+              <td class="py-2"><a href="javascript:void(0)" class="edit"><i id="edit_<%= pet.id %>"
+                    class="fas fa-pencil-alt"></i></a></td>
+              <td class="py-2"><a href="javascript:void(0)" class="delete"><i id="del_<%= pet.id %>"
+                    class="fas fa-trash-alt"></i></a></td>
             </tr>
             <% } %>
-            <% } %>
           </tbody>
+        </table>
+        <% } %>
+        </tbody>
         </table>
       </div>
     </div>
@@ -121,11 +121,12 @@
             <div class="form-group">
               <input type="hidden" name="id" id="id">
               <input type="hidden" name="dataAdotado" id="dataAdotado">
-              <input id="nome" class="form-control input-decoration mb-2" type="text" name="nome" placeholder="Nome do Pet" maxlength="100">
+              <input id="nome" class="form-control input-decoration mb-2" type="text" name="nome"
+                placeholder="Nome do Pet" maxlength="100">
               <textarea name="descricao" id="descricao" class="form-control input-decoration mb-2" rows="5"
                 placeholder="Descrição" type="text" maxlength="200"></textarea>
-              <input id="contato" class="form-control input-decoration mb-2" type="text" name="contato" placeholder="Contato"
-                columns="4" maxlength="45">
+              <input id="contato" class="form-control input-decoration mb-2" type="text" name="contato"
+                placeholder="Contato" columns="4" maxlength="45">
               <div class="custom-control custom-switch mb-2">
                 <input type="checkbox" class="custom-control-input input-decoration" name="adotado" id="adotado">
                 <label class="custom-control-label text-blue" for="adotado">Adotado</label>

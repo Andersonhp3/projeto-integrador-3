@@ -54,6 +54,8 @@
       </div>
       <div class="col-md-9">
         <h1 class="text-blue">Meus Produtos</h1>
+
+        <% if (produtos.length === 0) {%>
         <nav aria-label="Page navigation example">
           <ul class="pagination pagination-sm">
             <li id="previous-page" class='page-item'>
@@ -62,7 +64,6 @@
                 <span class="sr-only">Previous</span>
               </a>
             </li>
-
           </ul>
         </nav>
         <table id="table" class="table table-sm table-striped table-responsive">
@@ -91,6 +92,11 @@
             <% } %>
           </tbody>
         </table>
+        <% } else { %>
+        <div class="container d-flex justify-content-center align-items-center" style="height: 300px;">
+          <h4 class="text-center text-blue">Você ainda não colocou nenhum produto à venda!</h4>
+        </div>
+        <% } %>
       </div>
     </div>
   </div>
