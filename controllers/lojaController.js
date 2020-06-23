@@ -514,12 +514,17 @@ const lojaController = {
             include: ['produto']
         })
 
-        let relacionados = await Produto.findAll({
+        let relacionados;
+        if(carrinho.length > 0){
+        relacionados = await Produto.findAll({
             where: {
                 categoria_pet_id: carrinho[0].produto.categoria_pet_id
             },
             include: ['imagem']
         })
+        }
+
+        console.log(carrinho.length)
 
         res.render('carrinho', {
             title: 'Carrinho',
