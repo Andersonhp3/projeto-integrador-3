@@ -239,15 +239,7 @@ const authController = {
       .catch((err) => console.log(err));
     } else {
       let id = hasAddress.dataValues.id;
-      await Endereco.update({
-        cep,
-        logradouro,
-        numero,
-        bairro,
-        usuario_id,
-        estado_id: estado,
-        cidade_id: cidade,
-      },{
+      await Endereco.update(novoEndereco,{
         where: {
           id
         }
