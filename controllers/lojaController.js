@@ -50,6 +50,11 @@ const lojaController = {
         });
 
         let categoriaPet = await CategoriaPet.findAll({
+            where: {
+                id: {
+                  [Op.ne]: 8
+                }
+            },
             include: [{
                 model: Produto,
                 as: "categoria_pet_produto",
