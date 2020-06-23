@@ -126,7 +126,7 @@ const lojaController = {
             preco = 100000;
         }
 
-
+        let { page = 1 } = req.query;
 
         let verificarQuery = (...query) => {
 
@@ -163,6 +163,8 @@ const lojaController = {
                         [Op.between]: [0, preco]
                     }
                 },
+                limit:16,
+                offset: (page-1) * 16
             }
         } else {
             produtoAllOrder = {
@@ -175,14 +177,18 @@ const lojaController = {
                 },
                 order: [
                     ['preco', ordemPreco]
-                ]
+                ],
+                limit:16,
+                offset: (page-1) * 16
             }
         }
 
 
-        let produtoAll = await Produto.findAll(
+        let { count: total, rows:produtoAll } = await Produto.findAndCountAll(
             produtoAllOrder
         )
+        let totalPagina = Math.ceil(total/16);
+       
 
         let marcasProduto = []
         for (let i = 0; i < produtoAll.length; i++) {
@@ -201,7 +207,6 @@ const lojaController = {
             return !this[JSON.stringify(a)] && (this[JSON.stringify(a)] = true);
         }, Object.create(null));
 
-        console.log(marcasOrdenadas)
 
         let categoriaProduto = await Categoria.findByPk(id, {
             include: [{
@@ -230,7 +235,6 @@ const lojaController = {
         res.render('categoriaProduto', {
             title: 'Categoria Produto',
             css: 'categoria',
-            // produto,
             categoriaPetAll,
             usuario,
             categoriaProduto,
@@ -238,7 +242,8 @@ const lojaController = {
             produtoAll,
             carrinho,
             queryAtual,
-            marcasOrdenadas
+            marcasOrdenadas,
+            totalPagina
 
         });
     },
