@@ -245,9 +245,6 @@ h2 {
 }
 
 @media (max-width: 480px) {
-    .banner div {
-
-    }
 
     .btn-adocao {
         position: absolute;
@@ -301,7 +298,7 @@ h2 {
     }
 
     .card-img-top {
-        /* width: 90%; */
+        width: 50%;
         margin: 5px auto;
     }
 }
