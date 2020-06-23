@@ -48,7 +48,7 @@
                     <div class="col-12">
                         <div class="dropdown my-2">
                             <a class="btn dropdown-toggle btn-sm text-decoration-none text-blue" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Filtrar por:
+                              Ordenar por:
                             </a>
                           
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -58,9 +58,7 @@
                           </div>
                     </div>
                     <div class="row">
-                        <% if (idCategoriaProduto != undefined) {%>
                             <% for ( let i = 0; i < produtoAll.length; i++) {%>
-                                <% if (produtoAll[i].categoria_id == idCategoriaProduto) { %>
                                     <div class="col-md-3 col-12 justify-content-between mb-4">
                                     <a class="text-decoration-none text-blue" href="/produto/detalheProduto?id=<%=produtoAll[i].id%>">
                                        <div class="card" style="width: auto;">
@@ -74,37 +72,21 @@
                                        </div>
                                    </a>
                                </div>
-                               <%}%>
-                            <%}%>
-                        <%} else if (idCategoriaProduto == undefined){%>
-                            
-                            <% for ( let i = 0; i < categoriaPet.categoria_pet_produto.length; i++) {%>
-                                <div class="col-md-3 col-12 justify-content-between mb-4">
-                                <a class="text-decoration-none text-blue" href="/produto/detalheProduto?id=<%=categoriaPet.categoria_pet_produto[i].id%>">
-                                   <div class="card" style="width: auto;">
-                                       <img src="<%=categoriaPet.categoria_pet_produto[i].imagem[0].dataValues.imagem%>"
-                                           class="card-img-top" alt="Nome do produto">
-                                       <div class="card-body">
-                                           <h6 class="card-title text-truncate" id="nomeProduto"><%=categoriaPet.categoria_pet_produto[i].nome%>
-                                           </h6>
-                                           <p class="card-text" id="precoProduto"><%=categoriaPet.categoria_pet_produto[i].preco.toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'})%></p>
-                                        </div>  
-                                   </div>
-                               </a>
-                           </div>
-                        <% } } %>
+                        <% } %>
                         
                     </div>
                     <nav aria-label="Page navigation example ">
-                        <ul class="pagination justify-content-center">
+                        <ul class="pagination justify-content-center text-decoration-none text-blue">
                           <li class="page-item">
                             <a class="page-link" href="#" aria-label="Previous">
                               <span aria-hidden="true">&laquo;</span>
                             </a>
                           </li>
-                          <li class="page-item"><a class="page-link" href="#">1</a></li>
-                          <li class="page-item"><a class="page-link" href="#">2</a></li>
-                          <li class="page-item"><a class="page-link" href="#">3</a></li>
+                          <% for (let nrPagina = 1; nrPagina <= totalPagina; nrPagina++) {%>
+                            <%=console.log(totalPagina)%>
+                            <li class="page-item"><a class="page-link" href="/produto<%=queryAtual%>&page=<%=nrPagina%>"><%=nrPagina%></a></li>
+                          <%}%>
+
                           <li class="page-item">
                             <a class="page-link" href="#" aria-label="Next">
                               <span aria-hidden="true">&raquo;</span>
