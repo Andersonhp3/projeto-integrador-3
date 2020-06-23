@@ -99,3 +99,8 @@ p {
 .opcoes.navlink {
     font-size: 1em;
 }
+
+    .row{
+        margin: 0;
+    }
+

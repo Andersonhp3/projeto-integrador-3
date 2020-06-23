@@ -84,6 +84,12 @@ section.first {
   margin-top: 135px;
 }
 
+@media (max-width: 576px) {
+  seciton.first {
+    margin-top: 160px;
+  }
+}
+
 .bg-blue {
   background-color: #03658C;
 }
