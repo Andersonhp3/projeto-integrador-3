@@ -577,104 +577,15 @@ const lojaController = {
         let pedidos = []
 
         for (item of carrinho) {
-            switch (item.quantidade) {
-                case 2:
-                    pedidos.push({
-                        produto: item.produto_id,
-                        usuario: item.usuario_id,
-                    });
-                    pedidos.push({
-                        produto: item.produto_id,
-                        usuario: item.usuario_id,
-                    })
-                    break;
-                case 3:
-                    pedidos.push({
-                        produto: item.produto_id,
-                        usuario: item.usuario_id,
-                    });
-                    pedidos.push({
-                        produto: item.produto_id,
-                        usuario: item.usuario_id,
-                    });
-                    pedidos.push({
-                        produto: item.produto_id,
-                        usuario: item.usuario_id,
-                    })
-                    break;
-                case 4:
-                    pedidos.push({
-                        produto: item.produto_id,
-                        usuario: item.usuario_id,
-                    });
-                    pedidos.push({
-                        produto: item.produto_id,
-                        usuario: item.usuario_id,
-                    });
-                    pedidos.push({
-                        produto: item.produto_id,
-                        usuario: item.usuario_id,
-                    });
-                    pedidos.push({
-                        produto: item.produto_id,
-                        usuario: item.usuario_id,
-                    })
-                    break;
-                case 5:
-                    pedidos.push({
-                        produto: item.produto_id,
-                        usuario: item.usuario_id,
-                    });
-                    pedidos.push({
-                        produto: item.produto_id,
-                        usuario: item.usuario_id,
-                    });
-                    pedidos.push({
-                        produto: item.produto_id,
-                        usuario: item.usuario_id,
-                    });
-                    pedidos.push({
-                        produto: item.produto_id,
-                        usuario: item.usuario_id,
-                    });
-                    pedidos.push({
-                        produto: item.produto_id,
-                        usuario: item.usuario_id,
-                    })
-                    break;
-                case 6:
-                    pedidos.push({
-                        produto: item.produto_id,
-                        usuario: item.usuario_id,
-                    });
-                    pedidos.push({
-                        produto: item.produto_id,
-                        usuario: item.usuario_id,
-                    });
-                    pedidos.push({
-                        produto: item.produto_id,
-                        usuario: item.usuario_id,
-                    });
-                    pedidos.push({
-                        produto: item.produto_id,
-                        usuario: item.usuario_id,
-                    });
-                    pedidos.push({
-                        produto: item.produto_id,
-                        usuario: item.usuario_id,
-                    });
-                    pedidos.push({
-                        produto: item.produto_id,
-                        usuario: item.usuario_id,
-                    })
-                    break;
-                default:
-                    pedidos.push({
-                        produto: item.produto_id,
-                        usuario: item.usuario_id,
-                    })
+            for (let i=0; i < item.quantidade; i++){
+                pedidos.push({
+                    produto: item.produto_id,
+                    usuario: item.usuario_id,
+                })
             }
         }
+
+        console.log(pedidos)
 
         for (pedido of pedidos) {
             let novoPedido = await Pedido.create({
