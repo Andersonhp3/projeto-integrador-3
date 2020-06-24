@@ -1,4 +1,8 @@
 
+a {
+    color: black;
+}
+
 a:hover {
     text-decoration: none;
     color: #f2a0a0;
