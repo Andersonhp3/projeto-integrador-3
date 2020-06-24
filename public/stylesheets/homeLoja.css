@@ -38,18 +38,23 @@ section#deals {
     /* box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); */
 }
 
-.carousel{
+.carousel {
     display: flex;
 }
 
-#imagemProduto {
-    height: 160px;
-    width: 177px;
+.card {
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.30);
 }
 
+.card-img-top {
+    width: 100%;
+    margin: 0;
+}
 
-
-
+#imagemProduto {
+    width: 100%;
+    margin: 0;
+}
 
 .carousel-control-prev {
     height: 50px;
@@ -73,135 +78,163 @@ section#deals {
     border: 1px solid #03658C;
     border-radius: 2rem;
 }
+
 .newsShop-group #newsShop-button {
-outline: none !important;
-box-shadow: none !important;
-background-color: transparent; 
-}
-.newsShop-group #newsShop {
-border: 0;
-background-color: transparent; 
-outline: none !important;
-box-shadow: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: transparent;
 }
 
-@media (max-width: 1024px){
-    .banner{
+.newsShop-group #newsShop {
+    border: 0;
+    background-color: transparent;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+@media (max-width: 1024px) {
+    .banner {
         height: 350px
     }
-    
-    .banner img{
+
+    .banner img {
         width: 100%;
         height: 350px;
     }
 }
-@media (max-width: 770px){
+
+@media (max-width: 770px) {
     .col-2 {
         flex: auto;
         max-width: 50%
     }
-    .banner{
+
+    .banner {
         height: 280px
     }
-    
-    .banner img{
+
+    .banner img {
         width: 100%;
         height: 280px;
     }
+
     h2 {
         font-size: 1.8rem;
     }
+
     .carousel {
         height: 350px;
     }
+
     .carousel-inner {
         height: 350px;
     }
-    .hidden{
-        visibility: hidden; 
+
+    .hidden {
+        visibility: hidden;
     }
+
     .card-img-top {
         width: 90%;
         margin: 5px auto;
-    }    
+    }
 }
-@media (max-width: 641px){
+
+@media (max-width: 641px) {
     section#navCategorias {
         margin-top: 108px;
     }
+
     .col-2 {
         flex: auto;
         max-width: 50%
     }
-    .banner{
+
+    .banner {
         height: 220px
     }
-    
-    .banner img{
+
+    .banner img {
         width: 100%;
         height: 220px;
     }
+
     h2 {
         font-size: 1.3rem;
     }
+
     .carousel {
         height: 300px;
     }
+
     .carousel-inner {
         height: 300px;
     }
-    .hidden{
-        visibility: hidden; 
+
+    .hidden {
+        visibility: hidden;
     }
+
     .card-img-top {
         width: 90%;
         margin: 5px auto;
     }
 }
 
-@media (max-width: 575px){
+@media (max-width: 575px) {
     section#navCategorias {
         margin-top: 151px;
     }
+
     section#newsletter {
         display: none;
     }
 }
 
-@media (max-width: 480px){
+@media (max-width: 480px) {
     section#newsletter {
         display: none;
     }
+
     .col-6 {
         flex: auto;
         max-width: 90%
     }
+
     .col-2 {
         flex: auto;
         max-width: 50%
     }
-    .banner{
+
+    .banner {
         height: 220px
     }
-    
-    .banner img{
+
+    .banner img {
         width: 100%;
         height: 220px;
     }
+
     h2 {
         font-size: 1.3rem;
     }
+
     .carousel {
-        height: 250px;
+        height: 480px;
     }
+
     .carousel-inner {
-        height: 250px;
+        height: 100%;
     }
-    .hidden{
-        visibility: hidden; 
+
+    .hidden {
+        visibility: hidden;
     }
+
     .card-img-top {
-        /* width: 90%; */
+        width: 100%;
         margin: 5px auto;
     }
-};
+}
+
+;
