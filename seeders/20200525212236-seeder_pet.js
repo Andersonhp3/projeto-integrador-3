@@ -150,7 +150,7 @@ module.exports = {
         adotado: false,
         ativo:true,
         dataAdotado: null,
-        categoria_pet_id: 7,
+        categoria_pet_id: 4,
         usuario_id: 2
       },
       {
@@ -630,7 +630,7 @@ module.exports = {
         adotado: true,
         ativo:true,
         dataAdotado: '2020-06-12',
-        categoria_pet_id: 7,
+        categoria_pet_id: 4,
         usuario_id: 2
       },
       {
