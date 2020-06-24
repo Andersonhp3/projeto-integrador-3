@@ -23,11 +23,11 @@
 <section id="secMaisVendidos" class="container mt-5">
     <h2 class="text-blue">Mais vendidos</h2>
     <div id="carouselMaisVendidos" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
+        <div class="carousel-inner container">
             <div class="carousel-item active">
                 <div class="row">
                     <% for( let i = 1; i <= 6; i++) {%>
-                        <div class="col-md-2 col-12 px-1">  
+                        <div class="col-md-2 col-12 px-1 py-2">  
                             <a href="/produto/detalheProduto?id=<%=maisVendidos[ i - 1].id%>" class="text-decoration-none text-blue">
                                 <div class="card" style="width: auto;">
                                     <img src="<%=maisVendidos[i -1].get().imagem[0].dataValues.imagem%>"
@@ -45,7 +45,7 @@
                 <div class="carousel-item">
                     <div class="row">
                         <% for( let i = 7; i <= 12; i++) {%>
-                            <div class="col-md-2 col-12 px-1"> 
+                            <div class="col-md-2 col-12 px-1 py-2"> 
                                 <a href="/produto/detalheProduto?id=<%=maisVendidos[ i - 1].id%>" class="text-decoration-none text-blue">
                                     <div class="card" style="width: auto;">
                                         <img src="<%=maisVendidos[i -1].get().imagem[0].dataValues.imagem%>"
@@ -63,7 +63,7 @@
                 <div class="carousel-item">
                     <div class="row">
                         <% for( let i = 13; i <= 18; i++) {%>
-                            <div class="col-md-2 col-12 px-1"> 
+                            <div class="col-md-2 col-12 px-1 py-2"> 
                                 <a href="/produto/detalheProduto?id=<%=maisVendidos[ i - 1].id%> class="text-decoration-none text-blue"">
                                     <div class="card" style="width: auto;">
                                         <img src="<%=maisVendidos[i -1].get().imagem[0].dataValues.imagem%>"
