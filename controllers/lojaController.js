@@ -669,20 +669,22 @@ const lojaController = {
             id,
             nome,
             marca,
+            estoque,
+            preco,
             descricao,
             categoria,
             categoria_pet
         } = req.body;
-
+        console.log(categoria)
         categoria = await Categoria.findOne({
             where: {
-                categoria
+                id:categoria
             }
         });
-
+        console.log(categoria)
         categoria_pet = await CategoriaPet.findOne({
             where: {
-                categoria: categoria_pet
+                id: categoria_pet
             }
         });
 
