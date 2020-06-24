@@ -5,7 +5,7 @@
         <% if (carrinho.length > 0){ %>
         <div class="col-md-8">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
-                <span>Resumo do Pedido</span>
+                <span class="text-blue">Resumo do Pedido</span>
             </h4>
 
             <ul class="list-group mb-3">
@@ -13,10 +13,10 @@
                 <li class="list-group-item d-flex justify-content-between lh-condensed py-2" id="listaCarrinho">
                     <div class="col-8">
                         <div class="col-12 px-0 py-1">
-                            <h6 class="my-0"><%=item.produto.nome%></h6>
+                            <h6 class="my-0 text-blue"><%=item.produto.nome%></h6>
                         </div>
-                        <div class="col-12 px-0 py-1"><span class="text-muted"> Quantidade: </span>
-                            <input type="number" min="1" class="ml-2 qtd" value=<%= item.quantidade%>
+                        <div class="col-12 px-0 py-1"><span class="text-pink"><strong>Quantidade: </strong></span>
+                            <input type="number" min="1" class="ml-2 qtd input-decoration" value=<%= item.quantidade%>
                                 id="<%= item.id %>"></div>
                     </div>
                     <div class="col-4">
@@ -36,7 +36,7 @@
         </div>
         <div class="col-md-4">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
-                <span>Seu carrinho</span>
+                <span class="text-blue">Seu carrinho</span>
             </h4>
             <ul class="list-group mb-3">
                 <li class="list-group-item d-flex justify-content-between">
@@ -49,7 +49,7 @@
             <a href="/finalizarPedido"><button class="btn btn-site">Finalizar Pedido</button></a>
         </div>
     </div>
-    <h2>Quem comprou também viu:</h2>
+    <h2 class="text-blue">Quem comprou também viu:</h2>
     <div class="row">
         <% for (let i = 0; i < 4; i++){%> 
         <div class="col-sm-6 col-md-3 p-1">
