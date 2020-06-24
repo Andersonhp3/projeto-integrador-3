@@ -185,6 +185,9 @@ const lojaController = {
         let { page = 1 } = req.query;
 
         let condTotal = {
+            ativo: {
+                [Op.ne]: false // adicionado condição ativo para não trazer itens dasativados na pesquisa
+            },
             ...condIdProdu,
             ...condPreco,
             ...condMarca,
