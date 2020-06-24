@@ -86,7 +86,7 @@
             <% for(pet of pets) {%>
             <tr class="table-items">
               <th class="py-2" id="th_<%= pet.id %>" scope="row"><%= pet.id %></th>
-              <td class="py-2"><img src="<%= pet.imagem[0].imagem %>" width="70px" alt=""></td>
+              <td class="py-2"><a href="/pet/detalheAdocao?id=<%= pet.id %>"><img src="<%= pet.imagem[0].imagem %>" width="70px" alt=""></a></td>
               <td class="py-2"><%= pet.nome %></td>
               <td class="py-2"><%= pet.adotado ? 'Sim' : 'Não' %></td>
               <td class="py-2"><%= pet.dataCadastro.toLocaleDateString() %></td>
