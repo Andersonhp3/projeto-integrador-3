@@ -1,5 +1,26 @@
 <%- include('./partials/header', {active: title}) %>
+<section id="navCategorias" class="mb-3">
+    <nav class="navbar navbar-expand-sm bg-white py-0">
+        <div class="container">
+            <button class="navbar-toggler text-blue" type="button" data-toggle="collapse"
+                data-target="#myNavbarCategorias" aria-controls="myNavbarCategorias" aria-expanded="false"
+                aria-label="Menu de categorias">
+                <i class="fas fa-bars text-blue mr-2"></i>Categorias
+            </button>
+            <a class="nav-link nav-item py-0 text-decoration-none text-blue d-none d-sm-block"
+                href="#"> <i class="fas fa-bars text-blue mr-1"><strong class="ml-2">Categorias</strong></i> </a>
 
+            <div class="container collapse navbar-collapse text-blue" id="myNavbarCategorias">
+                <div class="navbar-nav row">
+                    <% for (let categoria of categoriaPetAll) {%>   
+                    <a class="nav-link nav-item py-0 text-decoration-none text-reset active"
+                        href="/produto/categoriaPet?id=<%=categoria.id%>"><%=categoria.categoria%></a>
+                    <%}%>
+                </div><!-- navbar -->
+            </div><!-- collapse -->
+        </div>
+    </nav>
+</section>
 <section id="produto" class="first">
     <div class="container tudo">
         <div class="row">

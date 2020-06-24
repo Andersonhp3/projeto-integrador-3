@@ -94,6 +94,14 @@ const lojaController = {
         let carrinho = undefined
 
 
+        let categoriaPetAll = await CategoriaPet.findAll({
+            include: [{
+                model: Produto,
+                as: "categoria_pet_produto",
+                atributes: ["categoria_pet_produto"]
+            }]
+        });
+
         let produto = await Produto.findByPk(id, {
             include: ['usuario', 'imagem']
         })
@@ -111,7 +119,8 @@ const lojaController = {
             css: 'produto',
             produto,
             usuario,
-            carrinho
+            carrinho,
+            categoriaPetAll
         })
     },
     detalheProduto: async (req, res) => {
@@ -127,26 +136,68 @@ const lojaController = {
 
         let preco = req.query.preco;
         let ordemPreco = req.query.ordem;
+        let marca = req.query.marca;
 
-        if (preco == undefined) {
-            preco = 100000;
+        if(preco == undefined) {
+            preco = 100000
+        }
+
+        let condPreco = {
+            preco: {
+                [Op.between]: [0, preco]
+            }        
+        }
+
+        let condOrdemPreco;
+        if(ordemPreco != undefined){
+            console.log("passou")
+            condOrdemPreco = [['preco', ordemPreco]]
+        }else {
+            condOrdemPreco = []
+        }
+        
+        let condMarca;
+        
+        if(marca != undefined){
+            condMarca = {
+                marca: marca
+            }
+        }else {
+            condMarca = {}
+        }
+
+        let condOrdem = [...condOrdemPreco]
+        console.log(condOrdem)
+        let condIdProdu = {
+            categoria_id: id
         }
 
         let { page = 1 } = req.query;
 
-        let verificarQuery = (...query) => {
-
+        let condTotal = {
+            ...condIdProdu,
+            ...condPreco,
+            ...condMarca,
         }
 
         let queryAtual = req.url
-        if (queryAtual.indexOf('preco')) {
+
+        if (queryAtual.indexOf('preco') > -1) {
+            queryAtual = queryAtual.replace("&preco="+preco,"")
+        }
+
+
+        if(queryAtual.indexOf('ordem') > -1){
+            queryAtual = queryAtual.replace("&ordem="+ordemPreco,"")
+        }
+        
+        if(queryAtual.indexOf('page') > -1){
+            queryAtual = queryAtual.replace("&page="+page,"")
+        }
+
+        if(queryAtual.indexOf('marca') > -1){
             queryAtual = '/categoriaProduto?id=' + id
         }
-
-        if (queryAtual.indexOf('preco') < -1 && queryAtual.indexOf('categoriaProdutoId')) {
-            queryAtual = '/categoriaPet?id=' + id + "&categoriaProdutoId=" + idCategoriaProduto;
-        }
-
 
 
         let categoriaPetAll = await CategoriaPet.findAll({
@@ -159,39 +210,16 @@ const lojaController = {
 
         let produtoAllOrder;
 
-        // verificando order para pesquisar
-        if (ordemPreco == undefined) {
-            produtoAllOrder = {
-                include: 'imagem',
-                where: {
-                    categoria_id: id,
-                    preco: {
-                        [Op.between]: [0, preco]
-                    }
-                },
-                limit:16,
-                offset: (page-1) * 16
-            }
-        } else {
-            produtoAllOrder = {
-                include: 'imagem',
-                where: {
-                    categoria_id: id,
-                    preco: {
-                        [Op.between]: [0, preco]
-                    }
-                },
-                order: [
-                    ['preco', ordemPreco]
-                ],
-                limit:16,
-                offset: (page-1) * 16
-            }
-        }
 
 
         let { count: total, rows:produtoAll } = await Produto.findAndCountAll(
-            produtoAllOrder
+            {
+                include: 'imagem',
+                where: condTotal,
+                limit:16,
+                offset: (page-1) * 16,
+                order:condOrdem
+            }
         )
         let totalPagina = Math.ceil(total/16);
        
@@ -271,6 +299,16 @@ const lojaController = {
             }        
         }
 
+        let condOrdemPreco;
+
+        if(ordemPreco != undefined){
+            condOrdemPreco = [['preco', ordemPreco]]
+        }else {
+            condOrdemPreco = []
+        }
+
+        let condOrdem = [...condOrdemPreco]
+
 
         let condIdCateProduto;
 
@@ -291,49 +329,33 @@ const lojaController = {
             ...condIdCateProduto,
             ...condIdCatePet
         }
-
+        let { page = 1 } = req.query;
         
         if (queryAtual.indexOf('preco') > -1) {
-            queryAtual = '/categoriaPet?id=' + id
+            queryAtual = queryAtual.replace("&preco="+preco,"")
         }
 
-        if (queryAtual.indexOf('preco') || queryAtual.indexOf('categoriaProdutoId')) {
-            queryAtual = '/categoriaPet?id=' + id + "&categoriaProdutoId=" + idCategoriaProduto;
+        if(queryAtual.indexOf('ordem') > -1){
+            queryAtual = queryAtual.replace("&ordem="+ordemPreco,"")
+        }
+        
+        if(queryAtual.indexOf('page') > -1){
+            queryAtual = queryAtual.replace("&page="+page,"")
         }
 
-        if (queryAtual.indexOf('preco') > -1 && queryAtual.indexOf('categoriaProdutoId') > -1 && queryAtual.indexOf('preco')) {
-            queryAtual = '/categoriaPet?id=' + id + "&categoriaProdutoId=" + idCategoriaProduto;
-        }
 
         if (preco == undefined) {
             preco = 100000;
         }
 
-        let produtoAllOrder;
-
-        let { page = 1 } = req.query;
-        // verificando order para pesquisar
-        if (ordemPreco == undefined) {
-            produtoAllOrder = {
-                include: 'imagem',
-                where: condTotal,
-                limit:16,
-                offset: (page-1) * 16
-            }
-        } else {
-            produtoAllOrder = {
+        let { count: total, rows:produtoAll } = await Produto.findAndCountAll(
+            {
                 include: 'imagem',
                 where: condTotal,
                 limit:16,
                 offset: (page-1) * 16,
-                order: [
-                    ['preco', ordemPreco]
-                ]
+                order: condOrdem
             }
-        }
-
-        let { count: total, rows:produtoAll } = await Produto.findAndCountAll(
-            produtoAllOrder
         )
         let totalPagina = Math.ceil(total/16);
 
@@ -350,11 +372,6 @@ const lojaController = {
         let categoriaPet = await CategoriaPet.findByPk(id, {
             include: [{
                 model: Produto,
-                where: {
-                    preco: {
-                        [Op.between]: [0, preco]
-                    }
-                },
                 as: "categoria_pet_produto",
                 include: ['categoria', "imagem"],
             }, ],
@@ -364,11 +381,6 @@ const lojaController = {
         let categoriaProduto = await Categoria.findAll({
             include: [{
                 model: Produto,
-                where: {
-                    preco: {
-                        [Op.between]: [0, preco]
-                    }
-                },
                 as: "produto",
                 atributes: ["produto"]
             }],
@@ -405,7 +417,7 @@ const lojaController = {
             })
         }
 
-
+        
 
 
         res.render('categoriaPet', {
@@ -676,20 +688,22 @@ const lojaController = {
             id,
             nome,
             marca,
+            estoque,
+            preco,
             descricao,
             categoria,
             categoria_pet
         } = req.body;
-
+        console.log(categoria)
         categoria = await Categoria.findOne({
             where: {
-                categoria
+                id:categoria
             }
         });
-
+        console.log(categoria)
         categoria_pet = await CategoriaPet.findOne({
             where: {
-                categoria: categoria_pet
+                id: categoria_pet
             }
         });
 
