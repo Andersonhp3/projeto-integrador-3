@@ -163,9 +163,15 @@ box-shadow: none !important;
     section#navCategorias {
         margin-top: 151px;
     }
+    section#newsletter {
+        display: none;
+    }
 }
 
 @media (max-width: 480px){
+    section#newsletter {
+        display: none;
+    }
     .col-6 {
         flex: auto;
         max-width: 90%
