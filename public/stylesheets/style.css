@@ -84,6 +84,11 @@ section.first {
   margin-top: 135px;
 }
 
+section#register div.row div {
+  display: inline-flex;
+  margin: 2px;
+  align-items: center;
+}
 .bg-blue {
   background-color: #03658C;
 }
