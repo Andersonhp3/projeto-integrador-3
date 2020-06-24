@@ -36,7 +36,7 @@
                     <div>
                         <li class="text-decoration-none text-blue"> Marcas</li>
                         <% for ( let i = 0; i < marcasOrdenadas.length; i++  ) {%>
-                        <div class="opcao text-decoration-none text-blue"><a href="/produto<%=queryAtual%>&marca=<%=marcasOrdenadas[i].marca%>" class="text-decoration-none text-blue"><%=marcasOrdenadas[i].marca%></a></a></div>
+                        <div class="opcao text-decoration-none text-blue"><a href="/produto/categoriaProduto?id=<%=categoriaProduto.id%>&marca=<%=marcasOrdenadas[i].marca%>" class="text-decoration-none text-blue"><%=marcasOrdenadas[i].marca%></a></a></div>
                         <%}%>
                     </div>
                     <div>

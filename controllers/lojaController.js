@@ -195,9 +195,6 @@ const lojaController = {
             queryAtual = queryAtual.replace("&page="+page,"")
         }
 
-        if(queryAtual.indexOf('marca') > -1){
-            queryAtual = '/categoriaProduto?id=' + id
-        }
 
 
         let categoriaPetAll = await CategoriaPet.findAll({
