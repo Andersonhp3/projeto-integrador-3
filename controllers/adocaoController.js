@@ -61,7 +61,13 @@ const adocaoController = {
     home: async (req, res) => {
         let usuario = req.session.usuario;
         let carrinho = undefined
-        let categorias = await CategoriaPet.findAll()
+        let categorias = await CategoriaPet.findAll({
+            where: {
+                id: {
+                    [Op.ne]: 8
+                  }
+            }
+        })
         let pets = await Pet.findAll({
             where: {
                 adotado: 0,
