@@ -331,7 +331,11 @@ const lojaController = {
             categoria_pet_id: id
         }
 
+        
         let condTotal = {
+            ativo: {
+                [Op.ne]: false // adicionado condição ativo para não trazer itens dasativados na pesquisa
+            },
             ...condPreco,
             ...condIdCateProduto,
             ...condIdCatePet
