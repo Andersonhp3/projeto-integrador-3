@@ -35,8 +35,9 @@ upload.addEventListener("change", (e) => {
                 cropper = new Cropper(img, {
                     aspectRatio: 1,
                     dragMode: 'move',
-                    minContainerWidth: 400,
-                    minContainerHeight: 400,
+                    viewMode: 2,
+                    minContainerWidth: 300,
+                    minContainerHeight: 300,
                 });
             }
         };

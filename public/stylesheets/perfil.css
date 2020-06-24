@@ -65,7 +65,8 @@ p {
     margin-bottom: 0;
 }
 
-.active, li.active {
+.active,
+li.active {
     color: #f2a0a0 !important;
 }
 
@@ -92,7 +93,7 @@ p {
 
 }
 
-.active-option{
+.active-option {
     width: 50%;
     margin: 0 auto;
     text-align: center;
@@ -116,4 +117,15 @@ li.nav-item a {
 li.nav-item a i {
     width: 2rem;
     text-align: center;
+}
+
+#canvas {
+    width: auto;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+}
+
+#canvas img {
+    width: 100%;
 }
