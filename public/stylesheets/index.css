@@ -289,11 +289,11 @@ h2 {
     }
 
     .carousel {
-        height: 250px;
+        height: 450px;
     }
 
     .carousel-inner {
-        height: 250px;
+        height: 100%;
     }
 
     .hidden {
@@ -301,7 +301,7 @@ h2 {
     }
 
     .card-img-top {
-        width: 40%;
+        width: 100%;
         margin: 5px auto;
     }
 }
