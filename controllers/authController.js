@@ -513,7 +513,9 @@ const authController = {
     if (!imagemb64) {
       var imagem = user.imagem;
     } else {
-      fs.unlinkSync('./public' + usuario.imagem)
+      if(fs.existsSync('./public' + usuario.imagem)){
+        fs.unlinkSync('./public' + usuario.imagem)
+      }
       let filetype = imagemb64.split(';base64,')[0].split('/')[1];
       let imgb64 = imagemb64.split(';base64,').pop();
       var imagem = await decode_base64(imgb64, ('avatar.' + filetype));
