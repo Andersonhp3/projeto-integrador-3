@@ -34,6 +34,7 @@ const adocaoController = {
         let pets = await Pet.findAll({
             where: {
                 categoria_pet_id,
+                adotado: 0,
                 ativo: {
                     [Op.ne]: false
                 }
