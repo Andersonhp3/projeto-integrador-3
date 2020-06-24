@@ -54,14 +54,8 @@
                 </div>
             </div>
             <div class="col-md-6 mt-3 mb-5">
-                <h3 class="text-left"><%=produto.nome%></h3>
-                <p>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </p>
+                <h3 class=" mb-3 text-left"><%=produto.nome%></h3>
+                <p class="h5 mb-3 text-blue"><strong class="text-pink">Marca: </strong><%=produto.marca%></p>
 
 
                 <form action="/comprar" method="GET">
@@ -78,7 +72,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h4><strong class="text-blue">Informação geral do produto</strong></h4>
-                    <p><%=produto.descricao%></p>
+                    <p class="text-blue"><%=produto.descricao%></p>
                 </div>
             </div>
         </div>
@@ -90,11 +84,6 @@
                 </div>
                 <div class="">
                     <h5 id="nomeUser" class="text-blue"><strong><%=produto.usuario.nome%></strong></h5>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
                     <div>
                         <p class="text-blue"><strong class="text-pink">Email do vendedor:
                             </strong><%=produto.usuario.email%></p>
