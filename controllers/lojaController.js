@@ -26,6 +26,11 @@ const lojaController = {
         let usuario = req.session.usuario;
         let carrinho = undefined
         const itens = await Produto.findAll({
+            where: {
+                ativo: {
+                    [Op.ne]: false
+                }
+            },
             include: [{
                 model: ImagemProduto,
                 as: "imagem",
@@ -34,6 +39,11 @@ const lojaController = {
         });
 
         let destaques = await Produto.findAll({
+            where: {
+                ativo: {
+                    [Op.ne]: false
+                }
+            },
             include: [{
                 model: ImagemProduto,
                 as: "imagem",
@@ -542,7 +552,10 @@ const lojaController = {
         if(carrinho.length > 0){
         relacionados = await Produto.findAll({
             where: {
-                categoria_pet_id: carrinho[0].produto.categoria_pet_id
+                categoria_pet_id: carrinho[0].produto.categoria_pet_id,
+                ativo: {
+                    [Op.ne]: false
+                }
             },
             include: ['imagem']
         })

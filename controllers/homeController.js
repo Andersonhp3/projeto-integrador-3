@@ -25,6 +25,11 @@ const homeController =  {
         
         //Buscando todos itens
         let itens = await Produto.findAll({
+            where: {
+                ativo: {
+                    [Op.ne]: false
+                }
+            },
             include: [{
                 model: ImagemProduto,
                 as: "imagem",
@@ -34,7 +39,7 @@ const homeController =  {
 
         let pets = await Pet.findAll({
             where: {
-                adotado: 0,
+                adotado: false,
                 ativo: {
                     [Op.ne]: false
                 }
@@ -48,7 +53,7 @@ const homeController =  {
 
         let adotados = await Pet.findAll({
             where: {
-                adotado: 1
+                adotado: true
             },
             order: [
                 ['dataAdotado', 'DESC'],
