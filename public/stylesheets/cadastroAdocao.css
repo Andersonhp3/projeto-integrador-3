@@ -35,9 +35,13 @@ p {
 
 #canvas {
     width: auto;
-    height: 60vh;
+    height: 45vh;
     display: flex;
     justify-content: center;
+}
+
+.modal-dialog {
+    max-width: 350px;
 }
 
 #canvas img {

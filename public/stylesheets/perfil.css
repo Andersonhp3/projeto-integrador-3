@@ -47,6 +47,7 @@ p {
 
 #divFotoUser {
     text-align: center;
+    padding: 0;
 }
 
 /* Hover na imagem do usuario */
@@ -58,6 +59,8 @@ p {
 .campo-info {
     width: 100%;
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 .campo-info p {
@@ -121,11 +124,29 @@ li.nav-item a i {
 
 #canvas {
     width: auto;
-    height: 60vh;
+    height: 45vh;
     display: flex;
     justify-content: center;
 }
 
+.modal-dialog {
+    max-width: 350px;
+}
+
 #canvas img {
     width: 100%;
+}
+
+div.row.container {
+    margin: 0;
+    padding: 0;
+}
+
+.campo-nome {
+    padding: 0;
+    margin: 0;
+}
+.campo-info div.col-md-12 {
+   padding: 0;
+   margin: 0; 
 }
