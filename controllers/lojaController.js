@@ -94,6 +94,14 @@ const lojaController = {
         let carrinho = undefined
 
 
+        let categoriaPetAll = await CategoriaPet.findAll({
+            include: [{
+                model: Produto,
+                as: "categoria_pet_produto",
+                atributes: ["categoria_pet_produto"]
+            }]
+        });
+
         let produto = await Produto.findByPk(id, {
             include: ['usuario', 'imagem']
         })
@@ -111,7 +119,8 @@ const lojaController = {
             css: 'produto',
             produto,
             usuario,
-            carrinho
+            carrinho,
+            categoriaPetAll
         })
     },
     detalheProduto: async (req, res) => {
