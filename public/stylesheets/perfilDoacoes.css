@@ -52,3 +52,56 @@ p {
     color: white !important;
 }
 /* Hover na imagem do usuario */
+
+.active, li.active {
+    color: #f2a0a0 !important;
+}
+
+.dropdown d-block {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.dropdown-toggle {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+#perfil nav {
+    margin-bottom: 20px;
+}
+
+.opcoes {
+    font-size: 1.2em;
+    background-color: white;
+
+}
+
+.active-option{
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    color: #03658c;
+
+}
+
+.fa-chevron-down {
+    color: #03658c;
+}
+
+.opcoes.navlink {
+    font-size: 1em;
+
+}
+
+li.nav-item a {
+    color: #03658c;
+}
+
+li.nav-item a i {
+    width: 2rem;
+    text-align: center;
+}

@@ -1,7 +1,3 @@
-/* mt = margin top */
-a {
-    color: black;
-}
 
 a:hover {
     text-decoration: none;
@@ -17,11 +13,6 @@ p {
     font-size: 17px;
 }
 
-.imgIcone {
-    width: 30px;
-    padding-right: 8px;
-}
-
 .divInfo {
     background-color: white;
     box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.30);
@@ -34,9 +25,6 @@ p {
     border-right: grey solid 1px;
 }
 
-.active, li.active {
-    color: #f2a0a0;
-}
 
 /* Hover na imagem do usuario */
 
@@ -45,12 +33,7 @@ p {
     height: 200px;
   }
   
-  #modal-body {
-    /* display: flex;
-    justify-content: center; */
-  }
-   
-  .modal-body-content {
+.modal-body-content {
     /* border: 2px solid var(--blue-color); */
     padding: 0;
   }
@@ -62,3 +45,56 @@ p {
     display: flex;
     justify-content: center;
   }
+
+ .active, li.active {
+    color: #f2a0a0 !important;
+}
+
+.dropdown d-block {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.dropdown-toggle {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+#perfil nav {
+    margin-bottom: 20px;
+}
+
+.opcoes {
+    font-size: 1.2em;
+    background-color: white;
+
+}
+
+.active-option{
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    color: #03658c;
+
+}
+
+.fa-chevron-down {
+    color: #03658c;
+}
+
+.opcoes.navlink {
+    font-size: 1em;
+
+}
+
+li.nav-item a {
+    color: #03658c;
+}
+
+li.nav-item a i {
+    width: 2rem;
+    text-align: center;
+}
