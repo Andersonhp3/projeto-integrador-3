@@ -46,6 +46,10 @@ upload.addEventListener("change", (e) => {
     $('#image-cropper').modal('show');
 });
 
+upload.addEventListener('click', (e) => {
+    upload.value = "";
+})
+
 save.addEventListener('click', (e) => {
     e.preventDefault();
     let imgSrc = cropper
